@@ -1,0 +1,536 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Registrar Cotizacion</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-yellow fixed sidebar-mini">
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+        </script>
+        <div class="content-wrapper">
+
+            <section class="content-header">
+                <h1>
+                    DATOS COTIZACION
+                </h1>
+            </section>
+
+
+            <section class="content">
+                <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">DATOS DE COTIZACION</h3>
+                                </div>
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblSedeOrigen">Sede Origen</label>
+                                                <input type="text" id="vcSedeOrigen" name="vcSedeOrigen" class="form-control SedeOrigen" style="background-color:lightgoldenrodyellow; display:block" readonly />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblTrabajador1" style="display:block">Responsable</label>
+                                                <input type="text" class="form-control" id="nvTrabajador1" name="nvTrabajador1" style="background-color:lightgoldenrodyellow; display:block" readonly />
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="lblFechaPedidoCotizacionPedido106" style="width:100px;">Fecha</label>
+                                                <input type="text" class="datepicker form-control mifecha" id="dFechaPedidoCotizacionPedido106" name="dFechaPedidoCotizacionPedido106" value="" placeholder="dd/mm/yyyy" readonly />
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label id="lblAreaRequerimiento55">File/Sustento</label>
+                                                <input type="file" class="filestyle" data-buttonname="btn-success" data-buttontext="&nbsp;&nbsp;&nbsp;Seleccione archivo">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label for="lblObservacionCotizacionPedido106" style="width:120px;">Observacion</label>
+                                                <textarea class="form-control" cols="130" id="nvObservacionCotizacionPedido106"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+
+
+
+
+            <section class="content">
+                <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">DATOS DE  COTIZACION</h3>
+                                </div>
+                                <div class="box-body">
+
+
+                                    <div class="row">
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblPedidoCotizacion106">Pedido</label>
+                                                <input type="text" class="form-control" id="vcPedidoCotizacion106" name="vcPedidoCotizacion106" value="" />
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label id="lblProveedorCotizacion106">Proveedor</label>
+                                                <input type="text" class="form-control" id="vcProveedorCotizacion106" name="vcProveedorCotizacion106" value="" />
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblCondicionPagoCotizacion106">Condicion Pago</label>
+                                                <select class="form-control" id="cboCondicionPagoCotizacion106">
+                                                    <option value="0">CONTADO</option>
+                                                    <option value="1">CREDITO 15 DIAS</option>
+                                                    <option value="2">CREDITO 30 DIAS</option>
+                                                    <option value="3">CREDITO 45 DIAS</option>
+                                                    <option value="4">OTROS</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-1">
+                                            <div class="form-group">
+                                                <label id="lblDiasCreditoCotizacion106">Dias Credito</label>
+                                                <input type="number" class="form-control" id="vcDiasCreditoCotizacion106" name="vcDiasCreditoCotizacion106" value="" />
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="lblFechaVencimientoCotizacion106" style="width:130px;">Fecha Vencimiento</label>
+                                                <input type="text" class="datepicker form-control mifecha" id="dFechaVencimientoCotizacion106" name="dFechaVencimientoCotizacion106" value="" placeholder="dd/mm/yyyy" />
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+                                    <div class="row">
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="lblFechaVigenciaCotizacion106" style="width:100px;">Fecha Vigencia</label>
+                                                <input type="text" class="datepicker form-control mifecha" id="dFechaVigenciaCotizacion106" name="dFechaVigenciaCotizacion106" value="" placeholder="dd/mm/yyyy" />
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblTipoMonedaCotizacion106" style="display: block">Tipo Moneda</label>
+                                                <select class="form-control" style="display: block;" id="cboTipoMonedaCotizacion106">
+                                                    <option value="0">SOLES</option>
+                                                    <option value="1">DOLARES</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblFormaPagoCotizacion106" style="display: block">Forma Pago</label>
+                                                <select class="form-control" style="display: block;" id="cboFormaPagoCotizacion106">
+                                                    <option value="0">DEPOSITO EN CUENTA</option>
+                                                    <option value="1">TRANSFERENCIA DE FONDOS</option>
+                                                    <option value="2">TARJETA DE DEBITO</option>
+                                                    <option value="3">TARJETA DE CREDITO EMITIDA EN EL PAIS POR UNA EMPRESA DEL SISTEMA FINANCIERO</option>
+                                                    <option value="4">EFECTIVO EN LOS DEMAS CASOS</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <!--<div class="col-md-1">
+                                        <div class="form-group">
+                                            <label for="Imprime" style="width:90px">Anticipo</label>
+                                            <input type="checkbox" id="chkAnticipoCotizacion106" name="chkAnticipoCotizacion106" value="" />
+                                        </div>
+                                    </div>-->
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblPorcentajeCotizacion106">Numero de Cuenta</label>
+                                                <input type="number" class="form-control" id="nvCantidadOrdenCompra106" name="nvCantidadOrdenCompra106" value="" />
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label for="lblObservacionCotizacion106" style="width:120px;">Observacion</label>
+                                                <textarea class="form-control" cols="130" id="nvObservacionCotizacion106"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section class="content">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <div class="table-responsive">
+                            <table class="table table-bordered " id="CabeceraBuscarCotizacion">
+                                <tr>
+                                    <td>
+                                        <b>DETALLE DE COTIZACION</b>
+                                    </td>
+
+                                    <td align="right">
+                                        <b>Cantidad de Items: <span id="CantidadItemsCotizacion106">0</span></b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lblCodigoCotizacion106">Codigo</label>
+                                        <input type="text" class="form-control" id="vcCodigoCotizacion106" name="vcCodigoCotizacion106" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lblDescripcionCotizacion106">Descripcion</label>
+                                        <input type="text" class="form-control" id="vcDescripcionCotizacion106" name="vcDescripcionCotizacion106" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lblUnidadMedidaCotizacion59">Unidad Medida</label>
+                                        <input type="text" class="form-control" id="vcUnidadMedidaCotizacion106" name="vcUnidadMedidaCotizacion106" value="" readonly />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lblCantidadCotizacion59">Cantidad</label>
+                                        <input type="number" class="form-control" id="vcCantidadCotizacion106" name="vcCantidadCotizacion106" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lblPrecioCotizacion59">Precio</label>
+                                        <input type="number" class="form-control" id="vcPrecioCotizacion106" name="vcPrecioCotizacion106" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-1">
+                                    <div class="form-group">
+                                        <button class="btn btn-success sincabecera" id="btnAgregarDetalleCotizacion106" name="btnAgregarDetalleCotizacion106">
+                                            <span class="glyphicon glyphicon-plus"></span><b></b>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover" id="tblDetalleCotizacion106">
+                                            <tr class="info">
+                                                <th>Acciones</th>
+                                                <th>Item</th>
+                                                <th>Codigo</th>
+                                                <th>Descripcion</th>
+                                                <th>Unidad Medida</th>
+                                                <th>Precio</th>
+                                                <th>Cantidad</th>
+                                                <th>Inafecto</th>
+                                                <th>Importe</th>
+
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table table-bordered table-condensed">
+                                <tr class="danger">
+                                    <td align="right"><b>SUB TOTAL</b></td>
+                                    <td align="right" width="100px">
+                                        <input type="text" name="numSubTotalCotizacion106" id="numSubTotalCotizacion106" value="" readonly="readonly" style="width: 150px;background-color:lightyellow; text-align: right;" />
+                                    </td>
+                                </tr>
+                                <tr class="danger">
+                                    <td align="right"><b>IGV</b></td>
+                                    <td align="right" width="100px">
+                                        <input type="text" name="numIGVCotizacion106" id="numIGVCotizacion106" value="" readonly="readonly" style="width: 150px;background-color:lightyellow; text-align: right;" />
+                                    </td>
+                                </tr>
+                                <tr class="danger">
+                                    <td align="right"><b>TOTAL</b></td>
+                                    <td align="right" width="100px">
+                                        <input type="text" name="numTotalCotizacion106" id="numTotalCotizacion106" value="" readonly="readonly" style="width: 150px;background-color:lightyellow; text-align: right;" />
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+
+
+
+            <section class="content">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <div class="table-responsive">
+                            <table class="table table-bordered " id="CabeceraBuscarDetalleCotizacion">
+                                <tr>
+                                    <td>
+                                        <b>DETALLE DE PAGO</b>
+                                    </td>
+
+                                    <td align="right">
+                                        <b>Cantidad de Items: <span id="CantidadItemsCotizacionPago106">0</span></b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lblCondicionPagoDetalleCotizacion106">Condicion Pago</label>
+                                        <select class="form-control" id="cboCondicionPagoDetalleCotizacion106">
+                                            <option value="0">CONTADO</option>
+                                            <option value="1">CREDITO 15 DIAS</option>
+                                            <option value="2">CREDITO 30 DIAS</option>
+                                            <option value="3">CREDITO 45 DIAS</option>
+                                            <option value="4">OTROS</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lblDiasCotizacion106">Dias</label>
+                                        <input type="number" class="form-control" id="vcDiasCotizacion106" name="vcDiasCotizacion106" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lblFormaPagoCotizacion106" style="display: block">Forma Pago</label>
+                                        <select class="form-control" style="display: block;" id="cboFormaPagoCotizacion106">
+                                            <option value="0">DEPOSITO EN CUENTA</option>
+                                            <option value="1">TRANSFERENCIA DE FONDOS</option>
+                                            <option value="2">TARJETA DE DEBITO</option>
+                                            <option value="3">TARJETA DE CREDITO EMITIDA EN EL PAIS POR UNA EMPRESA DEL SISTEMA FINANCIERO</option>
+                                            <option value="4">EFECTIVO EN LOS DEMAS CASOS</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lblCantidadCotizacion59">Monto Cuota</label>
+                                        <input type="number" class="form-control" id="vcMontoCuotaCotizacion106" name="vcMontoCuotaCotizacion106" value="" />
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-1">
+                                    <div class="form-group">
+                                        <button class="btn btn-success sincabecera" id="btnAgregarDetalleCotizacionPago106" name="btnAgregarDetalleCotizacionPago106">
+                                            <span class="glyphicon glyphicon-plus"></span><b></b>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover" id="tblDetalleCotizacionPago106">
+                                            <tr class="info">
+                                                <th>Acciones</th>
+                                                <th>Item</th>
+                                                <th>Condicion</th>
+                                                <th>Dias</th>
+                                                <th>Medio</th>
+                                                <th>Monto</th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <table class="table table-bordered table-condensed">
+                                <tr class="danger">
+                                    <td align="right"><b>TOTAL PAGOS</b></td>
+                                    <td align="right" width="100px">
+                                        <input type="text" name="numTotalPagosCotizacion106" id="numTotalPagosCotizacion106" value="" readonly="readonly" style="width: 150px;background-color:lightyellow; text-align: right;" />
+                                    </td>
+                                </tr>
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+
+
+            <div class="panel-body">
+                <div class="form-group">
+
+                    <button type="button" class="btn btn-info" id="" name=""><span class="glyphicon glyphicon-floppy-disk"></span><b>Guardar</b></button>
+                    <button type="button" class="btn btn-success" id="" name=""><span class="glyphicon glyphicon-ok"></span><b>Confirmar</b></button>
+                    <!--<button type="button" class="btn btn-info" id=""><span class="glyphicon glyphicon-print"></span><b>Imprimir</b></button>-->
+                    <button type="button" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>Atras</b></button>
+                </div>
+            </div>
+    </div>
+        
+</body>
+</html>
+
+
+
+<table id="tabla_oculta_cotizacion106">
+    <tr class="fila-base">
+        <td width="65px">
+            <button type="button" class="btn btn-danger btn-xs" id="QuitarCotizacion"><span class="glyphicon glyphicon-remove"></span></button>
+            <button type="button" class="btn btn-success btn-xs" id="ModificarCotizacion"><span class="glyphicon glyphicon-pencil"></span></button>
+
+        </td>
+        <td></td><!--Item-->
+        <td></td><!--Codigo-->
+        <td></td><!--Descripcion-->
+        <td></td><!--Unidad Medida-->
+        <td></td><!--Precio-->
+        <td></td><!--Cantidad-->
+        <td><input class="Inafecto" type="checkbox" /></td>
+        <td></td><!---Importe--->
+    </tr>
+
+
+</table>
+
+
+<table id="tabla_oculta_cotizaciondetalle106">
+    <tr class="fila-base">
+        <td width="65px">
+            <button type="button" class="btn btn-danger btn-xs" id="QuitarCotizacionDetalle"><span class="glyphicon glyphicon-remove"></span></button>
+            <button type="button" class="btn btn-success btn-xs" id="ModificarCotizacionDetalle"><span class="glyphicon glyphicon-pencil"></span></button>
+
+        </td>
+        <td></td><!--Item-->
+        <td></td><!--CondicionPago-->
+        <td></td><!--Dias-->
+        <td></td><!--Forma Pago-->
+        <td></td><!--Monto-->
+        
+    </tr>
+
+
+</table>
+
+
+<script type="text/javascript">
+
+
+
+    $(function () {
+
+        $(document).on("click", ".Inafecto", function () {
+            CalcularTotalCotizacion();
+        });
+
+    })
+
+    </script>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Login</title>
+    <link href="../../public/plugins/admin-lte/css/AdminLTE.css" rel="stylesheet" />
+    <link href="../../public/plugins/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../../public/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../public/web/css/estilos.css" rel="stylesheet" type="text/css" />
+    <link href="../../public/web/css/sweetalert.css" rel="stylesheet" />
+</head>
+
+<body class="hold-transition login-page">
+    <div class="login-box" style="width:40%">
+        <div class="login-box-body">
+            <form action="./../Shared/Plantilla.html#" method="post" id="frmLogin" name="frmLogin">
+                <table style="width:100%; padding:5px" id="TablaSede">
+                    <!--<tr>
+                        <td>
+                            <input type="hidden" name="sede" id="sede" value=" " />
+                            <input type="text" class="enlaceSede" name="desc_sede" id="desc_sede" value=" " />
+                        </td>
+                        <td>
+                            <input type="hidden" name="sede" id="sede" value=" " />
+                            <input type="text" class="enlaceSede" name="desc_sede" id="desc_sede" value=" " />
+                        </td>
+                        <td>
+                            <input type="hidden" name="sede" id="sede" value=" " />
+                            <input type="text" class="enlaceSede" name="desc_sede" id="desc_sede" value=" " />
+                        </td>
+                        <td>
+                            <input type="hidden" name="sede" id="sede" value=" " />
+                            <input type="text" class="enlaceSede" name="desc_sede" id="desc_sede" value=" " />
+                        </td>
+                    </tr>-->
+                </table>
+                <br />
+                <button type="button" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>Atras</b></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../../public/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../../public/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../public/web/js/funciones.js"></script>
+    <script src="../../public/web/js/script.js"></script>
+    <script src="../../public/web/js/sweetalert-dev.js"></script>
+    <script src="../../public/web/js/sweetalert.min.js"></script>
+
+    <p style="text-align:center;">&copy;  <label id="anio"></label> - SG NATCLAR SAC</p>
+
+
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+    
+        ObtenerSede($("#sede").attr("id"));
+
+});
+</script>

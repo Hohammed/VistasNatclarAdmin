@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Registrar Valorizacion</title>
+    <link rel="import" href="../../Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-green fixed sidebar-mini sidebar-collapse">
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+        </script>
+        <script src="../../Scripts/Finanzas/Global.js"></script>
+        <script src="../../Scripts/Finanzas/RegistrarValorizacion.js"></script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    REGISTRAR VALORIZACION
+                </h1>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">Cabecera Valorizacion</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label id="lblNumeroValorizacion" class="">Numero</label>
+                                            <div class="row">                                                
+                                                <div class="col-md-5">
+                                                    <input type="text" class="form-control" id="txtiNumero" name="txtiNumero" value="" style="" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" id="txtiEstablecimiento" name="txtiEstablecimiento" value="" style="" />
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                         <div class="form-group">
+                                          <label>Periodo</label>
+                                          <div class="row">
+                                                 <div class="col-md-5">
+                                                     <input type="text" class="form-control UsuarioOrigen" id="txtAnio" name="txtAnio" value="" style="" />
+                                                 </div>
+                                                 <div class="col-md-6">                                                    
+                                                     <input type="text" class="form-control UsuarioOrigen" id="txtMes" name="txtMes" value="" style="" />                                                    
+                                                 </div>
+                                             </div>
+                                        
+                                    </div>
+                                    </div>                                                
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="cboPeriodoValorizacion" class="">Periodo Valorizacion</label>
+                                            <select id="cboPeriodoValorizacion" class="form-control"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label id="lblFecha" class="">Fecha</label>
+                                            <input type="text" class="datepicker mifecha form-control" placeholder="dd/mm/yyyy" name="txtdtFechaEmision" id="txtdtFechaEmision" />
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="form-group">
+                                            <label id="lblPagador" class="">Pagador</label>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" id="txtvcRucCliente" name="txtvcRucCliente" value="" style="" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" id="txtvcDescripcion" name="txtvcDescripcion" value="" style="" />
+                                                    </div>
+                                                </div>
+                                                                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="cboCondicionPago" class="">Condicion Pago</label>
+                                            <select id="cboCondicionPago" class="form-control">
+                                                <option value="">-------SELECCIONAR-------</option>
+                                                <option value="CREDITO">CREDITO</option>
+                                                <option value="CONTADO">CONTADO</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label>Split Valorizacion</label>
+                                            <input type="text" class="form-control" id="txtvcDescripcion" name="txtvcDescripcion" value="" style="" />
+                                        </div>
+                                    </div>  
+                                </div>
+                               
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label>Unidad</label>
+                                            <input type="text" class="form-control" id="txtvcUnidad" name="txtvcUnidad" value="" style="" />
+                                        </div>
+                                    </div>  
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="cboTipoMoneda" class="">Moneda</label>
+                                            <select id="cboTipoMoneda" class="form-control"></select>
+                                        </div>
+                                    </div>                               
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label id="lblEstadoValorizacion" class="">Estado</label>
+                                            <select id="cboEstadoValorizacion" class="form-control"></select>
+                                        </div>
+                                    </div>                          
+                                   
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label for="txtnvObservacion" class="">Observa.</label>
+                                            <textarea class="form-control" rows="2" id="txtnvObservacion" name="txtnvObservacion" style="" maxlength="500"> </textarea>
+                                        </div>
+                                    </div>                                   
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">LISTA ATENCIONES</h3>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <label id="lblAtencionSeleccionado">Atenciones Seleccionadas</label>
+                                        <input type="text" id="txtAtencionSeleccionado" class="recurso">
+                                        <label id="lblImporteSeleccionado">Importe Seleccionado</label>
+                                        <input type="text" id="txtImporteSeleccionado" class="recurso" />
+                                    </div>
+                                    <div class="col-md-4">                                       
+                                        <button id="btnExportar" class="btn btn-primary btn-sm pull-right recurso">
+                                            Exportar
+                                            <i class="fa fa-file-excel-o" style="color: #ffffff" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table id="tblAtenciones" class="recurso">
+                                                <thead>
+                                                    <tr>
+                                                        <th hidden>vcIdValorizacionDetalle</th>
+                                                        <th hidden>iItem</th>
+                                                        <th hidden>vcIdSede</th>
+                                                        <th>SEDE</th>
+                                                        <th hidden>vcIdUnidad</th>
+                                                        <th>UNIDAD</th>
+                                                        <th>FECHA EXAMEN</th>
+                                                        <th hidden>vcIdTipoExamen</th>
+                                                        <th>TIPO EXAMEN</th>
+                                                        <th>N° OPERACION</th>
+                                                        <th>DNI</th>
+                                                        <th>NOMBRES</th>
+                                                        <th>SUBTOTAL S/.</th>
+                                                        <th hidden>iIdEstado</th>
+                                                        <th>ESTADO</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th hidden>vcIdValorizacionDetalle</th>
+                                                        <th hidden>iItem</th>                                                        
+                                                        <th hidden>vcIdSede</th>
+                                                        <th>SEDE</th>
+                                                        <th hidden>vcIdUnidad</th>
+                                                        <th>UNIDAD</th>
+                                                        <th>FECHA EXAMEN</th>
+                                                        <th hidden>vcIdTipoExamen</th>
+                                                        <th>TIPO EXAMEN</th>
+                                                        <th>N° OPERACION</th>
+                                                        <th>DNI</th>
+                                                        <th>NOMBRES</th>
+                                                        <th>SUBTOTAL S/.</th>
+                                                        <th hidden>iIdEstado</th>
+                                                        <th>ESTADO</th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">Total Valorizacion</h3>                               
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>SUBTOTAL</label>
+                                                <input class="incrustado" type="text" id="nuSubTotal" readonly="readonly"  />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label id="lblImpuesto">IGV </label>
+                                                <input type="text" id="nuImpuestoPorcentaje" readonly="readonly" value="18"  />
+                                                <input type="text" id="nuImpuestoValor" readonly="readonly" value="" />
+                                            </div>
+                                        </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label id="lblTotal">TOTAL</label>
+                                                    <input type="text" id="nuTotal" readonly="readonly" value="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success" id="btnGuardarValorizacion" name="btnGuardarValorizacion"><span class="glyphicon glyphicon-floppy-disk"></span><b>Guardar</b></button>
+                            <button type="button" class="btn btn-danger" id="btnAnularValorizacion" name="btnAnularValorizacion"><span class="glyphicon glyphicon-remove"></span><b>Anular</b></button>
+                            <button type="button" class="btn btn-success" id="btnFacturarValorizacion" name="btnFacturarValorizacion"><span class="glyphicon glyphicon-usd"></span><b>Facturar</b></button>
+                            <button type="button" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>Atras</b></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </div>
+
+    <div class="modal fade" id="FormRegistrarDetalleDocumentoVenta" accesskey="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg " style="max-width:600px" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title titulo-modal" id="myModalLabel">Registrar Detalle Documento Venta</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label id="lblCodigoServicio" class="col-sm-3 control-label no-padding">Codigo</label>
+                            <div class="col-sm-7">
+
+                                <input type="text" id="vcCodigoServicio" name="vcCodigoservicio" class=" form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label id="lblDenominacionServicio" class="col-sm-3 control-label no-padding">Descripcion</label>
+                            <div class="col-sm-7">
+                                <input type="text" id="nvDenominacionServicio" name="nvDenominacionServicio" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label class="col-sm-3 control-label no-padding">Cantidad</label>
+                            <div class="col-sm-7">
+                                <input type="number" id="nuCantidad" name="nuCantidad" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-sm-3 control-label no-padding">Precio Unitario</label>
+                            <div class="col-sm-6">
+                                <input type="number" id="nuPrecioUnitario" name="nuPrecioUnitario" class="form-control" id="nuImporte" name="nuImporte" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" id="btnAgregarDetalle" name="btnAgregarDetalle"><i class="fa fa-plus-circle"></i> Agregar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Tablas Ocultas-->
+    <table id="tabla_oculta_documentoventa_detalle">
+        <tr class="fila-base">
+            <td hidden></td><!--Id-->
+            <td hidden></td><!--Sede-->
+            <td hidden></td><!--Item-->
+            <td>
+                <button type="button" class="btn btn-danger btn-xs" id="QuitarDetalleDocumentoVenta"><span class="glyphicon glyphicon-remove"></span></button>
+            </td>
+            <td></td><!--item-->
+            <td></td><!--cod-->
+            <td></td><!--descrip-->
+            <td></td><!--cantidad-->
+            <td></td><!--preunit-->
+            <td></td><!--Dscto-->
+            <td></td><!--PrecioUnitarioNeto-->
+            <td></td><!--Importe-->
+        </tr>
+    </table>
+</body>
+</html>
+

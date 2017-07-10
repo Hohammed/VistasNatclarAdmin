@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Busqueda Ajuste Stock</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-yellow fixed sidebar-mini" onload="">
+
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+        </script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <!--<h1>
+                INVENTARIO DE ARTICULOS
+            </h1>-->
+            </section>
+
+
+            <section class="content">
+                <div class="box box-primary collapsed-box">
+                    <div class="box-header">
+                        <h3 class="box-title">BUSQUEDA DE INVENTARIO DE ARTICULOS</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-angle-double-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label id="lblSedeOrigen23">Almacen</label>
+                                    <select class="form-control ListaSede" id="cboSedeOrigen23"></select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="lblFechaIniSalida51" style="display:block">Fecha Inicio</label>
+                                    <input type="text" class="datepicker form-control mifecha" id="dFechaIniSalida51" name="dFechaIniSalida51" style="display:block" value="" placeholder="dd/mm/yyyy" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="lblFechaFinSalida51" style="display:block">Fecha Fin</label>
+                                    <input type="text" class="datepicker form-control mifecha" id="dFechaFinSalida51" name="dFechaFinSalida51" style="display:block" value="" placeholder="dd/mm/yyyy" />
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-success sincabecera" name="btnBuscarAlmacen50" id="btnBuscarAlmacen50">
+                                        <span class="glyphicon glyphicon-search">
+                                        </span>
+                                        <b>Buscar</b>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <table id="CabeceraBuscarSalida51">
+                                    <tr>
+                                        <td width="100%">
+                                            <b>LISTA DE INVENTARIO DE ARTICULOS</b>
+                                        </td>
+                                        <td width="100%" align="right">
+                                            <button type="button" class="btn btn-success" id="btnNuevoAjusteStock50" name="btnNuevoAjusteStock50">
+                                                <b>Nuevo</b>
+                                                <span class="glyphicon glyphicon-file">
+                                                </span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover" id="tblDetalleOrdenCompra57">
+                                            <tr class="">
+
+
+                                                <th>Codigo</th>
+                                                <th>Almacen</th>
+                                                <th>Fecha</th>
+                                                <th>Solicitante</th>
+                                                <th>Estado</th>
+
+                                            </tr>
+
+
+
+
+
+
+
+
+
+
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+            </section>
+
+
+
+
+
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+<script type="text/javascript">
+
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+</script>
+

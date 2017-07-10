@@ -1,0 +1,710 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Registrar Orden Compra</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-yellow fixed sidebar-mini" onload="">
+
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+        </script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    REGISTRAR ORDENES DE COMPRA
+                </h1>
+            </section>
+
+
+            <section class="content">
+                <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">DATOS ORDENES COMPRA</h3>
+                                </div>
+                                <div class="box-body">
+                                <div class="row">
+
+                                    <div class="col-md-1">
+                                            <div class="form-group">
+                                            <label id="lblIdOrdenCompra104">Id</label>
+                                                <input type="text" class="form-control" style="display:block; background-color:lightgoldenrodyellow" id="vcIdOrdenCompra104" name="vcIdOrdenCompra104" value="" readonly />
+                                        </div>
+                                    </div>
+                               
+
+                                    <div class="col-md-2">
+                                            <div class="form-group">
+                                            <label id="lblUsuario">Usuario</label>
+                                                <input type="text" id="nvUsuario" name="nvUsuario" class="form-control UsuarioOrigen" style="display:block; background-color:lightgoldenrodyellow" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                            <div class="form-group">
+                                            <label id="lblSedeOrigen">Sede Origen</label>
+                                                <input type="text" id="vcSedeOrigen" name="vcSedeOrigen" class="form-control SedeOrigen" style="display:block; background-color:lightgoldenrodyellow" readonly />
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-2">
+                                            <div class="form-group">
+                                            <label id="lblTipoOrdenCompra104" style="display: block">Tipo</label>
+                                            <select class="form-control" style ="display:block; " id="cboTipoOrdenCompra104">
+                                                <option value="1">COMPRA</option>
+                                                <option value="2">DEVOLUCION</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                  
+                                   
+                                    <div class="col-md-1">
+                                            <div class="form-group">
+                                            <label id="lblCotizacionOrdenCompra104">Cotizacion</label>
+                                                <input type="text" class="form-control" style="display:block; background-color:lightgoldenrodyellow" id="vcCotizacionOrdenCompra104" name="vcCotizacionOrdenCompra104" value="" readonly />
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="col-md-2">
+
+                                            <div class="form-group">
+                                            <label for="lblFechaOrdenCompra104" style="width:80px;">Fecha</label>
+                                                <input type="text" class="datepicker form-control mifecha" style="display:block; background-color:lightgoldenrodyellow" id="dFechaOrdenCompra104" name="dFechaOrdenCompra104" value="" placeholder="dd/mm/yyyy" />
+                                        </div>
+
+                                    </div>
+                                 
+                                </div>
+
+                                    <div class="row">
+                                        <!--<div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblProveedorOrdenCompra104">Proveedor/Ruc</label>
+                                                <input type="text" class="form-control" id="vcProveedorOrdenCompra104" name="vcProveedorOrdenCompra104" value="" />
+                                            </div>
+                                        </div>-->
+
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label id="lblProveedorOrdenCompra104">Proveedor</label>
+                                                <input type="text" class="form-control" id="vcProveedorOrdenCompra104" name="vcProveedorOrdenCompra104" value="" />
+                                                <input type="hidden" class="form-control" id="vcProveedorRuc104" name="vcProveedorRuc104" value="" />
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblCondicionOrdenCompra104">Condicion Pago</label>
+                                                <select class="form-control" id="cboCondicionOrdenCompra104">
+                                                    <option value="0">CONTADO</option>
+                                                    <option value="1">CREDITO 15 DIAS</option>
+                                                    <option value="2">CREDITO 30 DIAS</option>
+                                                    <option value="3">CREDITO 45 DIAS</option>
+                                                    <option value="4">OTROS</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-1">
+                                            <div class="form-group">
+                                                <label id="lblDiasCreditoOrdenCompra104">Dias Credito</label>
+                                                <input type="number" class="form-control" id="vcDiasCreditoOrdenCompra104" name="vcDiasCreditoOrdenCompra104" value="" readonly />
+                                            </div>
+                                        </div>
+                                       
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="lblFechaVencimientoOrdenCompra104" style="width:120px;">Fecha Vencimiento</label>
+                                                <input type="text" class="datepicker form-control mifecha" style="display:block; background-color:lightgoldenrodyellow" id="dFechaVencimientoOrdenCompra104" name="dFechaVencimientoOrdenCompra104" value="" placeholder="dd/mm/yyyy" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-1">
+                                            <div class="form-group">
+                                                <label id="lblTipoMonedaOrdenCompra104" style="display: block">Tipo Moneda</label>
+                                                <select class="form-control" style="display: block;" id="cboTipoMonedaOrdenCompra104">
+                                                    <option value="0">SOLES</option>
+                                                    <option value="1">DOLARES</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblTipoMonedaOrdenCompra104" style="display: block">Tipo Operacion</label>
+                                                <select class="form-control" style="display: block;" id="cboTipoMonedaOrdenCompra104">
+                                                    <option value="0">VENTA NACIONAL</option>
+                                                    <option value="1">COMPRA NACIONAL</option>
+                                                    <option value="2">CONSIGNACION RECIBIDA</option>
+                                                    <option value="3">CONSIGNACION ENTREGADA</option>
+                                                    <option value="4">DEVOLUCION RECIBIDA</option>
+                                                </select>
+                                    </div> 
+                                        </div>
+
+
+
+                                    </div>
+
+
+                                <div class="row">
+                                        
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label id="lblcboSedeDestino104" style="display: block">Centro Costo</label>
+                                            <select class="form-control ListaSede" style="display: block;" id="cboSedeDestino104"></select>
+                                        </div>
+                                    </div>
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblAreaNatclar104" style="display: block">Area Natclar</label>
+                                                <select class="form-control midivisionaria" id="cboAreaNatclar104">
+            
+
+                                                     </select>
+                                        </div>
+                                        </div>
+
+
+                                    <div class="col-md-2">
+                                            <div class="form-group">
+                                            <label for="lblFechaEntregaOrdenCompra104" style="width:120px;">Fecha Entrega</label>
+                                                <input type="text" class="datepicker form-control mifecha" style="display:block; background-color:lightgoldenrodyellow" id="dFechaEntregaOrdenCompra104" name="dFechaEntregaOrdenCompra57" value="" style="width:230px;" placeholder="dd/mm/yyyy" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label id="lblLugarEntregaOrdenCompra104">Lugar Entrega</label>
+                                            <input type="text" class="form-control" id="vcLugarEntregaOrdenCompra104" name="vcLugarEntregaOrdenCompra104" value="" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                            <div class="form-group">
+                                            <label id="lblMedioPagoOrdenCompra104" style="display: block">Medio Pago</label>
+                                            <select class="form-control" style="display: block;" id="cboMedioOrdenCompra104">
+                                                <option value="0">DEPOSITO EN CUENTA</option>
+                                                <option value="1">TRANSFERENCIA DE FONDOS</option>
+                                                <option value="2">TARJETA DE DEBITO</option>
+                                                <option value="3">TARJETA DE CREDITO EMITIDA EN EL PAIS POR UNA EMPRESA DEL SISTEMA FINANCIERO</option>
+                                                <option value="4">EFECTIVO EN LOS DEMAS CASOS</option>
+                                            </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+
+
+                                        <div class="col-md-1">
+                                            <div class="form-group">
+                                                <label id="lblPrioridadOrdenCompra104" style="display: block">Prioridad</label>
+                                                <select class="form-control" style="display: block;" id="cboPrioridadOrdenCompra104">
+                                                    <option value="0">ALTA</option>
+                                                    <option value="1">MEDIA</option>
+                                                    <option value="2">BAJA</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblServCompOrdenCompra104" style="display: block">Serv/Comp</label>
+                                                <select class="form-control" style="display: block;" id="cboServCompOrdenCompra104">
+                                                    <option value="0">DEVOLUCION</option>
+                                                    <option value="1">TRANSPORTE DE CARGA</option>
+                                                    <option value="2">PASAJES TERRESTRES</option>
+                                                    <option value="3">PASAJES AEREOS</option>
+                                                    <option value="4">TRANSPORTE DE PERSONAL</option>
+                                                    <option value="5">CORREROS</option>
+                                                    <option value="6">ALOJAMIENTO</option>
+                                                </select>
+                                        </div>
+                                    </div>
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblNumeroCuentaOrdenCompra104">Numero de Cuenta</label>
+                                                <input type="text" class="form-control" id="vcNumeroCuentaOrdenCompra104" name="vcNumeroCuentaOrdenCompra104" value="" />
+                                            </div>
+                                        </div>
+
+                                </div>
+
+                                  
+                                <div class="row">
+                                    <div class="col-md-7">
+                                            <div class="form-group">
+                                            <label id="lblObservacionOrdenCompra104">Observación</label>
+                                            <textarea class="form-control" cols="130" id="nvObservacionOrdenCompra104"></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                </form>
+            </section>
+
+            <!--<section class="content">
+                <div class="box box-primary">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover" id="TablaCabeceraCargar54">
+                                    <tr>
+                                        <td>
+                                            <b>CARGAR DESDE EXCEL</b>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="file" class="filestyle" data-buttonname="btn-success" data-buttontext="&nbsp;&nbsp;&nbsp;Seleccione archivo">
+                                </div>
+                            </div>
+
+                            <div class="col-md-1">
+                                <span class="icon-input-btn">
+                                    <button type="button" class="btn btn-success" name="Cargar" id="Cargar">
+                                        <span class="glyphicon glyphicon-open">
+                                        </span>
+                                        <b>Cargar</b>
+                                    </button>
+
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>-->
+
+
+            <section class="content">
+                <div class="box box-primary">
+                    <div class="box-header">
+                            <div class="table-responsive">
+                            <table class="table table-bordered " id="CabeceraBuscarOrdenCompra">
+                                    <tr>
+                                        <td>
+                                            <b>DETALLE DE ORDEN COMPRA</b>
+                                        </td>
+
+                                        <td align="right">
+                                            <b>Cantidad de Items: <span id="CantidadItemsOrdenCompra57">0</span></b>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <div class="form-group">
+                                        <label id="lblCodigoOrdenCompra57">Codigo</label>
+                                        <input type="text" class="form-control" id="vcCodigoOrdenCompras57" name="vcCodigoOrdenCompra57" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lblDescripcionOrdenCompra57">Descripcion</label>
+                                        <input type="text" class="form-control" id="nvDescripcionOrdenCompra57" name="nvDescripcionOrdenCompra57" value="" />
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="form-group">
+                                        <label id="lblUnidadMedidaOrdenCompra57">Unidad Medida</label>
+                                        <input type="text" class="form-control" id="nvUnidadMedidaOrdenCompra57" name="nvUnidadMedidaOrdenCompra57" value="" readonly />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lblPresentacionOrdenCompra57">Presentacion</label>
+                                        <select class="form-control" id="cboPresentacionOrdenCompra57">
+                                            <!--<option value="0">CAJA X 100</option>
+                                            <option value="1">UNIDAD</option>
+                                            <option value="2">BLISTER</option>
+                                            <-->
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-1">
+                                    <div class="form-group">
+                                        <label id="lblCantidadOrdenCompra57">Cantidad</label>
+                                        <input type="number" class="form-control" id="nvCantidadOrdenCompra57" name="nvCantidadOrdenCompra57" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-1">
+                                    <div class="form-group">
+                                        <label id="lblPrecioOrdenCompra57">Precio</label>
+                                        <input type="number" class="form-control" id="nvPrecioOrdenCompra57" name="nvPrecioOrdenCompra57" value="" />
+                                    </div>
+                                </div>
+                               
+
+                             
+
+
+                                <div class="col-md-1">
+                                    <div class="form-group">
+                                        <button class="btn btn-success sincabecera" id="btnAgregarDetalleOrdenCompra57" name="btnAgregarDetalleOrdenCompra57">
+                                            <span class="glyphicon glyphicon-plus"></span><b></b>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-hover" id="tblDetalleOrdenCompra57">
+                                                <tr class="info">
+                                                    <th>Acciones</th>
+                                                    <th>Item</th>
+                                                    <th>Codigo</th>
+                                                    <th>Descripcion</th>
+                                                    <th>Unidad Medida</th>
+                                                    <th hidden> Valor Presentacion</th>
+                                                    <th>Presentacion</th>
+                                                    <th>Precio</th>
+                                                    <th>Cantidad</th>
+                                                    <th>Inafecto</th>
+                                                    <th>Importe</th>
+
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                              
+
+
+
+
+                              
+                                </div>
+                    <table class="table table-bordered table-condensed">
+                        <tr class="danger">
+                            <td align="right"><b>SUB TOTAL</b></td>
+                            <td align="right" width="100px">
+                                <input type="text" name="numSubTotalOrdenCompra57" id="numSubTotalOrdenCompra57" value="" readonly="readonly" style="width: 150px;background-color:lightyellow; text-align: right;" />
+                            </td>
+                        </tr>
+                        <tr class="danger">
+                            <td align="right"><b>IGV</b></td>
+                            <td align="right" width="100px">
+                                <input type="text" name="numIGVOrdenCompra57" id="numIGVOrdenCompra57" value="" readonly="readonly" style="width: 150px;background-color:lightyellow; text-align: right;" />
+                            </td>
+                        </tr>
+                        <tr class="danger">
+                            <td align="right"><b>TOTAL</b></td>
+                            <td align="right" width="100px">
+                                <input type="text" name="numTotalOrdenCompra57" id="numTotalOrdenCompra57" value="" readonly="readonly" style="width: 150px;background-color:lightyellow; text-align: right;" />
+                            </td>
+                        </tr>
+                    </table>
+                             
+                            </div>
+
+
+            </section>
+
+      
+
+            <section class="content">
+                <div class="box box-primary">
+                    <div class="box-header">
+                            <div class="table-responsive">
+                            <table class="table table-bordered" id="CabeceraBuscarOrdenCompraPago57">
+                                    <tr>
+                                        <td>
+                                            <b>DETALLE DE PAGO</b>
+                                        </td>
+
+                                        <td align="right">
+                                            <b>Cantidad de Items: <span id="CantidadItemsOrdenCompraPago57">0</span></b>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                            </div>
+
+
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label id="lblCondicionOrdenCompraPago57">Condicion Pago</label>
+                                    <select class="form-control" id="cboCondicionOrdenCompraPago57">
+                                        <option value="0">CONTADO</option>
+                                        <option value="1">CREDITO 15 DIAS</option>
+                                        <option value="2">CREDITO 30 DIAS</option>
+                                        <option value="3">CREDITO 45 DIAS</option>
+                                        <option value="4">OTROS</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <label id="lblDiasOrdenCompraPago57">Dias Credito</label>
+                                    <input type="number" class="form-control" id="nvDiasOrdenCompraPago57" name="nvDiasOrdenCompraPago57" value="" readonly />
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label id="lblMedioPagoOrdenCompraPago57" style="display: block">Medio Pago</label>
+                                    <select class="form-control" style="display: block;" id="cboMedioOrdenCompraPago57">
+                                        <option value="0">DEPOSITO EN CUENTA</option>
+                                        <option value="1">TRANSFERENCIA DE FONDOS</option>
+                                        <option value="2">TARJETA DE DEBITO</option>
+                                        <option value="3">TARJETA DE CREDITO EMITIDA EN EL PAIS POR UNA EMPRESA DEL SISTEMA FINANCIERO</option>
+                                        <option value="4">EFECTIVO EN LOS DEMAS CASOS</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="lblFechaOrdenCompraPago57" style="width:80px;">Fecha Pago</label>
+                                    <input type="text" class="datepicker form-control mifecha" id="dFechaOrdenCompraPago57" name="dFechaOrdenCompraPago57" value="" style="width:200px;" placeholder="dd/mm/yyyy" />
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <label id="lblMontoOrdenCompraPago57">Importe Pago</label>
+                                    <input type="number" class="form-control" id="nvMontoOrdenCompraPago57" name="nvMontoOrdenCompraPago57" value="" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <button class="btn btn-success sincabecera" id="btnAgregarDetalleOrdenCompraPago57" name="btnAgregarDetalleOrdenCompraPago57">
+                                            <span class="glyphicon glyphicon-plus"></span><b></b>
+                                    </button>
+                                </div>
+                            </div>
+                            </div>
+
+                        </div>
+               
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover" id="tblDetalleOrdenCompraPago57">
+                                    <tr class="info">
+                                        <th>Acciones</th>
+                                        <th>Item</th>
+                                        <th>Condicion</th>
+                                        <th>Dias</th>
+                                        <th>Medio</th>
+                                        <th>Fecha Pago</th>
+                                        <th>Monto</th>
+                                    
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-bordered table-condensed">
+                        <tr class="danger">
+                            <td align="right"><b>SUB TOTAL</b></td>
+                            <td align="right" width="100px">
+                                <input type="text" name="numSubTotalOrdenCompraPago57" id="numSubTotalOrdenCompraPago57" value="" readonly="readonly" style="width: 150px;background-color:lightyellow; text-align: right;" />
+                            </td>
+                        </tr>
+                    
+                      
+                    </table>
+                    </div>
+                    </div>
+                </section>
+
+            <div class="panel-body">
+                <div class="form-group">
+
+                    <button type="button" class="btn btn-info" id="" name=""><span class="glyphicon glyphicon-floppy-disk"></span><b>Guardar</b></button>
+                    <button type="button" class="btn btn-success" id="" name=""><span class="glyphicon glyphicon-ok"></span><b>Confirmar</b></button>
+                    <!--<button type="button" class="btn btn-info" id=""><span class="glyphicon glyphicon-print"></span><b>Imprimir</b></button>-->
+                    <button type="button" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>Atras</b></button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+</body>
+</html>
+<table id="tabla_oculta_ordencompra57">
+    <tr class="fila-base">
+        <td width="65px">
+            <button type="button" class="btn btn-danger btn-xs" id="QuitarOrdenCompra"><span class="glyphicon glyphicon-remove"></span></button>
+            <button type="button" class="btn btn-success btn-xs" id="ModificarOrdenCompra"><span class="glyphicon glyphicon-pencil"></span></button> 
+
+        </td>
+        <td></td><!--Item-->
+        <td></td><!--Codigo-->
+        <td></td><!--Descripcion-->
+        <td></td><!--Unidad Medida-->
+        <td hidden></td><!--Presentacion-->
+        <td></td><!--Presentacion-->
+        <td></td><!--Precio-->
+        <td></td><!--Cantidad-->
+        <td><input class="Inafecto" type="checkbox" /></td>
+        <td></td><!---Importe---> 
+    </tr>
+
+
+</table>
+
+
+<table id="tabla_oculta_ordencomprapago57">
+    <tr class="fila-base">
+        <td width="65px">
+            <button type="button" class="btn btn-danger btn-xs" id="QuitarOrdenCompraPago"><span class="glyphicon glyphicon-remove"></span></button>
+            <button type="button" class="btn btn-success btn-xs" id="ModificarOrdenCompraPago"><span class="glyphicon glyphicon-pencil"></span></button>
+
+        </td>
+        <td></td><!--Item-->
+        <td hidden></td><!--Valor Condicion-->
+        <td></td><!--Condicion-->
+        <td></td><!--Dias-->
+        <td hidden></td><!--Valor Medio-->
+        <td></td><!--Medio-->
+        <td></td><!--Fecha-->
+        <td></td><!--Monto-->
+
+    </tr>
+
+
+</table>
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on("change", "#cboCondicionOrdenCompra104", function () {
+            if ($("#cboCondicionOrdenCompra104").val() == "4") {
+                $("#vcDiasCreditoOrdenCompra104").prop("readonly", false);
+        } else {
+                $("#vcDiasCreditoOrdenCompra104").prop("readonly", true);
+                $("#vcDiasCreditoOrdenCompra104").val("");
+        }
+        });
+    })
+
+    $(document).ready(function () {
+        $(document).on("change", "#cboCondicionOrdenCompraPago57", function () {
+            if ($("#cboCondicionOrdenCompraPago57").val() == "4") {
+                $("#nvDiasOrdenCompraPago57").prop("readonly", false);
+            } else {
+                $("#nvDiasOrdenCompraPago57").prop("readonly", true);
+                $("#nvDiasOrdenCompraPago57").val("");
+            }
+        });
+        PresentacionOrdenC();
+    })
+
+
+
+    $("#vcProveedorOrdenCompra104").autocomplete({
+        source: function (request, response) {
+            filtro = $("#vcProveedorOrdenCompra104").val();
+            var data = { filtro: filtro };
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                data: { filtro: filtro },
+                url: 'http://localhost:22822/ProveedorByFiltro/Get',
+                async: true,
+                contentType: "application/json",
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return { value: item.nvRazonSocial, text1: item.vcRUCProveedor };
+                    }))
+                },
+                error: function () { console.log("ERROR..."); }
+            })
+        },
+        minLength: 3,
+        select: function (event, ui) {
+            $("#vcProveedorOrdenCompra104").val(ui.item.text);
+            $("#vcProveedorRuc104").val(ui.item.text1);
+            //$("#nvTrabajadorR35").prop('readonly', true);
+            $("#vcProveedorOrdenCompra104").css("background-color", "lightgoldenrodyellow");
+        },
+        error: function (ex) {
+            alert('Error al traer datos.' + ex);
+        }
+    })
+
+
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+
+    $(function () {
+
+        $(document).on("click", ".Inafecto", function () {
+            CalcularTotal();
+        });
+
+    })
+
+
+    CargarAreaNatclar();
+</script>
+

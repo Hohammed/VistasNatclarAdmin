@@ -1,0 +1,167 @@
+﻿@{
+    Layout = "";
+    ViewBag.Title = "Iniciar Sesion";
+}
+
+
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+<link href="~/public/web/css/estilos.css" rel="stylesheet" />
+<link href="~/Content/msgBoxLight.css" rel="stylesheet" />
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<!-- Theme style -->
+<link href="~/public/plugins/admin-lte/css/AdminLTE.css" rel="stylesheet" />
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="~/Scripts/jquery.msgBox.js"></script>
+
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/respond.js"></script>
+<script src="~/public/web/js/script.js"></script>
+
+<head id="Head">
+
+    <title>Iniciar Sesión</title>
+
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+           
+                <input type="hidden" id="#Datos_JSON" name="#Datos_JSON" />
+                <div class="login-logo">
+                    <img src="/Images/logo_empresa.png">
+                </div>
+                <p class="login-box-msg">INICIO DE SESIÓN</p>
+                <div class="form-group has-feedback">
+                    <input id="USU_LOGIN" name="USU_LOGIN" class="form-control" placeholder="Usuario">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                   
+                        <input id="USU_CLAVE" name="USU_CLAVE" type="text" class="form-control" placeholder="Password">
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                   
+                    
+                </div>
+                <div id="LISTA_CENTROS" class="form-group has-feedback" style="display:none;">
+                    <select class="form-control form-control" id="USU_CENTRO" name="USU_CENTRO"></select>
+                </div>
+                <div class="row">
+                   
+                    <div class="col-xs-12">
+                        <input type="button" id="IniciarSesion" class="btn btn-primary btn-block btn-flat" value="Iniciar Sesion" />
+
+                    </div>
+                   
+                </div>
+
+        </div>
+       
+    </div>
+  
+    <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../plugins/iCheck/icheck.min.js"></script>
+
+    <p style="text-align:center;">&copy; @DateTime.Now.Year - SG NATCLAR SAC</p>
+</body>
+
+<script type="text/javascript">
+
+    $(document).on("click", "#IniciarSesion", function () {
+        var user = $("#USU_LOGIN").val();
+        var pass = $("#USU_CLAVE").val();
+        BuscarUsuario(user, pass, function (Usuario) {
+            $("LISTA_CENTROS").show(true);
+        });
+    });
+
+    function BuscarUsuario(user, pass, callback) {
+        $.ajax({
+            
+            url: '@Url.Action("../Account/BuscarUsuario")',
+            data: { user: JSON.stringify(user), pass: JSON.stringify(pass) },
+            //Es el parametro que se envia a la funcion 
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            statusCode: {
+                200: function(Usuario){
+                    callback(Usuario);
+                },
+                404: function(){
+                    alert("Usuario no encontrado");
+                }
+            }
+        });
+    }
+  
+   
+</script>
+
+@*<script type="text/javascript">*@
+    @*var Logeado = "N";
+    $("#IniciarSesion").click(function () {
+        if (Logeado == "N") {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("../Seguridad/ValidarIniciarSesion")',
+                dataType: 'json',
+                data: { USU_LOGIN: $("#USU_LOGIN").val(), USU_CLAVE: $("#USU_CLAVE").val() },
+                success: function (response) {
+                    if (response != 0) {
+                        $("#USU_ID").val(response);
+                        $("#LISTA_CENTROS").show(true);
+                        Logeado = "S";
+                        CargarCentros();
+                    }
+                    else {
+                        $.msgBox({
+                            type: "error",
+                            title: "Error",
+                            content: "Usuario o Clave incorrecto."
+                        });
+                    }
+                },
+                error: function (ex) {
+                    alert('Error al logear.' + ex.toString());
+                }
+            });
+        }
+        else {
+            $("#frmIniciarSesion").submit();
+        }
+    });
+
+    function CargarCentros() {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("../Seguridad/GetUsuarioCentros")',
+
+            dataType: 'json',
+            async: false,
+            data: { USU_ID: $("#USU_ID").val() },
+
+            success: function (CENTROS) {
+                $.each(CENTROS, function (i, CENTRO) {
+                    $("#USU_CENTRO").append('<option value="' + CENTRO.USCE_CEN_CODIGO + '">' +
+                     CENTRO.USCE_CENTRO_DENOMINACION + '</option>');
+                });
+            },
+            error: function (ex) {
+                alert('Fallo al obtener Centros.' + ex);
+            }
+        });
+    }*@
+
+@*</script>*@

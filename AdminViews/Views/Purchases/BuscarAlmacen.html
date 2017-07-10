@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Buscar Almacen</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-yellow fixed sidebar-mini" onload="">
+
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+        </script>
+        <div class="content-wrapper">
+            <section class="content-header">
+    
+            </section>
+
+
+            <section class="content">
+                <div class="box box-primary ">
+                    <div class="box-header">
+                        <h3 class="box-title">BUSQUEDA DE ALMACENES</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-angle-double-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label id="lblCodigoAlmacen">Codigo</label>
+                                    <input type="text" id="vcCodigoAlmacen" name="vcCodigoAlmacen" class="form-control " display:block" />
+                                </div>
+                            </div>
+                             
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label id="lblDenominacionAlmacen">Denominacion</label>
+                                    <input type="text" id="vcDenominacionAlmacen" name="vcDenominacionAlmacen" class="form-control " display:block" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-success sincabecera" name="btnBuscarAlmacen50" id="btnBuscarAlmacen50">
+                                        <span class="glyphicon glyphicon-search">
+                                        </span>
+                                        <b>Buscar</b>
+                                    </button>
+                                </div>
+                            </div>
+                       
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <section class="content">
+                <form name="">
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <table id="CabeceraRequerimiento">
+                                <tr>
+                                    <td width="100%">
+                                        <b>ALMACEN</b>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-success" id="btnSearch">
+                                            <span class="glyphicon glyphicon-search">
+                                            </span>
+                                        </button>
+                                    </td>
+
+                                    <td>
+                                        <div id="busqueda" style="display:none">
+                                            <input type="text" id="SrcAlmacen" name="SrcRequerimiento" value="" style="border-radius: 3px; height:35px; background-color: lightgoldenrodyellow" />
+                                        </div>
+                                    </td>
+
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+
+                                    <td>
+                                        <button type="button" class="btn btn-success" id="" name="">
+                                            <b>Nuevo</b>
+                                            <span class="glyphicon glyphicon-file">
+                                            </span>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive" id="">
+                                        <table class="tablesorter-blue table table-bordered table-hover" id="TablaRegistrarAlmacen">
+                                            <thead>
+                                                <tr class="info">
+                                                    <th style="background-color: #99ffcc" width="100px">Acciones</th>
+                                                    <th style="background-color: #99ffcc">ID Almacen</th>
+                                                    <th hidden>IdAlmacen</th>
+                                                    <th style="background-color: #99ffcc">Descripcion</th>
+                                                    <th hidden>nvDescripcion</th>
+                                                  
+
+
+                                                </tr>
+                                            </thead>
+
+
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </section>
+
+
+
+         
+
+          
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$('#TablaRegistrarPlanilla').DataTable({
+        //    "scrollX": true
+        //});
+
+        $("#btnSearch").click(function () {
+            $('#busqueda').toggle("slow");
+        });
+
+        //ObtenerTrabajadoresPorSede();
+    });
+
+    $(window).on("load", function () {
+        //ObtenerMotivoTareo();
+        setTimeout(function () { TablaRegistrarAlmacen() }, 5000);
+    });
+
+    function TablaRegistrarAlmacen() {
+        $("#TablaRegistrarAlmacen").tablesorter();
+    }
+
+
+
+    function ObtenerAlmacenes() {
+
+        id_almacen = $("#vcCodigoAlmacen").val();
+        nvdescripcion = $("#vcDenominacionAlmacen").val();
+        
+        var xhr = new XMLHttpRequest();
+
+        var obj;
+
+        xhr.open('GET', 'http://localhost:17334/AlmacenByFiltro/Get?' + 'id_almacen=' + (id_almacen) + '&nvdescripcion=' + (nvdescripcion), true);
+
+        xhr.responseType = "json";
+        // xhr.setRequestHeader("Content-Type", "application/json");
+        //console.log(sede)
+        xhr.onload = function () {
+
+            var status = xhr.status;
+            if (status == 200) {
+                // console.log(xhr.response.GetDataPOSTResult.cUser + " " + xhr.response.GetDataPOSTResult.cPassword);
+                obj = xhr.response;
+                obj2 = JSON.stringify(obj);
+                console.log(xhr.response)
+
+                if (obj != 0) {
+                    //Para actualizar la fila de las columnas
+                    $("#TablaRegistrarAlmacen tbody tr").remove();
+                    for (i = 0, j = 1; i < obj.length; i++, j++) {
+                        $("#TablaRegistrarAlmacen tbody").append("<tr><td><button type='button' class='btn btn-success btn-xs' id='btnRegistrarAlmacen'><span class='glyphicon glyphicon-info-sign'></span><b>Ver Stock</b></button></td>" +
+                                                                  
+                       
+                        //'<td>' + j + '</td>' +
+                        '<td>' + obj[i].vcIdAlmacen + '</td>' +
+                        '<td>' + obj[i].nvDescripcion + '</td>' +
+                        
+                        '</td></tr>');
+                    }
+                }
+                else {
+                    swal("Usted no cuenta con Almacenes asignados!")
+                }
+            }
+            else {
+                swal("Ocurrió un error al obtener a sus Almacenes!")
+            }
+        }
+        xhr.send();
+        //xhr.send(dataobj);
+    }
+
+
+
+
+    $(document).on("click", "#btnBuscarAlmacen50", function () {
+        ObtenerAlmacenes();
+    });
+
+   
+
+
+    $(function () {
+        $(".datepicker").datepicker();
+
+     
+    });
+
+</script>

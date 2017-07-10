@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Tareo - ERP Admin</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-blue fixed sidebar-mini">
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+           
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+            
+        </script>
+        <div class="content-wrapper">
+            <section class="content">
+                <form>
+                    <div class="form-inline panel panel-primary">
+                        <div class="panel-heading"><b>DATOS ASISTENCIA</b></div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="nvTrabajador" style="width:150px;">Responsable</label>
+                                <input type="text" class="form-control" id="nvTrabajador" name="nvTrabajador" value="" style="width:300px;" readonly />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="vcSede" style="width:80px;">Sede</label>
+                                <input type="text" class="form-control" id="vcSede" name="vcSede" value="" style="width:200px;" readonly />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </section>
+        </div>
+    </div>
+</body>
+</html>

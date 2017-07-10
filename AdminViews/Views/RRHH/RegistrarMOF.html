@@ -1,0 +1,1027 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Registrar MOF</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+    <style>
+        .select {
+            width: 650px;
+            margin: 0 0 50px 0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .select2 {
+            width: 150px;
+            margin: 0 0 50px 0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 10px 0 0 10px;
+        }
+    </style>
+</head>
+<body class="hold-transition skin-edit fixed sidebar-mini">
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+        </script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    REGISTRAR MOF
+                </h1>
+            </section>
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary collapsed-box">
+                            
+                                <div class="box-header">
+                                    <h3 class="box-title">DATOS USUARIO</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                            <i class="fa fa-angle-double-down"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="lblTrabajadorS98">Solicitante</label>
+                                                <!--<div class="input-group">-->
+                                                <!--<span class="input-group-btn">-->
+                                                <input type="text" class="form-control UsuarioOrigen" id="nvTrabajadorS98" name="nvTrabajadorS98" value="" style="background-color:lightgoldenrodyellow; display:block" readonly />
+                                                <!--<button type="button" class="btn btn-danger " id="btnNuevaBusquedaTS98"><span class="glyphicon glyphicon-remove"></span></button>-->
+                                                <!--</span>-->
+                                                <!--  </div>-->
+                                            </div>
+                                        </div>
+                                        <!--<div class="col-md-1">
+                                        </div>-->
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label id="lblSedeOrigen">Sede Origen</label>
+                                                <input type="text" id="vcSedeOrigen" name="vcSedeOrigen" class="form-control SedeOrigen" style="background-color:lightgoldenrodyellow; display:block" readonly />
+                                            </div>
+                                        </div>
+                                        <!--<div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="lblPuesto98">Puesto</label>
+                                                <input type="text" class="form-control" id="nvPuesto98" name="nvPuesto98" style="background-color:lightgoldenrodyellow" value=" " readonly />
+                                            </div>
+                                        </div>-->
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblFechaMovimiento98">Fecha</label>
+                                                <input type="text" class="datepicker form-control mifecha" placeholder="dd/mm/yyyy" id="dFechaMovimiento98" name="dFechaMovimiento98" style="background-color:lightgoldenrodyellow; display:block" value="" readonly />
+                                                <!-- <input type="text" class="datepicker form-control" placeholder="dd//mm//yyyy" id="dtfechafin" name="dtfechafin" value="" style="width:100px;" />-->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="content-header">
+                <!--<h1>
+                    DETALLE MOVIMIENTO
+                </h1>-->
+            </section>
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">DETALLE MOF</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label id="lblPuesto100" style="display:block">Puesto</label>
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <input type="text" class="form-control" id="nvPuesto100" name="nvPuesto100" value="" />
+                                                    <input type="hidden" class="form-control" id="iIdPuesto100" name="iIdPuesto100" value="" />
+                                                    <button type="button" class="btn btn-danger" id="btnNuevaBusqueda100"><span class="glyphicon glyphicon-remove"></span></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label id="lblArea100" style="display:block">Área</label>
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <input type="text" class="form-control" id="nvArea100" name="nvArea100" value="" />
+                                                    <input type="hidden" class="form-control" id="iIdArea100" name="iIdArea100" value="" />
+                                                    <button type="button" class="btn btn-danger" id="btnNuevaBusquedaArea100"><span class="glyphicon glyphicon-remove"></span></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group" style="display:block">
+                                            <label id="lblUnidadOrganizativa100">Unidad Organizativa</label>
+                                            <!--<input type="text" class="form-control" id="nvUnidadOrganizativa98" name="nvUnidadOrganizativa98" value="" readonly />-->
+                                            <select class="form-control cboUnidadOrganizativa" id="cboUnidadOrganizativa100"></select>
+                                        </div>
+                                    </div>
+                                    <!--<div class="col-md-3">
+                                        <div class="form-group">
+                                            <label id="lblArea99" style="display: block">Área</label>
+                                            <select class="form-control" style="display: block;" id="cboArea">
+                                               
+                                                <option value="0">Selecione</option>
+                                                <option value="T">Trabajado</option>
+                                                <option value="L">Libre</option>
+                                                <option value="DM">Descanso Médico</option>
+                                                <option value="C">Capacitaciones</option>
+                                                <option value="V">Vacaciones</option>
+                                               
+                                            </select>
+                                        </div>
+                                    </div>-->
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label id="lblObservaciones" style="vertical-align:top;">Objetivos</label>
+                                            <textarea class="form-control" rows="5" id="txtaFunciones100"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label id="lblObservaciones" style="vertical-align:top;">Funciones</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+
+                                            <select name="origen[]" id="origen" multiple="multiple" class="select" size="6">
+                                                <option value="1">Opción 1</option>
+                                                <option value="2">Opción 2</option>
+                                                <option value="3">Opción 3</option>
+                                                <option value="4">Opción 4</option>
+                                                <option value="5">Opción 5</option>
+                                                <option value="6">Opción 6</option>
+                                                <option value="7">Opción 7</option>
+                                                <option value="8">Opción 8</option>
+                                                <option value="1">Opción 1</option>
+                                                <option value="2">Opción 2</option>
+                                                <option value="3">Opción 3</option>
+                                                <option value="4">Opción 4</option>
+                                                <option value="5">Opción 5</option>
+                                                <option value="6">Opción 6</option>
+                                                <option value="7">Opción 7</option>
+                                                <option value="8">Opción 8</option>
+                                                <option value="1">Opción 1</option>
+                                                <option value="2">Opción 2</option>
+                                                <option value="3">Opción 3</option>
+                                                <option value="4">Opción 4</option>
+                                                <option value="5">Opción 5</option>
+                                                <option value="6">Opción 6</option>
+                                                <option value="7">Opción 7</option>
+                                                <option value="8">Opción 8</option>
+                                                <option value="1">Opción 1</option>
+                                                <option value="2">Opción 2</option>
+                                                <option value="3">Opción 3</option>
+                                                <option value="4">Opción 4</option>
+                                                <option value="5">Opción 5</option>
+                                                <option value="6">Opción 6</option>
+                                                <option value="7">Opción 7</option>
+                                                <option value="8">Opción 8</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 ">
+                                        <div class="form-group">
+
+
+
+                                            <!--<div class="col-md-1 sincabecera" style="align-content:center; padding-left:35px">-->
+                                            <!-- <div class="form-group">-->
+                                            <button id="btnReinciarSelectDerecha" name="btnReinciarSelect" type="button" class="btn-min btn btn-success btn-flat"><i class="glyphicon glyphicon-forward"></i></button>
+                                            <button id="btnMoverDerecha" name="btnMoverDerecha" class="btn-min btn btn-default btn-flat"><i class="glyphicon glyphicon-chevron-right"></i></button>
+                                            <button id="btnMoverIzquierda" name="btnMoverIzquierda" type="button" class="btn-min btn btn-default btn-flat"><i class="glyphicon glyphicon-chevron-left"></i></button>
+                                            <button id="btnReinciarSelectIzquierda" name="btnReinciarSelect" type="button" class="btn-min btn btn-success btn-flat"><i class="glyphicon glyphicon-backward"></i></button>
+                                            <!--</div>
+                                </div>-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 ">
+                                        <div class="form-group">
+                                            <div class="">
+                                                <select name="destino[]" id="destino" multiple="multiple" class="select" size="6"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        
+                            <div class=" box box-primary" id="TablaProfesionGrado">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered" id="CabeceraProfesionGrado">
+                                                <tr>
+                                                    <td>
+                                                        <b>REGISTRAR PROFESIÓN - GRADO</b>
+
+                                                        <button type="button" class="btn btn-success" id="btnAgregarProfesionGrado">
+                                                            <span class="glyphicon glyphicon-plus">
+                                                            </span>
+                                                        </button>
+                                                    </td>
+                                                    <td align="right">
+                                                        <b>Cantidad de Items: <span id="CantidadItemsProfesiongrado">0</span></b>
+                                                        <!--<button type="button" class="btn btn-success btn-sm" id="AgregarDetalleComp"><span class="glyphicon glyphicon-plus"></span></button>-->
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="box-body">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="hidden" id="Item_Profesion_Grado" name="Item_Profesion_Grado" />
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered table-hover" id="TablaCabeceraProfesionGrado">
+                                                    <tr class="info">
+                                                        <th width="100px">Acciones</th>
+                                                        <th>Item</th>
+                                                        <th hidden>Valor Prof</th>
+                                                        <th>Profesión</th>
+                                                        <th hidden>Valor Grado</th>
+                                                        <th>Grado</th>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class=" box box-primary" id="TablaFormacionObligatoria">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="CabeceraFormacionObligatoria">
+                                            <tr>
+                                                <td>
+                                                    <b>REGISTRAR FORMACIÓN OBLIGATORIA</b>
+
+                                                    <button type="button" class="btn btn-success" id="btnAgregarFormacionObligatoria">
+                                                        <span class="glyphicon glyphicon-plus">
+                                                        </span>
+                                                    </button>
+                                                </td>
+                                                <td align="right">
+                                                    <b>Cantidad de Items: <span id="CantidadItemsFormacionObligatoria">0</span></b>
+                                                    <!--<button type="button" class="btn btn-success btn-sm" id="AgregarDetalleComp"><span class="glyphicon glyphicon-plus"></span></button>-->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="box-body">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="hidden" id="Item_Formacion_Obligatoria" name="Item_Formacion_Obligatoria" />
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-hover" id="TablaCabeceraFormacionObligatoria">
+                                                <tr class="info">
+                                                    <th width="100px">Acciones</th>
+                                                    <th>Item</th>
+                                                    <th hidden>Valor Descripcion</th>
+                                                    <th>Descripción</th>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <div class=" box box-primary" id="TablaFormacionComplementaria">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="CabeceraFormacionComplementaria">
+                                            <tr>
+                                                <td>
+                                                    <b>REGISTRAR FORMACIÓN COMPLEMENTARIA</b>
+
+                                                    <button type="button" class="btn btn-success" id="btnAgregarFormacionComplementaria">
+                                                        <span class="glyphicon glyphicon-plus">
+                                                        </span>
+                                                    </button>
+                                                </td>
+                                                <td align="right">
+                                                    <b>Cantidad de Items: <span id="CantidadItemsFormacionComplementaria">0</span></b>
+                                                    <!--<button type="button" class="btn btn-success btn-sm" id="AgregarDetalleComp"><span class="glyphicon glyphicon-plus"></span></button>-->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="box-body">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="hidden" id="Item_Formacion_Complementaria" name="Item_Formacion_Complementaria" />
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-hover" id="TablaCabeceraFormacionComplementaria">
+                                                <tr class="info">
+                                                    <th width="100px">Acciones</th>
+                                                    <th>Item</th>
+                                                    <th hidden>Valor Descripcion</th>
+                                                    <th>Descripción</th>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class=" box box-primary" id="TablaAnioSector">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="CabeceraAnioSector">
+                                            <tr>
+                                                <td>
+                                                    <b>REGISTRAR AÑOS DE EXPERIENCIA - SECTOR</b>
+
+                                                    <button type="button" class="btn btn-success" id="btnAgregarAnioSector">
+                                                        <span class="glyphicon glyphicon-plus">
+                                                        </span>
+                                                    </button>
+                                                </td>
+                                                <td align="right">
+                                                    <b>Cantidad de Items: <span id="CantidadItemsAnioSector">0</span></b>
+                                                    <!--<button type="button" class="btn btn-success btn-sm" id="AgregarDetalleComp"><span class="glyphicon glyphicon-plus"></span></button>-->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="box-body">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="hidden" id="Item_Anio_Sector" name="Item_Anio_Sector" />
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-hover" id="TablaCabeceraAnioSector">
+                                                <tr class="info">
+                                                    <th width="100px">Acciones</th>
+                                                    <th>Item</th>
+                                                    <th>Años</th>
+                                                    <th hidden>Valor Descripcion</th>
+                                                    <th>Descripción</th>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">COMPETENCIAS GENERALES</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+
+                                            <select name="origen2[]" id="origen2" multiple="multiple" class="select2" size="6">
+                                                <option value="1">Opción 1</option>
+                                                <option value="2">Opción 2</option>
+                                                <option value="3">Opción 3</option>
+                                                <option value="4">Opción 4</option>
+                                                <option value="5">Opción 5</option>
+                                                <option value="6">Opción 6</option>
+                                                <option value="7">Opción 7</option>
+                                                <option value="8">Opción 8</option>
+                                                <option value="1">Opción 1</option>
+                                                <option value="2">Opción 2</option>
+                                                <option value="3">Opción 3</option>
+                                                <option value="4">Opción 4</option>
+                                                <option value="5">Opción 5</option>
+                                                <option value="6">Opción 6</option>
+                                                <option value="7">Opción 7</option>
+                                                <option value="8">Opción 8</option>
+                                                <option value="1">Opción 1</option>
+                                                <option value="2">Opción 2</option>
+                                                <option value="3">Opción 3</option>
+                                                <option value="4">Opción 4</option>
+                                                <option value="5">Opción 5</option>
+                                                <option value="6">Opción 6</option>
+                                                <option value="7">Opción 7</option>
+                                                <option value="8">Opción 8</option>
+                                                <option value="1">Opción 1</option>
+                                                <option value="2">Opción 2</option>
+                                                <option value="3">Opción 3</option>
+                                                <option value="4">Opción 4</option>
+                                                <option value="5">Opción 5</option>
+                                                <option value="6">Opción 6</option>
+                                                <option value="7">Opción 7</option>
+                                                <option value="8">Opción 8</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <button id="btnReinciarSelectDerech2a" name="btnReinciarSelect2" type="button" class="btn-min btn btn-success btn-flat"><i class="glyphicon glyphicon-forward"></i></button>
+                                            <button id="btnMoverDerecha2" name="btnMoverDerecha2" class="btn-min btn btn-default btn-flat"><i class="glyphicon glyphicon-chevron-right"></i></button>
+                                            <button id="btnMoverIzquierda2" name="btnMoverIzquierda2" type="button" class="btn-min btn btn-default btn-flat"><i class="glyphicon glyphicon-chevron-left"></i></button>
+                                            <button id="btnReinciarSelectIzquierda2" name="btnReinciarSelect2" type="button" class="btn-min btn btn-success btn-flat"><i class="glyphicon glyphicon-backward"></i></button>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <div class="">
+                                                <select name="destino2[]" id="destino2" multiple="multiple" class="select2" size="6"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">COMPETENCIAS ESPECÍFICAS</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+
+                                            <select name="origen3[]" id="origen3" multiple="multiple" class="select2" size="6">
+                                                <option value="1">Opción 1</option>
+                                                <option value="2">Opción 2</option>
+                                                <option value="3">Opción 3</option>
+                                                <option value="4">Opción 4</option>
+                                                <option value="5">Opción 5</option>
+                                                <option value="6">Opción 6</option>
+                                                <option value="7">Opción 7</option>
+                                                <option value="8">Opción 8</option>
+                                                <option value="1">Opción 1</option>
+                                                <option value="2">Opción 2</option>
+                                                <option value="3">Opción 3</option>
+                                                <option value="4">Opción 4</option>
+                                                <option value="5">Opción 5</option>
+                                                <option value="6">Opción 6</option>
+                                                <option value="7">Opción 7</option>
+                                                <option value="8">Opción 8</option>
+                                                <option value="1">Opción 1</option>
+                                                <option value="2">Opción 2</option>
+                                                <option value="3">Opción 3</option>
+                                                <option value="4">Opción 4</option>
+                                                <option value="5">Opción 5</option>
+                                                <option value="6">Opción 6</option>
+                                                <option value="7">Opción 7</option>
+                                                <option value="8">Opción 8</option>
+                                                <option value="1">Opción 1</option>
+                                                <option value="2">Opción 2</option>
+                                                <option value="3">Opción 3</option>
+                                                <option value="4">Opción 4</option>
+                                                <option value="5">Opción 5</option>
+                                                <option value="6">Opción 6</option>
+                                                <option value="7">Opción 7</option>
+                                                <option value="8">Opción 8</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <button id="btnReinciarSelectDerecha3" name="btnReinciarSelect3" type="button" class="btn-min btn btn-success btn-flat"><i class="glyphicon glyphicon-forward"></i></button>
+                                            <button id="btnMoverDerecha3" name="btnMoverDerecha3" class="btn-min btn btn-default btn-flat"><i class="glyphicon glyphicon-chevron-right"></i></button>
+                                            <button id="btnMoverIzquierda3" name="btnMoverIzquierda3" type="button" class="btn-min btn btn-default btn-flat"><i class="glyphicon glyphicon-chevron-left"></i></button>
+                                            <button id="btnReinciarSelectIzquierda3" name="btnReinciarSelect3" type="button" class="btn-min btn btn-success btn-flat"><i class="glyphicon glyphicon-backward"></i></button>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <div class="">
+                                                <select name="destino3[]" id="destino3" multiple="multiple" class="select2" size="6"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="panel-body">
+            <div class="form-group">
+                <button type="button" class="btn btn-success" id="btnGuardarMOF" name="btnGuardarMOF"><span class="glyphicon glyphicon-floppy-disk"></span><b>&nbsp; Guardar</b></button>
+                <!--<button type="button" class="btn btn-success" id=""><span class="glyphicon glyphicon-ok"></span><b>Confirmar</b></button>-->
+                <!--<button type="button" class="btn btn-info" id=""><span class="glyphicon glyphicon-print"></span><b>Imprimir</b></button>-->
+                <button type="button" class="btn btn-danger" id="Cancelar"><span class="glyphicon glyphicon-remove"></span><b>&nbsp; Cancelar</b></button>
+                <button type="button" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>&nbsp; Atrás</b></button>
+           </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
+
+<table id="tabla_oculta_Profesion_Grado">
+    <tr class="fila-base">
+        <td width="65px">
+            <button type="button" class="btn btn-danger btn-xs" id="QuitarPG"><span class="glyphicon glyphicon-remove"></span></button>
+            <button type="button" class="btn btn-success btn-xs" id="ModificarPG"><span class="glyphicon glyphicon-pencil"></span></button>
+        </td>
+        <td></td><!--Item-->
+        <td hidden></td><!--Valor Prof-->
+        <td></td><!--Prof-->
+        <td hidden></td><!--Valor Grado-->
+        <td></td><!--Grado-->
+    </tr>
+</table>
+
+<table id="tabla_oculta_Formacion_Obligatoria">
+    <tr class="fila-base">
+        <td width="65px">
+            <button type="button" class="btn btn-danger btn-xs" id="QuitarFO"><span class="glyphicon glyphicon-remove"></span></button>
+            <button type="button" class="btn btn-success btn-xs" id="ModificarFO"><span class="glyphicon glyphicon-pencil"></span></button>
+        </td>
+        <td></td><!--Item-->
+        <td hidden></td><!--Valor Descrip-->
+        <td></td><!--Descrip-->
+    </tr>
+</table>
+
+<table id="tabla_oculta_Formacion_Complementaria">
+    <tr class="fila-base">
+        <td width="65px">
+            <button type="button" class="btn btn-danger btn-xs" id="QuitarFC"><span class="glyphicon glyphicon-remove"></span></button>
+            <button type="button" class="btn btn-success btn-xs" id="ModificarFC"><span class="glyphicon glyphicon-pencil"></span></button>
+        </td>
+        <td></td><!--Item-->
+        <td hidden></td><!--Valor Descrip-->
+        <td></td><!--Descrip-->
+    </tr>
+</table>
+
+<table id="tabla_oculta_Anio_Sector">
+    <tr class="fila-base">
+        <td width="65px">
+            <button type="button" class="btn btn-danger btn-xs" id="QuitarAS"><span class="glyphicon glyphicon-remove"></span></button>
+            <button type="button" class="btn btn-success btn-xs" id="ModificarAS"><span class="glyphicon glyphicon-pencil"></span></button>
+        </td>
+        <td></td><!--Item-->
+        <td></td><!--Años-->
+        <td hidden></td><!--Valor Descrip-->
+        <td></td><!--Descrip-->
+    </tr>
+</table>
+
+<div class="modal fade xs" style="text-align:center; vertical-align:middle"  id="frmRegistrarProfesionGrado" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog" style="width:500px" role="document">
+        <div class="modal-content" style="text-align:center; vertical-align:middle">
+            <div class="modal-header" >
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title titulo-modal" id="myModalLabel">REGISTRAR PROFESIÓN GRADO</h4>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label id="lblProfesion">Profesión</label>
+                            <select class="form-control" id="Profesion">
+                                <option value="0">Jefe de Jefes</option>
+                                <option value="1">Ing. Sistemas</option>
+                                <option value="2">Administrador</option>
+                                <option value="3">Contado</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label id="lblGrado">Grado</label>
+                            <select class="form-control" id="Grado">
+                                <option value="0">Doctorado</option>
+                                <option value="1">Maestría</option>
+                                <option value="2">Titulado</option>
+                                <option value="3">Bachiller</option>
+                                <option value="4">Estudiante</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success sincabecera" id="AgregarProfesionGrado" name="AgregarProfesionGrado">
+                                <span class="glyphicon glyphicon-plus">
+                                </span>
+                                <!--<b>Agregar</b>-->
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade xs" style="text-align:center; vertical-align:middle" id="frmRegistrarFormacionObligatoria" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog" style="width:500px" role="document">
+        <div class="modal-content" style="text-align:center; vertical-align:middle">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title titulo-modal" id="myModalLabel">REGISTRAR FORMACIÓN OBLIGATORIA</h4>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label id="lblProfesion">Formación Obligatoria</label>
+                            <select class="form-control" id="FormacionObligatoria">
+                                <option value="0">Cursos</option>
+                                <option value="1">Seminarios</option>
+                                <option value="2">Taller</option>
+                                <option value="3">Charla</option>
+                            </select>
+                        </div>
+                    </div>
+                   
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success sincabecera" id="AgregarFormacionObligatoria" name="AgregarFormacionObligatoria">
+                                <span class="glyphicon glyphicon-plus">
+                                </span>
+                                <!--<b>Agregar</b>-->
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade xs" style="text-align:center; vertical-align:middle" id="frmRegistrarFormacioncomplementaria" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog" style="width:500px" role="document">
+        <div class="modal-content" style="text-align:center; vertical-align:middle">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title titulo-modal" id="myModalLabel">REGISTRAR FORMACIÓN COMPLEMENTARIA</h4>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label id="lblProfesion">Formación Complementaria</label>
+                            <select class="form-control" id="Formacioncomplementaria">
+                                <option value="0">Cursos</option>
+                                <option value="1">Seminarios</option>
+                                <option value="2">Taller</option>
+                                <option value="3">Charla</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success sincabecera" id="AgregarFormacionComplementaria" name="AgregarFormacionComplementaria">
+                                <span class="glyphicon glyphicon-plus">
+                                </span>
+                                <!--<b>Agregar</b>-->
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade xs" style="text-align:center; vertical-align:middle" id="frmRegistrarFormacioncomplementaria" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog" style="width:500px" role="document">
+        <div class="modal-content" style="text-align:center; vertical-align:middle">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title titulo-modal" id="myModalLabel">REGISTRAR FORMACIÓN COMPLEMENTARIA</h4>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label id="lblProfesion">Formación Complementaria</label>
+                            <select class="form-control" id="Formacioncomplementaria">
+                                <option value="0">Cursos</option>
+                                <option value="1">Seminarios</option>
+                                <option value="2">Taller</option>
+                                <option value="3">Charla</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success sincabecera" id="AgregarFormacionComplementaria" name="AgregarFormacionComplementaria">
+                                <span class="glyphicon glyphicon-plus">
+                                </span>
+                                <!--<b>Agregar</b>-->
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade xs" style="text-align:center; vertical-align:middle" id="frmRegistrarAnioSector" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog" style="width:500px" role="document">
+        <div class="modal-content" style="text-align:center; vertical-align:middle">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title titulo-modal" id="myModalLabel">REGISTRAR AÑOS DE EXPERIENCIA - SECTOR</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label id="lblAnio1000">Años</label>
+                            <input type="number" class="form-control" name="anio100" id="anio100" value="0" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label id="lblSector1000">Sector</label>
+                            <select class="form-control" id="cboSector100">
+                                <option value="0">---Seleccione---</option>
+                                <option value="1">Medicina Ocupacional</option>
+                                <option value="2">Informática</option>
+                                <option value="3">Enfermería</option>
+                                <option value="4">SAP Contable</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success sincabecera" id="AgregarAnioSector" name="AgregarAnioSector">
+                                <span class="glyphicon glyphicon-plus">
+                                </span>
+                                <!--<b>Agregar</b>-->
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$('#TablaRegistrarMovimiento').DataTable({
+        //    "scrollX": true 
+        //});
+        $('#btnMoverDerecha').click(function () { return !$('#origen option:selected').remove().appendTo('#destino'); });
+        $('#btnMoverIzquierda').click(function () { return !$('#destino option:selected').remove().appendTo('#origen'); });
+        $('#btnReinciarSelectDerecha').click(function () { $('#origen option').each(function () { $(this).remove().appendTo('#destino'); }); });
+        $('#btnReinciarSelectIzquierda').click(function () { $('#destino option').each(function () { $(this).remove().appendTo('#origen'); }); });
+
+        $('#btnMoverDerecha2').click(function () { return !$('#origen2 option:selected').remove().appendTo('#destino2'); });
+        $('#btnMoverIzquierda2').click(function () { return !$('#destino2 option:selected').remove().appendTo('#origen2'); });
+        $('#btnReinciarSelectDerecha2').click(function () { $('#origen2 option').each(function () { $(this).remove().appendTo('#destino2'); }); });
+        $('#btnReinciarSelectIzquierda2').click(function () { $('#destino2 option').each(function () { $(this).remove().appendTo('#origen2'); }); });
+       
+        $('#btnMoverDerecha3').click(function () { return !$('#origen3 option:selected').remove().appendTo('#destino3'); });
+        $('#btnMoverIzquierda3').click(function () { return !$('#destino3 option:selected').remove().appendTo('#origen3'); });
+        $('#btnReinciarSelectDerecha3').click(function () { $('#origen3 option').each(function () { $(this).remove().appendTo('#destino3'); }); });
+        $('#btnReinciarSelectIzquierda3').click(function () { $('#destino3 option').each(function () { $(this).remove().appendTo('#origen3'); }); });
+
+        $("#btnAgregarProfesionGrado").click(function () {
+            $('#frmRegistrarProfesionGrado').modal('toggle');
+        });
+
+        $('#frmRegistrarProfesionGrado').on('hidden.bs.modal', function (e) {
+            LimpiarDetallePG();
+        });
+
+
+        $("#btnAgregarFormacionObligatoria").click(function () {
+            $('#frmRegistrarFormacionObligatoria').modal('toggle');
+        });
+
+        $('#frmRegistrarFormacionObligatoria').on('hidden.bs.modal', function (e) {
+            LimpiarDetalleFO();
+        });
+
+        $("#btnAgregarFormacionComplementaria").click(function () {
+            $('#frmRegistrarFormacioncomplementaria').modal('toggle');
+        });
+
+        $('#frmRegistrarFormacioncomplementaria').on('hidden.bs.modal', function (e) {
+            LimpiarDetalleFC();
+        });
+
+        $("#btnAgregarAnioSector").click(function () {
+            $('#frmRegistrarAnioSector').modal('toggle');
+        });
+
+        $('#frmRegistrarAnioSector').on('hidden.bs.modal', function (e) {
+            LimpiarDetalleAS();
+        });
+
+        UnidadOrganizativa();
+
+        $("#nvPuesto100").autocomplete({
+            source: function (request, response) {
+                filtro = $("#nvPuesto100").val();
+                var data = { filtro: filtro };
+                $.ajax({
+                    type: "GET",
+                    datatype: "json",
+                    data: { filtro: filtro },
+                    //url: 'https://admin_erp.natclar.com.pe:11000/rWSPuesto/PuestoByFiltro/Get',
+                    url: 'http://admin_erp.natclar.com.pe/rWSPuesto/PuestoByFiltro/Get',
+                    async: true,
+                    //data: JSON.stringify({usuario: dataobj}),
+                    //data: JSON.stringify(dataobj),
+                    //data: jQuery.parseJSON({user:us, pass:passw}),
+                    //datos: { filtro: filtro },
+                    contentType: "application/json",
+                    success: function (data) {
+                        console.log(data)
+                        response($.map(data, function (item) {
+                            return { value: item.Descripcion, text1: item.IdPuesto };
+                        }))
+                    },
+                    error: function () { console.log("ERROR..."); }
+                })
+            },
+            minLength: 3,
+            select: function (event, ui) {
+                $("#nvPuesto100").val(ui.item.text);
+                $("#nvPuesto100").prop('readonly', true);
+                $("#nvPuesto100").css('background-color', 'lightgoldenrodyellow');
+                $("#iIdPuesto100").val(ui.item.text1);
+                
+            },
+            error: function (ex) {
+                alert('Error al traer datos.' + ex);
+            }
+        })
+
+        $("#nvArea100").autocomplete({
+            source: function (request, response) {
+                filtro = $("#nvArea100").val();
+                var data = { filtro: filtro };
+                $.ajax({
+                    type: "GET",
+                    datatype: "json",
+                    data: { filtro: filtro },
+                    //url: 'https://admin_erp.natclar.com.pe:11000/rWSArea/AreaByFiltro/Get',
+                    url: 'http://admin_erp.natclar.com.pe/rWSArea/AreaByFiltro/Get',
+                    async: true,
+                    //data: JSON.stringify({usuario: dataobj}),
+                    //data: JSON.stringify(dataobj),
+                    //data: jQuery.parseJSON({user:us, pass:passw}),
+                    //datos: { filtro: filtro },
+                    contentType: "application/json",
+                    success: function (data) {
+                        console.log(data)
+                        response($.map(data, function (item) {
+                            return { value: item.Descripcion, text1: item.IdAreaNatclar };
+                        }))
+                    },
+                    error: function () { console.log("ERROR..."); }
+                })
+            },
+            minLength: 3,
+            select: function (event, ui) {
+                $("#nvArea100").val(ui.item.text);
+                $("#nvArea100").prop('readonly', true);
+                $("#nvArea100").css('background-color', 'lightgoldenrodyellow');
+                $("#iIdArea100").val(ui.item.text1);
+            },
+            error: function (ex) {
+                alert('Error al traer datos.' + ex);
+            }
+        })
+        
+        $(document).on("click", "#Cancelar", function () {
+        swal({
+            title: "Esta seguro de eliminar este Registro?",
+            text: "No podrá recuperar los datos ingresados...!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Si, estoy seguro!",
+            cancelButtonText: "Cancelar!",
+            closeOnConfirm: false
+        }, function () {
+            window.location.href = "../../../Views/RRHH/RegistrarMOF.html";
+            swal("Correcto!", "Su Registro fue eliminado.", "success");
+        });
+        });
+
+        $(function () {
+            $(".datepicker").datepicker();
+        });
+
+
+        
+
+    });
+</script>

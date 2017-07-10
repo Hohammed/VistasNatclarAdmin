@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Buscar Asistencia</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-edit fixed sidebar-mini">
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+        </script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    BUSCAR ASISTENCIA
+                </h1>
+            </section>
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">BUSCAR ASISTENCIA</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label id="lblTrabajador52">Trabajador</label>
+                                            <input type="text" class="form-control" name="nvTrabajador52" id="nvTrabajador52" value=" " />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="form-group">
+                                            <label id="lblTodos52">Todos</label><br />
+                                            <input type="checkbox" id="cbxTodosTrabajador52" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label id="lblFecha52">Fecha</label>
+                                            <input type="text" class="datepicker form-control" placeholder="dd/mm/yyyy" id="dInicioAsistencia52" name="dInicioAsistencia52" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="text" class="datepicker form-control sincabecera" placeholder="dd/mm/yyyy" id="dFinAsistencia52" name="dFinAsistencia52" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <button type="button" class="btn btn-success sincabecera" id="btnBuscarAsistencia52" name="btnBuscarAsistencia52">
+                                                <span class="glyphicon glyphicon-search">
+                                                </span>
+                                                <b>Buscar</b>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="content">
+                <div class="box box-primary">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover" id="CabeceraBuscarTareo">
+                                    <tr>
+                                        <td width="100%">
+                                            <b>LISTA DE TAREO</b>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover" id="TablaBuscarAsistencia">
+                                    <tr class="info">
+                                        <th>Item</th>
+                                        <th>DNI</th>
+                                        <th>Trabajador</th>
+                                        <th>Total Tardanzas</th>
+                                        <th>Dias Tardanzas</th>
+                                        <th>Dias Trabajados</th>
+                                        <th>Días Libres</th>
+                                        <th>Días Adicionales</th>
+                                        <th>Descanso Médico</th>
+                                        <th>Capacitaciones Internas</th>
+                                        <th>Falta</th>
+                                        <th>Feriados Laborales</th>
+                                        <th>Permiso c/ Goce</th>
+                                        <th>Permiso s/ Goce</th>
+                                        <th>Trabajo Matutino</th>
+                                        <th>Trabajo Nocturno</th>
+                                        <th>Trabajo Vespertino</th>
+                                        <th>Vacaciones</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>43982568</td>
+                                        <td>Jorge Leiva Díaz</td>
+                                        <td>9</td>
+                                        <td>2:35</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>12</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>8</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>43982568</td>
+                                        <td>Jorge Leiva Díaz</td>
+                                        <td>19</td>
+                                        <td>1:55</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>12</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>8</td>
+                                     
+                                </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$('#TablaBuscarTareo').DataTable({
+        //    "scrollX": true
+        //});
+    });
+
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+
+</script>

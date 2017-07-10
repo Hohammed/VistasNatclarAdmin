@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>chat</title>
+    <style>
+        #zone_chat strong {
+            color: white;
+            background-color: black;
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Chat</h1>
+
+    <form action="/" method="post" id="chat_form">
+        <input type="text" name="message" id="message" placeholder="Tu mensaje" size="50" autofocus />
+        <input type="submit" id="send_message" value="Send" />
+    </form>
+
+    <section id="chat_zone"></section>
+
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://localhost:8080');
+
+        var username = prompt('¿Cual es tú nombre?');
+        socket.emit('new_client', username);
+        document.title = username + ' - ' + document.title;
+
+        // cuando el mensaje se recibe, se inserta en la página
+        socket.on('message', function (data) {
+            insertMessage(data.username, data.message)
+        });
+
+        // Cuando el nuevo cliente se conecta, se muestra
+        socket.on('new_client', function (username) {
+            $('#chat_zone').prepend('<p><em>' + username + ' se unió al chat!</em></p>');
+        })
+
+        // cuando el formulario se envia, el mensaje se muestra en el DIV
+        $('#chat_form').submit(function () {
+            var message = $('#message').val();
+            socket.emit('message', message); // Enviar mensaje a los demas
+            insertMessage(username, message); // Mostrar los mensajes
+            $('#message').val('').focus(); // Limpiar el txt del mensaje
+            return false; // Submit Formulario :v
+        });
+
+        // Agrega mensaje
+        function insertMessage(username, message) {
+            $('#chat_zone').prepend('<p><strong>' + username + '</strong> ' + message + '</p>');
+        }
+    </script>
+</body>
+</html>

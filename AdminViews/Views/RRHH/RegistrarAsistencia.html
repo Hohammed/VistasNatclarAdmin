@@ -1,0 +1,870 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Registrar Asistencia</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+
+    <style>
+        #scroll {
+            overflow: scroll;
+            height: 450px;
+            width: 980px;
+        }
+
+            #scroll table {
+                width: 500px;
+                background-color: lightgray;
+            }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: turquoise;
+            display: block;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="hold-transition skin-edit fixed sidebar-mini" onload="mostrarReloj()">
+
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+        </script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    REGISTRAR ASISTENCIA
+                </h1>
+            </section>
+
+            <section class="content">
+                <form>
+                    <div class="box box-primary collapsed-box">
+                        <div class="box-header">
+                            <h3 class="box-title">DATOS ASISTENCIA</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-angle-double-down"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label id="lblTrabajador16" style="display:none">Responsable</label>
+                                        <input type="text" id="nvTrabajador16" name="nvTrabajador16" class="form-control" style="display: none; background-color: lightgoldenrodyellow" readonly />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label id="lblSede16" style="display:none">Sede</label>
+                                        <select class="form-control ListaSedes" id="cboSedes16" name="cboSedes16" style="display: none"></select>
+                                    </div>
+                                </div>
+                                <!--<div class="col-md-3">
+                                    <div class="form-group">
+                                        <label id="lblSede16" style="display:none">Sede</label>
+                                        <input type="text" id="vcSede16" name="vcSede16" class="form-control" style="display:none;background-color:lightgoldenrodyellow" readonly />
+                                    </div>
+                                </div>-->
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lbldFecha" style="display:none">Fecha</label>
+                                        <input type="text" id="dFechaAsistencia16" name="dFechaAsistencia16" class="datepicker form-control mifecha" style="display: none" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-success sincabecera" id="btnSearchAsistencia16" style="display:none">
+                                        <span class="glyphicon glyphicon-search">
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <!--<section class="content-header">
+                <h1>
+                    LISTA DE ASISTENCIA
+                </h1>
+            </section>-->
+
+            <section class="content">
+
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <form name="reloj">
+                            <table id="CabeceraRegistrarAsistencia">
+                                <tr>
+                                    <td width="100%">
+                                        <b>LISTA DE ASISTENCIA</b>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-success" id="btnSearch">
+                                            <span class="glyphicon glyphicon-search">
+                                            </span>
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <div id="busqueda" style="display:none">
+                                            <input type="text" id="SrcAsistencia" name="SrcAsistencia" value="" style="border-radius: 3px; height:35px; background-color: lightgoldenrodyellow" />
+                                        </div>
+                                    </td>
+                                    <td> &nbsp;</td>
+                                    <td>&nbsp; </td>
+                                    <td> &nbsp;</td>
+                                    <td>&nbsp; </td>
+                                    <td>
+                                        <label style="width:120px;">HORA ACTUAL</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" name="reloj" style="border-width: 0; color: black; width:100px;" id="reloj" readonly />
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="box-body">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="table-responsive" id="scroll">
+                                    <table class="tablesorter-blue table table-bordered table-hover" id="TablaRegistrarAsistencia" style="display:none">
+                                        <thead>
+                                            <tr class="info">
+                                                <th>#</th>
+                                                <th hidden>ID Trabajador</th>
+                                                <th width="150px">DNI</th>
+                                                <!--<th>A. Paterno</th>
+                                                <th>A. Materno</th>-->
+                                                <th colspan="3">Trabajador</th>
+                                                <th hidden>Puesto</th>
+                                                <th>Puesto</th>
+                                                <th hidden>Sistema de Trabajo</th>
+                                                <th>Sist. Trab</th>
+                                                <th hidden>Área</th>
+                                                <th>Área</th>
+                                                <th hidden>Local</th>
+                                                <th>Local</th>
+                                                <th hidden>Sede</th>
+                                                <th>Sede</th>
+                                                <th hidden>Emp</th>
+                                                <th>Emp</th>
+                                                <th>Ingreso</th>
+                                                <th>Fecha</th>
+                                                <th>Hora</th>
+                                                <th>Descripción</th>
+                                                <th>Minutos Tardanzas</th>
+                                                <th>Observaciones</th>
+                                                <th hidden>Id_Asistencia</th>
+                                                <th width="150px">Detalles</th>
+                                                <!--<th>Almuerzo Inicio</th>
+                                                <th>Almuerzo Fin</th>
+                                                <th>Salida</th>-->
+                                            </tr>
+                                        </thead>
+
+                                        <tbody></tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="overlay">
+                            <i class="fa fa-refresh fa-spin"></i>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="panel-body">
+                    <div class="form-group">
+
+                        <button type="button" style="display:none" class="btn btn-info" id="btnGuardarAsistencia16" name="btnGuardarAsistencia16"><span class="glyphicon glyphicon-floppy-disk"></span><b>&nbsp;Guardar</b></button>
+                        <button type="button" style="display:none" class="btn btn-success" id="btnConfirmarAsistencia16" name="btnConfirmarAsistencia16"><span class="glyphicon glyphicon-ok"></span><b>&nbsp;Confirmar</b></button>
+                        <!--<button type="button"style="display:none" class="btn btn-info" id=""><span class="glyphicon glyphicon-print"></span><b>&nbsp;Imprimir</b></button>-->
+                        <button type="button" style="display:none" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>&nbsp;Atrás</b></button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
+
+<table id="tabla_oculta_detalle_asistencia">
+    <tr class="">
+        <td>
+            <button type="button" class="btn btn-danger btn-xs" id="QuitarAsistenciaDetalle"><span class="glyphicon glyphicon-remove"></span></button>
+            <button type="button" class="btn btn-success btn-xs" id="ModificarAsistenciaDetalle"><span class="glyphicon glyphicon-pencil"></span></button>
+        </td>
+        <td hidden></td><!--Id_Asistencia-->
+        <td></td>
+        <td hidden></td><!--Id_Tipo_Marcacion-->
+        <td></td><!--Tipo_Marcacion-->
+        <td></td>
+        <td></td>
+        <td hidden></td><!--Usuario-->
+        <td hidden>1</td><!--Estado-->
+    </tr>
+</table>
+
+<div class="modal fade xs" style="text-align:center; vertical-align:middle" id="frmRegistrarDetalle" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog" style="width:800px" role="document">
+        <div class="modal-content" style="text-align:center; vertical-align:middle">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title titulo-modal" id="myModalLabel">REGISTRAR DETALLE </h4>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <!--<b>DETALLE ASISTENCIA DE<label id="nombreCompleto">JORGE ENRIQUE LEIVA DIAZ</label></b>
+                            con DNI: <b><label id="vcNumeroDocumento">&nbsp; 43982568</label></b>
+                            con Sistema de Trabajo<b><label id="vcDescripcionSistemaTrabajo">&nbsp; 5 x 2</label></b>
+                            cuyo hora de ingreso es<b><label id="tIngreso">&nbsp; 08:00:00</label></b>
+                            <!--a<b><label id="tSalida">&nbsp; 06:00:00</label></b>-->
+
+                            <b><!--DETALLE ASISTENCIA DE--> <label id="nombreCompleto"></label></b>
+                            con DNI: <b><label id="vcNumeroDocumento"></label></b>
+                            con Sistema de Trabajo <b><label id="vcDescripcionSistemaTrabajo"></label></b>
+                            cuyo hora de ingreso es <b><label id="tIngreso"></label></b>
+                            <!--a<b><label id="tSalida">&nbsp; 06:00:00</label></b>-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label id="lblTipoMarcacion">Detalle</label>
+                            <select class="form-control cboTipoMarcacion" id="cboTipoMarcacion">
+                                <!--<option value="1">Almuerzo Inicio</option>
+                                <option value="2">Almuerzo Fin</option>
+                                <option value="3">Compras Inicio</option>
+                                <option value="4">Compras Fin</option>
+                                <option value="5">Salida Diligencias</option>
+                                <option value="6">Salida</option>-->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2" style="display:none">
+                        <div class="form-group">
+                            <!-- <label id="lblFechaDetalle">Fecha</label>-->
+                            <input type="hidden" name="name" id="FechaDetalle" value=" " class="form-control mifecha" />
+                            <input type="text" name="parent" id="parent" value=" " class="form-control " />
+                            <input type="text" name="idAsistencia" id="idAsistencia" value=" " class="form-control " />
+                        </div>
+                    </div>
+                    <div class="col-md-2" style="display:none">
+                        <div class="form-group">
+                            <!--<label id="lblHoraDetalle">Hora</label>-->
+                            <input type="hidden" name="name" id="HoraDetalle" value="" class=" form-control" />
+                            <input type="text" name="name" id="UsuarioDetAsist" value="" class=" form-control vcLogin" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label id="lblObservacionesDetalle">Observaciones</label>
+                            <textarea name='ObservacionesDetalle' style='border-width:0' id='ObservacionesDetalle' class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success sincabecera" id="AgregarMarcacion" name="AgregarMarcacion">
+                                <span class="glyphicon glyphicon-plus">
+                                </span>
+                                <!--<b>Agregar</b>-->
+                            </button>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            <!--</div>
+            <div class="box-body">-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <!-- <td width="80%">
+                                                        <b>DETALLE ASISTENCIA DE <label id="nombreCompleto">JORGE ENRIQUE LEIVA DIAZ</label></b>
+                                                        <button type="button" class="btn btn-success" id="btnAgregarBono">
+                            <span class="glyphicon glyphicon-plus">
+                            </span>
+                        </button>
+                                                    </td>-->
+                                    <!--<td align="right">
+                            <b>Cantidad de Items: <span id="CantidadItemsDetalleAsistencia">0</span></b>
+                        </td>-->
+                                </tr>
+                                <!--<tr>
+                        <td colspan="2">
+                            con DNI: <b><label id="vcNumeroDocumento">&nbsp; 43982568</label></b>
+                            con Sistema de Trabajo<b><label id="vcDescripcionSistemaTrabajo">&nbsp; 5 x 2</label></b>
+                            cuyo horario es de<b><label id="tIngreso">&nbsp; 08:00:00</label></b>
+                            a<b><label id="tSalida">&nbsp; 06:00:00</label></b>
+                        </td>
+                    </tr>-->
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="box-body">-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="hidden" id="Item_Asistencia_Detalle" name="Item_Asistencia_Detalle" />
+                            <div class="table-responsive">
+                                <b style="text-align:right">Cantidad de Items: <span id="CantidadItemsDetalleAsistencia">0</span></b>
+                                <table class="table table-bordered" id="ListaAsistenciaDetalle">
+                                    <thead>
+                                        <tr class="info">
+                                            <th>Acciones</th>
+                                            <th hidden></th><!--Id_Asistencia-->
+                                            <th hidden></th><!--Item-->
+                                            <th>Item</th>
+                                            <th hidden></th><!--Id_Tipo_Marcacion-->
+                                            <th>Descripción</th><!--Tipo_Marcacion-->
+                                            <th>Hora</th>
+                                            <th>Observación</th>
+                                            <th hidden></th><!--Usuario-->
+                                            <th hidden></th><!--Estado-->
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="box-body">-->
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-success sincabecera" id="GuardarMarcacion" name="GuardarMarcacion">
+                                        <span class="glyphicon glyphicon-floppy-disk">
+                                        </span>
+                                        <!--<b>Agregar</b>-->
+                                    </button>
+                                    <!--<button type="button" class="btn btn-success sincabecera" id="Abrir" name="Abrir">
+                            <span class="glyphicon glyphicon-plus">
+                            </span>
+
+                        </button>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+                   
+        </div>
+    <!--</div>
+</div>-->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$('#TablaRegistrarAsistencia').DataTable({
+        //    "scrollX": true
+        //});
+
+        setTimeout(function () { ObtenerTrabajadoresPorSede() }, 1000);
+
+        $("#btnSearch").click(function () {
+            $('#busqueda').toggle("slow");
+        });
+
+        sessionStorage.setItem("Fecha", $("#dFechaAsistencia16").val())
+
+        $(document).on('click', '#btnConfirmarAsistencia16', function () {
+            var aux = 1;
+            $("#TablaRegistrarAsistencia tbody tr").each(function (index) {
+
+                if (index >= 0) {
+
+                    var MotivoTareo;
+                    MotivoTareo = $(this).find('.Tipo').val();
+                    //console.log(MotivoTareo)
+
+                    if (MotivoTareo == 0) {
+                        aux++;
+                        swal("No puede confirmar la Asistencia porque aún hay Trabajadores con Motivo Tareo: '---SELECCIONAR---'");
+                    }
+                }
+
+            });
+            //console.log(aux)
+            if (aux == 1) {
+                ConfirmarAsistencia();
+            }
+        });
+
+        $(document).on('click', '#btnSearchAsistencia16', function () {
+            $(".overlay").show();
+            ObtenerTrabajadoresPorSede();
+            setTimeout(function () { ObtenerMotivoTareo() }, 3000);
+            setTimeout(function () { OcultarOverload() }, 3000);
+            setTimeout(function () { Estadoasistencia() }, 3000);
+        });
+        TipoMarcador();
+    });
+
+    $(window).on("load", function () {
+        //ObtenerMotivoTareo();
+        setTimeout(function () { ObtenerMotivoTareo() }, 3000);
+    });
+
+    $(window).on("load", function () {
+        setTimeout(function () { TablaRegistrarAsistencia() }, 3000);
+
+    });
+
+    $(window).on("load", function () {
+        setTimeout(function () { Estadoasistencia() }, 3000);
+    });
+
+    function OcultarOverload() {
+        $(".overlay").hide();
+    }
+
+    function TablaRegistrarAsistencia() {
+        $("#TablaRegistrarAsistencia").tablesorter();
+    }
+
+    $(document).on('click', '.AgregarDetalles', function () {
+        var parent = $(this).parents().get(1);
+        var i = parent.rowIndex;
+        //console.log(i)
+        //var idAsistencia = $("#AgregarDetalles").parents().children("td").get(22);
+
+        var idAsist = $(this).parent().parent().find('td:eq(22)').text();
+        var dni = $(this).parent().parent().find("input[type=text]:eq(1)").val();
+        var nombre = $(this).parent().parent().find("td:eq(3)").text();
+        var sistra = $(this).parent().parent().find('td:eq(7)').text();
+        var tIngreso = $(this).parent().parent().find("input[type=text]:eq(3)").val();
+
+        $("#nombreCompleto").text(nombre);
+        $("#vcNumeroDocumento").text(dni);
+        $("#vcDescripcionSistemaTrabajo").text(sistra);
+
+        $("#parent").val(i);
+        $("#idAsistencia").val(idAsist);
+        reloj = $("#reloj").val();
+        $("#HoraDetalle").val(reloj);
+        //var par = $("#parent").val();
+        //console.log(par)
+        //var  id = $("#idAsistencia").val();
+        //console.log(id)
+        if ($("#idAsistencia").val() == 0) {
+            swal("No existe asistencia registrada, favor de registrar una Asistencia")
+            return;
+        }
+
+        $('#frmRegistrarDetalle').modal('toggle');
+    });
+
+    function BloquearBotones() {
+        if($("#ListaAsistenciaDetalle tbody tr").length>0){
+            var idEstadoAsistencia = 0;
+            if (idEstadoAsistencia == 0) {
+                $(".QuitarAsistenciaDetalle").attr('disabled', 'disabled');
+                $(".ModificarAsistenciaDetalle").attr('disabled', 'disabled');
+            }
+        }
+        
+    }
+
+    $('#frmRegistrarDetalle').on('hidden.bs.modal', function (e) {
+        LimpiarDetalleDetalleAsistencia();
+        $("#ListaAsistenciaDetalle tbody tr").remove();
+        $("#CantidadItemsDetalleAsistencia").text(0);
+        item = 0;
+    });
+
+    $('#frmRegistrarDetalle').on('show.bs.modal', function (e) {
+        setTimeout(function () { BloquearBotones() }, 3000);
+        ObtenerDetalleAsistencia();
+    });
+
+    $(document).on('change', '.Tipo', function () {
+        //alert($(".Tipo option:selected").val())
+
+        //$("#TablaRegistrarAsistencia tbody tr").find('td:eq(1)').each(function (index) {
+        //    ini = $(this).parents("tr").find('.ingreso').val();
+        //    console.log(ini)
+        var parent = $(this).parents().get(1);
+        var Tipo = $(this).val();
+        restarHoras(Tipo, parent);
+        //})
+        //$(".Tipo").attr('disabled', 'disabled');
+    });
+
+    //$(document).on('change', '.cboTipoMarcacion', function () {
+    //    reloj = $("#reloj").val();
+    //    $("#HoraDetalle").val(reloj);
+    //});
+
+    $(document).on("click", "#AgregarMarcacion", function () {
+        AgregarMarcacion();
+    });
+
+    function Estadoasistencia() {
+        EstadoAsistencia = sessionStorage.getItem("iIdEstadoAsistencia");
+        //console.log(EstadoAsistencia)
+        $("#TablaRegistrarAsistencia tbody tr").each(function (index) {
+            if (index >= 0) {
+                if (EstadoAsistencia == "9") {
+                    $("#btnGuardarAsistencia16").hide();
+                    $("#btnConfirmarAsistencia16").hide();
+                    $(this).children("td").each(function (index2) {
+                        if (index2 == 19) {
+                            $(".Tipo").attr('disabled', 'disabled')
+                        } else {
+                            $(".Tipo").removeAttr('disabled');
+                        }
+                    })
+                }
+            }
+        })
+    }
+
+    function ObtenerDetalleAsistencia() {
+        iIdAsistencia = $("#idAsistencia").val();
+
+        var xhr = new XMLHttpRequest();
+        var dataobj = { iIdAsistencia: iIdAsistencia };
+
+        xhr.open('GET', 'http://admin_erp.natclar.com.pe:12000/rWSDetalleAsistencia/rWSDetalleAsistencia/Get?iIdAsistencia=' + iIdAsistencia, true);
+        xhr.responseType = "json";
+        xhr.onload = function () {
+            var status = xhr.status;
+            if (status == 200) {
+                obj = xhr.response;
+
+                if (obj != "0") {
+                    //console.log(obj);
+                    // $("#ListaAsistenciaDetalle tbody tr").remove();
+                    for (i = 0, j = 1; i < obj.length; i++, j++) {
+
+                        $("#ListaAsistenciaDetalle").append('<tr><td ><button type="button" class="btn btn-danger btn-xs QuitarAsistenciaDetalle" id="QuitarAsistenciaDetalle"><span class="glyphicon glyphicon-remove"></span></button>' +
+                        '<button type="button" class="btn btn-success btn-xs ModificarAsistenciaDetalle" id="ModificarAsistenciaDetalle"><span class="glyphicon glyphicon-pencil"></span></button></td >' +
+                        '<td hidden>' + obj[i].iIdAsistencia + '</td>' +
+                        '<td hidden>' + obj[i].iItem + '</td>' +
+                        '<td>' + j + '</td>' +
+                        '<td hidden>' + obj[i].iIdTipoMarcacion + '</td>' +
+                        '<td>' + obj[i].vcDescripcionTipoMarcacion + '</td>' +
+                        '<td>' + obj[i].tAsistencia + '</td>' +
+                        '<td>' + obj[i].nvObservacion + '</td>' +
+                        '<td></td>' +
+                        '<td hidden>' + obj[i].iIdEstado + '</td>' +
+                        '</td></tr>');
+                    }
+                    $("#CantidadItemsDetalleAsistencia").text(obj.length);
+                }
+                else {
+                    swal("No se encuentra Detalle de la Asistencia!")
+                }
+            }
+            else {
+                swal("Ocurrió un error al obtener Detalle de la Asistencia!")
+            }
+        }
+        xhr.send();
+        //xhr.send(dataobj);
+    }
+
+    function ObtenerTrabajadoresPorSede() {
+        //sede = sessionStorage.getItem("Sede");
+        sede = $(".ListaSedes").val();
+        fecha = $(".mifecha").val();
+        //console.log(sede)
+        //fecha = sessionStorage.getItem("Fecha");
+        //console.log(fecha)
+        //console.log(sede)
+        var xhr = new XMLHttpRequest();
+        var dataobj = { sede: sede };
+        var obj;
+        var idCbo, idCbo2;
+        user = $("#dni").val();
+
+        xhr.open('GET', 'http://admin_erp.natclar.com.pe:12000/rWSAsistencia/Asistencia/Get?id_sede=' + sede + '&fecha=' + fecha, true);
+        xhr.responseType = "json";
+        // xhr.setRequestHeader("Content-Type", "application/json");
+        //console.log(sede)
+        xhr.onload = function () {
+            var status = xhr.status;
+            if (status == 200) {
+                //console.log(xhr.response);
+                // console.log(xhr.response.GetDataPOSTResult.cUser + " " + xhr.response.GetDataPOSTResult.cPassword);
+                obj = xhr.response;
+
+                if (obj != "0") {
+                    console.log(obj);
+                    $("#TablaRegistrarAsistencia tbody tr").remove();
+                    for (i = 0, j = 1; i < obj.length; i++, j++) {
+                        idCbo = obj[i].vcIdMotivoTareo;
+                        idCbo2 = obj[i].nvDescripcionMotivoTareo;
+                        sessionStorage.setItem("iIdEstadoAsistencia", obj[i].iIdEstadoAsistencia)
+                        //console.log(idCbo);
+                        //console.log(idCbo2);
+                        $("#TablaRegistrarAsistencia").append('<tr><td >' + j + '</td>' +
+                        "<td hidden><input type='text' name='id' value=" + obj[i].iIdTrabajadorInterno + " id='id' class='id' readonly /></td>" +
+                        "<td width='50px'><input type='text' name='dni' value=" + obj[i].vcNumeroDocumento + " id='dni' class='dni' style='border-width:0' readonly /></td>" +
+                        //'<td>' + obj[i].Trabajador.persona.vcApellidoPaterno + '</td>' +
+                        //'<td>' + obj[i].Trabajador.persona.vcApellidoMaterno + '</td>' +
+                        '<td colspan="3">' + obj[i].vcApellidoPaterno + " " + obj[i].vcApellidoPaterno + " " + obj[i].vcNombres + '</td>' +
+                        '<td hidden>' + obj[i].iIdPuesto + '</td>' +
+                        '<td>' + obj[i].vcDescripcionPuesto + '</td>' +
+                        '<td hidden>' + obj[i].iIdSistemaTrabajo + '</td>' +
+                        '<td>' + obj[i].vcDescripcionSistemaTrabajo + '</td>' +
+                        '<td hidden>' + obj[i].vcIdAreaNatclar + '</td>' +
+                        '<td>' + obj[i].DescripcionAreaNatclar + '</td>' +
+                        '<td hidden>' + obj[i].vcIdSede + '</td>' +
+                        '<td>' + obj[i].vcDescripcionSede + '</td>' +
+                        "<td hidden><input type='text' name='unor' value=" + obj[i].iIdUnidadOrganizativa + " style='border-width:0;width:50px' id='unor' readonly /></td>" +
+                        '<td>' + obj[i].vcDescripcionUnidadOrganizativa + '</td>' +
+                        '<td hidden>' + "1" + '</td>' +
+                        '<td>' + "NATCLAR" + '</td>' +
+                        "<td ><input type='text' name='ingreso' value=" + obj[i].tIngreso + " style='border-width:0;width:50px' id='ingreso' class='ingreso' readonly /></td>" +
+                        "<td ><input type='text' name='FechaAsistencia16' style='border-width:0;width:80px' id='FechaAsistencia16' value=" + obj[i].vcFechaCalendario + " readonly /></td> " +
+                        "<td ><input type='text' name='ingresodia' style='border-width:0;width:50px' id='ingresodia' value=" + obj[i].TAsistencia + " readonly /></td>" +
+                        "<td><select class='Tipo' name='Tipo' id='cbo_" + i + "'></select>" +
+                        "<td ><input type='text' name='mintotal' value=" + obj[i].iMinTardanza + " style='border-width:0;width:50px' id='mintotal' readonly/></td>" +
+                        "<td><textarea type='text' name='observaciones' style='border-width:0' id='observaciones'>" + obj[i].nvObservacion + " </textarea></td>" +
+                        '<td hidden>' + obj[i].iIdAsistencia + '</td>' +
+                        '<td hidden></td>' +
+                        '<td hidden>' + user +
+                        "<td ><button type='button' class='btn btn-success btn-xs AgregarDetalles' id='AgregarDetalles'><span class='glyphicon glyphicon-plus'></span></td>" +
+                        "<td hidden><input type='text' name='AlmuerzoIni' value='' style='border-width:0;width:50px' id='AlmuerzoIni' class='AlmuerzoIni' readonly/></td>" +
+                        "<td hidden><input type='text' name='AlmuerzoFin' value='' style='border-width:0;width:50px' id='AlmuerzoFin' class='AlmuerzoFin' readonly/></td>" +
+                        "<td hidden><input type='text' name='Salida' value='' style='border-width:0;width:50px' id='Salida' class='Salida' readonly/></td>" +
+                        '</td></tr>');
+                        Setearcbo(i, idCbo);
+                    }
+
+                }
+                else {
+                    swal("Usted no cuenta con Trabajadores asignados!")
+                }
+            }
+            else {
+                swal("Ocurrió un error al obtener a sus Trabajadores!")
+            }
+        }
+        xhr.send();
+        //xhr.send(dataobj);
+    }
+
+
+    //function ObtenerTrabajadoresPorSede() {
+    //    //sede = sessionStorage.getItem("Sede");
+    //    sede = $(".ListaSedes").val();
+    //    fecha = $(".mifecha").val();
+    //    //console.log(sede)
+    //    //fecha = sessionStorage.getItem("Fecha");
+    //    //console.log(fecha)
+    //    //console.log(sede)
+    //    var xhr = new XMLHttpRequest();
+    //    var dataobj = { sede: sede };
+    //    var obj;
+    //    var idCbo, idCbo2;
+    //    user = $("#dni").val();
+
+    //    xhr.open('GET', 'http://admin_erp.natclar.com.pe:12000/rWSAsistencia/Asistencia/Get?id_sede=' + sede + '&fecha=' + fecha, true);
+    //    xhr.responseType = "json";
+    //    // xhr.setRequestHeader("Content-Type", "application/json");
+    //    //console.log(sede)
+    //    xhr.onload = function () {
+    //        var status = xhr.status;
+    //        if (status == 200) {
+    //            //console.log(xhr.response);
+    //            // console.log(xhr.response.GetDataPOSTResult.cUser + " " + xhr.response.GetDataPOSTResult.cPassword);
+    //            obj = xhr.response;
+
+    //            if (obj != "0") {
+    //                console.log(obj);
+    //                $("#TablaRegistrarAsistencia tbody tr").remove();
+    //                for (i = 0, j = 1; i < obj.length; i++, j++) {
+    //                    idCbo = obj[i].MotivoTareo.vcIdMotivoTareo;
+    //                    idCbo2 = obj[i].MotivoTareo.nvDescripcion;
+    //                    sessionStorage.setItem("iIdEstadoAsistencia", obj[i].EstadoAsistencia.iIdEstado)
+    //                    //console.log(idCbo);
+    //                    //console.log(idCbo2);
+    //                    $("#TablaRegistrarAsistencia").append('<tr><td >' + j + '</td>' +
+    //                    "<td hidden><input type='text' name='id' value=" + obj[i].Trabajador.iIdTrabajadorInterno + " id='id' class='id' readonly /></td>" +
+    //                    "<td><input type='text' name='dni' value=" + obj[i].Trabajador.persona.vcNumeroDocumento + " id='dni' class='dni' style='border-width:0' readonly /></td>" +
+    //                    //'<td>' + obj[i].Trabajador.persona.vcApellidoPaterno + '</td>' +
+    //                    //'<td>' + obj[i].Trabajador.persona.vcApellidoMaterno + '</td>' +
+    //                    '<td colspan="3">' + obj[i].Trabajador.persona.vcApellidoPaterno + " " + obj[i].Trabajador.persona.vcApellidoMaterno + " " + obj[i].Trabajador.persona.vcNombres + '</td>' +
+    //                    '<td hidden>' + obj[i].Trabajador.puesto.IdPuesto + '</td>' +
+    //                    '<td>' + obj[i].Trabajador.puesto.Descripcion + '</td>' +
+    //                    '<td hidden>' + obj[i].Trabajador.sistemaTrabajo.iIdSistemaTrabajo + '</td>' +
+    //                    '<td>' + obj[i].Trabajador.sistemaTrabajo.vcDescripcion + '</td>' +
+    //                    '<td hidden>' + obj[i].Trabajador.AreaNatclar.IdAreaNatclar + '</td>' +
+    //                    '<td>' + obj[i].Trabajador.AreaNatclar.Descripcion + '</td>' +
+    //                    '<td hidden>' + obj[i].Sede.vcIdSede + '</td>' +
+    //                    '<td>' + obj[i].Sede.vcDescripcion + '</td>' +
+    //                    "<td hidden><input type='text' name='unor' value=" + obj[i].Sede.UnidadOrganizativa.iIdUnidadOrganizativa + " style='border-width:0;width:50px' id='unor' readonly /></td>" +
+    //                    '<td>' + obj[i].Sede.UnidadOrganizativa.vcDescripcion + '</td>' +
+    //                    '<td hidden>' + "1" + '</td>' +
+    //                    '<td>' + "NATCLAR" + '</td>' +
+    //                    "<td ><input type='text' name='ingreso' value=" + obj[i].Trabajador.tIngreso + " style='border-width:0;width:50px' id='ingreso' class='ingreso' readonly /></td>" +
+    //                    "<td ><input type='text' name='FechaAsistencia16' style='border-width:0;width:80px' id='FechaAsistencia16' value=" + obj[i].Calendario.dCalendario + " readonly /></td> " +
+    //                    "<td ><input type='text' name='ingresodia' style='border-width:0;width:50px' id='ingresodia' value=" + obj[i].TAsistencia + " readonly /></td>" +
+    //                    "<td><select class='Tipo' name='Tipo' id='cbo_" + i + "'></select>" +
+    //                    "<td ><input type='text' name='mintotal' value=" + obj[i].iMinTardanza + " style='border-width:0;width:50px' id='mintotal' readonly/></td>" +
+    //                    "<td><textarea type='text' name='observaciones' style='border-width:0' id='observaciones'>" + obj[i].nvObservacion + " </textarea></td>" +
+    //                    '<td hidden>' + obj[i].iIdAsistencia + '</td>' +
+    //                    '<td hidden></td>' +
+    //                    '<td hidden>' + user +
+    //                    "<td ><button type='button' class='btn btn-success btn-xs AgregarDetalles' id='AgregarDetalles'><span class='glyphicon glyphicon-plus'></span></td>" +
+    //                    "<td ><input type='text' name='AlmuerzoIni' value='' style='border-width:0;width:50px' id='AlmuerzoIni' class='AlmuerzoIni' readonly/></td>" +
+    //                    "<td ><input type='text' name='AlmuerzoFin' value='' style='border-width:0;width:50px' id='AlmuerzoFin' class='AlmuerzoFin' readonly/></td>" +
+    //                    "<td ><input type='text' name='Salida' value='' style='border-width:0;width:50px' id='Salida' class='Salida' readonly/></td>" +
+    //                    '</td></tr>');
+    //                    Setearcbo(i, idCbo);
+    //                }
+
+    //            }
+    //            else {
+    //                swal("Usted no cuenta con Trabajadores asignados!")
+    //            }
+    //        }
+    //        else {
+    //            swal("Ocurrió un error al obtener a sus Trabajadores!")
+    //        }
+    //    }
+    //    xhr.send();
+    //    //xhr.send(dataobj);
+    //}
+
+    function ObtenerMotivoTareo() {
+        //$(".Tipo option").remove();
+        var xhr = new XMLHttpRequest();
+        var dataobj = { sede: sede };
+        var obj, Atr;
+        //CBO2 = sessionStorage.getItem("CBO");
+        //console.log("cbo1:", CBO2);
+        //CBO = JSON.parse(CBO2)
+        //console.log(CBO[1])
+        xhr.open('GET', 'http://admin_erp.natclar.com.pe:12000/rWSMotivoTareo/MotivoTareo/Get', true);
+        xhr.responseType = "json";
+        // xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onload = function () {
+            var status = xhr.status;
+            if (status == 200) {
+                //console.log(xhr.response);
+                // console.log(xhr.response.GetDataPOSTResult.cUser + " " + xhr.response.GetDataPOSTResult.cPassword);
+                obj = xhr.response;
+                //console.log(obj)
+                $.each(obj, function (i, Motivo) {
+                    $("select.Tipo").append($('<option value="' + Motivo.vcIdMotivoTareo + '" >' +
+                             Motivo.nvDescripcion + '</option>'));
+                });
+            }
+            else {
+                swal("Ocurrió un error al traer los motivos de tareo!")
+            }
+        }
+        xhr.send();
+        //xhr.send(dataobj);
+    }
+
+    function Setearcbo(i, idCbo) {
+        var setCbo = setTimeout(function () { setfinal(i, idCbo) }, 3000);
+        setTimeout(function () { OcultarOverload() }, 3000);
+    }
+
+    function setfinal(i, idCbo) {
+        $("#cbo_" + i + " option").each(function () {
+            var idR = $(this).val();
+            if (idR == idCbo) {
+                $("#cbo_" + i + " option[value=" + idR + "]").attr("selected", "selected");
+            }
+        });
+    }
+
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+
+    $(function () {
+        theTable = $("#TablaRegistrarAsistencia");
+        $("#SrcAsistencia").keyup(function () {
+            $.uiTableFilter(theTable, this.value);
+        });
+    });
+
+    function ConfirmarAsistencia() {
+        //alert("GuardarTareo")
+        jsonObj = [];
+        $("#TablaRegistrarAsistencia tbody tr").each(function (index) {
+            if (index >= 0) {
+                item = {}
+
+                $(this).children("td").each(function (index2) {
+                    if (index2 == 22)
+                        item["iIdAsistencia"] = $(this).text();
+                })
+                jsonObj.push(item);
+            }
+        });
+
+        Djsonobj = (JSON.stringify(jsonObj));
+        console.log(Djsonobj);
+        var xhr = new XMLHttpRequest();
+        var dataobj = Djsonobj;
+
+        xhr.open('PUT', 'http://admin_erp.natclar.com.pe:12000/rWSAsistencia/Asistencia/Put');
+        xhr.responseType = "json";
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.onload = function () {
+            var status = xhr.status;
+            if (status == 200) {
+                swal("La Confirmación fue exitosa")
+                setTimeout(" window.location = '../../../Views/RRHH/RegistrarAsistencia'", 2000)
+            } else {
+                swal("Error al Confirmar..!")
+                console.log(status);
+            }
+        };
+        xhr.send(JSON.stringify(jsonObj));
+    }
+
+
+</script>

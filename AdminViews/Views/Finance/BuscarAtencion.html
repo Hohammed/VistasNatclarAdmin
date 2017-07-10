@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Buscar Atencion</title>
+    <link rel="import" href="../../Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-green fixed sidebar-mini sidebar-collapse">
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.queryitor('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+        </script>
+        <script src="../../Scripts/Finanzas/Global.js"></script>
+        <script src="../../Scripts/Finanzas/BuscarAtencion.js"></script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>BUSCAR ATENCIONES</h1>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box collapsed-box">
+                                <div class="box-header">
+                                    <h3 class="box-title">BUSCAR ATENCIONES</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                            <i class="fa fa-angle-double-down"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lbldFechaIni">Fecha Inicio</label>
+                                                <input type="text" class="datepicker mifecha form-control recurso" placeholder="dd/mm/yyyy" id="dFechaIni" name="dFechaIni" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lbldFechaFin">Fecha Fin</label>
+                                                <input type="text" class="datepicker mifecha fechaHoy form-control recurso" placeholder="dd/mm/yyyy" id="dFechaFin" name="dFechaFin" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label id="lblTipoExamen">Tipo De Examen</label>
+                                                <select class="form-control recurso" id="cboTipoExamen"></select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label id="lblPagador">Pagador</label>
+                                                <input type="text" class="form-control recurso" name="nvPagador" id="nvPagador" value="" />
+                                                <input type="hidden" id="vcRucPagador" class="recurso" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md2">
+                                            <div class="form-group">
+                                                <button type="button" class="btn btn-success sincabecera recurso" id="btnBuscarAtencion" name="btnBuscarAtencion">
+                                                    <span class="glyphicon glyphicon-search"></span>
+                                                    <b>Buscar</b>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblDocumento">N° Documento</label>
+                                                <input type="text" class="form-control recurso" id="vcNumeroDocumento" name="vcNumeroDocumento" maxlength="8" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label id="lblNombres">Apellidos y Nombres</label>
+                                                <input type="text" class="form-control recurso" id="vcNombres" name="vcNombres" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box collapsed-box">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">BUSQUEDA AVANZADA</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                            <i class="fa fa-angle-double-down"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label id="lblTitular">Titular</label>
+                                            <select id="cboTitular" class="form-control recurso" style=""></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label id="lblUnidad">Unidad</label>
+                                            <select id="cboUnidad" class="form-control recurso" style=""></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label id="lblContrata">Contrata</label>
+                                            <select id="cboContrata" class="form-control recurso" style=""></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">LISTA ATENCIONES</h3>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <label id="lblImporteSeleccionado">Importe Seleccionado</label>
+                                        <input type="text" id="txtImporteSeleccionado" class="recurso" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button id="btnValorizar" class="btn btn-primary btn-sm pull-right recurso">
+                                            Valorizar
+                                            <i class="fa fa-money" style="color: #ffffff" aria-hidden="true"></i>
+                                        </button>
+                                        <button id="btnFacturar" class="btn btn-primary btn-sm pull-right recurso">
+                                            Facturar
+                                            <i class="fa fa-money" style="color: #ffffff" aria-hidden="true"></i>
+                                        </button>
+                                        <button id="btnExportar" class="btn btn-primary btn-sm pull-right recurso">
+                                            Exportar
+                                            <i class="fa fa-file-excel-o" style="color: #ffffff" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table id="tblAtenciones" class="recurso">
+                                                <thead>
+                                                    <tr>
+                                                        <th>IDESEDE</th>
+                                                        <th>N° OPERACION</th>
+                                                        <th>DNI</th>
+                                                        <th>NOMBRES</th>
+                                                        <th>FECHA EXAMEN</th>
+                                                        <th hidden>IDEXAMEN</th>
+                                                        <th>EXAMEN</th>
+                                                        <th>RUC</th>
+                                                        <th>PAGADOR</th>
+                                                        <th hidden>RUC</th>
+                                                        <th>TITULAR</th>
+                                                        <th hidden>IDUNIDAD</th>
+                                                        <th>UNIDAD</th>
+                                                        <th hidden>RUC</th>
+                                                        <th>CONTRATA</th>
+                                                        <th hidden>IDPROTOCOLO</th>
+                                                        <th>PROTOCOLO</th>
+                                                        <th>MONTO S/.</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th>IDESEDE</th>
+                                                        <th>N° OPERACION</th>
+                                                        <th>DNI</th>
+                                                        <th>NOMBRES</th>
+                                                        <th>FECHA EXAMEN</th>
+                                                        <th hidden>IDEXAMEN</th>
+                                                        <th>EXAMEN</th>
+                                                        <th>RUC</th>
+                                                        <th>PAGADOR</th>
+                                                        <th hidden>RUC</th>
+                                                        <th>TITULAR</th>
+                                                        <th hidden>IDUNIDAD</th>
+                                                        <th>UNIDAD</th>
+                                                        <th hidden>RUC</th>
+                                                        <th>CONTRATA</th>
+                                                        <th hidden>IDPROTOCOLO</th>
+                                                        <th>PROTOCOLO</th>
+                                                        <th>MONTO S/.</th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

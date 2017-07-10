@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Registrar Traslado</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-blue fixed sidebar-mini" onload="">
+
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+        </script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    DATOS TRASLADO
+                </h1>
+            </section>
+
+            <section class="content">
+                <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">DATOS TRASLADO</h3>
+                                </div>
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblSede1" style="display: block">Origen</label>
+                                                <select class="form-control" style="display: none;" id="cboSede1"></select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblSedeDestino49" style="display: block">Destino</label>
+                                                <select class="form-control" style="display: block;" id="cboSedeDestino49">
+                                                    <option value="1">Sede San Isidro</option>
+                                                    <option value="2">Yanacocha</option>
+                                                    <option value="3">Bateas</option>
+                                                    <option value="4">Casapalca</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblSedeDestino49" style="display: block">SubAlmacenOrigen</label>
+                                                <select class="form-control" style="display: block;" id="cboSedeDestino49">
+                                                    <option value="1">BOTIQUIN</option>
+                                                    <option value="2">FARMACIA</option>
+                                                    <option value="3">TOPICO</option>
+                                                    <option value="3">AMBULANCIA</option>
+                                                    <option value="3">MALETIN EMERGENCIA</option>
+                                                    <option value="4">EMO</option>
+                                                    <option value="5">BREAPAMPA</option>
+                                                    <option value="6">CARAHUACRA</option>
+                                                    <option value="7">CASAPALCA</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblSedeDestino49" style="display: block">SubAlmacenDestino</label>
+                                                <select class="form-control" style="display: block;" id="cboSedeDestino49">
+                                                    <option value="1">BOTIQUIN</option>
+                                                    <option value="2">FARMACIA</option>
+                                                    <option value="3">TOPICO</option>
+                                                    <option value="3">AMBULANCIA</option>
+                                                    <option value="3">MALETIN EMERGENCIA</option>
+                                                    <option value="4">EMO</option>
+                                                    <option value="5">BREAPAMPA</option>
+                                                    <option value="6">CARAHUACRA</option>
+                                                    <option value="7">CASAPALCA</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="vcArea" style="width:100px;">Fecha</label>
+                                                <input type="text" class="datepicker form-control" id="dtFecha" name="dtFecha" value="" placeholder="dd/mm/yyyy" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblUnidadOrganizativa" style="display: block">Tipo Documento</label>
+                                                <select class="form-control" style="display: block;" id="cboUnidadOrganizativa">
+                                                    <option value="1">Guia de Remision</option>
+                                                    <option value="2">Nota Entrada</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="form-group">
+                                                <label id="lblTrabajadorR">Serie</label>
+                                                <input type="text" class="form-control" id="nvTrabajadorR" name="nvTrabajadorR" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="form-group">
+                                                <label id="lblTrabajadorR">Numero</label>
+                                                <input type="text" class="form-control" id="nvTrabajadorR" name="nvTrabajadorR" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="UnidadOrganizativa" style="width:80px;">Proveedor/Ruc</label>
+                                                <input type="text" class="form-control" id="nvTrabajador" name="nvTrabajador" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblSedeDestino49" style="display: block">Estado</label>
+                                                <select class="form-control" style="display: block;" id="cboSedeDestino49">
+                                                    <option value="1">---TODOS---</option>
+                                                    <option value="2">BORRADOR</option>
+                                                    <option value="3">CONFIRMADO</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblTrabajador1" style="display:none">Responsable</label>
+                                                <input type="text" class="form-control" id="nvTrabajador1" name="nvTrabajador1" value="" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="form-group">
+                                                <label id="lblTrabajadorR">Requerimiento</label>
+                                                <input type="text" class="form-control" id="nvTrabajadorR" name="nvTrabajadorR" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="form-group">
+                                                <button type="button" class="btn btn-success sincabecera" name="btnBuscarReq" id="btnBuscarReq">
+                                                    <span class="glyphicon glyphicon-search">
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="UnidadOrganizativa" style="width:120px;">Observacion</label>
+                                                <textarea class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section class="content">
+                <div class="box box-primary">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover" id="TablaCabeceraCargar">
+                                    <tr>
+                                        <td>
+                                            <b>CARGAR DESDE EXCEL</b>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="file" class="filestyle" data-buttonname="btn-success" data-buttontext="&nbsp;&nbsp;&nbsp;Seleccione archivo">
+                                </div>
+                            </div>
+
+                            <div class="col-md-1">
+                                <span class="icon-input-btn">
+                                    <button type="button" class="btn btn-success" name="Cargar" id="Cargar">
+                                        <span class="glyphicon glyphicon-open">
+                                        </span>
+                                        <b>Cargar</b>
+                                    </button>
+
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content">
+                <div class="box box-primary">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover" id="TablaCabeceraTraslado">
+                                    <tr>
+                                        <td>
+                                            <b>DETALLE TRASLADO</b>
+                                        </td>
+                                        <td align="right">
+                                            <b>Cantidad de Items: <span id="CantidadItemsTraslado">0</span></b>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label id="lblCodigo49">Codigo</label>
+                                    <input type="text" class="form-control" id="vcCodigo49" name="vcCodigo49" value="" />
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="lblPresentacion49">Presentacion</label>
+                                    <input type="text" class="form-control" id="vcPresentacion49" name="vcPresentacion49" value="" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="lblCantidad49">Cantidad</label>
+                                    <input type="number" class="form-control" id="intCantidad49" name="intCantidad49" value="" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="lblFechaVencimiento49">FechaVencimiento</label>
+                                    <input type="date" class="form-control" id="dtFechaVencimiento49" name="dtFechaVencimiento49" value="" readonly />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label id="lblSede16">Centro Costo</label>
+                                    <input type="text" id="vcSede16" name="vcSede16" class="form-control" readonly />
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-success sincabecera" id=""><span class=""></span><b>Lote</b></button>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <button class="btn btn-success sincabecera" id="btnAgregarDetalleTraslado49" name="btnAgregarDetalleTraslado49">
+                                        <span class="glyphicon glyphicon-floppy-disk"></span><b>Agregar</b>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover" id="tblDetalleTraslado49">
+                                    <tr class="info">
+                                        <th>Acciones</th>
+                                        <th>Item</th>
+                                        <th>Codigo</th>
+                                        <th>SubAlmacen</th>
+                                        <th>Presentacion</th>
+                                        <th>Cantidad</th>
+                                        <th>CentroCosto</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <div class="panel-body">
+                <div class="form-group">
+
+                    <button type="button" class="btn btn-info" id="" name=""><span class="glyphicon glyphicon-floppy-disk"></span><b>Guardar</b></button>
+                    <button type="button" class="btn btn-success" id="" name=""><span class="glyphicon glyphicon-ok"></span><b>Confirmar</b></button>
+                    <!--<button type="button" class="btn btn-info" id=""><span class="glyphicon glyphicon-print"></span><b>Imprimir</b></button>-->
+                    <button type="button" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>Atras</b></button>
+                </div>
+            </div>
+
+        </div>
+
+</body>
+</html>
+
+<table id="tabla_oculta_traslado">
+    <tr class="fila-base">
+        <td width="65px">
+            <button type="button" class="btn btn-danger btn-xs" id="QuitarTraslado"><span class="glyphicon glyphicon-remove"></span></button>
+            <button type="button" class="btn btn-success btn-xs" id="ModificarTraslado"><span class="glyphicon glyphicon-pencil"></span></button>
+        </td>
+        <td></td><!--Item-->
+        <td></td><!--Codigo-->
+        <td></td><!--SubAlmacen-->
+        <td></td><!--Presentacion-->
+        <td></td><!--Cantidad-->
+        <td></td><!--Centro Costo-->
+    </tr>
+</table>
+
+<div class="modal fade bs-example-modal-lg" id="frmBuscarReq" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <b>BUSCAR REQUERIMIENTO</b>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="Fecha">Fecha</label>
+                            <input type="text" class="datepicker form-control" name="dInicioEntrada49" id="dInicioEntrada49" placeholder="dd/mm/yyyy" value="" />
+
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <input type="text" class="datepicker form-control sincabecera" name="dFinEntrada49" id="dFinEntrada49" placeholder="dd/mm/yyyy" value="" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label id="lblProveedor49">Proveedor</label>
+                            <input type="text" class="form-control" id="nvProveedor49" name="Establecimiento" placeholder="Proveedor..." />
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success sincabecera" id="BuscarOrdenCompra">
+                                <span class="glyphicon glyphicon-search">
+                                </span>
+                                <b>Buscar</b>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="ListaBusquedaOrdenesCompra">
+                        <tr class="info">
+                            <th></th>
+                            <th>Id</th>
+                            <th hidden></th><!--Establecimiente-->
+                            <th>Establecimiento</th>
+                            <th>Responsable</th>
+                            <th>Motivo</th>
+                            <th>Fecha</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-success btn-xs" id="Buscar" name="Buscar">
+                                    <span class="glyphicon glyphicon-search">
+                                    </span>
+                                    <b>Agregar</b>
+                                </button>
+                            </td>
+                            <td>1</td>
+                            <td hidden></td>
+                            <td>YAULIYACU</td>
+                            <td>CARMEN ROSA VILLALOBOS CORONADO</td>
+                            <td>Pedido Ordinario</td>
+                            <td>21/02/2017</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnBuscarReq").click(function () {
+            $('#frmBuscarReq').modal('toggle');
+        });
+    });
+
+   
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+</script>

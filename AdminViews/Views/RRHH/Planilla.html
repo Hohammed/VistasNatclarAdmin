@@ -1,0 +1,1170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Planilla</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+    <script src="../../public/web/js/tableExport.js"></script>
+    <script src="../../public/web/js/jquery.base64.js"></script>
+    <script src="../../public/web/js/html2canvas.js"></script>
+</head>
+<body class="hold-transition skin-edit fixed sidebar-mini">
+
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+        </script>
+        <div class="content-wrapper">
+
+            <section class="content-header">
+                <h1>
+                    GENERAR PLANILLA
+                </h1>
+            </section>
+
+            <section class="content">
+                <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box box-primary collapsed-box">
+                                <div class=" box-header">
+                                    <h3 class="box-title">DATOS PLANILLA</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                            <i class="fa fa-angle-double-down"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="box-title" id="lblTrabajador48">Responsable</label>
+                                                <input type="text" id="nvTrabajador48" name="nvTrabajador48" class="form-control" style="background-color:lightgoldenrodyellow" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="box-title" id="lblSede48">Sede</label>
+                                                <input type="text" id="vcSede48" name="vcSede48" class="form-control" style="background-color:lightgoldenrodyellow" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lbldFechaPlanilla48">Fecha</label>
+                                                <input type="text" class="datepicker form-control mifecha" placeholder="dd/mm/yyyy" id="dFechaPlanilla48" name="dFechaPlanilla48" style="display:block; background-color: lightgoldenrodyellow" value="" readonly />
+                                                <!-- <input type="text" class="datepicker form-control" placeholder="dd//mm//yyyy" id="dtfechafin" name="dtfechafin" value="" style="width:100px;" />-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            
+            <section class="content">
+                <form name="">
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <table id="CabeceraPlanilla">
+                                <tr>
+                                    <td width="100%">
+                                        <b>PLANILLA</b>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-success" id="btnSearch">
+                                            <span class="glyphicon glyphicon-search">
+                                            </span>
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <div id="busqueda" style="display:none">
+                                            <input type="text" id="SrcPlanilla" name="SrcPlanilla" value="" style="border-radius: 3px; height:35px; background-color: lightgoldenrodyellow" />
+                                        </div>
+                                    </td>
+                                   <td>
+                                       <input type="button" id="btnExport" value="Exportar" class="btn btn-success" onclick="$('#TablaPlanilla').tableExport({ type: 'excel', escape: 'false' });" />
+                                   </td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive" id="TablaPlanilla">
+                                        <table class="tablesorter-blue table table-bordered table-hover" id="TablaRegistrarPlanilla">
+                                            <thead>
+                                                <tr class="info">
+                                                    <th style="background-color: #99ffcc">Item</th>
+                                                    <th style="background-color: #99ffcc">DNI</th>
+                                                    <!--<th style="background-color: #99ffcc">A. Paterno</th>-->
+                                                    <!--<th style="background-color: #99ffcc">A. Materno</th>-->
+                                                    <th style="background-color: #99ffcc" colspan="3">Trabajador</th>
+                                                    <th hidden>Id_puesto</th>
+                                                    <th style="background-color: #99ffcc">Puesto</th>
+                                                    <th hidden>Id_Área</th>
+                                                    <th style="background-color: #99ffcc">Área</th>
+                                                    <th hidden>Id_Gerencia</th>
+                                                    <th style="background-color: #99ffcc">Gerencia</th>
+                                                    <th hidden>Id_Un_Or</th>
+                                                    <th style="background-color: #99ffcc">Local_UnOr</th>
+                                                    <th style="background-color: #99ffcc">UN OR</th>
+                                                    <th hidden>Ruc_Emp</th>
+                                                    <th style="background-color: #99ffcc">Empresa_Prioridad</th>
+                                                    <th style="background-color: #99ffcc">Empresa</th>
+                                                    <th hidden>Id_Sede</th>
+                                                    <th style="background-color: #99ffcc">Sede</th>
+                                                    <th hidden>Id_Centro_Costo</th>
+                                                    <th style="background-color: #99ffcc">Centro Costo</th>
+                                                    <th hidden>Id_Sistema_de_Trabajo</th>
+                                                    <th style="background-color: #99ffcc">Sis.Trab</th>
+                                                    <th style="background-color: #99ffcc">Fecha Ingreso</th>
+                                                    <th style="background-color: #99ffcc">Fecha Cese</th>
+                                                    <th style="background-color: #99ffcc">Sueldo</th>
+                                                    <th hidden style="background-color: #82F0C4">Tiene Asig</th>
+                                                    <th style="background-color: #82F0C4">Asig. Fam.</th>
+                                                    <th style="background-color: #82F0C4">Días Lab.</th>
+                                                    <th style="background-color: #82F0C4">Días Vac.</th>
+                                                    <th style="background-color: #82F0C4">Venta Vac.</th>
+                                                    <th style="background-color: #82F0C4">Días Sub.</th>
+                                                    <th style="background-color: #82F0C4">Días Permiso CG.</th>
+                                                    <th style="background-color: #82F0C4">Días Permiso SG.</th>
+                                                    <th style="background-color: #82F0C4">Días Maternidad</th>
+                                                    <th style="background-color: #82F0C4">Días Lactancia</th>
+                                                    <th style="background-color: #82F0C4">Días Falt.</th>
+                                                    <th style="background-color: #82F0C4">Total Días</th>
+                                                    <th style="background-color: #82F0C4">Fer. Lab.</th>
+                                                    <th style="background-color: #82F0C4">Días adic.</th>
+                                                    <th style="background-color: #82F0C4">Min. HE 25%</th>
+                                                    <th style="background-color: #82F0C4">Min. HE 35%</th>
+                                                    <th style="background-color: #82F0C4">Min. Tard.</th>
+                                                    <th style="background-color: #82F0C4">Bono Destaque</th>
+                                                    <th style="background-color: #82F0C4">Bono Productividad</th>
+                                                    <th style="background-color: #82F0C4">Bono Movilidad</th>
+                                                    <th style="background-color: #82F0C4">Otros Bono</th>
+                                                    <th style="background-color: #82F0C4">Otros Ingresos</th>
+                                                    <th style="background-color: #33CCCC">Haberes</th>
+                                                    <th style="background-color: #33CCCC">Total Asig. Fam.</th>
+                                                    <th style="background-color: #33CCCC">Total Bonos</th>
+                                                    <th style="background-color: #33CCCC">Total Vacac.</th>
+                                                    <th style="background-color: #33CCCC">Total Venta Vacac.</th>
+                                                    <th style="background-color: #33CCCC">Total Subsidio</th>
+                                                    <th style="background-color: #33CCCC">Total Fer. Lab.</th>
+                                                    <th style="background-color: #33CCCC">Total Días Adic.</th>
+                                                    <th style="background-color: #33CCCC">Total HE25</th>
+                                                    <th style="background-color: #33CCCC">Total HE35</th>
+                                                    <th style="background-color: #17A8A1">Ingreso Mens. Bás.</th>
+                                                    <th style="background-color: #42DBDB">Vacac.</th>
+                                                    <th style="background-color: #17A8A1">Total Base Imponible</th>
+                                                    <th hidden style="background-color: #FFBFBF">Regimen Pensionario</th>
+                                                    <th hidden style="background-color: #FFBFBF">Tipo AFP</th>
+                                                    <th hidden style="background-color: #FFBFBF">Flujo Pension</th>
+                                                    <th style="background-color: #FFBFBF">AFP Aporte</th>
+                                                    <th style="background-color: #FFBFBF">AFP Comisión</th>
+                                                    <th style="background-color: #FFBFBF">AFP Seguro</th>
+                                                    <th style="background-color: #FFBFBF">Total AFP</th>
+                                                    <th style="background-color: #FFBFBF">ONP</th>
+                                                    <th hidden style="background-color: #FFBFBF">Aporta EsSalud Vida</th>
+                                                    <th style="background-color: #FFBFBF">EsSalud Vida</th>
+                                                    <th style="background-color: #FFBFBF">Renta 5ta Categoría</th>
+                                                    <th style="background-color: #FFBFBF">Total Tardanzas</th>
+                                                    <th style="background-color: #FFBFBF">Prestamo Personal</th>
+                                                    <th style="background-color: #FFBFBF">Convenio BanBif</th>
+                                                    <th style="background-color: #FFBFBF">Seguro</th>
+                                                    <th style="background-color: #FFBFBF">Mapfre</th>
+                                                    <th style="background-color: #FFBFBF">Rímac</th>
+                                                    <th style="background-color: #FFBFBF">Pacífico</th>
+                                                    <th style="background-color: #FFBFBF">Dscto. Judicial</th>
+                                                    <th style="background-color: #FFBFBF">Otros Dsctos.</th>
+                                                    <th style="background-color: #FF7373">Total Dsctos.</th>
+                                                    <th style="background-color: #17A8A1">Neto Haberes</th>
+                                                    <th style="background-color: #17A8A1">Neto Vacac.</th>
+                                                    <th style="background-color: #17A8A1">Total Neto</th>
+                                                    <th style="background-color: #6BE0BD">EsSalud</th>
+                                                    <th style="background-color: #6BE0BD">EPS</th>
+                                                    <!--<th style="background-color: #6BE0BD">SCTR Salud</th>
+                    <th style="background-color: #6BE0BD">SCTR Pensión</th>-->
+                                                    <th style="background-color: #6BE0BD">Vida Ley</th>
+                                                    <th style="background-color: #17A8A1">Total Aportaciones</th>
+                                                </tr>
+                                            </thead>
+
+                                            <!--<tfoot>
+            <tr class="info">
+                <th style="background-color: #99ffcc">Item</th>
+                <th style="background-color: #99ffcc">DNI</th>
+                <!--<th style="background-color: #99ffcc">A. Paterno</th>
+                <th style="background-color: #99ffcc">A. Materno</th>-->
+                                            <!-- <th style="background-color: #99ffcc" colspan="3">Nombres</th>
+                                                    <th hidden>Id_puesto</th>
+                                                    <th style="background-color: #99ffcc">Puesto</th>
+                                                    <th hidden>Id_Área</th>
+                                                    <th style="background-color: #99ffcc">Área</th>
+                                                    <th hidden>Id_Gerencia</th>
+                                                    <th style="background-color: #99ffcc">Gerencia</th>
+                                                    <th hidden>Id_Un_Or</th>
+                                                    <th style="background-color: #99ffcc">Local_UnOr</th>
+                                                    <th style="background-color: #99ffcc">UN OR</th>
+                                                    <th hidden>Ruc_Emp</th>
+                                                    <th style="background-color: #99ffcc">Empresa_Prioridad</th>
+                                                    <th style="background-color: #99ffcc">Empresa</th>
+                                                    <th hidden>Id_Sede</th>
+                                                    <th style="background-color: #99ffcc">Sede</th>
+                                                    <th hidden>Id_Centro_Costo</th>
+                                                    <th style="background-color: #99ffcc">Centro Costo</th>
+                                                    <th hidden>Id_Sistema_de_Trabajo</th>
+                                                    <th style="background-color: #99ffcc">Sis.Trab</th>
+                                                    <th style="background-color: #99ffcc">Fecha Ingreso</th>
+                                                    <th style="background-color: #99ffcc">Fecha Cese</th>
+                                                    <th style="background-color: #99ffcc">Sueldo</th>
+                                                    <th style="background-color: #82F0C4">Tiene Asig</th>
+                                                    <th style="background-color: #82F0C4">Asig. Fam.</th>
+                                                    <th style="background-color: #82F0C4">Días Lab.</th>
+                                                    <th style="background-color: #82F0C4">Días Vac.</th>
+                                                    <th style="background-color: #82F0C4">Venta Vac.</th>
+                                                    <th style="background-color: #82F0C4">Días Sub.</th>
+                                                    <th style="background-color: #82F0C4">Días Permiso CG.</th>
+                                                    <th style="background-color: #82F0C4">Días Permiso SG.</th>
+                                                    <th style="background-color: #82F0C4">Días Maternidad</th>
+                                                    <th style="background-color: #82F0C4">Días Lactancia</th>
+                                                    <th style="background-color: #82F0C4">Días Falt.</th>
+                                                    <th style="background-color: #82F0C4">Total Días</th>
+                                                    <th style="background-color: #82F0C4">Fer. Lab.</th>
+                                                    <th style="background-color: #82F0C4">Días adic.</th>
+                                                    <th style="background-color: #82F0C4">Min. HE 25%</th>
+                                                    <th style="background-color: #82F0C4">Min. HE 35%</th>
+                                                    <th style="background-color: #82F0C4">Min. Tard.</th>
+                                                    <th style="background-color: #82F0C4">Bono Destaque</th>
+                                                    <th style="background-color: #82F0C4">Bono Productividad</th>
+                                                    <th style="background-color: #82F0C4">Bono Movilidad</th>
+                                                    <th style="background-color: #82F0C4">Otros Bono</th>
+                                                    <th style="background-color: #82F0C4">Otros Ingresos</th>
+                                                    <th style="background-color: #33CCCC">Haberes</th>
+                                                    <th style="background-color: #33CCCC">Total Asig. Fam.</th>
+                                                    <th style="background-color: #33CCCC">Total Bonos</th>
+                                                    <th style="background-color: #33CCCC">Total Vacac.</th>
+                                                    <th style="background-color: #33CCCC">Total Venta Vacac.</th>
+                                                    <th style="background-color: #33CCCC">Total Subsidio</th>
+                                                    <th style="background-color: #33CCCC">Total Fer. Lab.</th>
+                                                    <th style="background-color: #33CCCC">Total Días Adic.</th>
+                                                    <th style="background-color: #33CCCC">Total HE25</th>
+                                                    <th style="background-color: #33CCCC">Total HE35</th>
+                                                    <th style="background-color: #17A8A1">Ingreso Mens. Bás.</th>
+                                                    <th style="background-color: #42DBDB">Vacac.</th>
+                                                    <th style="background-color: #17A8A1">Total Base Imponible</th>
+                                                    <th style="background-color: #FFBFBF">Regimen Pensionario</th>
+                                                    <th style="background-color: #FFBFBF">Tipo AFP</th>
+                                                    <th style="background-color: #FFBFBF">Flujo Pension</th>
+                                                    <th style="background-color: #FFBFBF">AFP Aporte</th>
+                                                    <th style="background-color: #FFBFBF">AFP Comisión</th>
+                                                    <th style="background-color: #FFBFBF">AFP Seguro</th>
+                                                    <th style="background-color: #FFBFBF">Total AFP</th>
+                                                    <th style="background-color: #FFBFBF">ONP</th>
+                                                    <th style="background-color: #FFBFBF">Aporta EsSalud Vida</th>
+                                                    <th style="background-color: #FFBFBF">EsSalud Vida</th>
+                                                    <th style="background-color: #FFBFBF">Renta 5ta Categoría</th>
+                                                    <th style="background-color: #FFBFBF">Total Tardanzas</th>
+                                                    <th style="background-color: #FFBFBF">Prestamo Personal</th>
+                                                    <th style="background-color: #FFBFBF">Convenio BanBif</th>
+                                                    <th style="background-color: #FFBFBF">Seguro</th>
+                                                    <th style="background-color: #FFBFBF">Mapfre</th>
+                                                    <th style="background-color: #FFBFBF">Rímac</th>
+                                                    <th style="background-color: #FFBFBF">Pacífico</th>
+                                                    <th style="background-color: #FFBFBF">Dscto. Judicial</th>
+                                                    <th style="background-color: #FFBFBF">Otros Dsctos.</th>
+                                                    <th style="background-color: #FF7373">Total Dsctos.</th>
+                                                    <th style="background-color: #17A8A1">Neto Haberes</th>
+                                                    <th style="background-color: #17A8A1">Neto Vacac.</th>
+                                                    <th style="background-color: #17A8A1">Total Neto</th>
+                                                    <th style="background-color: #6BE0BD">EsSalud</th>
+                                                    <th style="background-color: #6BE0BD">EPS</th>
+                                                    <!--<th style="background-color: #6BE0BD">SCTR Salud</th>
+            <th style="background-color: #6BE0BD">SCTR Pensión</th>-->
+                                            <!--<th style="background-color: #6BE0BD">Vida Ley</th>
+                    <th style="background-color: #17A8A1">Total Aportaciones</th>
+                </tr>
+            </tfoot>-->
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-success" id="btnGenerarPlanilla" name="btnGenerarPlanilla"><span class="glyphicon glyphicon-refresh"></span><b>&nbsp; Planilla</b></button>
+                        <button type="button" class="btn btn-info" id="btnGuardarAsistencia" name="btnGuardarAsistencia"><span class="glyphicon glyphicon-floppy-disk"></span><b>&nbsp; Guardar</b></button>
+                        <!--<button type="button" class="btn btn-success" id="btnConfirmarAsistencia" name="btnConfirmarAsistencia"><span class="glyphicon glyphicon-ok"></span><b>Confirmar</b></button>-->
+                        <!--<button type="button" class="btn btn-info" id=""><span class="glyphicon glyphicon-print"></span><b>Imprimir</b></button>-->
+                        <button type="button" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>&nbsp; Atras</b></button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$('#TablaRegistrarPlanilla').DataTable({
+        //    "scrollX": true
+        //});
+
+        $("#btnSearch").click(function () {
+            $('#busqueda').toggle("slow");
+        });
+        
+        //ObtenerTrabajadoresPorSede();
+        ContratoByTrabajador();
+    });
+
+    $(window).on("load", function () {
+        //ObtenerMotivoTareo();
+        setTimeout(function () { TablaRegistrarPlanilla() }, 5000);
+    });
+
+    function TablaRegistrarPlanilla() {
+        $("#TablaRegistrarPlanilla").tablesorter();
+    }
+   
+    function ContratoByTrabajador() {
+        var idTrab = 0;
+        var xhr = new XMLHttpRequest();
+
+
+        xhr.open('POST', 'http://admin_erp.natclar.com.pe:12000/sWSPlanilla/PlanillaByContrato.svc?wsdl', true);
+        xhr.setRequestHeader('Content-Type', 'text/xml');
+        xhr.setRequestHeader("SOAPAction", "http://tempuri.org/IPlanillaByContrato/Get");
+        /*		
+        var dataobj = 	'<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">';
+        dataobj+= 		'	<s:Body>'+
+                        '		<GetData xmlns="http://tempuri.org/">'+
+                        '<user d4p1:nil="true" xmlns:d4p1="http://www.w3.org/2001/XMLSchema-instance">a</user>'+
+                        '<pass d4p1:nil="true" xmlns:d4p1="http://www.w3.org/2001/XMLSchema-instance">a</pass>'+
+                        '</GetData>'+
+                        '</s:Body>'+
+                        '</s:Envelope>';
+        
+        */
+        var dataobj = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">';
+        dataobj += '<soapenv:Header/>';
+        dataobj += '<soapenv:Body>';
+        dataobj += '<tem:Get>';
+        //<!--Optional:-->
+        dataobj += '<tem:idContrato>' + idTrab + '</tem:idContrato>';
+        //<!--Optional:-->
+        //dataobj += '<tem:pass>' + pass1 + '</tem:pass>';
+        dataobj += '</tem:Get>';
+        dataobj += '</soapenv:Body>';
+        dataobj += '</soapenv:Envelope>';
+        //console.log(dataobj);
+        xhr.onload = function () {
+            var status = xhr.status;
+           
+            if (status == 200) {
+               
+                xml = xhr.responseXML
+                json = xmlToJson(xml);
+                //console.log(xhr.response);
+                //console.log(xhr.responseText);
+                //console.log(xhr.responseXML);
+                console.log(json);
+                obj = json["s:Envelope"]["s:Body"].GetResponse.GetResult["a:DatosPlanilla"];
+                //console.log(obj)
+                //console.log(obj.length)
+                //obj2 = obj[0]["a:iIdTrabajadorInterno"]["#text"];
+                //console.log(obj2)
+               
+                if (obj != 0) {
+                    for (i = 0, j = 1; i < obj.length; i++, j++) {
+                        console.log(obj[i])
+                        $("#TablaRegistrarPlanilla tbody").append('<tr><td>' + j + '</td>' +
+                        '<td>' + obj[i]["a:vcNumeroDocumento"]["#text"] + '</td>' +
+                        '<td hidden>' + obj[i]["a:iIdTrabajadorInterno"]["#text"] + '</td>' +
+                        '<td colspan=3>' + obj[i]["a:vcNombreCompleto"]["#text"] + '</td>' +
+                        '<td hidden>' + obj[i]["a:vcPuesto"]["#text"] + '</td>' +
+                        '<td>' + obj[i]["a:vcPuesto"]["#text"] + '</td>' +
+                        '<td hidden>' + obj[i]["a:vcArea"]["#text"] + '</td>' +
+                        '<td>' + obj[i]["a:vcArea"]["#text"] + '</td>' +
+                        '<td hidden>' + obj[i]["a:vcGerencia"]["#text"] + '</td>' +
+                        '<td>' + obj[i]["a:vcGerencia"]["#text"] + '</td>' +
+                        '<td hidden>' + obj[i]["a:prioridadUO"]["#text"] + '</td>' +
+                        '<td>' + obj[i]["a:prioridadUO"]["#text"] + '</td>' +
+                        '<td>' + obj[i]["a:vcUnidadOrganizativa"]["#text"] + '</td>' +
+                        '<td hidden>' + obj[i]["a:prioridadSede"]["#text"] + '</td>' +
+                        '<td>' + obj[i]["a:prioridadSede"]["#text"] + '</td>' +
+                        '<td>' + obj[i]["a:vcEmpresa"]["#text"] + '</td>' +
+                        '<td>' + obj[i]["a:vcSede"]["#text"] + '</td>' +
+                        '<td>' + obj[i]["a:vcSede"]["#text"] + '</td>' +
+                        '<td hidden>' + obj[i]["a:vcSistemaTrabajo"]["#text"] + '</td>' +
+                        '<td>' + obj[i]["a:vcSistemaTrabajo"]["#text"] + '</td>' +
+                        "<td><input type='text' id='fechaIngreso' name='fechaIngreso' class='fechaIngreso' value=" + obj[i]["a:dInicio"]["#text"] + " style='border-width:0' readonly /></td>" +
+                        '<td>' + obj[i]["a:dFin"]["#text"] + '</td>' +
+                        "<td><input type='number' id='sueldo' class='sueldo' name='sueldo' value=" + obj[i]["a:numSueldo"]["#text"] + " style='border-width:0' readonly/> </td>" +
+                        "<td hidden><input type='number' value=" + obj[i]["a:iIdAsignacionFamiliar"]["#text"] + " style='border-width:0' id='TieneAsig' name='TieneAsig' class='TieneAsig' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='asig' name='asig' class='asig' readonly/></td>" +
+                        "<td><input type='number' value=" + obj[i]["a:iDiasLaborados"]["#text"] + " style='border-width:0' id='dTrabajados' name='dTrabajados' class='dTrabajados' readonly/></td>" +
+                        "<td><input type='number' value=" + obj[i]["a:iV"]["#text"] + " style='border-width:0' id='dVacaciones' name='dVacaciones' class='dVacaciones' /></td>" +
+                        "<td><input type='number' value=" + obj[i]["a:iV"]["#text"] + "  style='border-width:0' id='VentaVacaciones' name='VentaVacaciones' class='VentaVacaciones' /></td>" +
+                        "<td><input type='number' value=" + obj[i]["a:iSD"]["#text"] + "  style='border-width:0' id='dSubsidios' name='dSubsidios' class='dSubsidios' /></td>" +
+                        "<td><input type='number' value=" + obj[i]["a:iPG"]["#text"] + "  style='border-width:0' id='dPermisoCG' name='dPermisoCG' class='dPermisoCG' /></td>" +
+                        "<td><input type='number' value=" + obj[i]["a:iPS"]["#text"] + "  style='border-width:0' id='dPermisoSG' name='dPermisoSG' class='dPermisoSG' /></td>" +
+                        "<td><input type='number' value=" + obj[i]["a:iSM"]["#text"] + "  style='border-width:0' id='dMaternidad' name='dMaternidad' class='dMaternidad' /></td>" +
+                        "<td><input type='number' value=" + obj[i]["a:iV"]["#text"] + "  style='border-width:0' id='dLactancia' name='dLactancia' class='dLactancia' /></td>" +
+                        "<td><input type='number' value=" + obj[i]["a:iFF"]["#text"] + "  style='border-width:0' id='dFaltas' name='dFaltas' class='dFaltas' /></td>" +
+                        "<td><input type='number' value=" + obj[i]["a:iTotal"]["#text"] + "  style='border-width:0' id='TotalDias' name='TotalDias' class='TotalDias' readonly/></td>" +
+                        "<td><input type='number' value=" + obj[i]["a:iFL"]["#text"] + "  style='border-width:0' id='FerLab' name='FerLab' class='FerLab' /></td>" +
+                        "<td><input type='number' value=" + obj[i]["a:iA"]["#text"] + "  style='border-width:0' id='dAdicionales' name='dAdicionales' class='dAdicionales' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='HE25' name='HE25' class='HE25' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='HE35' name='HE35' class='HE35' /></td>" +
+                        "<td><input type='number' value=" + obj[i]["a:iTotalMinutos"]["#text"] + " style='border-width:0' id='MinutosTardanzas' name='MinutosTardanzas' class='MinutosTardanzas'/></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='bDestaque' name='bDestaque' class='bDestaque' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='bProductividad' name='bProductividad' class='bProductividad' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='bMovilidad' name='bMovilidad' class='bMovilidad' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='bOtrosBonos' name='bOtrosBonos' class='bOtrosBonos' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='bOtros' name='bOtros' class='bOtros' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='haberes' name='haberes' class='haberes' readonly/></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalAsig' name='TotalAsig' class='TotalAsig' readonly/></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalBonos' name='TotalBonos' class='TotalBonos' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalVacaciones' name='TotalVacaciones' class='TotalVacaciones' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalVentaVacaciones' name='TotalVentaVacaciones' class='TotalVentaVacaciones' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalSubsidios' name='TotalSubsidios' class='TotalSubsidios' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalFerLab' name='TotalFerLab' class='TotalFerLab' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotaldAdicionales' name='TotaldAdicionales' class='TotaldAdicionales' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalHE25' name='TotalHE25' class='TotalHE25' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalHE35' name='TotalHE35' class='TotalHE35' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='IngresoMensualBasico' name='IngresoMensualBasico' class='IngresoMensualBasico' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalVacaciones2' name='TotalVacaciones2' class='TotalVacaciones2' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalBaseImponible' name='TotalBaseImponible' class='TotalBaseImponible' readonly/></td></td>" +
+                        "<td hidden><input type='number' value=" + obj[i]["a:iIdRegimenPensionario"]["#text"] + " style='border-width:0' id='RegimenPension' name='RegimenPension' class='RegimenPension' /></td></td>" +
+                        "<td hidden><input type='number' value=" + obj[i]["a:iIdAFP"]["#text"] + " style='border-width:0' id='TipoAfp' name='TipoAfp' class='TipoAfp' /></td></td>" +
+                        "<td hidden><input type='text' value=" + obj[i]["a:cTipoComision"]["#text"] + " style='border-width:0' id='FlujoPension' name='FlujoPension' class='FlujoPension' /></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='AFPAporte' name='AFPAporte' class='AFPAporte' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='AFPComision' name='AFPComision' class='AFPComision' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='AFPSeguro' name='AFPSeguro' class='AFPSeguro' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='AFPTotal' name='AFPTotal' class='AFPTotal' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='ONP' name='ONP' class='ONP' readonly/></td></td>" +
+                        "<td hidden><input type='number' value='' style='border-width:0' id='AportaEsSaludvida' name='AportaEsSaludvida' class='AportaEsSaludvida' /></td></td>" +
+                        "<td><input type='number' value=" + obj[i]["a:deEsSaludVida"]["#text"] + " style='border-width:0' id='EsSaludvida' name='EsSaludvida' class='EsSaludvida' readonly/></td></td>" +
+                        "<td><input type='number' value=" + obj[i]["a:de5Categoria"]["#text"] + " style='border-width:0' id='Renta5' name='Renta5' class='Renta5' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalTardanzas' name='TotalTardanzas' class='TotalTardanzas' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='PrestamoPersonal' name='PrestamoPersonal' class='PrestamoPersonal'/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='ConvenioBanBif' name='ConvenioBanBif' class='ConvenioBanBif'/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='Seguro' name='Seguro' class='Seguro'/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='EPSMapfre' name='EPSMapfre' class='EPSMapfre'/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='EPSRimac' name='EPSRimac' class='EPSRimac'/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='EPSPacifico' name='EPSPacifico' class='EPSPacifico'/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='DsctoJudicial' name='DsctoJudicial' class='DsctoJudicial'/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='OtrosDsctos' name='OtrosDsctos' class='OtrosDsctos'/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalDsctos' name='TotalDsctos' class='TotalDsctos' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='NetoHaberes' name='NetoHaberes' class='NetoHaberes' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='NetoVacaciones' name='NetoVacaciones' class='NetoVacaciones' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0;background-color: Snow' id='TotalNeto' name='TotalNeto' class='TotalNeto' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0;background-color: Snow' id='EsSalud' name='EsSalud' class='EsSalud' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='EPS' name='EPS' class='EPS'/></td></td>" +
+                        //"<td><input type='number' value='' style='border-width:0;background-color: Snow' id='SctrSalud' name='SctrSalud' class='SctrSalud' readonly/></td></td>" +
+                        //"<td><input type='number' value='' style='border-width:0;background-color: Snow' id='SctrPension' name='SctrPension' class='SctrPension' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0;background-color: Snow' id='VidaLey' name='VidaLey' class='VidaLey' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0;background-color: Snow' id='TotalAportaciones' name='TotalAportaciones' class='TotalAportaciones' readonly/></td></td>" +
+                //if (obj == "TRUE") {
+                //    swal("El Usuario y Contraseña son correctos", "", "success")
+                //    $("#USU_LOGIN").prop('readonly', true);
+                //    $("#USU_CLAVE").prop('readonly', true);
+                //    MostrarEscogerSede();
+                //}
+                 '</td></tr>');
+                        }
+                        } else {
+                    swal("Incorrecto!")
+                }
+            } else {
+                swal("Ocurrió un error al obtener los datos!")
+            }
+        };
+
+        //xhr.send(JSON.stringify(dataobj));	
+        xhr.send(dataobj);
+        //xhr.send(xmldoc);
+    }
+
+    function xmlToJson(xml) {
+
+        // Create the return object
+        var obj = {};
+
+        if (xml.nodeType == 1) { // element
+            // do attributes
+            if (xml.attributes.length > 0) {
+                obj["@attributes"] = {};
+                for (var j = 0; j < xml.attributes.length; j++) {
+                    var attribute = xml.attributes.item(j);
+                    obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+                }
+            }
+        } else if (xml.nodeType == 3) { // text
+            obj = xml.nodeValue;
+        }
+
+        // do children
+        if (xml.hasChildNodes()) {
+            for (var i = 0; i < xml.childNodes.length; i++) {
+                var item = xml.childNodes.item(i);
+                var nodeName = item.nodeName;
+                if (typeof (obj[nodeName]) == "undefined") {
+                    obj[nodeName] = xmlToJson(item);
+                } else {
+                    if (typeof (obj[nodeName].push) == "undefined") {
+                        var old = obj[nodeName];
+                        obj[nodeName] = [];
+                        obj[nodeName].push(old);
+                    }
+                    obj[nodeName].push(xmlToJson(item));
+                }
+            }
+        }
+        return obj;
+    };
+
+    function ObtenerTrabajadoresPorSede() {
+        sede = sessionStorage.getItem("Sede");
+        //console.log(sede)
+        var xhr = new XMLHttpRequest();
+        var dataobj = { sede: sede };
+        var obj;
+
+        xhr.open('GET', 'http://admin_erp.natclar.com.pe:12000/rWSTrabajador/TrabajadorBySede/Get?sede=' + sede, true);
+        xhr.responseType = "json";
+        // xhr.setRequestHeader("Content-Type", "application/json");
+        //console.log(sede)
+        xhr.onload = function () {
+            var status = xhr.status;
+            if (status == 200) {
+                console.log(xhr.response);
+                // console.log(xhr.response.GetDataPOSTResult.cUser + " " + xhr.response.GetDataPOSTResult.cPassword);
+                obj = xhr.response;
+                obj2 = JSON.stringify(obj);
+               // console.log(obj2)
+
+                if (obj != "0") {
+                    for (i = 0, j = 1; i < obj.length; i++, j++) {
+                         //console.log(obj[i])
+                        $("#TablaRegistrarPlanilla tbody").append('<tr><td>' + j + '</td>' +
+                        '<td>' + obj[i].persona.vcNumeroDocumento + '</td>' +
+                        //'<td>' + obj[i].persona.vcApellidoPaterno + '</td>' +
+                        //'<td>' + obj[i].persona.vcApellidoMaterno + '</td>' +
+                        '<td colspan="3">' + obj[i].persona.vcApellidoPaterno + " " + obj[i].persona.vcApellidoMaterno + " " + obj[i].persona.vcNombres + '</td>' +
+                        '<td hidden>' + obj[i].puesto.IdPuesto + '</td>' +
+                        '<td>' + obj[i].puesto.Descripcion + '</td>' +
+                        '<td hidden>' + obj[i].AreaNatclar.IdAreaNatclar + '</td>' +
+                        '<td>' + obj[i].AreaNatclar.Descripcion  + '</td>' +
+                        '<td hidden>' + obj[i].gerencia.IdGerencia + '</td>' +
+                        '<td>' + obj[i].gerencia.vcDescripcion + '</td>' +
+                        '<td hidden>' + obj[i].sede.UnidadOrganizativa.iIdUnidadOrganizativa + '</td>' +
+                        '<td>' + obj[i].sede.UnidadOrganizativa.Prioridad.iIdPrioridad + '</td>' +
+                        '<td>' + obj[i].sede.UnidadOrganizativa.vcDescripcion + '</td>' +
+                        '<td hidden>' + obj[i].UbicacionTrabajo.EmpresaTitular.vcRucEmpresa + '</td>' +
+                        '<td>' + "1" + '</td>' +
+                        '<td>' + obj[i].UbicacionTrabajo.EmpresaTitular.nvRazonSocial + '</td>' +
+                        '<td hidden>' + obj[i].sede.vcIdSede + '</td>' +
+                        '<td>' + obj[i].sede.vcDescripcion + '</td>' +
+                        "<td><input type='text' class='fecha' id='fecha' name='fecha' style='border-width:0' readonly /></td>" +
+                        '<td hidden>' + obj[i].sistemaTrabajo.iIdSistemaTrabajo + '</td>' +
+                        '<td>' + obj[i].sistemaTrabajo.vcDescripcion + '</td>' +
+                        "<td><input type='date' value='' style='border-width:0' id='fechaIngreso' name='fechaIngreso' class='fechaIngreso'/></td>" +
+                        "<td><input type='date' value='' style='border-width:0' id='fechaCese' name='fechaCese' class='fechaCese'/></td>" +
+                        "<td><input type='number' name='sueldo' value='' style='border-width:0' id='sueldo' class='sueldo'/></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TieneAsig' name='TieneAsig' class='TieneAsig' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='asig' name='asig' class='asig' readonly/></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='dTrabajados' name='dTrabajados' class='dTrabajados' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='dVacaciones' name='dVacaciones' class='dVacaciones' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='VentaVacaciones' name='VentaVacaciones' class='VentaVacaciones' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='dSubsidios' name='dSubsidios' class='dSubsidios' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='dPermisoCG' name='dPermisoCG' class='dPermisoCG' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='dPermisoSG' name='dPermisoSG' class='dPermisoSG' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='dMaternidad' name='dMaternidad' class='dMaternidad' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='dLactancia' name='dLactancia' class='dLactancia' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='dFaltas' name='dFaltas' class='dFaltas' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalDias' name='TotalDias' class='TotalDias' readonly/></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='FerLab' name='FerLab' class='FerLab' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='dAdicionales' name='dAdicionales' class='dAdicionales' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='HE25' name='HE25' class='HE25' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='HE35' name='HE35' class='HE35' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='MinutosTardanzas' name='MinutosTardanzas' class='MinutosTardanzas'/></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='bDestaque' name='bDestaque' class='bDestaque' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='bProductividad' name='bProductividad' class='bProductividad' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='bMovilidad' name='bMovilidad' class='bMovilidad' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='bOtrosBonos' name='bOtrosBonos' class='bOtrosBonos' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='bOtros' name='bOtros' class='bOtros' /></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='haberes' name='haberes' class='haberes' readonly/></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalAsig' name='TotalAsig' class='TotalAsig' readonly/></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalBonos' name='TotalBonos' class='TotalBonos' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalVacaciones' name='TotalVacaciones' class='TotalVacaciones' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalVentaVacaciones' name='TotalVentaVacaciones' class='TotalVentaVacaciones' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalSubsidios' name='TotalSubsidios' class='TotalSubsidios' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalFerLab' name='TotalFerLab' class='TotalFerLab' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotaldAdicionales' name='TotaldAdicionales' class='TotaldAdicionales' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalHE25' name='TotalHE25' class='TotalHE25' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalHE35' name='TotalHE35' class='TotalHE35' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='IngresoMensualBasico' name='IngresoMensualBasico' class='IngresoMensualBasico' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalVacaciones2' name='TotalVacaciones2' class='TotalVacaciones2' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalBaseImponible' name='TotalBaseImponible' class='TotalBaseImponible' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='RegimenPension' name='RegimenPension' class='RegimenPension' /></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TipoAfp' name='TipoAfp' class='TipoAfp' /></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='FlujoPension' name='FlujoPension' class='FlujoPension' /></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='AFPAporte' name='AFPAporte' class='AFPAporte' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='AFPComision' name='AFPComision' class='AFPComision' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='AFPSeguro' name='AFPSeguro' class='AFPSeguro' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='AFPTotal' name='AFPTotal' class='AFPTotal' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='ONP' name='ONP' class='ONP' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='AportaEsSaludvida' name='AportaEsSaludvida' class='AportaEsSaludvida' /></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='EsSaludvida' name='EsSaludvida' class='EsSaludvida' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='Renta5' name='Renta5' class='Renta5' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalTardanzas' name='TotalTardanzas' class='TotalTardanzas' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='PrestamoPersonal' name='PrestamoPersonal' class='PrestamoPersonal'/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='ConvenioBanBif' name='ConvenioBanBif' class='ConvenioBanBif'/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='Seguro' name='Seguro' class='Seguro'/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='EPSMapfre' name='EPSMapfre' class='EPSMapfre'/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='EPSRimac' name='EPSRimac' class='EPSRimac'/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='EPSPacifico' name='EPSPacifico' class='EPSPacifico'/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='DsctoJudicial' name='DsctoJudicial' class='DsctoJudicial'/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='OtrosDsctos' name='OtrosDsctos' class='OtrosDsctos'/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='TotalDsctos' name='TotalDsctos' class='TotalDsctos' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='NetoHaberes' name='NetoHaberes' class='NetoHaberes' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='NetoVacaciones' name='NetoVacaciones' class='NetoVacaciones' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0;background-color: Snow' id='TotalNeto' name='TotalNeto' class='TotalNeto' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0;background-color: Snow' id='EsSalud' name='EsSalud' class='EsSalud' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0' id='EPS' name='EPS' class='EPS'/></td></td>" +
+                        //"<td><input type='number' value='' style='border-width:0;background-color: Snow' id='SctrSalud' name='SctrSalud' class='SctrSalud' readonly/></td></td>" +
+                        //"<td><input type='number' value='' style='border-width:0;background-color: Snow' id='SctrPension' name='SctrPension' class='SctrPension' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0;background-color: Snow' id='VidaLey' name='VidaLey' class='VidaLey' readonly/></td></td>" +
+                        "<td><input type='number' value='' style='border-width:0;background-color: Snow' id='TotalAportaciones' name='TotalAportaciones' class='TotalAportaciones' readonly/></td></td>" +
+                        '</td></tr>');
+                    }
+                }
+                else {
+                    swal("Usted no cuenta con Trabajadores asignados!")
+                }
+            }
+            else {
+                swal("Ocurrió un error al obtener a sus Trabajadores!")
+            }
+        }
+        xhr.send();
+        //xhr.send(dataobj);
+    }
+
+
+    function Calcular() {
+        $("#TablaRegistrarPlanilla tbody tr").find('td:eq(1)').each(function (index) {
+            //console.log(Number($(this).parents("tr").find('.sueldo').val()) + Number($(this).parents("tr").find('.asig').val()));
+            sueldo = Number($(this).parents("tr").find('.sueldo').val());
+
+            TieneAsig = Number($(this).parents("tr").find('.TieneAsig').val());
+            if (TieneAsig == 1) {
+                asig = parseFloat("85,00");
+                $(this).parents("tr").find('.asig').val(asig.toFixed(2));
+            } else {
+                asig = parseFloat("0,00");
+                $(this).parents("tr").find('.asig').val(asig.toFixed(2));
+            }
+
+            dTrabajados = Number($(this).parents("tr").find('.dTrabajados').val());
+            dVacaciones = Number($(this).parents("tr").find('.dVacaciones').val());
+            VentaVacaciones = Number($(this).parents("tr").find('.VentaVacaciones').val());
+            dPermisoCG = Number($(this).parents("tr").find('.dPermisoCG').val());
+            dPermisoSG = Number($(this).parents("tr").find('.dPermisoSG').val());
+            dMaternidad = Number($(this).parents("tr").find('.dMaternidad').val());
+            dLactancia = Number($(this).parents("tr").find('.dLactancia').val());
+            dSubsidios = Number($(this).parents("tr").find('.dSubsidios').val());
+            dFaltas = Number($(this).parents("tr").find('.dFaltas').val());
+            FerLab = Number($(this).parents("tr").find('.FerLab').val());
+            dAdicionales = Number($(this).parents("tr").find('.dAdicionales').val());
+            HE25 = Number($(this).parents("tr").find('.HE25').val());
+            HE35 = Number($(this).parents("tr").find('.HE35').val());
+
+            TotalDias = dTrabajados + dVacaciones + dPermisoCG + dPermisoSG + dMaternidad + dLactancia + dSubsidios + dFaltas + FerLab + dAdicionales;
+
+            bDestaque = Number($(this).parents("tr").find('.bDestaque').val());
+            bProductividad = Number($(this).parents("tr").find('.bProductividad').val());
+            bMovilidad = Number($(this).parents("tr").find('.bMovilidad').val());
+            bOtrosBonos = Number($(this).parents("tr").find('.bOtrosBonos').val());
+            bOtros = Number($(this).parents("tr").find('.bOtros').val());
+
+            sueldoT = ((sueldo / 30) * dTrabajados);
+            sueldoV = ((sueldo / 30) * dVacaciones);
+
+            TotalVentaVacaciones = ((sueldo / 30) * VentaVacaciones);
+
+            haberes = sueldoT;
+            TotalAsig = asig;
+            TotalBonos = bDestaque + bProductividad + bMovilidad + bOtrosBonos + bOtros;
+            TotalVacaciones2 = sueldoV;
+            TotalSubsidios = ((sueldo / 30) * dSubsidios);
+            TotalFerLab = (((sueldo / 30) * 2) * FerLab);
+            TotaldAdicionales = ((sueldo / 30) * dAdicionales);
+            TotalHE25 = ((((sueldo / 30) / 8) / 60) * 1.25) * HE25;
+            TotalHE35 = ((((sueldo / 30) / 8) / 60) * 1.35) * HE35;
+            
+            MinutosTardanzas = Number($(this).parents("tr").find('.MinutosTardanzas').val());
+
+            TotalFaltas = parseFloat('0.00');
+
+            IngresoMensualBasico = haberes + TotalAsig + TotalBonos + TotalSubsidios + TotalFerLab + TotaldAdicionales + TotalHE25 + TotalHE35;
+
+            TotalBaseImponible = IngresoMensualBasico + TotalVacaciones2;
+
+            RegimenPension = Number($(this).parents("tr").find('.RegimenPension').val());
+            TipoAfp = Number($(this).parents("tr").find('.TipoAfp').val());
+            FlujoPension = $(this).parents("tr").find('.FlujoPension').val();
+
+            if (RegimenPension == 1) {
+                if (FlujoPension == "F") {
+                    switch (TipoAfp) {
+                        case 1:
+                            AFPAporte = 0.1;
+                            AFPComision = 0.0155;
+                            AFPSeguro = 0.0136;
+
+                            AFPAporte = (parseFloat(TotalBaseImponible) * parseFloat(AFPAporte)).toFixed(2);
+                            AFPComision = (parseFloat(TotalBaseImponible) * parseFloat(AFPComision)).toFixed(2);
+                            AFPSeguro = (parseFloat(TotalBaseImponible) * parseFloat(AFPSeguro)).toFixed(2);
+
+                            AFPTotal = (parseFloat(AFPAporte) + parseFloat(AFPComision) + parseFloat(AFPSeguro)).toFixed(2);
+                            //AFPTotal = Afptotal.toFixed(2);
+                            ONP = parseFloat("0,00");
+                            console.log(AFPAporte)
+                            console.log(AFPComision)
+                            console.log(AFPSeguro)
+                            console.log(AFPTotal)
+                            break;
+
+                        case 2:
+                            AFPAporte = 0.1;
+                            AFPComision = 0.0160;
+                            AFPSeguro = 0.0136;
+
+                            AFPAporte = (parseFloat(TotalBaseImponible) * parseFloat(AFPAporte)).toFixed(2);
+                            AFPComision = (parseFloat(TotalBaseImponible) * parseFloat(AFPComision)).toFixed(2);
+                            AFPSeguro = (parseFloat(TotalBaseImponible) * parseFloat(AFPSeguro)).toFixed(2);
+
+                            AFPTotal = (parseFloat(AFPAporte) + parseFloat(AFPComision) + parseFloat(AFPSeguro)).toFixed(2);
+                            //AFPTotal = Afptotal.toFixed(2);
+                            ONP = parseFloat("0,00");
+                            console.log(AFPAporte)
+                            console.log(AFPComision)
+                            console.log(AFPSeguro)
+                            console.log(AFPTotal)
+
+                            break;
+
+                        case 3:
+                            AFPAporte = 0.1;
+                            AFPComision = 0.0169;
+                            AFPSeguro = 0.0136;
+
+                            AFPAporte = (parseFloat(TotalBaseImponible) * parseFloat(AFPAporte)).toFixed(2);
+                            AFPComision = (parseFloat(TotalBaseImponible) * parseFloat(AFPComision)).toFixed(2);
+                            AFPSeguro = (parseFloat(TotalBaseImponible) * parseFloat(AFPSeguro)).toFixed(2);
+
+                            AFPTotal = (parseFloat(AFPAporte) + parseFloat(AFPComision) + parseFloat(AFPSeguro)).toFixed(2);
+                            //AFPTotal = Afptotal.toFixed(2);
+                            ONP = parseFloat("0,00");
+                            console.log(AFPAporte)
+                            console.log(AFPComision)
+                            console.log(AFPSeguro)
+                            console.log(AFPTotal)
+                            break;
+
+                        case 4:
+                            AFPAporte = 0.1;
+                            AFPComision = 0.0147;
+                            AFPSeguro = 0.0136;
+
+                            AFPAporte = (parseFloat(TotalBaseImponible) * parseFloat(AFPAporte)).toFixed(2);
+                            AFPComision = (parseFloat(TotalBaseImponible) * parseFloat(AFPComision)).toFixed(2);
+                            AFPSeguro = (parseFloat(TotalBaseImponible) * parseFloat(AFPSeguro)).toFixed(2);
+
+                            AFPTotal = (parseFloat(AFPAporte) + parseFloat(AFPComision) + parseFloat(AFPSeguro)).toFixed(2);
+                            //AFPTotal = Afptotal.toFixed(2);
+                            ONP = parseFloat("0,00");
+                            console.log(AFPAporte)
+                            console.log(AFPComision)
+                            console.log(AFPSeguro)
+                            console.log(AFPTotal)
+
+                            break;
+                    }
+                } else {
+                    switch (TipoAfp) {
+                        case 1:
+                            AFPAporte = 0.1;
+                            AFPComision = 0.0123;
+                            AFPSeguro = 0.0136;
+
+                            AFPAporte = (parseFloat(TotalBaseImponible) * parseFloat(AFPAporte)).toFixed(2);
+                            AFPComision = (parseFloat(TotalBaseImponible) * parseFloat(AFPComision)).toFixed(2);
+                            AFPSeguro = (parseFloat(TotalBaseImponible) * parseFloat(AFPSeguro)).toFixed(2);
+
+                            AFPTotal = (parseFloat(AFPAporte) + parseFloat(AFPComision) + parseFloat(AFPSeguro)).toFixed(2);
+                            //AFPTotal = Afptotal.toFixed(2);
+                            ONP = parseFloat("0,00");
+                            //console.log(AFPAporte)
+                            //console.log(AFPComision)
+                            //console.log(AFPSeguro)
+                            //console.log(AFPTotal)
+                            break;
+
+                        case 2:
+                            AFPAporte = 0.1;
+                            AFPComision = 0.0119;
+                            AFPSeguro = 0.0136;
+
+                            AFPAporte = (parseFloat(TotalBaseImponible) * parseFloat(AFPAporte)).toFixed(2);
+                            AFPComision = (parseFloat(TotalBaseImponible) * parseFloat(AFPComision)).toFixed(2);
+                            AFPSeguro = (parseFloat(TotalBaseImponible) * parseFloat(AFPSeguro)).toFixed(2);
+
+                            AFPTotal = (parseFloat(AFPAporte) + parseFloat(AFPComision) + parseFloat(AFPSeguro)).toFixed(2);
+                            //AFPTotal = Afptotal.toFixed(2);
+                            ONP = parseFloat("0,00");
+                            //console.log(AFPAporte)
+                            //console.log(AFPComision)
+                            //console.log(AFPSeguro)
+                            //console.log(AFPTotal)
+
+                            break;
+
+                        case 3:
+                            AFPAporte = 0.1;
+                            AFPComision = 0.0146;
+                            AFPSeguro = 0.0136;
+
+                            AFPAporte = (parseFloat(TotalBaseImponible) * parseFloat(AFPAporte)).toFixed(2);
+                            AFPComision = (parseFloat(TotalBaseImponible) * parseFloat(AFPComision)).toFixed(2);
+                            AFPSeguro = (parseFloat(TotalBaseImponible) * parseFloat(AFPSeguro)).toFixed(2);
+
+                            AFPTotal = (parseFloat(AFPAporte) + parseFloat(AFPComision) + parseFloat(AFPSeguro)).toFixed(2);
+                            //AFPTotal = Afptotal.toFixed(2);
+                            ONP = parseFloat("0,00");
+                            //console.log(AFPAporte)
+                            //console.log(AFPComision)
+                            //console.log(AFPSeguro)
+                            //console.log(AFPTotal)
+                            break;
+
+                        case 4:
+                            AFPAporte = 0.1;
+                            AFPComision = 0.0038;
+                            AFPSeguro = 0.0136;
+
+                            AFPAporte = (parseFloat(TotalBaseImponible) * parseFloat(AFPAporte)).toFixed(2);
+                            AFPComision = (parseFloat(TotalBaseImponible) * parseFloat(AFPComision)).toFixed(2);
+                            AFPSeguro = (parseFloat(TotalBaseImponible) * parseFloat(AFPSeguro)).toFixed(2);
+
+                            AFPTotal = (parseFloat(AFPAporte) + parseFloat(AFPComision) + parseFloat(AFPSeguro)).toFixed(2);
+                            //AFPTotal = Afptotal.toFixed(2);
+                            ONP = parseFloat("0,00");
+                            //console.log(AFPAporte)
+                            //console.log(AFPComision)
+                            //console.log(AFPSeguro)
+                            //console.log(AFPTotal)
+
+                            break;
+                    }
+                }
+            } else if (RegimenPension == 2){
+                ONP = 0.13;
+                ONP = (parseFloat(TotalBaseImponible) * parseFloat(ONP)).toFixed(2);
+                AFPAporte = parseFloat("0,00");
+                AFPComision = parseFloat("0,00");
+                AFPSeguro = parseFloat("0,00");
+                AFPTotal = parseFloat("0,00");
+                TipoAfp = Number($(this).parents("tr").find('.TipoAfp').val(0));
+                FlujoPension = Number($(this).parents("tr").find('.FlujoPension').val(0));
+                //console.log(ONP)
+            }
+
+            //AportaEsSaludvida = Number($(this).parents("tr").find('.AportaEsSaludvida').val());
+
+            //if (AportaEsSaludvida == 1) {
+            //    EsSaludvida = (parseFloat("5,00")).toFixed(2);
+            //    //console.log(EsSaludvida)
+            //    $(this).parents("tr").find('.EsSaludvida').val(EsSaludvida);
+            //} else {
+            //    EsSaludvida = (parseFloat("0,00")).toFixed(2);
+            //    AportaEsSaludvida = parseFloat("0,00");
+            //    $(this).parents("tr").find('.AportaEsSaludvida').val(AportaEsSaludvida);
+            //    //console.log(EsSaludvida)
+            //    $(this).parents("tr").find('.EsSaludvida').val(EsSaludvida);
+            //}
+           
+            EsSaludvida = Number($(this).parents("tr").find('.EsSaludvida').val()).toFixed(2);
+
+            TotalTardanzas = (((sueldo / 30) / 8) / 60) * MinutosTardanzas;
+
+            PrestamoPersonal = Number($(this).parents("tr").find('.PrestamoPersonal').val()).toFixed(2);
+            ConvenioBanBif = Number($(this).parents("tr").find('.ConvenioBanBif').val()).toFixed(2);
+            EPSMapfre = Number($(this).parents("tr").find('.EPSMapfre').val()).toFixed(2);
+            EPSRimac = Number($(this).parents("tr").find('.EPSRimac').val()).toFixed(2);
+            EPSPacifico = Number($(this).parents("tr").find('.EPSPacifico').val()).toFixed(2);
+
+            //EPS = Number($(this).parents("tr").find('.EPS').val());
+            Seguro = Number($(this).parents("tr").find('.Seguro').val());
+
+            if (Seguro == 1) {
+                MontoSeguro = TotalBaseImponible * 0.0225;
+                MontoEsSalud = TotalBaseImponible * 0.0675;
+                MontoVacio = parseFloat("0,00");
+                $(this).parents("tr").find('.EPS').val(MontoSeguro.toFixed(2));
+                $(this).parents("tr").find('.EsSalud').val(MontoEsSalud.toFixed(2));
+                //$(this).parents("tr").find('.EPSMapfre').val(MontoVacio.toFixed(2));
+                //$(this).parents("tr").find('.EPSRimac').val(MontoVacio.toFixed(2));
+                //$(this).parents("tr").find('.EPSPacifico').val(MontoVacio.toFixed(2));
+            } else {
+                EsSalud = TotalBaseImponible * 0.09;
+                MontoVacio = parseFloat("0,00");
+                $(this).parents("tr").find('.EsSalud').val(EsSalud.toFixed(2));
+                $(this).parents("tr").find('.EPS').val(MontoVacio.toFixed(2));
+                //$(this).parents("tr").find('.EPSMapfre').val(MontoVacio.toFixed(2));
+                //$(this).parents("tr").find('.EPSRimac').val(MontoVacio.toFixed(2));
+                //$(this).parents("tr").find('.EPSPacifico').val(MontoVacio.toFixed(2));
+            }
+            
+            DsctoJudicial = Number($(this).parents("tr").find('.DsctoJudicial').val()).toFixed(2);
+            OtrosDsctos = Number($(this).parents("tr").find('.OtrosDsctos').val()).toFixed(2);
+            NetoVacaciones = parseFloat('0.00');
+           
+            //RENTA 5TA CATEGORIA
+            UIT = 4050;
+            IngMens = sueldo + asig;
+            IngAnual = (IngMens * 14 + ((IngMens * 2) * 0.09));
+            
+            Deducion = UIT * (-7);
+            RemComputable = IngAnual + Deducion;
+            
+            var tasa = parseFloat('0.00');
+            var impuestoAnual = parseFloat('0.00');
+            var diff = parseFloat('0.00');
+            var impuestoAnual1 = parseFloat('0.00');
+            var impuestoAnual2 = parseFloat('0.00');
+            var impuestoAnual3 = parseFloat('0.00');
+            var impuestoAnual4 = parseFloat('0.00');
+            var Renta5 = parseFloat('0.00');
+
+            if (RemComputable > 0) {
+                for (var i = 0; i < 5 ; i++) {
+
+                    switch (i) {
+
+                        case 0:
+                            diff = 0;
+                            tasa = 0.08;
+
+                            if (RemComputable < 20250)
+                                diff = RemComputable
+                            else
+                                diff += 20250;
+                            impuestoAnual += tasa * diff;
+                           
+                            break;
+                        case 1:
+                            diff = 0;
+                            tasa = 0.14;
+                            if (RemComputable > 20250) {
+                                if (RemComputable <= 81000) {
+                                    diff = RemComputable - 20250;
+                                }
+                                else {
+                                    diff = 60750;
+                                }
+                            }
+                            else
+                                diff = 0;
+                            impuestoAnual += tasa * diff;
+                           
+                            break;
+                        case 2:
+                            diff = 0;
+                            tasa = 0.17;
+                            if (RemComputable > 81000) {
+                                if (RemComputable <= 141750) {
+                                    diff = RemComputable - 81001;
+                                }
+                                else {
+                                    diff = 60750;
+                                }
+                            }
+                            else
+                                diff = 0;
+                            impuestoAnual += tasa * diff;
+                           
+                            break;
+                        case 3:
+                            diff = 0;
+                            tasa = 0.20;
+                            if (RemComputable > 141750) {
+                                if (RemComputable <= 182250) {
+                                    diff = RemComputable - 141751;
+                                }
+                                else {
+                                    diff = 40500;
+                                }
+                            }
+                            else
+                                diff = 0;
+                            impuestoAnual += tasa * diff;
+
+
+                            break;
+                        case 4:
+                            diff = 0;
+                            tasa = 0.30;
+                            if (RemComputable >= 182251) {
+                                diff = RemComputable - 182251;
+                            }
+                            else {
+                                diff = 0;
+                                
+                            }
+                            impuestoAnual += tasa * diff;
+                            //console.log(diff)
+                            break;
+                    }
+                }
+                impuestoAnual = impuestoAnual.toFixed(0);
+                Renta5 = (impuestoAnual / 12).toFixed(0);
+            }
+           
+            TotalDsctos = parseFloat(parseFloat(TotalTardanzas) + parseFloat(Renta5) + parseFloat(AFPTotal) + parseFloat(ONP) + parseFloat(EsSaludvida) + parseFloat(PrestamoPersonal) + parseFloat(ConvenioBanBif) + parseFloat(EPSMapfre) + parseFloat(EPSRimac) + parseFloat(EPSPacifico) + parseFloat(DsctoJudicial) + parseFloat(OtrosDsctos)).toFixed(2);
+            NetoHaberes = (parseFloat(TotalBaseImponible) - parseFloat(TotalDsctos)).toFixed(2);
+            TotalNeto = (parseFloat(NetoHaberes) + parseFloat(NetoVacaciones)).toFixed(2);
+
+            //SctrS = 0.0038;
+            //ScrtP = 0.0038;
+            VidaL = 0.0030;
+
+            fecha = new Date();
+            var cadena = fecha.getFullYear();
+            
+            fechaIngresos = $(this).parents("tr").find('.fechaIngreso').val();
+            
+            var element = fechaIngresos.split(' ');
+            
+            var fechas = element[0].split('-');
+            
+            Fecha = fechas[2] + '/' + fechas[1] + '/' + fechas[0];
+            fechaAnio = fechas[0];
+            
+            difFecha = Number(cadena - fechaAnio);
+            
+            if (difFecha > 3) {
+                
+                VidaLey = parseFloat(sueldo * VidaL).toFixed(2);
+                $(this).parents("tr").find('.VidaLey').val(VidaLey);
+
+            } else {
+                VidaLey = parseFloat("0,00").toFixed(2);
+                $(this).parents("tr").find('.VidaLey').val(VidaLey);
+
+            }
+            
+            EsSalud1 = Number($(this).parents("tr").find('.EsSalud').val()).toFixed(2);
+            EPS1 = Number($(this).parents("tr").find('.EPS').val()).toFixed(2);
+            VidaLey1 = Number($(this).parents("tr").find('.VidaLey').val()).toFixed(2);
+            TotalAportacionesA = parseFloat(EsSalud1) + parseFloat(EPS1) + parseFloat(VidaLey1);
+            TotalAportaciones = parseFloat(TotalAportacionesA).toFixed(2);
+
+            $(this).parents("tr").find('.TotalDias').val(TotalDias);
+            $(this).parents("tr").find('.TotalSubsidios').val(TotalSubsidios.toFixed(2));
+            $(this).parents("tr").find('.TotaldAdicionales').val(TotaldAdicionales.toFixed(2));
+            $(this).parents("tr").find('.TotalFerLab').val(TotalFerLab.toFixed(2));
+            $(this).parents("tr").find('.haberes').val(haberes.toFixed(2));
+            $(this).parents("tr").find('.TotalBonos').val(TotalBonos.toFixed(2));
+            $(this).parents("tr").find('.TotalVacaciones').val(sueldoV.toFixed(2));
+            $(this).parents("tr").find('.TotalVentaVacaciones').val(TotalVentaVacaciones.toFixed(2));
+            $(this).parents("tr").find('.TotalAsig').val(TotalAsig.toFixed(2));
+            $(this).parents("tr").find('.TotalHE25').val(TotalHE25.toFixed(2));
+            $(this).parents("tr").find('.TotalHE35').val(TotalHE35.toFixed(2));
+            $(this).parents("tr").find('.IngresoMensualBasico').val(IngresoMensualBasico.toFixed(2));
+            $(this).parents("tr").find('.TotalVacaciones2').val(TotalVacaciones2.toFixed(2));
+            $(this).parents("tr").find('.TotalBaseImponible').val(TotalBaseImponible.toFixed(2));
+            $(this).parents("tr").find('.AFPAporte').val(AFPAporte);
+            $(this).parents("tr").find('.AFPComision').val(AFPComision);
+            $(this).parents("tr").find('.AFPSeguro').val(AFPSeguro);
+            $(this).parents("tr").find('.AFPTotal').val(AFPTotal);
+            $(this).parents("tr").find('.ONP').val(ONP);
+            $("#TablaRegistrarPlanilla tbody tr:eq(" + index + ") .Renta5").val(Renta5);
+            $(this).parents("tr").find('.TotalTardanzas').val(TotalTardanzas.toFixed(2));
+            $(this).parents("tr").find('.TotalDsctos').val(TotalDsctos);
+            $(this).parents("tr").find('.NetoHaberes').val(NetoHaberes);
+            $(this).parents("tr").find('.TotalNeto').val(TotalNeto);
+            $(this).parents("tr").find('.TotalAportaciones').val(TotalAportaciones);
+        })
+    }
+
+    $(document).on("click", "#btnGenerarPlanilla", function () {
+        Calcular();
+    });
+
+    $(function () {
+        $(".datepicker").datepicker();
+
+        $(function () {
+            theTable = $("#TablaRegistrarPlanilla");
+            $("#SrcPlanilla").keyup(function () {
+                $.uiTableFilter(theTable, this.value);
+            });
+        });
+
+    });
+
+
+    //$(document).on("click", "#btnExport", function (e) {
+       
+    //    console.log("entre")
+    //    //window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('#TablaPlanilla').html()));
+        
+    //    var a = document.createElement('a');
+    //    //getting data from our div that contains the HTML table
+    //    var data_type = 'data:application/vnd.ms-excel';
+    //    var table_div = document.getElementById('#TablaPlanilla');
+    //    var table_html = table_div.outerHTML.replace(/ /g, '%20');
+    //    a.href = data_type + ', ' + table_html;
+    //    //setting the file name
+    //    a.download = 'exported_table.xls';
+    //    //triggering the function
+    //    a.click();
+    //    //just in case, prevent default behaviour
+    //    e.preventDefault();
+    //    //e.preventDefault();
+    //});
+
+</script>

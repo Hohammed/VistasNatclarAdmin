@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Buscar Valorizacion</title>
+    <link rel="import" href="../../Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-green fixed sidebar-mini sidebar-collapse">
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+        </script>
+        <script type="text/javascript">
+            $(document).on("ready", function () {
+                function configuracion() {
+                    $("#tblValorizaciones").DataTable();
+                }
+
+                configuracion();
+            });
+        </script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>BUSCAR VALORIZACIONES</h1>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box collapsed-box">
+                                <div class="box-header ">
+                                    <h3 class="box-title">BUSCAR VALORIZACIONES</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                            <i class="fa fa-angle-double-down"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label id="lblTipoExamen" style=" width:40px">Tipo</label>
+                                                <select class="form-control" id="cboTipoValorizacion" style=" width:100%">
+                                                    <option value="SPRE">Evaluacion Medico Ocupacional</option>
+                                                    <option value="MEDI">Medicamentos</option>
+                                                    <option value="SPRO">Profesionales</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblEstado" style=" width:80px">Estado</label>
+                                                <input type="text" class="form-control" name="nvEstado" id="nvEstado" value="" />
+                                                <input type="hidden" id="vcEstado" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <button type="button" class="btn btn-success sincabecera" id="btnBuscarAtencion" name="btnBuscarAtencion">
+                                                    <span class="glyphicon glyphicon-search"></span>
+                                                    <b>Buscar</b>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblFechaIni" style=" width:40px">Fecha</label>
+                                                <input type="text" class="datepicker mifecha form-control" placeholder="dd/mm/yyyy" id="dIniAtencion" name="dIniAtencion" value="" style=" width:100%;" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblFechaFin52">Fecha Fin</label>
+                                                <input type="text" class="datepicker mifecha form-control" placeholder="dd/mm/yyyy" id="dFinAtencion" name="dFinAtencion" value="" style="width: 100%;" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblPagador" style=" width:80px">Pagador</label>
+                                                <input type="text" class="form-control" name="nvPagador" id="nvPagador" value="" />
+                                                <input type="hidden" id="vcRucPagador" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">LISTA VALORIZACIONES</h3>
+                            </div>
+                            <div class="box-body">
+                                <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table id="tblValorizaciones">
+                                                <thead>
+                                                    <tr>
+                                                        <th>SEL</th>
+                                                        <th>TIPO</th>
+                                                        <th>PAGADOR</th>
+                                                        <th>ESTADO</th>
+                                                        <th>UNIDAD</th>
+                                                        <th>SUBTOTAL</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><input type="checkbox" class="chkSumarImporte" /></td>
+                                                        <td class="sorting_1">Gecko</td>
+                                                        <td>Firefox 1.0</td>
+                                                        <td>Win 98+ / OSX.2+</td>
+                                                        <td>1.7</td>
+                                                        <td>A</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th>SEL</th>
+                                                        <th>TIPO</th>
+                                                        <th>PAGADOR</th>
+                                                        <th>ESTADO</th>
+                                                        <th>UNIDAD</th>
+                                                        <th>SUBTOTAL</th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

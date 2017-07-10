@@ -1,0 +1,834 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>S.G. Natclar</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="shortcut icon" type="image/x-icon" href="../Images/favicon.ico">
+        <link href="../../public/web/css/estilos.css" rel="stylesheet" />
+        <link href="../../public/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="../../public/plugins/admin-lte/css/AdminLTE.min.css" rel="stylesheet" />
+        <link href="../../public/plugins/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+        <link href="../../public/plugins/admin-lte/css/skins/_all-skins.min.css" rel="stylesheet" />
+        <link href="../../public/plugins/admin-lte/css/skins/_all-skins.css" rel="stylesheet" />
+        <link href="../../Content/jquery-ui.css" rel="stylesheet" />
+        <link href="../../Content/jquery.datetimepicker.css" rel="stylesheet" />
+        <link href="../../public/web/css/jquery.timepicker.css" rel="stylesheet" />
+        <link href="../../public/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+        <link href="../../public/plugins/datatables/jquery.dataTables.css" rel="stylesheet" />
+        <link href="../../public/plugins/datatables/jquery.dataTables_themeroller.css" rel="stylesheet" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+        <link href="../../public/web/css/sweetalert.css" rel="stylesheet" />
+        <link href="../../public/web/css/skins/flat/blue.css" rel="stylesheet" />
+
+    <link href="../../public/web/js/Mottie-tablesorter-08bf513/css/theme.blue.css" rel="stylesheet" />
+</head>
+
+<!-- ADD THE CLASS layout-boxed TO GET A BOXED LAYOUT -->
+<body class="hold-transition skin-blue fixed sidebar-mini sidebar-collapse">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="../Shared/Layout.html" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>N</b>A</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg">NATCLAR <b>ADMIN</b></span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="../../Images/avatar.jpg" class="img-circle" alt="User Image" width="20" />
+                                <label id="nvUsuario" style="color:#ffffff"></label> <br />
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="../../Images/avatar.jpg" class="img-circle" alt="User Image" width="50" />
+                                    <br />
+                                    <label id="nvUsuario1" style="color:#ffffff"></label> <br />
+                                    <label id="nvRol" style="color:#ffffff"></label><br />
+                                    <input type="hidden" name="dni" id="dni" value=" " />
+                                    <label id="nvSede" style="color:#ffffff"></label>
+                                </li>
+
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <!--<div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>-->
+                                    <div class="pull-right">
+                                        <input type="button" id="CerrarSesion" class="btn btn-default btn-flat" value="Cerrar Sesión">
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+                        <li>
+                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- =============================================== -->
+        <!-- Left side column. contains the sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li class="header">MENÚ DE NAVEGACIÓN</li>
+                    <li class="treeview">
+                        <a href="../Shared/Layout.html">
+                            <i class="fa fa-home"></i> <span>INICIO</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        
+                    </li>
+                    <!--<li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-medkit"></i>
+                            <span>CONSULTAS MÉDICAS</span>
+                            <span class="pull-right-container">
+                                <span class="label label-primary pull-right"></span>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
+                            <li class="active"><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
+                            <li><a href="fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
+                            <li><a href="collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-calculator"></i>
+                            <span>CONTABILIDAD</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+                            <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+                            <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+                            <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-dollar"></i>
+                            <span>FINANZAS</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+                            <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+                            <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+                            <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-pie-chart"></i>
+                            <span>LOGISTICA</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+                            <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+                            <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+                            <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                        </ul>
+                    </li>-->
+                    <!--active-->
+                    <li class="treeview" id="RRHH" style="display:none">
+                        <a href="#">
+                            <i class="fa fa-group"></i>
+                            <span>RRHH</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#" style="display:none" id="PadreRequerimiento">
+                                    <i class="fa fa-circle-o"></i>Requerimiento
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li id="BuscarRequerimientoRRHH" style="display: none"><a href="../RRHH/BuscarRequerimiento.html"><i class="fa fa-circle-o"></i>Buscar Requerimiento</a></li>
+                                </ul>
+                                <ul class="treeview-menu">
+                                    <li id="RegistrarRequerimientoRRHH" style="display: none"><a href="../RRHH/RegistrarRequerimientoRRHH.html"><i class="fa fa-circle-o"></i>Registrar Requerimiento</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#" style="display:none" id="PadreAsistencia">
+                                    <i class="fa fa-circle-o"></i>Asistencia
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li id="RegistrarAsistencia" style="display:none"><a href="../RRHH/RegistrarAsistencia"><i class="fa fa-circle-o"></i>Registrar Asistencia</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#" style="display:none" id="PadreTareo">
+                                    <i class="fa fa-circle-o"></i>Tareo
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li id="BuscarTareo" style="display:none"><a href="../RRHH/BuscarTareo"><i class="fa fa-circle-o"></i>Buscar Tareo</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#" style="display:none" id="PadrePlanilla">
+                                    <i class="fa fa-circle-o"></i>Planilla
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li id="Planilla" style="display:none"><a href="../RRHH/Planilla"><i class="fa fa-circle-o"></i>Generar Planilla</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#" style="display:none" id="PadreMovimientos">
+                                    <i class="fa fa-circle-o"></i>Movimientos
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li id="BuscarMovimiento" style="display:none"><a href="../RRHH/BuscarMovimiento"><i class="fa fa-circle-o"></i>Buscar Movimiento</a></li>
+                                    <li id="RegistrarMovimiento" style="display: none"><a href="../RRHH/RegistrarMovimiento.html"><i class="fa fa-circle-o"></i>Registrar Movimiento</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#"style="display:none" id="PadreMOF">
+                                    <i class="fa fa-circle-o"></i>MOF
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li id="BuscarMOF" style="display: none"><a href="../RRHH/BuscarMOF"><i class="fa fa-circle-o"></i>Buscar MOF</a></li>
+                                    <li id="RegistrarMOF" style="display: none"><a href="../RRHH/RegistrarMOF.html"><i class="fa fa-circle-o"></i>Registrar MOF</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#" style="display:none" id="PadreVacaciones">
+                                    <i class="fa fa-circle-o"></i>Vacaciones
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li id="RegistrarVacaciones" style="display: none"><a href="../RRHH/RegistrarVacaciones.html"><i class="fa fa-circle-o"></i>Solicitar Vacaciones</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#" style="display:none" id="PadreTrabajador">
+                                    <i class="fa fa-circle-o"></i>Trabajador
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li id="RegistrarTrabajador" style="display: none"><a href="../RRHH/RegistrarTrabajador.html"><i class="fa fa-circle-o"></i>Registrar Trabajador</a></li>
+                                </ul>
+                    </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="treeview" style="display:none">
+                        <a href="#">
+                            <i class="fa fa-shopping-cart"></i> <span>Compras</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-circle-o"></i>Entradas
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="../Purchases/BuscarEntrada"><i class="fa fa-circle-o"></i>Buscar Entradas</a></li>
+                                    <li><a href="../Purchases/RegistrarEntrada"><i class="fa fa-circle-o"></i>Registrar Entrada</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-circle-o"></i>Salidas
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="../Purchases/BuscarSalida"><i class="fa fa-circle-o"></i>Buscar Salidas</a></li>
+                                    <li><a href="../Purchases/RegistrarSalida"><i class="fa fa-circle-o"></i>Registrar Salidas</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!--<ul class="treeview-menu">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-circle-o"></i>Traslados
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="../Purchases/BuscarTraslado"><i class="fa fa-circle-o"></i>Buscar Traslado</a></li>
+                                </ul>
+                            </li>
+                        </ul>-->
+
+                        <ul class="treeview-menu" style="display:none">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-circle-o"></i>Requerimientos
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="../Purchases/BuscarRequerimientoDetalleCompra"><i class="fa fa-circle-o"></i>Buscar Requerimiento</a></li>
+                                    <li><a href="../Purchases/RegistrarRequerimientoCompra"><i class="fa fa-circle-o"></i>Registrar Requerimiento</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-circle-o"></i>Ordenes de Compra
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="../Purchases/BuscarOrdenCompra"><i class="fa fa-circle-o"></i>Buscar Orden Compra</a></li>
+                                    <li><a href="../Purchases/RegistrarOrdendeCompra"><i class="fa fa-circle-o"></i>Registrar Orden Compra</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+
+
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-circle-o"></i>Cotizacion
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="../Purchases/BuscarCotizacion"><i class="fa fa-circle-o"></i>Buscar Cotizacion</a></li>
+                                    <li><a href="../Purchases/RegistrarCotizacion"><i class="fa fa-circle-o"></i>Registrar Cotizacion</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-circle-o"></i>Pedido
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="../Purchases/BuscarPedido"><i class="fa fa-circle-o"></i>Buscar Pedido</a></li>
+                                    <li><a href="../Purchases/RegistrarPedido"><i class="fa fa-circle-o"></i>Registrar Pedido</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-circle-o"></i>Articulo
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="../Purchases/AjusteStock"><i class="fa fa-circle-o"></i>Inventario Articulos</a></li>
+                                    <li><a href="../Purchases/BusquedaAjusteStock"><i class="fa fa-circle-o"></i>Busqueda de Inventario Articulos</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-circle-o"></i>Almacen
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="../Purchases/BuscarAlmacen"><i class="fa fa-circle-o"></i>Buscar Almacenes</a></li>
+                                    <li><a href="../Purchases/BusquedaStockAlmacen"><i class="fa fa-circle-o"></i>Buscar Stock Almacen</a></li>
+                                    <li><a href="../Purchases/BusquedaKardexAlmacenMaterial"><i class="fa fa-circle-o"></i>Buscar Kardex Almacen</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+
+                    </li>
+
+                    <li class="treeview" style="display:none">
+                        <a href="#">                          
+                            <i class="fa fa-dollar"></i> <span>Finanzas</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="../Finance/BuscarAtencion"><i class="fa fa-circle-o"></i>BuscarAtencion</a></li>
+                            <li><a href="../Finance/RegistrarDocumentoVenta"><i class="fa fa-circle-o"></i>Registrar Documento Venta</a></li>
+                            <li><a href="../Finance/RegistrarPago"><i class="fa fa-circle-o"></i>Registrar Pago</a></li>
+                            <li><a href="../Finance/BuscarValorizacion"><i class="fa fa-circle-o"></i>Buscar Valorizacion</a></li>
+                            <li><a href="../Finance/BuscarDocumentoVenta"><i class="fa fa-circle-o"></i>Buscar Documento Venta</a></li>
+                        </ul>
+                    </li>
+                    <!--<li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-edit"></i> <span>Forms</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="../forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
+                            <li><a href="../forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+                            <li><a href="../forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-table"></i> <span>Tables</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="../tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
+                            <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../calendar.html">
+                            <i class="fa fa-calendar"></i> <span>Calendar</span>
+                            <span class="pull-right-container">
+                                <small class="label pull-right bg-red">3</small>
+                                <small class="label pull-right bg-blue">17</small>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../mailbox/mailbox.html">
+                            <i class="fa fa-envelope"></i> <span>Mailbox</span>
+                            <span class="pull-right-container">
+                                <small class="label pull-right bg-yellow">12</small>
+                                <small class="label pull-right bg-green">16</small>
+                                <small class="label pull-right bg-red">5</small>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-folder"></i> <span>Examples</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="../examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
+                            <li><a href="../examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
+                            <li><a href="../examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
+                            <li><a href="../examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
+                            <li><a href="../examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
+                            <li><a href="../examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
+                            <li><a href="../examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
+                            <li><a href="../examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+                            <li><a href="../examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-share"></i> <span>Multilevel</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-circle-o"></i> Level One
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-circle-o"></i> Level Two
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                            <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                        </ul>
+                    </li>-->
+                    <!--<li><a href="../../documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+                    <li class="header">LABELS</li>
+                    <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+                    <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
+                    <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>-->
+                    </li>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- =============================================== -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <!--<section class="content-header">
+                <h1>
+                    Boxed Layout
+                    <small>Blank example to the boxed layout</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="#">Layout</a></li>
+                    <li class="active">Fixed</li>
+                </ol>
+            </section>-->
+            <!-- Main content -->
+            <section class="content">
+                <!--<input type="text" name="name" value=" " id="prueba"/>-->
+                <br /><br /><br /><br />
+                <ul id="carousel">
+                    <li><img width="1000" height="375" src="../../Images/image_1.jpg" /></li>
+                    <li><img width="1000" height="375" src="../../Images/image_2.jpg" /></li>
+                    <li><img width="1000" height="375" src="../../Images/image_3.jpg" /></li>
+                    <li><img width="1000" height="375" src="../../Images/image_4.jpg" /></li>
+                </ul>
+            </section>
+           
+        </div>
+        
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.3.8
+            </div>
+            <strong>Copyright &copy; 2017 <a href="http://www.natclar.com.pe">S.G. NATCLAR S.A.C.</a></strong> All rights
+            reserved.
+        </footer>
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Create the tabs -->
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+                <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- Home tab content -->
+                <div class="tab-pane" id="control-sidebar-home-tab">
+                    <h3 class="control-sidebar-heading">Recent Activity</h3>
+                    <ul class="control-sidebar-menu">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+                                    <p>Will be 23 on April 24th</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="menu-icon fa fa-user bg-yellow"></i>
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+                                    <p>New phone +1(800)555-1234</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+                                    <p>nora@example.com</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="menu-icon fa fa-file-code-o bg-green"></i>
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+                                    <p>Execution time 5 seconds</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.control-sidebar-menu -->
+                    <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                    <ul class="control-sidebar-menu">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">
+                                    Custom Template Design
+                                    <span class="label label-danger pull-right">70%</span>
+                                </h4>
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">
+                                    Update Resume
+                                    <span class="label label-success pull-right">95%</span>
+                                </h4>
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">
+                                    Laravel Integration
+                                    <span class="label label-warning pull-right">50%</span>
+                                </h4>
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">
+                                    Back End Framework
+                                    <span class="label label-primary pull-right">68%</span>
+                                </h4>
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.control-sidebar-menu -->
+                </div>
+                <!-- /.tab-pane -->
+                <!-- Stats tab content -->
+                <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+                <!-- /.tab-pane -->
+                <!-- Settings tab content -->
+                <div class="tab-pane" id="control-sidebar-settings-tab">
+                    <form method="post">
+                        <h3 class="control-sidebar-heading">General Settings</h3>
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Report panel usage
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+                            <p>
+                                Some information about this general settings option
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Allow mail redirect
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+                            <p>
+                                Other sets of options are available
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Expose author name in posts
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+                            <p>
+                                Allow the user to show his name in blog posts
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+                        <h3 class="control-sidebar-heading">Chat Settings</h3>
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Show me as online
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Turn off notifications
+                                <input type="checkbox" class="pull-right">
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Delete chat history
+                                <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+                    </form>
+                </div>
+                <!-- /.tab-pane -->
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+             immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery 2.2.3 -->
+    <script src="../../Scripts/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../../Scripts/jQueryUI/jquery-ui.js"></script>
+    <script src="../../public/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../Scripts/jquery.datetimepicker.js"></script>
+    <script src="../../public/web/js/jquery.timepicker.js"></script>
+    <script src="../../public/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../public/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="../../public/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="../../public/plugins/fastclick/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../public/plugins/admin-lte/js/app.js"></script>
+
+    <!-- AdminLTE for demo purposes -->
+   <script src="../../public/plugins/admin-lte/js/demo.js"></script>
+    <script src="../../public/web/js/Mottie-tablesorter-08bf513/js/jquery.tablesorter.js"></script>
+    <script src="../../public/web/js/sweetalert-dev.js"></script>
+    <script src="../../public/web/js/sweetalert.min.js"></script>
+    <script src="../../public/web/js/jquery.uitablefilter.js"></script>
+    <script src="../../public/web/js/funciones.js"></script>
+    <script src="../../public/web/js/Funciones_Asistencia.js"></script>
+    <script src="../../public/web/js/Funciones_Movimiento.js"></script>
+    <script src="../../public/web/js/Funciones_MOF.js"></script>
+    <script src="../../public/web/js/Funciones_RQ_RRHH.js"></script>
+    <script src="../../public/web/js/script.js"></script>
+    <script src="../../Scripts/Global/global.js"></script>
+    <script src="../../Scripts/Compras/compras.js"></script>
+    <script src="../../public/web/js/Permisos.js"></script>
+    <script src="../../Scripts/Finanzas/Finanzas.js"></script>
+    <script src="../../public/web/js/infinitecarousel/jquery.infinitecarousel3.js"></script>
+    <script src="../../public/web/js/jquery.session.js"></script>
+    <script src="../../public/web/js/bootstrap-filestyle-1.2.1/src/bootstrap-filestyle.js"></script>
+    <script src="../../public/web/js/icheck.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        a=$("#BuscarTareo.html")
+        a.show();
+       Permisos();
+    });
+
+    $("#carousel").infiniteCarousel({});
+    $(":file").filestyle({ buttonName: "btn-primary" }, { buttonText: "Find file" });
+
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+
+
+    //$(document).ready(function () {
+    //    $('input').iCheck({
+    //        //checkboxClass: 'icheckbox_flat-blue',
+    //        //radioClass: 'iradio_flat-red'
+    //    });
+    //});
+
+
+    $(function () {
+        $("#example1").DataTable();
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false
+        });
+    });
+
+</script>

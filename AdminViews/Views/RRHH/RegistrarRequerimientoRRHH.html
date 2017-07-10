@@ -1,0 +1,606 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Registrar Requerimiento</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-edit fixed sidebar-mini">
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+        </script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    REGISTRAR REQUERIMIENTO
+                </h1>
+            </section>
+
+            <section class="content">
+                <div class="box box-primary"> <!--collapsed-box">-->
+                    <div class="box-header">
+                        <h3 class="box-title">DATOS REQUERIMIENTO</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-angle-double-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="lblTrabajadorS98">Solicitante</label>
+                                    <!--<div class="input-group">-->
+                                    <!--<span class="input-group-btn">-->
+                                    <input type="text" class="form-control UsuarioOrigen" id="nvTrabajadorS98" name="nvTrabajadorS98" value="" style="background-color:lightgoldenrodyellow; display:block" readonly />
+                                    <input type="hidden" class="form-control vcLogin" id="idTrabajadorS98" name="idTrabajadorS98" value="" style="background-color:lightgoldenrodyellow; display:block" readonly />
+                                    <input type="hidden" class="form-control" id="iIdRequerimiento" name="iIdRequerimiento" value="" />
+                                    <input type="hidden" class="form-control" id="iIdEstadoAprobacion" name="iIdEstadoAprobacion" value="" />
+                                    <!--<button type="button" class="btn btn-danger " id="btnNuevaBusquedaTS98"><span class="glyphicon glyphicon-remove"></span></button>-->
+                                    <!--</span>-->
+                                    <!--  </div>-->
+                                </div>
+                            </div>
+                            <!--<div class="col-md-1">
+                            </div>-->
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label id="lblSedeOrigen">Sede Origen</label>
+                                    <input type="text" id="vcSedeOrigen" name="vcSedeOrigen" class="form-control SedeOrigen" style="background-color:lightgoldenrodyellow; display:block" readonly />
+                                    <input type="hidden" id="vcIdSedeOrigen" name="vcIdSedeOrigen" class="form-control misede" style="background-color:lightgoldenrodyellow; display:block" readonly />
+                                </div>
+                            </div>
+                            <!--<div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="lblPuesto98">Puesto</label>
+                                    <input type="text" class="form-control" id="nvPuesto98" name="nvPuesto98" style="background-color:lightgoldenrodyellow" value=" " readonly />
+                                </div>
+                            </div>-->
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label id="lblFechaMovimiento98">Fecha</label>
+                                    <input type="text" class="datepicker form-control mifecha" placeholder="dd/mm/yyyy" id="dFechaMovimiento1198" name="dFechaMovimiento98" style="background-color:lightgoldenrodyellow; display:block" value="" readonly />
+                                    <!-- <input type="text" class="datepicker form-control" placeholder="dd//mm//yyyy" id="dtfechafin" name="dtfechafin" value="" style="width:100px;" />-->
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label id="lblUnidadOrganizativa98">Unidad Organizativa</label>
+                                    <!--<input type="text" class="form-control" id="nvUnidadOrganizativa98" name="nvUnidadOrganizativa98" value="" readonly />-->
+                                    <select class="form-control cboUnidadOrganizativa" id="cboUnidadOrganizativa98"></select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label id="lblEmpresa98">Empresa</label>
+                                    <!--<input type="text" class="form-control" id="nvEmpresa98" name="nvEmpresa98" value="" readonly />-->
+                                    <select class="form-control cboEmpresa" id="cboEmpresa98">
+                                        <!--<option value="1">Buenaventura</option>
+                    <option value="2">Oyón</option>-->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label id="lblSede98">Sede</label>
+                                    <!--<input type="text" class="form-control" id="nvSede98" name="nvSede98" value="" readonly />-->
+                                    <select class="form-control cboSede" id="cboSede98c"></select>
+                                    <!--ListaSede-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label id="lblDepartamento98">Departamento</label>
+                                    <select class="form-control cboDepartamento" id="cboDepartamento98"></select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label id="lblProvincia98">Provincia</label>
+                                    <select class="form-control cboProvincia" id="cboProvincia98"></select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label id="lblDistrito98">Distrito</label>
+
+                                    <select class="form-control cboDistrito" id="cbodistrito98"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--<div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label id="lblUnidadOrganizativa98">Unidad Organizativa</label>
+                                    <!--<input type="text" class="form-control" id="nvUnidadOrganizativa98" name="nvUnidadOrganizativa98" value="" readonly />
+                                    <select class="form-control" id="cboUnidadOrganizativa98"></select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label id="lblEmpresa98">Empresa</label>
+                                    <!--<input type="text" class="form-control" id="nvEmpresa98" name="nvEmpresa98" value="" readonly />
+                                    <select class="form-control" id="cboEmpresa98">
+                                        <!--<option value="1">Buenaventura</option>
+                                        <option value="2">Oyón</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label id="lblSede98">Sede</label>
+                                    <!--<input type="text" class="form-control" id="nvSede98" name="nvSede98" value="" readonly />
+                                    <select class="form-control " id="cboSede98c"></select>
+                                    <!--ListaSede-->
+                    </div>
+                </div>      
+            </section>
+            <section class="content-header">
+                <!--<h1>
+                    DETALLE MOVIMIENTO
+                </h1>-->
+            </section>
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">DETALLE REQUERIMIENTO</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label id="lblMotivo98">Motivo</label>
+                                            <select class="form-control cboMotivo98" id="cboMotivo98"></select>
+                                            <!--<select id="cboMotivo98" class="form-control">
+                                                <option value="0">---SELECCIONE---</option>
+                                                <option value="1">NECESIDAD</option>
+                                                <option value="2">PUESTO NUEVO</option>
+                                                <option value="3">CAMPAÑA</option>
+                                                <option value="4">RENOVACIÓN</option>
+                                            </select>-->
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label id="lblTipoContrato98">Tipo Contrato</label>
+                                            <select class="form-control cboTipoContrato" id="cboTipoContrato98"></select>
+                                            <!--<select id="cbTipoContrato98" class="form-control">
+                                                <option value="0">---SELECCIONE---</option>
+                                                <option value="1">INCREMENTO ACTIVIDAD</option>
+                                                <option value="2">ACTIVIDAD ESPECÍFICA</option>
+                                            </select>-->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label id="lblSistTrabajo98">Sistema trabajo</label>
+                                            <select id="cboSistTrabajo98" class="form-control cboSistTrabajo"></select>
+                                        </div>
+                                    </div>
+                                    <div class="Hora_Sist" style="display:none">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblHoraIngreso98">Hora Ingreso</label>
+                                                <input type="text" class="form-control hora" name="tInicial98" id="tInicial98" value="" autocomplete="off" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblHoraSalida98">Hora Salida</label>
+                                                <input type="text" class="form-control hora" name="tFin98" id="tFin98" value="" autocomplete="off" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label id="lblPuesto98" style="display:block">Puesto</label>
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <input type="text" class="form-control" id="nvPuesto98" name="nvPuesto98" value="" />
+                                                    <input type="hidden" class="form-control" id="IdPuesto98" name="IdPuesto98" value="" />
+                                                    <button type="button" class="btn btn-danger" id="btnNuevaBusqueda98"><span class="glyphicon glyphicon-remove"></span></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label id="lblArea98" style="display:block">Área</label>
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <input type="text" class="form-control" id="nvArea98" name="nvArea98" value="" />
+                                                    <input type="hidden" class="form-control" id="IdArea98" name="IdArea98" value="" />
+                                                    <button type="button" class="btn btn-danger" id="btnNuevaBusquedaArea98"><span class="glyphicon glyphicon-remove"></span></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label id="lblPuesto98" style="display:block">Cantidad</label>
+                                            <input type="number" class="form-control" id="iCantidad98" name="iCantidad98" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label id="lblSalario98" style="display:block">Salario</label>
+                                            <input type="number" class="form-control" id="iSalario98" name="iSalario98" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <input type="checkbox" class="icheckbox_flat-blue" id="cbxSalario98" />
+                                            <label id="lblConfirmarSalario98">Confirmar Salario</label>
+                                            <input type="text" name="vcResponsableConfirmarSalario" value=" " id="vcResponsableConfirmarSalario" style="background-color:lightgoldenrodyellow;display:none" class="form-control" readonly />
+                                            <!--<input type="text" name="idResponsableConfirmarSalario" value=" " id="idResponsableConfirmarSalario" style="border:0" class="form-control" />-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2" id="Lugar_Ejecucion">
+                                        <div class="form-group">
+                                            <label id="lblPuesto98" style="display:block">Lugar de Ejecución</label>
+                                            <input type="radio" name="rbLugarEjecucion" id="rbSuperficie" value="SUPERFICIE" />SUPERFICIE
+                                            <br />
+                                            <input type="radio" name="rbLugarEjecucion" id="rbSocavon" value="SOCAVON" />SOCAVÓN
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2" id="Estado_civil">
+                                        <div class="form-group">
+                                            <label id="lblPuesto98" style="display:block">Estado Civil</label>
+                                            <input type="radio" name="rbEstadoCivil" id="rbCasado" value="CASADO" />CASADO
+                                            <br />
+                                            <input type="radio" name="rbEstadoCivil" id="rbSoltero" value="SOLTERO" />SOLTERO
+                                            <br />
+                                            <input type="radio" name="rbEstadoCivil" id="rbNo_RelevanteEC" value="NO_RELEVANTE" />NO RELEVANTE
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2" id="Sexo">
+                                        <div class="form-group">
+                                            <label id="lblPuesto98" style="display:block">Sexo</label>
+                                            <input type="radio" name="rbSexo" id="rbMaculino" value="MASCULINO" />MASCULINO
+                                            <br />
+                                            <input type="radio" name="rbSexo" id="rbFemenino" value="FEMENINO" />FEMENINO
+                                            <br />
+                                            <input type="radio" name="rbSexo" id="rbNo_RelevanteS" value="NO_RELEVANTE"/>NO RELEVANTE
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2" id="Rango_Edad">
+                                        <div class="form-group">
+                                            <label id="lblPuesto98" style="display:block">Rango de Edad</label>
+                                            <input type="radio" name="rbRangoEdad" id="rbNo_RelevanteRE" value="NO_RELEVANTE" />NO RELEVANTE
+                                            <br />
+                                            <input type="radio" name="rbRangoEdad" id="rbRelevanteRE" value="RELEVANTE" />RELEVANTE
+                                            <br />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2" id="Rango_Edad_Min" style="display:none">
+                                        <label>De:</label>
+                                        <input type="number" class="form-control" name="iEdadMin" id="iEdadMin" value="" min="18" max="60" />
+                                        <!--<label>a:</label>
+                                        <input type="number" class="form-control" name="iEdadMax" id="iEdadMax" value="" min="18" max="80" />-->
+                                    </div>
+                                    <div class="col-md-2" id="Rango_Edad_Max" style="display:none">
+                                        <!--<label>De:</label>
+                                        <input type="number" class="form-control" name="iEdadMin" id="iEdadMin" value="" min="18" max="60" />-->
+                                        <label>a:</label>
+                                        <input type="number" class="form-control" name="iEdadMax" id="iEdadMax" value="" min="18" max="80" />
+                                    </div>
+                                </div>
+                               
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label id="lblObservaciones" style="vertical-align:top;">Objetivos</label>
+                                        <textarea class="form-control" rows="5" id="txtaFunciones100"></textarea>
+                                    </div>
+                                </div>
+                            </div>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             
+            </section>
+         
+            <div class="panel-body">
+                <div class="form-group">
+                    <button type="button" class="btn btn-success" id="btnGuardarRQ" name="btnGuardarRQ"><span class="glyphicon glyphicon-floppy-disk"></span><b>&nbsp; Guardar</b></button>
+                    <button type="button" class="btn btn-danger" id="btnEliminarRQ"><span class="glyphicon glyphicon-trash"></span><b>&nbsp;Eliminar</b></button>
+                    <button type="button" class="btn btn-danger" id="Cancelar"><span class="glyphicon glyphicon-remove"></span><b>&nbsp; Cancelar</b></button>
+                    <button type="button" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>&nbsp; Atrás</b></button>
+                    <button type="button" class="btn btn-info" id="btnNuevoRQ"><span class="glyphicon glyphicon-plus-sign"></span><b>&nbsp;Nuevo</b></button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+
+<!--<div class="modal fade xs" style="text-align:center; vertical-align:middle"  id="frmRegistrarBono" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog" style="width:500px" role="document">
+        <div class="modal-content" style="text-align:center; vertical-align:middle">
+            <div class="modal-header" >
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <b>REGISTRAR BONO</b>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label id="lblBono">Bono</label>
+                            <select class="form-control" id="Bono">
+                                <option value="1">Movilidad</option>
+                                <option value="2">Alimentario</option>
+                                <option value="3">Destaque</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label id="lblCantidad">Cantidad</label>
+                            <input type="number" class="form-control" id="Cantidad" name="Cantidad" value="" />
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success sincabecera" id="AgregarBono" name="AgregarBono">
+                                <span class="glyphicon glyphicon-plus">
+                                </span>
+                                <!--<b>Agregar</b>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        SistemaTrabajo();
+        UnidadOrganizativa();
+        Departamentos();
+        TipoContrato();
+        Motivo();
+        $("#btnEliminarRQ").hide();
+        $("#btnNuevoRQ").hide();
+
+        var iIdRequerimiento = localStorage.getItem("iIdRequerimientoRRHH");
+        $("#iIdRequerimiento").val(iIdRequerimiento);
+        if (iIdRequerimiento != null) {
+            $("#nvTrabajadorS98").removeClass("UsuarioOrigen");
+            $("#idTrabajadorS98").removeClass("vcLogin");
+            $("#vcSedeOrigen").removeClass("SedeOrigen");
+            $("#vcIdSedeOrigen").removeClass("misede");
+            $("#dFechaMovimiento1198").removeClass("mifecha ");
+            $("#Cancelar").hide();
+            $("#btnNuevoRQ").show();
+            $("#btnEliminarRQ").show();
+            ObtenerRequerimiento();
+        }
+    //$('#TablaRegistrarMovimiento').DataTable({
+    //    "scrollX": true 
+    //});
+    //$("#btnAgregarBono").click(function () {
+    //    $('#frmRegistrarBono').modal('toggle');
+    //});
+
+    //$('#frmRegistrarBono').on('hidden.bs.modal', function (e) {
+    //    LimpiarDetalleBono();
+    //});
+
+    
+    
+    $("#nvPuesto98").autocomplete({
+        source: function (request, response) {
+            filtro = $("#nvPuesto98").val();
+            var data = { filtro: filtro };
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                data: { filtro: filtro },
+                url: 'http://admin_erp.natclar.com.pe/rWSPuesto/PuestoByFiltro/Get',
+                async: true,
+                //data: JSON.stringify({usuario: dataobj}),
+                //data: JSON.stringify(dataobj),
+                //data: jQuery.parseJSON({user:us, pass:passw}),
+                //datos: { filtro: filtro },
+                contentType: "application/json",
+                success: function (data) {
+                    //console.log(data)
+                    response($.map(data, function (item) {
+                        return { value: item.Descripcion, text1: item.IdPuesto};
+                    }))
+                },
+                error: function () { console.log("ERROR..."); }
+            })
+        },
+        minLength: 3,
+        select: function (event, ui) {
+            $("#nvPuesto98").val(ui.item.text);
+            $("#IdPuesto98").val(ui.item.text1);
+            //$("#nvPuesto98").val(ui.item.text2);
+            //$("#nvUnidadOrganizativa98").val(ui.item.text4);
+            //$("#nvEmpresa98").val(ui.item.text5);
+            //$("#nvSede98").val(ui.item.text6);
+            //$("#vcSistTrabA98").val(ui.item.text7);
+            //$("#nvPuestoA98").val(ui.item.text2);
+            //$("#nvSedeOrigen98").val(ui.item.text6);
+            $("#nvPuesto98").prop('readonly', true);
+            $("#nvPuesto98").css('background-color', 'lightgoldenrodyellow');
+        },
+        error: function (ex) {
+            alert('Error al traer datos.' + ex);
+        }
+    })
+
+    $("#nvArea98").autocomplete({
+        source: function (request, response) {
+            filtro = $("#nvArea98").val();
+            var data = { filtro: filtro };
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                data: { filtro: filtro },
+                //url: 'https://admin_erp.natclar.com.pe:11000/rWSArea/AreaByFiltro/Get',
+                url: 'http://admin_erp.natclar.com.pe/rWSArea/AreaByFiltro/Get',
+                async: true,
+                //data: JSON.stringify({usuario: dataobj}),
+                //data: JSON.stringify(dataobj),
+                //data: jQuery.parseJSON({user:us, pass:passw}),
+                //datos: { filtro: filtro },
+                contentType: "application/json",
+                success: function (data) {
+                    console.log(data)
+                    response($.map(data, function (item) {
+                        return { value: item.Descripcion, text1: item.IdAreaNatclar };
+                    }))
+                },
+                error: function () { console.log("ERROR..."); }
+            })
+        },
+        minLength: 3,
+        select: function (event, ui) {
+            $("#nvArea98").val(ui.item.text);
+            $("#nvArea98").prop('readonly', true);
+            $("#nvArea98").css('background-color', 'lightgoldenrodyellow');
+            $("#IdArea98").val(ui.item.text1);
+        },
+        error: function (ex) {
+            alert('Error al traer datos.' + ex);
+        }
+    })
+
+    $(function () {
+        $(".hora").timepicker({
+            show24Hours: true,
+        })
+    });
+
+    $(document).on("change", "#cboSistTrabajo98", function () {
+        if ($("#cboSistTrabajo98").val() == 1 || $("#cboSistTrabajo98").val() == 2) {
+            $(".Hora_Sist").show();
+        } else {
+            $(".Hora_Sist").hide();
+            $("#tInicial98").val("");
+            $("#tFin98").val("");
+        } 
+    });
+       
+    $(document).on("change", ".cboUnidadOrganizativa", function () {
+        $(".cboEmpresa").empty();
+        $(".cboSede").empty();
+        unor = $(".cboUnidadOrganizativa").val();
+        sessionStorage.setItem("Unor", $(".cboUnidadOrganizativa").val());
+        //Unor2 = sessionStorage.getItem("Unor");
+        //console.log(Unor2)
+        Empresa();
+    });
+
+    $(document).on("change", ".cboEmpresa", function () {
+        $(".cboSede").empty();
+        emp = $(".cboEmpresa").val();
+        sessionStorage.setItem("Emp", $(".cboEmpresa").val());
+        //Emp2 = sessionStorage.getItem("Emp");
+        //console.log(Emp2)
+        Sede_Emp_Unor();
+    });
+    
+    $(document).on("click", "#Cancelar", function () {
+        swal({
+            title: "Esta seguro de eliminar este Registro?",
+            text: "No podrá recuperar los datos ingresados...!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Si, estoy seguro!",
+            cancelButtonText: "Cancelar!",
+            closeOnConfirm: false
+        }, function () {
+            window.location.href = "../../../Views/RRHH/RegistrarRequerimientoRRHH.html";
+            swal("Correcto!", "Su Registro fue eliminado.", "success");
+            //localStorage.removeItem('iIdRequerimientoRRHH');
+            //sessionStorage.removeItem("unor");
+            //sessionStorage.removeItem("emp");
+            //sessionStorage.removeItem("sed");
+            //sessionStorage.removeItem("depa");
+            //sessionStorage.removeItem("prov");
+            //sessionStorage.removeItem("dist");
+            //sessionStorage.removeItem("SisTra");
+            //sessionStorage.removeItem("TipCont");
+            //sessionStorage.removeItem("Mot");
+        });
+    });
+
+    $(document).on("change", ".cboDepartamento", function () {
+        $(".cboProvincia").empty();
+        $(".cboDistrito").empty();
+        Dep = $(".cboDepartamento").val();
+        sessionStorage.setItem("Dep", $(".cboDepartamento").val());
+        //Dep = sessionStorage.getItem("Dep");
+        //console.log(Dep)
+        Provincia();
+    });
+
+    $(document).on("change", ".cboProvincia", function () {
+        $(".cboDistrito").empty();
+        prov = $(".cboProvincia").val();
+       
+        sessionStorage.setItem("Prov", $(".cboProvincia").val());
+        //prov2 = sessionStorage.getItem("Prov");
+        //console.log(prov2)
+        Distrito();
+    });
+
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+   
+});
+</script>

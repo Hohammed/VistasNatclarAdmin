@@ -1,0 +1,1093 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Registrar Salida</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-yellow fixed sidebar-mini" onload="">
+
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+        </script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    DATOS SALIDA
+                </h1>
+            </section>
+
+            <section class="content">
+                <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">DATOS SALIDA</h3>
+                                </div>
+                                <div class="box-body">
+
+                                    <div class="row">
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblUsuario">Usuario</label>
+                                                <input type="text" id="nvUsuario" name="nvUsuario" class="form-control UsuarioOrigen" style="display:block; background-color:lightgoldenrodyellow" readonly />
+                                                <input type="hidden" id="vcLogin" name="vcLogin" />
+                                                <input type="hidden" id="vcIdSalida" name="vcIdSalida" />
+                                                <input type="hidden" id="vcCodigoItem" name="vcCodigoItem" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblSedeOrigen">Almacen Origen</label>
+                                                <input type="text" id="vcAlmacenSalida54" name="vcAlmacenSalida54" class="form-control SedeOrigen" style="display:block; background-color:lightgoldenrodyellow" readonly />
+                                                <input type="hidden" id="vcIdRequerimiento" name="vcIdRequerimiento" />
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblcboSedeDestino54" style="display: block">Almacen Destino</label>
+                                                <select class="form-control ListaSede" style="display: block;" id="cboSedeDestino54"></select>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="lbldFechaSalida54" style="width:100px;">Fecha</label>
+                                                <input type="text" class="datepicker form-control mifecha" style="display:block; background-color:lightgoldenrodyellow" id="dFechaSalida54" name="dFechaSalida54" value="" placeholder="dd/mm/yyyy" />
+                                            </div>
+                                        </div>
+
+                                       
+
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblMotivoSalida54" style="display: block">Motivo</label>
+                                                <select class="form-control" style="display: block;" id="cboMotivoSalida54">
+                                                    <option value="1">VENTA</option>
+                                                    <option value="2">CONSUMO INTERNO</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-1">
+                                            <div class="form-group" style="display:none" id="RQ54">
+                                                <label id="lblRequerimiento54">Requerimiento</label>
+                                                <input type="text" class="form-control" id="vcRequerimiento54" name="vcRequerimiento54" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="form-group" style="display:none" id="btnRQ54">
+                                                <button type="button" class="btn btn-success sincabecera" name="btnBuscarRequerimiento54" id="btnBuscarRequerimiento54">
+                                                    <span class="glyphicon glyphicon-search">
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblTipoDocumentoSalida54" style="display: block">Tipo Documento</label>
+                                                <select class="form-control" style="display: block;" id="cboTipoDocumentoSalida54">
+                                                    <option value="13">GUIA REMISIÓN</option>
+                                                    <option value="14">NOTA SALIDA</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="form-group">
+                                                <label id="lblSerieSalida54">Serie</label>
+                                                <input type="text" class="form-control" id="vcSerieSalida54" name="vcSerieSalida54" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="form-group">
+                                                <label id="lblNumeroSalida54">Número</label>
+                                                <input type="text" class="form-control" id="vcNumeroSalida54" name="vcNumeroSalida54" value="" />
+                                            </div>
+                                        </div>
+
+
+                                    
+
+
+                                        <!--<div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="UnidadOrganizativa" style="width:80px;">Proveedor/Ruc</label>
+                                                <input type="text" class="form-control" id="nvTrabajador" name="nvTrabajador" value="" />
+                                            </div>
+                                        </div>-->
+                                    </div>
+                                    <!--Datos Usuario-->
+                                    <!--Fin Datos Usuario-->
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label id="lblObservacionSalida54">Observación</label>
+                                                <textarea class="form-control" cols="130" id="nvObservacionSalida54"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <!--<section class="content">
+                <div class="box box-primary">
+                    <div class="row">
+                        <div class="col-md-12">
+                    <div class="table-responsive">
+                                <table class="table table-bordered table-hover" id="TablaCabeceraCargar54">
+                            <tr>
+                                        <td>
+                                    <b>CARGAR DESDE EXCEL</b>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="file" class="filestyle" data-buttonname="btn-success" data-buttontext="&nbsp;&nbsp;&nbsp;Seleccione archivo">
+                                </div>
+                            </div>
+
+                            <div class="col-md-1">
+                                <span class="icon-input-btn">
+                                    <button type="button" class="btn btn-success" name="Cargar" id="Cargar">
+                                        <span class="glyphicon glyphicon-open">
+                                </span>
+                                        <b>Cargar</b>
+                                    </button>
+
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>-->
+
+
+            <section class="content">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover" id="TablaCabeceraSalida54">
+                                <tr>
+                                    <td>
+                                        <b>DETALLE SALIDA</b>
+                                    </td>
+                                    <td align="right">
+                                        <b>Cantidad de Items: <span id="CantidadItemsSalida54">0</span></b>
+                                    </td>
+                                </tr>
+                            </table>
+            
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <label id="lblCodigo54">Codigo</label>
+                                <input type="text" class="form-control" id="vcCodigoSalida54" name="vcCodigoSalida54" value=""  style="background-color:lightgoldenrodyellow" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label id="lblDecripción54">Decripción</label>
+                                <input type="text" class="form-control" id="nvDecripciónSalida54" name="nvDecripciónSalida54" value="" />
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <label id="lblUnidadMedidaSalida54">Unidad Medida</label>
+                                <input type="text" class="form-control" style="background-color:lightgoldenrodyellow" id="nvUnidadSalida54" name="nvUnidadSalida54" value="" />
+                            </div>
+                        </div>
+
+
+                        <!--<div class="col-md-2">
+                            <div class="form-group">
+                                <label id="lblUnidadMedidaSalida54">Laboratorio</label>
+                                <input type="text" class="form-control" style="background-color:lightgoldenrodyellow" id="nvUnidadSalida54" name="nvUnidadSalida54" value="" />
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label id="lblUnidadMedidaSalida54">Forma Farmaceutica</label>
+                                <input type="text" class="form-control" style="background-color:lightgoldenrodyellow" id="nvUnidadSalida54" name="nvUnidadSalida54" value="" />
+                            </div>
+                        </div>-->
+
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label id="lblSubAlmacenEntrada54" style="display: block">Divisionarias</label>
+                                <select class="form-control midivisionaria" style="display: block;" id="cboSubAlmacenSalida54">
+                                    
+                                    <!--<option value="0">FARMACO O MEDICAMENTO</option>
+                                        <option value="1">INSUMO</option>
+                                        <option value="2">EPPS</option>
+                                        <option value="3">EQUIPOS COMPUTO</option>
+                                        <option value="4">EQUIPOS MEDICO</option>
+                                        <option value="5">OTROS</option>
+                                        <option value="6">DEVOLUCIONES</option>-->
+                                </select>
+                               
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label id="lblPresentacionEntrada53">Presentacion</label>
+                                <select class="form-control " id="cboPresentacionSalida54">
+                                    <!--<option value="0">CAJA X 100</option>
+                                    <option value="1">UNIDAD</option>
+                                    <option value="2">BLISTER</option>-->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <label for="lblCantidad54">Cantidad</label>
+                                <input type="number" class="form-control" id="intCantidadSalida54" name="intCantidadSalida54" value="" />
+                            </div>
+                        </div>
+
+          
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <label id="lblSede16">Precio</label>
+                                <input type="number" class="form-control"id="nvPrecioSalida54" name="nvPrecioSalida54" value="" />
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-success sincabecera" id="btnLoteSalida54" name="btnLoteSalida54">
+                                    <span class=""></span><b>Lote</b>
+                                </button>
+                                <button class="btn btn-success sincabecera" id="btnAgregarDetalleSalida54" name="btnAgregarDetalleSalida54">
+                                    <span class="glyphicon glyphicon-plus"></span><b></b>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="hidden" id="Salida_item" name="Salida_item" />
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover" id="tblDetalleSalida54">
+                                <thead>
+                                    <tr class="info">
+                                        <th>Acciones</th>
+                                        <th>Item</th>
+                                        <th>Codigo</th>
+                                        <th>Decripción</th>
+                                        <th>Unidad Medida</th>
+                                        <th hidden> Valor SubAlmacen</th>
+                                        <th>SubAlmacen</th>
+                                        <th hidden> Valor Presentacion</th>
+                                        <th>Presentacion</th>
+                                        <th>Cantidad</th>
+                                        <th>Precio</th>
+                                        <th>Lote</th>
+                                        <th>FechaVenc</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+</div>
+            </section>
+
+
+
+            <div class="panel-body">
+                <div class="form-group">
+
+                    <button type="button" class="btn btn-info" id="btnGuardarSalida54" name="btnGuardarSalida54"><span class="glyphicon glyphicon-floppy-disk"></span><b>Guardar</b></button>
+                    <button type="button" class="btn btn-success" id="" name=""><span class="glyphicon glyphicon-ok"></span><b>Confirmar</b></button>
+                    <!--<button type="button" class="btn btn-info" id=""><span class="glyphicon glyphicon-print"></span><b>Imprimir</b></button>-->
+                    <button type="button" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>Atras</b></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+
+
+<table id="tabla_oculta_salida">
+    <tr class="fila-base">
+        <td width="65px">
+            <button type="button" class="btn btn-danger btn-xs" id="QuitarSalida"><span class="glyphicon glyphicon-remove"></span></button>
+            <button type="button" class="btn btn-success btn-xs" id="ModificarSalida"><span class="glyphicon glyphicon-pencil"></span></button>
+        </td>
+        <td></td><!--Item-->
+        <td></td><!--Codigo-->
+        <td></td><!--Decripción-->
+        <td></td><!--Unidad Medida-->
+       <td hidden></td><!--Valor Divisionarias-->
+        <td></td><!--Divisionarias-->
+        <td hidden></td><!--Valor Presentacion-->
+        <td></td><!--Presentacion-->
+        <td></td><!--Cantidad-->
+        <td></td><!--Precio-->
+        <td></td><!--Lote-->
+        <td></td><!--FechaVenc-->
+    </tr>
+</table>
+
+<div class="modal fade bs-example-modal-lg" id="frmBuscarRequerimiento" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title titulo-modal" style="text-align:center" id=" mymodallabel">BUSCAR REQUERIMIENTO</h4>
+            </div>
+            <div class="box-body">
+                <div class="row">
+
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label class="box-title" id="lblResponsableRequerimiento102">Responsable</label>
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <input type="text" id="nvResponsableRequerimiento102" name="nvResponsableRequerimiento102" class="form-control" />
+                                    <button type="button" class="btn btn-danger " id="btnNuevaBusquedaRQ102"><span class="glyphicon glyphicon-remove"></span></button>
+                                    <input type="hidden" id="iIdResponsableRequerimiento102" name="iIdResponsableRequerimiento102" />
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1"></div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="Fecha">Fecha Inicio</label>
+                            <input type="text" class="datepicker form-control mifecha" name="dFechaInicioSalida54" id="dFechaInicioSalida54" placeholder="dd/mm/yyyy" value="" />
+
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="Fecha">Fecha Fin</label>
+                            <input type="text" class="datepicker form-control mifecha" name="dFechaFinSalida54" id="dFechaFinSalida54" placeholder="dd/mm/yyyy" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                
+                   
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label id="lblcboSedeDestino54" style="display: block">CentroCosto</label>
+                            <select class="form-control ListaSede" style="display: block;" id="cboSedeDestino54"></select>
+                        </div>
+                    </div>
+
+               
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label id="lblDecripción54">Id</label>
+                            <input type="text" class="form-control" id="idRequerimiento54" name="idRequerimiento54" value="" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label id="lblEstadoRequerimiento102">Estado</label>
+                            <select class="form-control cboEstadoSalidaRequerimiento" id="cboEstadoSalidaRequerimiento54">
+                                <!--<option value="0">------TODOS----</option>
+        <option value="1">PENDIENTE APROBACION</option>
+        <option value="2">RECHAZADO</option>
+        <option value="3">APROBADO</option>-->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success sincabecera" id="btnBuscarRequerimientoSalida54">
+                                <span class="glyphicon glyphicon-search">
+                                </span>
+                                <b>Buscar</b>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    </div>
+
+              
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive" id="">
+                                <table class="tablesorter-blue table table-bordered table-hover" id="ListaBusquedaRequerimiento">
+                                    <thead>
+                                        <tr class="info">
+                                            <th style="background-color: #99ffcc" width="100px">Acciones</th>
+                                            <th style="background-color: #99ffcc">Item</th>
+                                            <th hidden>Item</th>
+                                            <th style="background-color: #99ffcc">Codigo</th>
+                                            <th hidden>IdRequerimiento</th>
+                                            <th style="background-color: #99ffcc">Centro Costo</th>
+                                            <th hidden>IdCentroCosto</th>
+                                            <th style="background-color: #99ffcc">Responsable</th>
+                                            <th hidden>IdResponsable</th>
+                                            <th style="background-color: #99ffcc">Fecha</th>
+                                            <th hidden>IdFecha</th>
+                                            <th style="background-color: #99ffcc">Fecha Maxima</th>
+                                            <th hidden>IdFechaMaxima</th>
+                                            <th style="background-color: #99ffcc">Estado</th>
+                                            <th hidden>Estado</th>
+
+                                        </tr>
+                                    </thead>
+
+
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="modal fade xs" id="frmBuscarLoteSalida" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" vertical-align:middle">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title titulo-modal" style="text-align:center" id=" mymodallabel">VER LOTE</h4>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="lblFechaVencimientoSalida54">Fecha Vencimiento</label>
+                            <input type="text" class="datepicker form-control mifecha" name="dFechaVencimientoSalida54" id="dFechaVencimientoSalida54" placeholder="dd/mm/yyyy" value="" />
+
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="lblLoteSalida54">Lote</label>
+                            <input type="text" class="form-control" name="vcLoteSalida54" id="vcLoteSalida54" value="" />
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label id="lblCantidadSalidaLote54">Cantidad</label>
+                            <input type="number" class="form-control" id="" name="numCantidadSalida54" value="" />
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success sincabecera" id="BuscarLoteSalida54">
+                                <span class="glyphicon glyphicon-search">
+                                </span>
+                                <b>Buscar</b>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <table class="tablesorter-blue table table-bordered table-hover" id="ListaBusquedaRequerimiento">
+                    <thead>
+                        <tr class="info">
+                            <th style="background-color: #99ffcc" width="100px">Acciones</th>
+                            <th style="background-color: #99ffcc">Cantidad</th>
+                            <th hidden>IdCantidad</th>
+                            <th style="background-color: #99ffcc">Lote</th>
+                            <th hidden>IdLote</th>
+                            <th style="background-color: #99ffcc">Fecha Vencimiento</th>
+                            <th hidden>dtFechaVencimiento</th>
+                            
+
+                        </tr>
+                    </thead>
+
+
+                    <tbody></tbody>
+                </table>
+                <!--<div class="table-responsive">
+                    <table class="table table-bordered" id="ListaBusquedaLoteSalida">
+                        <tr class="info">
+
+
+                            <th>Cantidad</th>
+                            <th>Lote</th>
+                            <th>Fecha Vencimiento</th>
+                        </tr>
+                        <tr>
+
+
+                            <td>2</td>
+                            <td>ABC123</td>
+                            <td>21/02/2017</td>
+                        </tr>
+                    </table>
+                </div>-->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    ObtenerCamposSalidas();
+   
+
+
+    ObtenerSalidasdeRequerimiento();
+    //$("#cboSubAlmacenSalida54").change(function () {
+    //    if ($("#cboSubAlmacenSalida54").val() == "0") {
+    //        $("#nvDecripciónSalida54").show();
+    //        $("#nvDecripciónSalida54").hide();
+
+       
+    //    };
+    //});
+
+    function reordenarSalida() {
+        var item = 1;
+        $("#tblDetalleSalida54 tbody tr").each(function (index) {
+            $(this).find("td:eq(1)").html(item++);
+        });
+    }
+    
+
+    $("#btnLoteSalida54").click(function () {
+        $('#frmBuscarLoteSalida').modal('toggle');
+    });
+
+    $('#frmBuscarLoteSalida').on('hidden.bs.modal', function (e) {
+        LimpiarDetalleFO();
+    });
+
+
+
+    $(document).ready(function () {
+        $("#btnBuscarRequerimiento54").click(function () {
+            $('#frmBuscarRequerimiento').modal('toggle');
+        });
+
+    });
+
+   
+
+    TipoEstadoSalidaRequerimiento();
+
+    $("#cboMotivoSalida54").change(function () {
+        if ($("#cboMotivoSalida54").val() == "2") {
+            $("#RQ54").show();
+            $("#btnRQ54").show();
+        } else {
+            $("#RQ54").hide();
+            $("#btnRQ54").hide();
+        }
+    });
+    PresentacionSalida();
+
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+
+    SubAlmacen();
+
+
+
+   
+
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    function ObtenerCamposSalidas() {
+
+        id_salida = getParameterByName('id_salida');
+
+
+        var xhr = new XMLHttpRequest();
+
+        var obj;
+
+        xhr.open('GET', 'http://localhost:28959/SalidaByFiltro/GetDatos?' + 'id_salida=' + (id_salida), true);
+
+        xhr.responseType = "json";
+        // xhr.setRequestHeader("Content-Type", "application/json");
+        //console.log(sede)
+        xhr.onload = function () {
+
+            var status = xhr.status;
+            if (status == 200) {
+                // console.log(xhr.response.GetDataPOSTResult.cUser + " " + xhr.response.GetDataPOSTResult.cPassword);
+                obj = xhr.response;
+                
+
+                if (obj != 0) {
+                    //Para actualizar la fila de las columnas 
+                   
+                   
+                       
+                    $("#vcIdSalida").val(obj.vcIdSalida);
+                    $("#cboSedeDestino54").val(obj.vcIdAlmacen);
+                    $("#nvUsuario").val(obj.vcNombres);
+                    $("#dFechaSalida54").val(obj.dtFecha);
+                    $("#vcSerieSalida54").val(obj.vcSerieDocumento);
+                    $("#vcNumeroSalida54").val(obj.iNumeroDocumento);
+                    $("#cboTipoDocumentoSalida54").val(obj.iIdTipoDocumento)
+                    $("#nvObservacionSalida54").val(obj.nvObservacion);
+
+                   
+                    //console.log("cantidad " + obj.datossalidadetalle.length);
+                    item = obj.datossalidadetalle.length - 1;
+                    $("#tabla_oculta_salida tbody tr:eq(0)").clone().removeClass('fila-base').appendTo("#tblDetalleSalida54 tbody");
+                    $("#CantidadItemsSalida54").text(parseInt($("#CantidadItemsSalida54").text()) + 1);
+                    $("#tblDetalleSalida54 tbody tr").remove();
+
+                    item++;
+                    if ($("#Salida_item").val() == "") {
+                        for (i = 0, j = 1; i < obj.datossalidadetalle.length; i++, j++) {
+                            $("#tblDetalleSalida54 tbody").append('<tr><td><button type="button" class="btn btn-danger btn-xs" id="QuitarSalida"><span class="glyphicon glyphicon-remove"></span></button>' +
+                            '<button type="button" class="btn btn-success btn-xs" id="ModificarSalida"><span class="glyphicon glyphicon-pencil"></span></button></td>'+
+                                            '<td>' + j + '</td>' +
+                                            '<td>' + obj.datossalidadetalle[i].vcCodigoItem + '</td>' +
+                                            '<td>' + obj.datossalidadetalle[i].vcDescripcionArticulo + '</td>' +
+                                            '<td>' + obj.datossalidadetalle[i].vcidUnidadMedida + '</td>' +
+                                            '<td hidden>' + obj.datossalidadetalle[i].vcIdSubAlmacen + '</td>' +
+                                            '<td>' + obj.datossalidadetalle[i].nvDescripcionSubAlmacen + '</td>' +
+                                            '<td hidden>' + obj.datossalidadetalle[i].vcIdPresentacion + '</td>' +
+                                            '<td>' + obj.datossalidadetalle[i].nvDescripcionPresentacion + ' </td>' +
+                                            '<td>' + obj.datossalidadetalle[i].numCantidad + '</td>' +
+                                            '<td>' + obj.datossalidadetalle[i].numPrecio +'</td>' +
+                                            '<td></td>' +
+                                            '<td></td>' +
+                                            '</td></tr>');
+                        
+                            ActualizarNumeroItemSalida();
+
+                            $("#CantidadItemsSalida54").text(item);
+                            fila = parseInt($("#CantidadItemsSalida54").text());
+
+                            //console.log(fila)
+                            //console.log(item)
+                        }
+
+                    }
+                    else {
+                        fila = parseInt($("#Salida_item").val());
+                        fila = fila - 1;
+                    }
+                    //});
+
+                }
+                else {
+                    swal("Usted no cuenta con Requerimientos asignados!")
+                }
+            }
+            else {
+                swal("Ocurrió un error al obtener a sus Requerimientos!")
+            }
+
+
+        }
+        xhr.send();
+        //xhr.send(dataobj);
+    }
+
+
+
+
+
+
+    
+
+
+
+
+    
+    function ObtenerRequerimientosSalidas() {
+
+        id_requerimiento = $("#idRequerimiento54").val();
+        fechainicio = $("#dFechaInicioSalida54").val();
+        fechafin = $("#dFechaFinSalida54").val();
+        //id_centrocosto = $("#cboSedeOrigen23").val();
+        id_centrocosto = 201;
+        id_login = $("#iIdResponsableRequerimiento102").val()
+        iIdEstado = $("#cboEstadoSalidaRequerimiento54").val()
+
+        var xhr = new XMLHttpRequest();
+
+        var obj;
+
+
+        xhr.open('GET', 'http://localhost:35061/RequerimientoFiltro/Get?' + 'id_requerimiento=' + (id_requerimiento) + '&fechainicio=' + (fechainicio) + '&fechafin=' + (fechafin) + ' &id_centrocosto=' + (id_centrocosto) + '&id_login=' + (id_login) + '&iIdEstado=' + (iIdEstado), true);
+
+        xhr.responseType = "json";
+        // xhr.setRequestHeader("Content-Type", "application/json");
+        //console.log(sede)
+        xhr.onload = function () {
+
+            var status = xhr.status;
+            if (status == 200) {
+                // console.log(xhr.response.GetDataPOSTResult.cUser + " " + xhr.response.GetDataPOSTResult.cPassword);
+                obj = xhr.response;
+                obj2 = JSON.stringify(obj);
+                console.log(xhr.response)
+
+                if (obj != 0) {
+                    //Para actualizar la fila de las columnas 
+                    $("#ListaBusquedaRequerimiento tbody tr").remove();
+                    for (i = 0, j = 1; i < obj.length; i++, j++) {
+                        $("#ListaBusquedaRequerimiento tbody").append("<tr><td><button type='button' class='btn btn-success btn-xs' id='btnAgregarRequeSalida'><span class='glyphicon glyphicon-info-sign'></span><b>Agregar</b></button></td>" +
+                        '<td>' + j + '</td>' +
+                        '<td>' + obj[i].vcIdRequerimiento + '</td>' +
+                        '<td>' + obj[i].vcDescripcionAlmacen + '</td>' +
+                        '<td>' + obj[i].vcLogin + '</td>' +
+                        '<td>' + obj[i].dFechaRequerimiento + '</td>' +
+                        '<td>' + obj[i].dtFechaMaximaAtencion + '</td>' +
+                        '<td>' + obj[i].nvDescripcionEstadoAprobacion + '</td>' +
+                        '</td></tr>');
+                    }
+                }
+                else {
+                    swal("Usted no cuenta con Requerimientos asignados!")
+                }
+            }
+            else {
+                swal("Ocurrió un error al obtener a sus Requerimientos!")
+            }
+        }
+        xhr.send();
+        //xhr.send(dataobj);
+    }
+
+
+
+    $("#btnAgregarRequeSalida").click(function () {
+        $('#vcRequerimiento54');
+    });
+
+
+    $(document).on("click", "#btnBuscarRequerimientoSalida54", function () {
+        ObtenerRequerimientosSalidas();
+    });
+
+
+    
+
+
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    
+
+    function ObtenerSalidasdeRequerimiento() {
+
+
+        id_requerimiento = getParameterByName('id_requerimiento');
+
+        var xhr = new XMLHttpRequest();
+
+        var obj;
+
+
+        xhr.open('GET', 'http://localhost:35061/RequerimientoFiltro/GetDatos?' + 'id_requerimiento=' + (id_requerimiento), true);
+
+        xhr.responseType = "json";
+        // xhr.setRequestHeader("Content-Type", "application/json");
+        //console.log(sede)
+        xhr.onload = function () {
+
+            var status = xhr.status;
+            if (status == 200) {
+                // console.log(xhr.response.GetDataPOSTResult.cUser + " " + xhr.response.GetDataPOSTResult.cPassword);
+                obj = xhr.response;
+                //datosrequerimientodetalle = xhr.response;
+                //obj2 = JSON.stringify(obj);
+                console.log(obj);
+
+                if (obj != 0) {
+                    //Para actualizar la fila de las columnas
+
+                    //$.each(obj, function (i, DatosRequerimiento) {
+                    //console.log(DatosRequerimiento);
+                    $("#vcIdRequerimiento").val(obj.vcIdRequerimiento);
+                    $("#nvUsuario").val(obj.vcNombres);
+                    $("#vcAlmacenSalida54").val(obj.vcDescripcionAlmacen);
+                    $("#dFechaSalida54").val(obj.dFechaRequerimiento);
+                    $("#nvObservacionSalida54").val(obj.nvObservacion);
+
+                    
+                    console.log("cantidad " + obj.datosrequerimientodetalle.length);
+                    item = obj.datosrequerimientodetalle.length - 1;
+                    $("#tabla_oculta_salida tbody tr:eq(0)").clone().removeClass('fila-base').appendTo("#tblDetalleSalida54 tbody");
+                    $("#CantidadItemsSalida54").text(parseInt($("#CantidadItemsSalida54").text()) + 1);
+                    //$("#CantidadItemsSalida54").text((item) + 1 );
+                    $("#tblDetalleSalida54 tbody tr").remove();
+
+
+
+
+         
+                    item++;
+                    //item = $("#tblDetalleSalida54 tr").length;
+                 
+                    if ($("#Salida_item").val() == "") {
+
+                    for (i = 0, j = 1; i < obj.datosrequerimientodetalle.length; i++, j++) {
+                        $("#tblDetalleSalida54 tbody").append('<tr><td><button type="button" class="btn btn-danger btn-xs" id="QuitarSalida"><span class="glyphicon glyphicon-remove"></span></button>' +
+                           '<button type="button" class="btn btn-success btn-xs" id="ModificarSalida"><span class="glyphicon glyphicon-pencil"></span></button></td>' +
+                                            '<td>' + item + '</td>' +
+                                            '<td>' + obj.datosrequerimientodetalle[i].vcCodigoItem + '</td>' +
+                                            '<td>' + obj.datosrequerimientodetalle[i].nvDescripcionCorta + '</td>' +
+                                            '<td>' + obj.datosrequerimientodetalle[i].vcIdUnidad + '</td>' +
+                                            '<td hidden>' + + '</td>'+
+                                            '<td></td>' +
+                                            '<td hidden>' + + '</td>' +
+                                            '<td></td>' +
+                                            '<td>' + obj.datosrequerimientodetalle[i].numCantidadSolicitada + '</td>' +
+                                            '<td></td>' +
+                                            '<td></td>' +
+                                            '<td></td>' +
+
+                                            '</td></tr>');
+
+                       
+                        ActualizarNumeroItemSalida();
+                      
+                        $("#CantidadItemsSalida54").text(item);
+                        fila = parseInt($("#CantidadItemsSalida54").text());
+                        
+                        console.log(fila)
+                        console.log(item)
+                    }
+
+                    }
+                    else {
+                        fila = parseInt($("#Salida_item").val());
+                        fila = fila - 1;
+                    }
+                    //});
+
+                }
+                else {
+                    swal("Usted no cuenta con Requerimientos asignados!")
+                }
+            }
+            else {
+                swal("Ocurrió un error al obtener a sus Requerimientos!")
+            }
+
+
+        }
+        xhr.send();
+        //xhr.send(dataobj);
+    }
+   
+    
+            
+
+
+   
+    $(document).on("click", "#btnAgregarRequeSalida", function () {
+        //ObtenerCamposRequerimientos();
+        id_requerimiento = $(this).parent().parent().find('td:eq(2)').text();
+        window.location.href = './RegistrarSalida?id_requerimiento=' + (id_requerimiento) + '&fechainicio=' + (fechainicio) + '&fechafin=' + (fechafin) + '&id_centrocosto=' + (id_centrocosto) + '&id_login=' + (id_login);
+    });
+
+
+
+    $("#nvResponsableRequerimiento102").autocomplete({
+        source: function (request, response) {
+            filtro = $("#nvResponsableRequerimiento102").val();
+            var data = { filtro: filtro };
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                data: { filtro: filtro },
+                url: 'http://admin_erp.natclar.com.pe:12000/rWSTrabajador/TrabajadorByFiltro/Get',
+                async: true,
+                //data: JSON.stringify({usuario: dataobj}),
+                //data: JSON.stringify(dataobj),
+                //data: jQuery.parseJSON({user:us, pass:passw}),
+                //datos: { filtro: filtro },
+                contentType: "application/json",
+                success: function (data) {
+                    //console.log(data)
+                    response($.map(data, function (item) {
+                        return { value: item.persona.vcApellidoPaterno + " " + item.persona.vcApellidoMaterno + " " + item.persona.vcNombres, text1: item.persona.vcNumeroDocumento };
+                    }))
+                },
+                error: function () { console.log("ERROR..."); }
+            })
+        },
+        minLength: 3,
+        select: function (event, ui) {
+            $("#nvResponsableRequerimiento102").val(ui.item.text);
+            $("#iIdResponsableRequerimiento102").val(ui.item.text1);
+            $("#nvResponsableRequerimiento102").prop('readonly', true);
+            $("#nvResponsableRequerimiento102").css("background-color", "lightgoldenrodyellow");
+        },
+        error: function (ex) {
+            alert('Error al traer datos.' + ex);
+        }
+    })
+
+
+    $("#vcCodigoSalida54").autocomplete({
+
+        source: function (request, response) {
+           
+            flitroCodigo = $("#vcCodigoSalida54").val();
+
+            //console.log(filtroTB)
+            //console.log(flitroDescrip)
+            //var data = { VCIDTIPOBIEN: filtroTB, NVDESCRIPCIONCORTA: flitroDescrip };
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                data: { VCIDARTICULO: flitroCodigo },
+                url: 'http://admin_erp.natclar.com.pe:12000/rWSArticulo/ArticuloByFiltro/Get',
+                async: true,
+                contentType: "application/json",
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return { value: item.vcIdArticulo, text1: item.nvDescripcionCorta, text2: item.vcIdUnidadMedida };
+                    }))
+                },
+                error: function () { console.log("ERROR..."); }
+            })
+        },
+        minLength: 3,
+
+        select: function (event, ui) {
+            $("#vcCodigoSalida54").val(ui.item.text);
+            $("#nvDecripciónSalida54").val(ui.item.text1);
+            $("#nvUnidadSalida54").val(ui.item.text2);
+            //$("#nvTrabajadorR35").prop('readonly', true);
+            //$("#vcDescripcionRequerimientoArticulo101").css("background-color", "lightgoldenrodyellow");
+        },
+        error: function (ex) {
+            alert('Error al traer datos.' + ex);
+        }
+
+    })
+
+
+
+
+
+    $("#nvDecripciónSalida54").autocomplete({
+
+        source: function (request, response) {
+
+            flitroDescripcion = $("#nvDecripciónSalida54").val();
+
+            //console.log(filtroTB)
+            //console.log(flitroDescrip)
+            //var data = { VCIDTIPOBIEN: filtroTB, NVDESCRIPCIONCORTA: flitroDescrip };
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                data: { NVDESCRIPCIONCORTA: flitroDescripcion },
+                url: 'http://localhost:22805/ArticuloByFiltro/GetDescripcion',
+                async: true,
+                contentType: "application/json",
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return { value: item.nvDescripcionCorta, text1: item.vcIdArticulo, text2: item.vcIdUnidadMedida };
+                    }))
+                },
+                error: function () { console.log("ERROR..."); }
+            })
+        },
+        minLength: 3,
+
+        select: function (event, ui) {
+            $("#nvDecripciónSalida54").val(ui.item.text);
+            $("#vcCodigoSalida54").val(ui.item.text1);
+            $("#nvUnidadSalida54").val(ui.item.text2);
+            //$("#nvTrabajadorR35").prop('readonly', true);
+            //$("#vcDescripcionRequerimientoArticulo101").css("background-color", "lightgoldenrodyellow");
+        },
+        error: function (ex) {
+            alert('Error al traer datos.' + ex);
+        }
+
+    })
+
+
+
+   
+
+</script>

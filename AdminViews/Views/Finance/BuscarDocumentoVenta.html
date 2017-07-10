@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Buscar Documento Venta</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-green fixed sidebar-mini sidebar-collapse">
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+        </script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    BUSCAR DOCUMENTO VENTA
+                </h1>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box box-default collapsed-box">
+                                <div class="box-header">
+                                    <h3 class="box-title">BUSCAR DOCUMENTO VENTA</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                            <i class="fa fa-angle-double-down"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <div class="row form-group">
+                                        <!--<div class="col-md-12">-->
+                                        <!--<div class="form-inline">-->
+                                        <div class="col-md-4">
+                                            <label id="lblTipoDocumentoVenta" class="col-sm-1 control-label no-padding">Tipo</label>
+                                            <div class="col-sm-11">
+                                                <select class="form-control" id="cboTipoDocumentoVenta">
+                                                    <option value="FEL">Factura Electronica</option>
+                                                    <option value="BEL">Boleta Electronica</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label id="lblEstado" class="col-sm-2 control-label no-padding">Estado</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="nvEstado" id="nvEstado" value="" />
+                                                <input type="hidden" id="vcEstado" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label id="lblSerie" class="col-sm-1 control-label no-padding">Serie</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="nvSerie" id="nvSerie" value="" />
+                                            </div>
+                                        </div>
+
+                                        <!--</div>-->
+                                        <!--</div>-->
+                                    </div>
+                                    <div class="row form-group">
+                                        <!--<div class="col-md-12">-->
+                                        <!--<div class="form-inline">-->
+                                        <div class="col-md-4">
+                                            <label id="lblFechaIni52" class="col-sm-2 control-label no-padding">Fecha</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="datepicker form-control" placeholder="dd/mm/yyyy" id="dIniDocumentoVenta" name="dIniDocumentoVenta" value="" />
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="datepicker form-control" placeholder="dd/mm/yyyy" id="dFinDocumentoVenta" name="dFinDocumentoVenta" value="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-5">
+                                            <label id="lblPagador" class="col-sm-2 control-label no-padding">Pagador</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="nvPagador1" id="nvPagador1" value="" />
+                                                <input type="hidden" id="vcRucPagador1" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <!--<div class="col-sm-5">-->
+                                            <button type="button" class="btn btn-success sincabecera" id="btnBuscarDocumentoVenta" name="btnBuscarDocumentoVenta">
+                                                <span class="glyphicon glyphicon-search"></span>
+                                                <b>Buscar</b>
+                                            </button>
+                                            <!--</div>-->
+                                            <!--</div>-->
+                                        </div>
+                                        <!--</div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">LISTA DOCUMENTOS VENTA</h3>
+
+                                <button id="NuevoDocumentoVenta" class="btn btn-link btn-xs pull-right">
+                                    Nuevo
+                                    <i class="fa fa fa-file-o" style="color: #00a65a" aria-hidden="true"></i>
+                                </button>
+                                <button class="btn btn-link btn-xs pull-right">
+                                    Exportar
+                                    <i class="fa fa-file-excel-o" style="color: #00a65a" aria-hidden="true"></i>
+                                </button>
+
+                                <div class="box-body">
+                                    <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                                        <div class="row">
+                                            <div class="col-sm-6"></div>
+                                            <div class="col-sm-6"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1"></th>
+                                                            <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1"></th>
+                                                            <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Serie</th>
+
+                                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Numero</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Tipo</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Pagador</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Estado</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">SubTotal</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Igv</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Total</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr role="row" class="odd">
+                                                            <td><a href='{Value}' class='btn btn-info btn-xs'><span class='glyphicon glyphicon-zoom-in'></span></a></td>
+                                                            <td><a href='{Value}' class='btn btn-info btn-xs'><span class='glyphicon glyphicon-print'></span></a></td>
+                                                            <td class="sorting_1">20</td>
+                                                            <td>12340</td>
+                                                            <td>FEL</td>
+                                                            <td>Empresa Minera Milpo</td>
+                                                            <td>CANCELADO</td>
+                                                            <td>100</td>
+                                                            <td>18</td>
+                                                            <td>118</td>
+                                                        </tr>
+                                                        <tr role="row" class="even">
+                                                            <td><a href='{Value}' class='btn btn-info btn-xs'><span class='glyphicon glyphicon-zoom-in'></span></a></td>
+                                                            <td><a href='{Value}' class='btn btn-info btn-xs'><span class='glyphicon glyphicon-print'></span></a></td>
+                                                            <td class="sorting_1">2</td>
+                                                            <td>140</td>
+                                                            <td>BEL</td>
+                                                            <td>Empresa Minera Quenuales</td>
+                                                            <td>ANULADO</td>
+                                                            <td>200</td>
+                                                            <td>36</td>
+                                                            <td>236</td>
+                                                        </tr>
+                                                        <tr role="row" class="odd">
+                                                            <td><a href='{Value}' class='btn btn-info btn-xs'><span class='glyphicon glyphicon-zoom-in'></span></a></td>
+                                                            <td><a href='{Value}' class='btn btn-info btn-xs'><span class='glyphicon glyphicon-print'></span></a></td>
+                                                            <td class="sorting_1">1</td>
+                                                            <td>1430</td>
+                                                            <td>FEL</td>
+                                                            <td>Empresa Minera Milpo</td>
+                                                            <td>PENDIENTE</td>
+                                                            <td>100</td>
+                                                            <td>18</td>
+                                                            <td>118</td>
+                                                        </tr>
+                                                        <tr role="row" class="even">
+                                                            <td><a href='{Value}' class='btn btn-info btn-xs'><span class='glyphicon glyphicon-zoom-in'></span></a></td>
+                                                            <td><a href='{Value}' class='btn btn-info btn-xs'><span class='glyphicon glyphicon-print'></span></a></td>
+                                                            <td class="sorting_1">33</td>
+                                                            <td>1040</td>
+                                                            <td>FEL</td>
+                                                            <td>Empresa Minera Milpo</td>
+                                                            <td>CANCELADO</td>
+                                                            <td>100</td>
+                                                            <td>18</td>
+                                                            <td>118</td>
+                                                        </tr>
+                                                        <tr role="row" class="odd">
+                                                            <td><a href='{Value}' class='btn btn-info btn-xs'><span class='glyphicon glyphicon-zoom-in'></span></a></td>
+                                                            <td><a href='{Value}' class='btn btn-info btn-xs'><span class='glyphicon glyphicon-print'></span></a></td>
+                                                            <td class="sorting_1">1</td>
+                                                            <td>345</td>
+                                                            <td>FEL</td>
+                                                            <td>Empresa Minera Milpo</td>
+                                                            <td>CANCELADO</td>
+                                                            <td>100</td>
+                                                            <td>18</td>
+                                                            <td>118</td>
+                                                        </tr>
+                                                        <tr role="row" class="even">
+                                                            <td><a href='{Value}' class='btn btn-info btn-xs'><span class='glyphicon glyphicon-zoom-in'></span></a></td>
+                                                            <td><a href='{Value}' class='btn btn-info btn-xs'><span class='glyphicon glyphicon-print'></span></a></td>
+                                                            <td class="sorting_1">1</td>
+                                                            <td>12343</td>
+                                                            <td>FEL</td>
+                                                            <td>Empresa Minera Milpo</td>
+                                                            <td>CANCELADO</td>
+                                                            <td>100</td>
+                                                            <td>18</td>
+                                                            <td>118</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th rowspan="1" colspan="1"></th>
+                                                            <th rowspan="1" colspan="1"></th>
+                                                            <th rowspan="1" colspan="1">Serie</th>
+                                                            <th rowspan="1" colspan="1">Numero</th>
+                                                            <th rowspan="1" colspan="1">Tipo</th>
+                                                            <th rowspan="1" colspan="1">Pagador</th>
+                                                            <th rowspan="1" colspan="1">Estado</th>
+                                                            <th rowspan="1" colspan="1">SubTotal</th>
+                                                            <th rowspan="1" colspan="1">Igv</th>
+                                                            <th rowspan="1" colspan="1">Total</th>
+
+                                                        </tr>
+
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">
+                                                    Showing 1 to 10 of 57 entries
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                                                    <ul class="pagination">
+                                                        <li class="paginate_button previous disabled" id="example2_previous">
+                                                            <a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a>
+                                                        </li>
+                                                        <li class="paginate_button active">
+                                                            <a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">
+                                                                1
+                                                            </a>
+                                                        </li>
+                                                        <li class="paginate_button ">
+                                                            <a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">
+                                                                2
+                                                            </a>
+                                                        </li>
+                                                        <li class="paginate_button ">
+                                                            <a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">
+                                                                3
+                                                            </a>
+                                                        </li>
+                                                        <li class="paginate_button ">
+                                                            <a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">
+                                                                4
+                                                            </a>
+                                                        </li>
+                                                        <li class="paginate_button ">
+                                                            <a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">
+                                                                5
+                                                            </a>
+                                                        </li>
+                                                        <li class="paginate_button ">
+                                                            <a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">
+                                                                6
+                                                            </a>
+                                                        </li>
+                                                        <li class="paginate_button next" id="example2_next">
+                                                            <a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,744 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Registrar Movimiento</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+    <script>
+
+    function abrir() {
+        window.open('BuscarMOF.html', 'popup', 'top=100,left=300,width=600,height=400');
+    }
+    </script> 
+</head>
+<body class="hold-transition skin-edit fixed sidebar-mini">
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+    </script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <!--<h1>
+                    REGISTRAR MOVIMIENTO
+                </h1>-->
+            </section>
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">REGISTRAR MOVIMIENTO</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="lblTrabajadorS35">Solicitante</label>
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <input type="text" class="form-control" id="nvTrabajadorS35" name="nvTrabajadorS35" value="" />
+                                                    <button type="button" class="btn btn-danger " id="btnNuevaBusquedaTS35"><span class="glyphicon glyphicon-remove"></span></button>
+                                                 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="lblTrabajadorAR35">A reemplazar</label>
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <input type="text" class="form-control" id="nvTrabajadorAR35" name="nvTrabajadorAR35" value="" />
+                                                    <button type="button" class="btn btn-danger" id="btnNuevaBusquedaTAR35"><span class="glyphicon glyphicon-remove"></span></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="lblPuesto35">Puesto</label>
+                                            <input type="text" class="form-control" id="nvPuesto35" name="nvPuesto35" style="background-color: lightgoldenrodyellow" value="" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label id="lblFechaMovimiento35">Fecha</label>
+                                            <input type="text" class="datepicker form-control mifecha" placeholder="dd/mm/yyyy" id="dFechaMovimiento35" name="dFechaMovimiento35" style="background-color: lightgoldenrodyellow" value="" disabled/>
+                                            <!-- <input type="text" class="datepicker form-control" placeholder="dd//mm//yyyy" id="dtfechafin" name="dtfechafin" value="" style="width:100px;" />-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label id="lblUnidadOrganizativa35">Unidad Organizativa</label>
+                                            <!--<input type="text" class="form-control" id="nvUnidadOrganizativa35" name="nvUnidadOrganizativa35" value="" readonly />-->
+                                            <select class="form-control cboUnidadOrganizativa" id="cboUnidadOrganizativa35"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label id="lblEmpresa35">Empresa</label>
+                                            <!--<input type="text" class="form-control" id="nvEmpresa35" name="nvEmpresa35" value="" readonly />-->
+                                            <select class="form-control cboEmpresa" id="cboEmpresa35">
+                                                <!--<option value="1">Buenaventura</option>
+                                                <option value="2">Oyón</option>-->
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label id="lblSede35">Sede</label>
+                                            <!--<input type="text" class="form-control" id="nvSede35" name="nvSede35" value="" readonly />-->
+                                            <select class="form-control cboSede" id="cboSede35c"></select>
+                                            <!--ListaSede-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="content-header">
+                <!--<h1>
+                    DETALLE MOVIMIENTO
+                </h1>-->
+            </section>
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">DETALLE MOVIMIENTO</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label id="lblTrabajadorR35">Reemplazante</label>
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <input type="text" class="form-control" id="nvTrabajadorR35" name="nvTrabajadorR35" value="" />
+                                                    <button type="button" class="btn btn-danger" id="btnNuevaBusqueda35"><span class="glyphicon glyphicon-remove"></span></button>
+                                                </span>
+                                            </div>   
+                                        </div>
+                                    </div>
+                                    <!--<div class="col-md-1">
+                                        <button type="button" class="btn btn-success btn-sm sincabecera" id="BuscarTrabajadorR"><span class="glyphicon glyphicon-search"></span></button>
+                                    </div>-->
+                                    <div class="col-md-1">
+                                        
+                                    </div>
+
+                                   
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="DNI35" style="width:150px;">Documento</label>
+                                                <input type="text" class="form-control" id="vcDocumento35" name="vcDocumento35" value="" maxlength="20" style="background-color: lightgoldenrodyellow" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label id="lblPuesto35-2" style="width:100px;">Puesto</label>
+                                                <input type="text" class="form-control" id="nvPuesto35-2" name="nvPuesto35-2" value="" style="background-color: lightgoldenrodyellow" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label id="lblArea35" style="width:100px;">Área</label>
+                                                <input type="text" class="form-control" id="nvArea35" name="nvArea35" value="" style="background-color: lightgoldenrodyellow" readonly />
+                                            </div>
+                                        </div>
+                                   
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label id="lblUnidadOrganizativa35-2">Unidad Organizativa</label>
+                                            <input type="text" class="form-control" id="nvUnidadOrganizativa35-2" name="nvUnidadOrganizativa35" value="" style="background-color: lightgoldenrodyellow" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label id="lblEmpresa35-2">Empresa</label>
+                                            <input type="text" class="form-control" id="nvEmpresa35-2" name="nvEmpresa35-2" value="" style="background-color: lightgoldenrodyellow" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label id="lblSede35-2">Sede</label>
+                                            <input type="text" class="form-control" id="nvSede35-2" name="nvSede35-2" value="" style="background-color: lightgoldenrodyellow" readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="checkbox" class="icheckbox_flat-blue" id="cbxSistTrab" />
+                                            <label id="SistTrab">Sistema de Trabajo</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="vcSistTrabA35" name="vcSistTrabA35" value="" placeholder="Sistema Actual" style="display: none;background-color: lightgoldenrodyellow" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <select class="form-control cboSistTrabajo" id="cboSistTrabN35" name="cboSistTrabN35" style="display:none"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="checkbox" id="cbxPuesto" />
+                                            <label id="lblCambioPuesto35">Cambio de Puesto</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="nvPuestoA35" name="nvPuestoA35" value="" placeholder="Puesto Actual" style="display: none;background-color: lightgoldenrodyellow" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="input-group Puestos" style="display:none">
+                                            <span class="input-group-btn">
+                                                <input type="hidden" class="form-control" id="idPuestoN35" name="idPuestoN35" value="" readonly />
+                                                <input type="text" class="form-control" id="nvPuestoN35" name="nvPuestoN35" value="" placeholder="Ingrese Puesto Nuevo" />
+                                                <button type="button" class="btn btn-danger" id="btnNuevaBusquedaPN35"><span class="glyphicon glyphicon-remove"></span></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="checkbox" id="cbxSueldo" />
+                                            <label id="lblCambioSueldo">Aumento Destaque</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="iSueldoA35" name="iSueldoA35" value="" placeholder="Sueldo Actual" style="display: none;background-color: lightgoldenrodyellow" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="iSueldoN35" name="iSueldoN35" value="" placeholder="Sueldo Nuevo" style="display:none"  />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label id="lblFechaCambioSueldo35" style="display: none">A partir de</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="text" class="datepicker form-control mifecha" id="dFechaCambioSueldo35" name="dFechaCambioSueldo35" value="" placeholder="dd/mm/yyyy" style="display:none"  />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="checkbox" id="cbxTransferencia" />
+                                            <label id="Transferencia">Transferencia</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="nvSedeOrigen35" name="nvSedeOrigen35" value="" placeholder="Sede Origen" style="display: none;background-color: lightgoldenrodyellow" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <select class="form-control ListaSede" id="cboSedeDestino35" name="cboSedeDestino35" style="display:none"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="text" class="datepicker form-control mifecha" id="dFechaIni35" name="dFechaIni35" value="" placeholder="De: dd/mm/yyyy" style="display:none"  />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="text" class="datepicker form-control mifecha" id="dFechaFin35" name="dFechaFin35" value="" placeholder="A: dd/mm/yyyy" style="display:none"  />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label id="lblObservaciones" style="vertical-align:top;">Observaciones</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <textarea rows="3" cols="110" id="txtaObservaciones35" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-header">
+                <!--<h1>
+                    REGISTRAR BONO
+                </h1>-->
+            </section>
+
+            <section class="content">
+                <div class="box box-primary" id="TablaBono">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="CabeceraBono">
+                                    <tr>
+                                        <td>
+                                            <b>REGISTRAR BONO</b>
+                                        <!--</td>
+                                        <td>-->
+                                            <button type="button" class="btn btn-success" id="btnAgregarBono">
+                                                <span class="glyphicon glyphicon-plus">
+                                                </span>
+                                            </button>
+                                        </td>
+                                        <td align="right">
+                                            <b>Cantidad de Items: <span id="CantidadItemsBono">0</span></b>
+                                            <!--<button type="button" class="btn btn-success btn-sm" id="AgregarDetalleComp"><span class="glyphicon glyphicon-plus"></span></button>-->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box-body">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="hidden" id="Item_Bono" name="Item_Bono" />
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover" id="TablaCabeceraBono">
+                                        <!--<thead>-->
+                                            <tr class="info">
+                                                <th>Acciones</th>
+                                                <th>Item</th>
+                                                <th hidden>Valor Empresa</th>
+                                                <th>Empresa</th>
+                                                <th hidden>Valor Puesto</th>
+                                                <th>Puesto</th>
+                                                <th hidden>Valor Bono</th>
+                                                <th>Bono</th>
+                                                <th>Monto</th>
+                                            </tr>
+                                       </thead>
+                                         <!--<tbody></tbody>-->
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <div class="panel-body">
+                <div class="form-group">
+                    <button type="button" class="btn btn-success" id="btnGuardarMovimiento" name="btnGuardarMovimiento"><span class="glyphicon glyphicon-floppy-disk"></span><b>&nbsp;Guardar</b></button>
+                    <!--<button type="button" class="btn btn-success" id=""><span class="glyphicon glyphicon-ok"></span><b>Confirmar</b></button>-->
+                    <!--<button type="button" class="btn btn-info" id=""><span class="glyphicon glyphicon-print"></span><b>Imprimir</b></button>-->
+                    <button type="button" class="btn btn-danger" id="Cancelar"><span class="glyphicon glyphicon-remove"></span><b>&nbsp; Cancelar</b></button>
+                    <button type="button" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>&nbsp;Atras</b></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+
+<table id="tabla_oculta_bono">
+    <tr class="fila-base">
+        <td width="65px">
+            <button type="button" class="btn btn-danger btn-xs" id="QuitarBono"><span class="glyphicon glyphicon-remove"></span></button>
+            <button type="button" class="btn btn-success btn-xs" id="ModificarBono"><span class="glyphicon glyphicon-pencil"></span></button>
+        </td>
+        <td></td><!--Item-->
+        <td hidden></td><!--Valor Empresa-->
+        <td></td><!--Descrip-->
+        <td hidden></td><!--Valor Puesto-->
+        <td></td><!--Descrip-->
+        <td hidden></td><!--Valor Bono-->
+        <td></td><!--Descrip-->
+        <td></td><!--Monto-->
+    </tr>
+</table>
+
+
+<div class="modal fade xs" style="text-align:center; vertical-align:middle"  id="frmRegistrarBono" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog" style="width:500px" role="document">
+        <div class="modal-content" style="text-align:center; vertical-align:middle">
+            <div class="modal-header" >
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title titulo-modal" id="myModalLabel">REGISTRAR BONO</h4>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label id="lblEmpresaBono35">Empresa</label>
+                            <select class="form-control" id="cboEmpresaBono35">
+                                <option value="1">Natclar</option>
+                                <option value="2">Otros</option>
+                                <!--<option value="3">Destaque</option>-->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label id="lblPuestoBono35">Puesto</label>
+                            <select class="form-control" id="cboPuestoBono35">
+                                <option value="1">Contador</option>
+                                <option value="2">Gerente</option>
+                                <!--<option value="3">Destaque</option>-->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label id="lblBono35">Bono</label>
+                            <select class="form-control" id="cboBono35">
+                                <option value="1">Movilidad</option>
+                                <option value="2">Alimentario</option>
+                                <!--<option value="3">Destaque</option>-->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label id="lblCantidad">Cantidad</label>
+                            <input type="number" class="form-control" id="Cantidad" name="Cantidad" value="" />
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success sincabecera" id="AgregarBono" name="AgregarBono">
+                                <span class="glyphicon glyphicon-plus">
+                                </span>
+                                <!--<b>Agregar</b>-->
+                            </button>
+                            <button type="button" class="btn btn-success sincabecera" id="Abrir" name="Abrir">
+                                <span class="glyphicon glyphicon-plus">
+                                </span>
+                                <!--<b>Agregar</b>-->
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    //    var Djsonobj = [{ "nvEmpresa": "Natclar", "nvEmpresa": "Natclar",  "nvEmpresa": "Natclar","nvPuesto": "Contador", "nvBono": "Movilidad", "iCantidad": "1245.00", "iIdempresa": "1", "iIdPuesto": "1", "iIdBono": "1" }];
+    //    var datwaSet = [
+    //["Tiger Nixon", "System Architect", "System Architect", "System Architect",  "System Architect",  "System Architect", "Edinburgh", "5421", "2011/04/25", "$320,800"],
+    //["Garrett Winters", "Garrett Winters", "Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750", "$170,750"],
+    //["Ashton Cox", "Ashton Cox", "Ashton Cox", "Junior Technical Author", "San Francisco", "1562", "2009/01/12", "$86,000", "$86,000"],
+    //    ];
+   
+       // $('#TablaCabeceraBono').DataTable({
+            
+    //    //"scrollX": true,
+    //    columns: [
+    //        { title: "ACCIONES" },
+    //        { title: "ITEM" },
+    //        { title: "EMPRESA" },
+    //         { title: "EMPRESA" },
+    //        { title: "PUESTO" },
+    //         { title: "PUESTO" },
+    //        { title: "BONO" },
+    //          { title: "BONO" },
+    //        { title: "MONTO" }
+    //    ],
+
+    //    //"ajax": function (data, callback, settings) {
+    //    //    callback(
+    //    //      JSON.parse(sessionStorage.getItem('Djsonobj'))
+    //    //    );
+    //    //},
+    //      data: Djsonobj,
+    //    "columnDefs": [
+    //        {
+    //            "targets": [2],
+    //            "visible": false,
+    //            "searchable": false
+    //        },
+    //        {
+    //            "targets": [4],
+    //            "visible": false
+    //        },
+    //         {
+    //             "targets": [6],
+    //             "visible": false
+    //         }
+    //    ]
+    //});
+
+    $("#btnAgregarBono").click(function () {
+        $('#frmRegistrarBono').modal('toggle');
+    });
+
+    $('#frmRegistrarBono').on('hidden.bs.modal', function (e) {
+        LimpiarDetalleBono();
+    });
+
+    UnidadOrganizativa();
+    SistemaTrabajo();
+
+    $("#nvTrabajadorR35").autocomplete({
+        source: function (request, response) {
+            filtro = $("#nvTrabajadorR35").val();
+            var data = { filtro: filtro };
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                data: { filtro: filtro },
+                url: 'http://admin_erp.natclar.com.pe:12000/rWSTrabajador/TrabajadorByFiltro/Get',
+                async: true,
+                //data: JSON.stringify({usuario: dataobj}),
+                //data: JSON.stringify(dataobj),
+                //data: jQuery.parseJSON({user:us, pass:passw}),
+                //datos: { filtro: filtro },
+                contentType: "application/json",
+                success: function (data) {
+                   // console.log(data)
+                    response($.map(data, function (item) {
+                        return { value: item.persona.vcApellidoPaterno + " " + item.persona.vcApellidoMaterno + " " + item.persona.vcNombres, text1: item.persona.vcNumeroDocumento, text2: item.puesto.Descripcion, text3: item.AreaNatclar.Descripcion, text4: item.sede.UnidadOrganizativa.vcDescripcion, text5: item.UbicacionTrabajo.Unidad.EmpresaTitular.nvRazonSocial, text6: item.sede.Ubigeo.nvDescripcion, text7: item.sistemaTrabajo.vcDescripcion };
+                    }))
+                },
+                error: function () { console.log("ERROR..."); }
+            })
+        },
+        minLength: 3,
+        select: function (event, ui) {
+            $("#nvTrabajadorR35").val(ui.item.text);
+            $("#vcDocumento35").val(ui.item.text1);
+            $("#nvPuesto35-2").val(ui.item.text2);
+            $("#nvArea35").val(ui.item.text3);
+            $("#nvUnidadOrganizativa35-2").val(ui.item.text4);
+            $("#nvEmpresa35-2").val(ui.item.text5);
+            $("#nvSede35-2").val(ui.item.text6);
+            $("#vcSistTrabA35").val(ui.item.text7);
+            $("#nvPuestoA35").val(ui.item.text2);
+            $("#nvSedeOrigen35").val(ui.item.text6);
+            $("#nvTrabajadorR35").prop('readonly', true);
+            $("#nvTrabajadorR35").css("background-color", "lightgoldenrodyellow");
+        },
+        error: function (ex) {
+            alert('Error al traer datos.' + ex);
+        }
+    })
+
+    $("#nvTrabajadorAR35").autocomplete({
+        source: function (request, response) {
+            filtro = $("#nvTrabajadorAR35").val();
+            var data = { filtro: filtro };
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                data: { filtro: filtro },
+                url: 'http://admin_erp.natclar.com.pe:12000/rWSTrabajador/TrabajadorByFiltro/Get',
+                async: true,
+                //data: JSON.stringify({usuario: dataobj}),
+                //data: JSON.stringify(dataobj),
+                //data: jQuery.parseJSON({user:us, pass:passw}),
+                //datos: { filtro: filtro },
+                contentType: "application/json",
+                success: function (data) {
+                    //console.log(data)
+                    response($.map(data, function (item) {
+                        return { value: item.persona.vcApellidoPaterno + " " + item.persona.vcApellidoMaterno + " " + item.persona.vcNombres, text1: item.persona.vcNumeroDocumento, text2: item.puesto.Descripcion, text3: item.AreaNatclar.Descripcion, text4: item.sede.UnidadOrganizativa.vcDescripcion, text5: item.UbicacionTrabajo.Unidad.EmpresaTitular.nvRazonSocial, text6: item.sede.Ubigeo.nvDescripcion, text7: item.sistemaTrabajo.vcDescripcion };
+                    }))
+                },
+                error: function () { console.log("ERROR..."); }
+            })
+        },
+        minLength: 3,
+        select: function (event, ui) {
+            $("#nvTrabajadorAR35").val(ui.item.text);
+            //$("#vcDocumento35").val(ui.item.text1);
+            $("#nvPuesto35").val(ui.item.text2);
+            $("#nvUnidadOrganizativa35").val(ui.item.text4);
+            $("#nvEmpresa35").val(ui.item.text5);
+            $("#nvSede35").val(ui.item.text6);
+            //$("#vcSistTrabA35").val(ui.item.text7);
+            //$("#nvPuestoA35").val(ui.item.text2);
+            //$("#nvSedeOrigen35").val(ui.item.text6);
+            $("#nvTrabajadorAR35").prop('readonly', true);
+            $("#nvTrabajadorAR35").css("background-color", "lightgoldenrodyellow");
+        },
+        error: function (ex) {
+            alert('Error al traer datos.' + ex);
+        }
+    })
+
+    $("#nvTrabajadorS35").autocomplete({
+        source: function (request, response) {
+            filtro = $("#nvTrabajadorS35").val();
+            var data = { filtro: filtro };
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                data: { filtro: filtro },
+                url: 'http://admin_erp.natclar.com.pe:12000/rWSTrabajador/TrabajadorByFiltro/Get',
+                async: true,
+                //data: JSON.stringify({usuario: dataobj}),
+                //data: JSON.stringify(dataobj),
+                //data: jQuery.parseJSON({user:us, pass:passw}),
+                //datos: { filtro: filtro },
+                contentType: "application/json",
+                success: function (data) {
+                    //console.log(data)
+                    response($.map(data, function (item) {
+                        return { value: item.persona.vcApellidoPaterno + " " + item.persona.vcApellidoMaterno + " " + item.persona.vcNombres, text1: item.persona.vcNumeroDocumento, text2: item.puesto.Descripcion, text3: item.AreaNatclar.Descripcion, text4: item.sede.UnidadOrganizativa.vcDescripcion, text5: item.UbicacionTrabajo.Unidad.EmpresaTitular.nvRazonSocial, text6: item.sede.Ubigeo.nvDescripcion, text7: item.sistemaTrabajo.vcDescripcion };
+                    }))
+                },
+                error: function () { console.log("ERROR..."); }
+            })
+        },
+        minLength: 3,
+        select: function (event, ui) {
+            $("#nvTrabajadorS35").val(ui.item.text);
+            //$("#vcDocumento35").val(ui.item.text1);
+            //$("#nvPuesto35").val(ui.item.text2);
+            //$("#nvUnidadOrganizativa35").val(ui.item.text4);
+            //$("#nvEmpresa35").val(ui.item.text5);
+            //$("#nvSede35").val(ui.item.text6);
+            //$("#vcSistTrabA35").val(ui.item.text7);
+            //$("#nvPuestoA35").val(ui.item.text2);
+            //$("#nvSedeOrigen35").val(ui.item.text6);
+            $("#nvTrabajadorS35").prop('readonly', true);
+            $("#nvTrabajadorS35").css("background-color", "lightgoldenrodyellow");
+        },
+        error: function (ex) {
+            alert('Error al traer datos.' + ex);
+        }
+    })
+
+    $("#nvPuestoN35").autocomplete({
+        source: function (request, response) {
+            filtro = $("#nvPuestoN35").val();
+            var data = { filtro: filtro };
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                data: { filtro: filtro },
+                //url: 'https://admin_erp.natclar.com.pe:12000/rWSPuesto/PuestoByFiltro/Get',
+                url: 'http://admin_erp.natclar.com.pe/rWSPuesto/PuestoByFiltro/Get',
+                async: true,
+                //data: JSON.stringify({usuario: dataobj}),
+                //data: JSON.stringify(dataobj),
+                //data: jQuery.parseJSON({user:us, pass:passw}),
+                //datos: { filtro: filtro },
+                contentType: "application/json",
+                success: function (data) {
+                    console.log(data)
+                    response($.map(data, function (item) {
+                        return { value: item.Descripcion, text1: item.IdPuesto };
+                    }))
+                },
+                error: function () { console.log("ERROR..."); }
+            })
+        },
+        minLength: 3,
+        select: function (event, ui) {
+            $("#nvPuestoN35").val(ui.item.text);
+            $("#nvPuestoN35").prop('readonly', true);
+            $("#nvPuestoN35").css('background-color', 'lightgoldenrodyellow');
+            $("#idPuestoN35").val(ui.item.text1);
+
+        },
+        error: function (ex) {
+            alert('Error al traer datos.' + ex);
+        }
+    })
+
+    $(document).on("change", ".cboUnidadOrganizativa", function () {
+        $(".cboEmpresa").empty();
+        $(".cboSede").empty();
+        unor = $(".cboUnidadOrganizativa").val();
+        sessionStorage.setItem("Unor", $(".cboUnidadOrganizativa").val());
+        //Unor2 = sessionStorage.getItem("Unor");
+        //console.log(Unor2)
+        Empresa();
+    });
+       
+    $(document).on("change", ".cboEmpresa", function () {
+        $(".cboSede").empty();
+        emp = $(".cboEmpresa").val();
+        sessionStorage.setItem("Emp", $(".cboEmpresa").val());
+        //Emp2 = sessionStorage.getItem("Emp");
+        //console.log(Emp2)
+        Sede_Emp_Unor();
+    });
+        
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+
+    $(document).on("click", "#Cancelar", function () {
+        swal({
+            title: "Esta seguro de eliminar este Registro?",
+            text: "No podrá recuperar los datos ingresados...!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Si, estoy seguro!",
+            cancelButtonText: "Cancelar!",
+            closeOnConfirm: false
+        }, function () {
+            window.location.href = "../../../Views/RRHH/RegistrarMovimiento.html";
+            swal("Correcto!", "Su Registro fue eliminado.", "success");
+        });
+    });
+
+    $(document).on("click", "#Abrir", function () {
+        abrir();
+    });
+});
+</script>

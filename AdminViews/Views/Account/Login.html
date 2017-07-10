@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Login</title>
+    <link href="../../public/plugins/admin-lte/css/AdminLTE.css" rel="stylesheet" />
+    <link href="../../public/plugins/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../../public/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../public/web/css/estilos.css" rel="stylesheet" type="text/css" />
+    <link href="../../public/web/css/sweetalert.css" rel="stylesheet" />
+</head>
+
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-box-body">
+            <form action="./../Shared/Plantilla.html#" method="post" id="frmLogin" name="frmLogin" onsubmit="MostrarEscogerSede(this)">
+                <div class=" login-logo">
+                <img src="../../Images/logo_empresa.png">
+                </div>
+                <p class="login-box-msg">INICIO DE SESIÓN</p>
+                <div class="form-group has-feedback">
+                    <input id="USU_LOGIN" name="USU_LOGIN" class="form-control" placeholder="Usuario">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input id="USU_CLAVE" name="USU_CLAVE" type="password" class="form-control" placeholder="Password">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <!--<div id="LISTA_CENTROS" class="form-group has-feedback">
+                    <select class="form-control form-control" id="USU_CENTRO" name="USU_CENTRO"></select>
+                </div>-->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <input type="button" id="IniciarSesion" class="btn btn-primary btn-block btn-flat" value="Iniciar Sesion" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../../public/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../../public/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../public/web/js/funciones.js"></script>
+    <script src="../../public/web/js/script.js"></script>
+    <script src="../../public/web/js/sweetalert-dev.js"></script>
+    <script src="../../public/web/js/sweetalert.min.js"></script>
+
+    <p style="text-align:center;">&copy;  <label id="anio"></label> - SG NATCLAR SAC</p>
+
+    <div class="modal fade" id="ListarCentros" accesskey="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-m" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Seleccionar Sede:</h4>
+                </div>
+                <div class="modal-body">
+
+                    <table border="1">
+                        <tr>
+                            <td width="200px">
+                                <span class="glyphicon glyphicon-search">
+                                </span>
+                                <a href="#">SAN ISIDRO</a>
+                            </td>
+                            <td width="200px">
+                                <span class="glyphicon glyphicon-search">
+                                </span>
+                                <a href="#">CLÍNICA COMAS</a>
+                            </td>
+                            <td width="200px">
+                                <span class="glyphicon glyphicon-search">
+                                </span>
+                                <a href="#">CLÍNICA LA VICTORÍA</a>
+                            </td>
+                            <td width="200px">
+                                <span class="glyphicon glyphicon-search">
+                                </span>
+                                <a href="#">OTRAS</a>
+                            </td>
+                        </tr>
+                    </table>
+                   
+                  
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btnContinuarModal" name="btnContinuarModal">Continuar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

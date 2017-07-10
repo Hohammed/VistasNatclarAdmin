@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - NATCERP</title>
+    @Styles.Render("~/bundles/estilos")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/script")
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/MVCGridHandler.axd/script.js"></script>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="../Home/Index" class="logo">
+                <span class="logo-mini"><b>NA</b></span>
+                <span class="logo-lg">NATCLAR <b>ADMIN</b></span>
+            </a>
+            <nav class="navbar navbar-static-top">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Barra de Navegación</span>
+                </a>
+                @Html.Partial("_DatosLogeo")
+            </nav>
+        </header>
+        @Html.Partial("_MenuLateral")
+        <div class="content-wrapper">
+            <section class="content">
+                <div class="row">
+                    <div class="col-xs-12" id="contenido">
+                        @RenderBody()
+                        <hr />
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.0
+            </div>
+            <strong>Copyright &copy;  @DateTime.Now.Year - <a href="http://www.natclar.com.pe/">SG NATCLAR SAC</a>.</strong> Todos los derechos reservados.
+        </footer>
+        <aside class="control-sidebar control-sidebar-dark">
+            @Html.Partial("_historiaClinica")
+        </aside>
+        <div class="control-sidebar-bg"></div>
+    </div>
+
+</body>
+</html>

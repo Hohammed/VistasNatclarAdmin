@@ -1,0 +1,740 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Registrar Requerimiento</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+    <script src="../../Scripts/Global/global.js"></script>
+</head>
+<body class="hold-transition skin-yellow fixed sidebar-mini">
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+        </script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    DATOS REQUERIMIENTO
+                </h1>
+            </section>
+
+            <section class="content">
+                <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">DATOS REQUERIMIENTO</h3>
+                                </div>
+                                <div class="box-body">
+
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblSedeOrigen">Almacen Origen</label>
+                                                <input type="text" id="vcAlmacenRequerimiento101" name="vcAlmacenRequerimiento101" class="form-control SedeOrigen" style="background-color:lightgoldenrodyellow" readonly />
+                                                <input type="hidden" id="vcIdRequerimiento" name="vcIdRequerimiento" />
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblTrabajador1" style="display:block">Responsable</label>
+                                                <input type="text" class="form-control UsuarioOrigen" style="background-color:lightgoldenrodyellow" id="nvResponsableRequerimiento101" name="nvResponsableRequerimiento101" value="" readonly>
+                                                <input type="hidden" id="vcLogin" name="vcLogin" />
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblAreaRequerimiento101">Area que pertenece</label>
+                                                <input type="text" class="form-control" id="vcAreaRequerimiento101" name="vcAreaRequerimiento101" value="" style="background-color:lightgoldenrodyellow" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblcboSedeDestino54" style="display: block">Centro de Costo</label>
+                                                <select class="form-control ListaSede" style="display: block;" id="cboSedeDestino54"></select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="lblFechaSolicitudRequerimiento101" style="width:100px;">Fecha Solicitud</label>
+                                                <input type="text" class="datepicker form-control mifecha" id="dFechaSolicitudRequerimiento101" name="dFechaSolicitudRequerimiento101" style="background-color:lightgoldenrodyellow" placeholder="dd/mm/yyyy" disabled />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+
+
+
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblTipoRequerimiento101" style="display: block">Tipo</label>
+                                                <select class="form-control" style="display: block;" id="cboTipoRequerimiento101">
+                                                    <option value="1">BIENES</option>
+                                                    <option value="2">SERVICIOS</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblMotivoRequerimiento101" style="display: block">Motivo</label>
+                                                <select class="form-control" style="display: block;" id="cboMotivoRequerimiento101">
+                                                    <option value="1">EXTRAORDINARIO</option>
+                                                    <option value="2" selected>ORDINARIO</option>
+
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblPrioridadRequerimiento101" style="display: block">Prioridad</label>
+                                                <select class="form-control" id="cboPrioridad101"></select>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="lblFechaMaximaRequerimiento101" style="width:200px;">Fecha Entrega</label>
+                                                <input type="text" class="datepicker form-control mifecha" id="dFechaMaximaRequerimiento101" name="dFechaMaximaRequerimiento101" style="background-color:lightgoldenrodyellow" placeholder="dd/mm/yyyy" disabled />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+
+
+
+                                        <div class="col-md-6" id="file" style="display:none">
+                                            <div class="form-group">
+                                                <label id="lblArchivoRequerimiento101">File/Sustento</label>
+                                                <input type="file" class="filestyle" data-buttonname="btn-success" data-buttontext="&nbsp;&nbsp;&nbsp;Seleccione archivo">
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label for="lblObservacionRequerimiento101" style="width:120px;">Observacion</label>
+                                                <textarea class="form-control" cols="130" id="nvObservacionRequerimiento101"></textarea>
+                                                <input type="hidden" id="iIdEstadoAprobacion" name="iIdEstadoAprobacion" />
+                                                <input type="hidden" id="iIdEstadoAtencion" name="iIdEstadoAtencion" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <!--<section class="content-header"></section>
+            <section class="content">
+                <div class="box box-primary">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover" id="TablaCabeceraCargar55">
+                                    <tr>
+                                        <td>
+                                            <b>CARGAR DESDE EXCEL</b>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="file" class="filestyle" data-buttonname="btn-success" data-buttontext="&nbsp;&nbsp;&nbsp;Seleccione archivo">
+                                </div>
+                            </div>
+
+                            <div class="col-md-1">
+                                <span class="icon-input-btn">
+                                    <button type="button" class="btn btn-success" name="Cargar" id="Cargar">
+                                        <span class="glyphicon glyphicon-open">
+                                        </span>
+                                        <b>Cargar</b>
+                                    </button>
+
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>-->
+
+
+
+            <section class="content" id="RQArticulos101">
+
+                <div class="box box-primary">
+                    <div class="box-header">
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="CabeceraRequerimiento101">
+                                <tr>
+                                    <td>
+                                        <b>DETALLE DE BIENES</b>
+                                    </td>
+                                    <td align="right">
+                                        <b>Cantidad de Items: <span id="CantidadItemsRequerimientoArticulo101">0</span></b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lblCodigoRequerimientoArticulo101">Codigo</label>
+                                        <input type="text" class="form-control" id="vcCodigoRequerimientoArticulo101" name="vcCodigoRequerimientoArticulo101" value="" readonly style="background-color:lightgoldenrodyellow" />
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                    <div class="">
+                                        
+                                        <input type="hidden" class="form-control" id="vcCodigoItemArticulo" name="vcCodigoItemArticulo" value="" readonly style="background-color:lightgoldenrodyellow" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label id="lblDescripcionRequerimientoArticulo101">Descripcion</label>
+                                        <input type="text" class="form-control" id="vcDescripcionRequerimientoArticulo101" name="vcDescripcionRequerimientoArticulo101" value="" />
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lblUnidadMedidaRequerimientoArticulo101">Unidad Medida</label>
+                                        <input type="text" class="form-control" style="background-color:lightgoldenrodyellow" id="nvUnidadMedidaRequerimientoArticulo101" name="nvUnidadMedidaRequerimientoArticulo101" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-1">
+                                    <div class="form-group">
+                                        <label for="lblCantidadRequerimientoArticulo101">Cantidad</label>
+                                        <input type="number" class="form-control" id="intCantidadRequerimientoArticulo101" name="intCantidadRequerimientoArticulo101" value="" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lblSede16">Centro Costo</label>
+                                        <input type="text" id="vcSede16" name="vcSede16" class="form-control" style="display: block ;background-color:lightgoldenrodyellow" readonly />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-1">
+                                    <div class="form-group">
+                                        <button class="btn btn-success sincabecera" id="btnAgregarDetalleRequerimientoArticulo101" name="btnAgregarDetalleRequerimientoArticulo101">
+                                            <span class="glyphicon glyphicon-plus"></span><b></b>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="hidden" id="Bienes_item" name="Bienes_item" />
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover" id="tblDetalleRequerimientoArticulo101">
+                                            <thead>
+                                                <tr class="info">
+                                                    <th>Acciones</th>
+                                                    <th>Item</th>
+                                                    <th>Codigo</th>
+                                                    <th>Descripcion</th>
+                                                    <th>Unidad Medida</th>
+                                                    <th>Cantidad</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel-body">
+                    <div class="form-group">
+
+                        <button type="button" class="btn btn-info" id="btnGuardarRequerimientoBienes101" name="btnGuardarRequerimientoBienes101"><span class="glyphicon glyphicon-floppy-disk"></span><b>Guardar</b></button>
+                        <button type="button" class="btn btn-success" id="btnConfirmarRequerimientoBienes101" name="btnConfirmarRequerimientoBienes101"><span class="glyphicon glyphicon-ok"></span><b>Confirmar</b></button>
+                        <!--<button type="button" class="btn btn-info" id=""><span class="glyphicon glyphicon-print"></span><b>Imprimir</b></button>-->
+                        <button type="button" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>Atras</b></button>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <section class="content" id="RQActivos101" style="display: none">
+
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <div class="table-responsive">
+                            <table class="table table-bordered " id="CabeceraRequerimientoActivo101">
+                                <tr>
+                                    <td>
+                                        <b>DETALLE DE SERVICIOS</b>
+                                    </td>
+                                    <td align="right">
+                                        <b>Cantidad de Items:<span id="CantidadItemsRequerimientoActivo101">0</span></b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lblCodigoRequerimientoActivo101">Codigo</label>
+                                        <input type="text" class="form-control" id="vcCodigoRequerimientoActivo101" name="vcCodigoRequerimientoActivo101" value="" readonly style="background-color:lightgoldenrodyellow" />
+                                        <input type="hidden" id="vcIdRequerimiento" name="vcIdRequerimiento" />
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label id="lblDescripcionRequerimientoActivo101">Descripcion</label>
+                                        <input type="text" class="form-control" id="vcDescripcionRequerimientoActivo101" name="vcDescripcionRequerimientoActivo101" value="" />
+
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-1">
+                                    <div class="form-group">
+                                        <label for="lblCantidadRequerimientoActivo101">Cantidad</label>
+                                        <input type="number" class="form-control" id="intCantidadRequerimientoActivo101" name="intCantidadRequerimientoActivo101" value="" />
+                                        <input type="hidden" id="numCantidadSolicitada" name="numCantidadSolicitada" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label id="lblSedeOrigen">Centro Costo</label>
+                                        <input type="text" id="vcSedeOrigen" name="vcSedeOrigen" class="form-control SedeOrigen" style="display: block ;background-color:lightgoldenrodyellow" readonly />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-1">
+                                    <div class="form-group">
+                                        <button class="btn btn-success sincabecera" id="btnAgregarDetalleRequerimientoActivo101" name="btnAgregarDetalleRequerimientoActivo101">
+                                            <span class="glyphicon glyphicon-plus"></span><b></b>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="hidden" id="Servicio_item" name="Servicio_item" />
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover" id="tblDetalleRequerimientoActivo101">
+                                        <!--<thead>-->
+                                            <tr class="info">
+                                                <th>Acciones</th>
+                                                <th>Item</th>
+                                                <th>Codigo</th>
+                                                <th>Descripcion</th>
+                                                <th>Cantidad</th>
+                                                <th>CentroCosto</th>
+                                            </tr>
+                                        <!--</thead>-->
+                                        <!--<tbody></tbody>-->
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="panel-body">
+                    <div class="form-group">
+
+                        <button type="button" class="btn btn-info" id="btnGuardarRequerimiento101" name="btnGuardarRequerimiento101"><span class="glyphicon glyphicon-floppy-disk"></span><b>Guardar</b></button>
+                        <button type="button" class="btn btn-success" id="btnConfirmarRequerimiento101" name="btnConfirmarRequerimiento101"><span class="glyphicon glyphicon-ok"></span><b>Confirmar</b></button>
+                        <!--<button type="button" class="btn btn-info" id=""><span class="glyphicon glyphicon-print"></span><b>Imprimir</b></button>-->
+                        <button type="button" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>Atras</b></button>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="content">
+                <div class="box box-primary">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover" id="TablaCabeceraSalida101">
+                                    <tr>
+                                        <td>
+                                            <b>ESTADO DE APROBACION</b>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<table id="tabla_oculta_requerimientoactivo101">
+    <tr class="fila-base">
+        <td width="65px">
+            <button type="button" class="btn btn-danger btn-xs" id="QuitarRequerimientoActivo"><span class="glyphicon glyphicon-remove"></span></button>
+            <button type="button" class="btn btn-success btn-xs" id="ModificarRequerimientoActivo"><span class="glyphicon glyphicon-pencil"></span></button>
+        </td>
+        <td></td><!--Item-->
+        <td></td><!--Codigo-->
+        <td></td><!--Descripcion-->
+        <td></td><!--Cantidad-->
+        <td></td><!--Centro Costo-->
+    </tr>
+</table>
+
+
+<table id="tabla_oculta_requerimientoarticulo101">
+
+    <tr class="fila-base">
+        <td width="65px">
+            <button type="button" class="btn btn-danger btn-xs" id="QuitarRequerimientoArticulo"><span class="glyphicon glyphicon-remove"></span></button>
+            <button type="button" class="btn btn-success btn-xs" id="ModificarRequerimientoArticulo"><span class="glyphicon glyphicon-pencil"></span></button>
+        </td>
+        <td></td><!--Item-->
+        <td></td><!--Codigo-->
+        <td></td><!--Descripcion-->
+        <td></td><!--Unidad Medida-->
+        <td></td><!--Cantidad-->
+
+    </tr>
+
+
+</table>
+
+
+
+
+
+
+<script type="text/javascript">
+    
+    ObtenerCamposRequerimientos();
+    //$(document).ready(function () {
+    //    var id_requerimiento = $.ObtenerParametros("id_requerimiento");
+    //    if (id_requerimiento != null) {
+            
+    //    }
+
+    //    ObtenerCamposRequerimientosDetalle();
+
+    //});
+
+    function reordenar() {
+        var item = 1;
+        $("#tblDetalleRequerimientoArticulo101 tbody tr").each(function (index) {
+            $(this).find("td:eq(1)").html(item++);
+        });
+    }
+
+    $("#cboTipoRequerimiento101").change(function () {
+        if ($("#cboTipoRequerimiento101").val() == "2") {
+            $("#RQActivos101").show();
+            $("#RQArticulos101").hide();
+
+        } else {
+            $("#RQActivos101").hide();
+            $("#RQArticulos101").show();
+        }
+    });
+
+
+    $("#cboMotivoRequerimiento101").change(function () {
+        if ($("#cboMotivoRequerimiento101").val() == "1") {
+            $("#file").show();
+
+        } else {
+            $("#file").hide();
+
+        }
+    });
+    Prioridad();
+
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+
+    //var item = ($("#tblDetalleRequerimientoArticulo101 tbody tr").length);
+    console.log(item)
+    function ObtenerCamposRequerimientos() {
+
+        
+        id_requerimiento = getParameterByName('id_requerimiento');
+        
+        var xhr = new XMLHttpRequest();
+
+        var obj;
+
+
+        xhr.open('GET', 'http://localhost:35061/RequerimientoFiltro/GetDatos?' + 'id_requerimiento=' + (id_requerimiento), true);
+
+        xhr.responseType = "json";
+        // xhr.setRequestHeader("Content-Type", "application/json");
+        //console.log(sede)
+        xhr.onload = function () {
+
+            var status = xhr.status;
+            if (status == 200) {
+                // console.log(xhr.response.GetDataPOSTResult.cUser + " " + xhr.response.GetDataPOSTResult.cPassword);
+                obj = xhr.response;
+                //datosrequerimientodetalle = xhr.response;
+                //obj2 = JSON.stringify(obj);
+                console.log(obj);
+
+                if (obj != 0) {
+                    //Para actualizar la fila de las columnas
+
+                    //$.each(obj, function (i, DatosRequerimiento) {
+                    //console.log(DatosRequerimiento);
+                    $("#vcIdRequerimiento").val(obj.vcIdRequerimiento);
+                    $("#nvResponsableRequerimiento101").val(obj.vcNombres);
+                    $("#vcAlmacenRequerimiento101").val(obj.vcDescripcionAlmacen);
+                    $("#vcAreaRequerimiento101").val(obj.vcDescripcionArea);
+
+                    $("#cboTipoRequerimiento101").val(obj.vcIdTipoBien);
+                    $("#cboMotivoRequerimiento101").val(obj.vcIdTipoMotivo);
+                    $("#cboPrioridad101").val(obj.vcPrioridad);
+                    $("#dFechaSolicitudRequerimiento101").val(obj.dFechaRequerimiento);
+                    $("#dFechaMaximaRequerimiento101").val(obj.dFechaRequerimiento);
+                    $("#nvObservacionRequerimiento101").val(obj.nvObservacion);
+
+          
+
+                    console.log("cantidad " + obj.datosrequerimientodetalle.length);
+                    item = obj.datosrequerimientodetalle.length - 1;
+                    $("#tabla_oculta_requerimientoarticulo101 tbody tr:eq(0)").clone().removeClass('fila-base').appendTo("#tblDetalleRequerimientoArticulo101 tbody");
+                    $("#CantidadItemsRequerimientoArticulo101").text(parseInt($("#CantidadItemsRequerimientoArticulo101").text()) + 1);
+                    $("#tblDetalleRequerimientoArticulo101 tbody tr").remove();
+
+
+
+                    item++;
+                    //    if ($("#vcCodigoRequerimientoActivo101").val() == "") {
+                    if ($("#Bienes_item").val() == "") {
+
+                        //CantidadItemsRequerimientoActivo101
+                        //$("#tabla_oculta_requerimientoarticulo101 tbody tr:eq(0)").clone().removeClass('fila-base').appendTo("#tblDetalleRequerimientoArticulo101 tbody");
+                        for (i = 0, j = 1; i < obj.datosrequerimientodetalle.length; i++, j++) {
+                        $("#tblDetalleRequerimientoArticulo101 tbody").append('<tr><td><button type="button" class="btn btn-danger btn-xs" id="QuitarRequerimientoArticulo"><span class="glyphicon glyphicon-remove"></span></button>' +
+                           '<button type="button" class="btn btn-success btn-xs" id="ModificarRequerimientoArticulo"><span class="glyphicon glyphicon-pencil"></span></button></td>' +
+                                           '<td>' + j + '</td>' +
+                                            //'<td hidden>' + item + '</td>' +
+                                            '<td>' + obj.datosrequerimientodetalle[i].vcCodigoItem + '</td>' +
+                                            '<td>' + obj.datosrequerimientodetalle[i].nvDescripcionCorta + '</td>' +
+                                            '<td>' + obj.datosrequerimientodetalle[i].vcIdUnidad + '</td>' +
+                                            '<td>' + obj.datosrequerimientodetalle[i].numCantidadSolicitada + '</td>' +
+                                            //'<td hidden>' + obj.datosrequerimientodetalle[i].EstadoAprobacion.nvDescripcion + '</td>' +
+                                            
+                                            '</td></tr>');
+
+                        
+                        ActualizarNumeroItemRequerimientoArticulo();
+
+                        $("#CantidadItemsRequerimientoArticulo101").text(item);
+                        fila = parseInt($("#CantidadItemsRequerimientoArticulo101").text());
+                        console.log(fila)
+                        console.log(item)
+                            }
+                    }
+                    else {
+                        fila = parseInt($("#Bienes_item").val());
+                        fila = fila - 1;
+                    }
+                    //});
+
+                }
+
+                else {
+                    swal("Usted no cuenta con Requerimientos asignados!")
+                }
+            }
+            else {
+                swal("Ocurrió un error al obtener a sus Requerimientos!")
+            }
+
+
+        }
+        xhr.send();
+        //xhr.send(dataobj);
+    }
+
+
+
+
+  
+
+
+
+    $("#vcDescripcionRequerimientoActivo101").autocomplete({
+
+        source: function (request, response) {
+            filtroTB = $("#cboTipoRequerimiento101").val();
+            flitroDescrip = $("#vcDescripcionRequerimientoActivo101").val();
+
+            //console.log(filtroTB)
+            //console.log(flitroDescrip)
+            //var data = { VCIDTIPOBIEN: filtroTB, NVDESCRIPCIONCORTA: flitroDescrip };
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                data: { VCIDTIPOBIEN: filtroTB, NVDESCRIPCIONCORTA: flitroDescrip },
+                url: 'http://admin_erp.natclar.com.pe:12000/rWSArticulo/ArticuloByFiltro/Get',
+                async: true,
+                contentType: "application/json",
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return { value: item.nvDescripcionCorta, text1: item.vcIdArticulo};
+                    }))
+                },
+                error: function () { console.log("ERROR..."); }
+            })
+        },
+        minLength: 3,
+
+        select: function (event, ui) {
+            $("#vcDescripcionRequerimientoActivo101").val(ui.item.text);
+            $("#vcCodigoRequerimientoActivo101").val(ui.item.text1);
+            
+            //$("#nvTrabajadorR35").prop('readonly', true);
+            //$("#vcDescripcionRequerimientoArticulo101").css("background-color", "lightgoldenrodyellow");
+        },
+        error: function (ex) {
+            alert('Error al traer datos.' + ex);
+        }
+
+    })
+
+
+
+
+    $("#vcDescripcionRequerimientoArticulo101").autocomplete({
+
+        source: function (request, response) {
+            filtroTB = $("#cboTipoRequerimiento101").val();
+            flitroDescrip = $("#vcDescripcionRequerimientoArticulo101").val();
+
+            //console.log(filtroTB)
+            //console.log(flitroDescrip)
+            //var data = { VCIDTIPOBIEN: filtroTB, NVDESCRIPCIONCORTA: flitroDescrip };
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                data: { VCIDTIPOBIEN: filtroTB, NVDESCRIPCIONCORTA: flitroDescrip },
+                url: 'http://admin_erp.natclar.com.pe:12000/rWSArticulo/ArticuloByFiltro/Get',
+                async: true,
+                contentType: "application/json",
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return { value: item.nvDescripcionCorta, text1: item.vcIdArticulo, text2: item.vcIdUnidadMedida };
+                    }))
+                },
+                error: function () { console.log("ERROR..."); }
+            })
+        },
+        minLength: 3,
+
+        select: function (event, ui) {
+            $("#vcDescripcionRequerimientoArticulo101").val(ui.item.text);
+            $("#vcCodigoRequerimientoArticulo101").val(ui.item.text1);
+            $("#nvUnidadMedidaRequerimientoArticulo101").val(ui.item.text2);
+            //$("#nvTrabajadorR35").prop('readonly', true);
+            //$("#vcDescripcionRequerimientoArticulo101").css("background-color", "lightgoldenrodyellow");
+        },
+        error: function (ex) {
+            alert('Error al traer datos.' + ex);
+        }
+
+    })
+
+
+
+
+</script>

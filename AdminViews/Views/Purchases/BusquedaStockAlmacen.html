@@ -1,0 +1,322 @@
+﻿ <!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Busqueda Stock Almacen</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-yellow fixed sidebar-mini" onload="">
+
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+        </script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <!--<h1>
+                    INVENTARIO DE ARTICULOS
+                </h1>-->
+            </section>
+
+
+            <section class="content">
+                <div class="box box-primary collapsed-box">
+                    <div class="box-header">
+                        <h3 class="box-title">BUSQUEDA DE STOCK ALMACEN SAN ISIDRO</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-angle-double-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label id="lblMaterialAlmacen">Material</label>
+                                    <input type="text" id="vcMaterialAlmacen" name="vcMaterialAlmacen" class="form-control" display:block" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-success sincabecera" name="btnBuscarAlmacen50" id="btnBuscarAlmacen50">
+                                        <span class="glyphicon glyphicon-search">
+                                        </span>
+                                        <b>Buscar</b>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <section class="content">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <div class="table-responsive">
+                            <table class="table table-bordered " id="CabeceraBuscarOrdenCompra">
+                                <tr>
+                                    <td>
+                                        <b>STOCK DE ALMACEN</b>
+                                    </td>
+
+                                    <td align="right">
+                                        <b>Cantidad de Items: <span id="CantidadItemsOrdenCompra57">0</span></b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover" id="tblDetalleOrdenCompra57">
+                                        <tr class="">
+
+                                           
+                                            <th>Codigo</th>
+                                            <th>Material</th>
+                                            <th>Stock Actual</th>
+                                            <th>Acciones</th>
+                                            <th></th>
+
+
+
+                                        </tr>
+                                        <tr>
+
+                                            
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" id="Buscar" name="Ver Stock">
+                                                    <span class="glyphicon glyphicon-search">
+                                                    </span>
+                                                    <b></b>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" id="Buscar" name="Ver Movimiento">
+                                                    <span class="glyphicon glyphicon-info-sign">
+                                                    </span>
+                                                    <b>Ver Movimientos</b>
+                                                </button>
+                                            </td>
+
+
+
+                                        </tr>
+                                        <tr>
+                                           
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" id="Buscar" name="Ver Stock">
+                                                    <span class="glyphicon glyphicon-search">
+                                                    </span>
+                                                    <b></b>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" id="Buscar" name="Ver Movimiento">
+                                                    <span class="glyphicon glyphicon-info-sign">
+                                                    </span>
+                                                    <b>Ver Movimientos</b>
+                                                </button>
+                                            </td>
+
+
+
+
+                                        </tr>
+
+                                        <tr>
+                                            
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" id="Buscar" name="Ver Stock">
+                                                    <span class="glyphicon glyphicon-search">
+                                                    </span>
+                                                    <b></b>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" id="Buscar" name="Ver Movimiento">
+                                                    <span class="glyphicon glyphicon-info-sign">
+                                                    </span>
+                                                    <b>Ver Movimientos</b>
+                                                </button>
+                                            </td>
+
+
+                                        </tr>
+
+                                        <tr>
+                                            
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" id="Buscar" name="Ver Stock">
+                                                    <span class="glyphicon glyphicon-search">
+                                                    </span>
+                                                    <b></b>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" id="Buscar" name="Ver Movimiento">
+                                                    <span class="glyphicon glyphicon-info-sign">
+                                                    </span>
+                                                    <b>Ver Movimientos</b>
+                                                </button>
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                            
+
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+
+                                            <td>
+                                                <button type="button" class="btn btn-info" id="Buscar" name="Ver Stock">
+                                                    <span class="glyphicon glyphicon-search">
+                                                    </span>
+                                                    <b></b>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" id="Buscar" name="Ver Movimiento">
+                                                    <span class="glyphicon glyphicon-info-sign">
+                                                    </span>
+                                                    <b>Ver Movimientos</b>
+                                                </button>
+                                            </td>
+
+
+                                        </tr>
+
+                                        <tr>
+
+                                           
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" id="Buscar" name="Ver Stock">
+                                                    <span class="glyphicon glyphicon-search">
+                                                    </span>
+                                                    <b></b>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" id="Buscar" name="Ver Movimiento">
+                                                    <span class="glyphicon glyphicon-info-sign">
+                                                    </span>
+                                                    <b>Ver Movimientos</b>
+                                                </button>
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+
+                                            
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" id="Buscar" name="Ver Stock">
+                                                    <span class="glyphicon glyphicon-search">
+                                                    </span>
+                                                    <b></b>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" id="Buscar" name="Ver Movimiento">
+                                                    <span class="glyphicon glyphicon-info-sign">
+                                                    </span>
+                                                    <b>Ver Movimientos</b>
+                                                </button>
+                                            </td>
+
+
+                                        </tr>
+
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </section>
+            <div class="panel-body">
+                <div class="form-group">
+
+                   
+                    <button type="button" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>Atras</b></button>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+<script type="text/javascript">
+
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+</script>

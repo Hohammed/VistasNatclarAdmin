@@ -1,0 +1,1862 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Registrar Trabajador</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-edit fixed sidebar-mini">
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+        </script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    REGISTAR TRABAJADOR
+                </h1>
+            </section>
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">DETALLE TRABAJADOR</h3>
+                            </div>
+                            <div class="box-body">
+                              
+                                <input type="hidden" id="DatosLaborales_JSON" name="DatosLaborales_JSON" />
+                                <input type="hidden" id="SeguridadSocial_JSON" name="SeguridadSocial_JSON" />
+                                <input type="hidden" id="Direccion_JSON" name="Direccion_JSON" />
+                                <div id="exTab1">
+                                    <ul class="nav nav-pills">
+                                        <li class="active">
+                                            <a href="#DatosPersonales" data-toggle="tab">Datos Personales</a>
+                                        </li>
+                                        <li>
+                                            <a href="#DatosInternos" data-toggle="tab">Datos Internos</a>
+                                        </li>
+                                        <li>
+                                            <a href="#DatosLaborales" data-toggle="tab">Datos Laborales</a>
+                                        </li>
+                                        <li>
+                                            <a href="#DatosSeguridadSocial" data-toggle="tab">Datos Seguridad Social</a>
+                                        </li>
+                                        <li>
+                                            <a href="#DatosFamiliares" data-toggle="tab">Datos de Familiares</a>
+                                        </li>
+                                        <li>
+                                            <a href="#Asignaciones" data-toggle="tab">Asignaciones</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content clearfix">
+                                        <div class="tab-pane active" id="DatosPersonales">
+                                            <div class="box box-primary">
+                                                <div class="box-header">
+                                                    <h3 class="box-title">DATOS PERSONALES</h3>
+                                                </div>
+                                                <div class="box-body">
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="lblDocumento123">Tipo Documento</label>
+                                                                <select id="cboTipoDocumento123" class="cboTipoDocumento123 form-control"></select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="lblDocumento123">Número Documento</label>
+                                                                <input type="text" class="form-control" id="iNumeroDocumento123" name="iNumeroDocumento123" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="lblApellidoPaterno123">Apellido Paterno</label>
+                                                                <input type="text" class="form-control" id="nvApellidoPaterno123" name="nvApellidoPaterno123" style="background-color: lightyellow" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="lblApellidomaterno123">Apellido Materno</label>
+                                                                <input type="text" class="form-control" id="nvApellidomaterno123" name="nvApellidomPaterno123" style="background-color: lightyellow" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="lblNombres123">Nombres</label>
+                                                                <input type="text" class="form-control" id="nvNombres123" name="nvNombres123" style="background-color: lightyellow" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="lblSexo123">Sexo</label>
+                                                                <select class="form-control">
+                                                                    <option value="MASCULINO">Masculino</option>
+                                                                    <option value="FEMENINO">Femenino</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="lbldNac">Fecha Nac.</label>
+                                                                <input type="text" class="datepicker mifecha form-control" id="dNacimiento123" name="dNacimiento123" value="" maxlength="10" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="lblDireccionNac123"><b><u>Dirección Nacimiento</u></b><br /></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label id="lblDepartamento123">Departamento</label>
+                                                                <select class="form-control cboDepartamento" id="cboDepartamento123"></select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label id="lblProvincia123">Provincia</label>
+                                                                <select class="form-control cboProvincia" id="cboProvincia123"></select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label id="lblDistrito123">Distrito</label>
+                                                                <select class="form-control cboDistrito" id="cbodistrito123"></select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-inline panel panel-primary" style=" margin-top: 10px;">
+                                                        <div class="panel-heading" style="padding:5px 5px;">
+                                                            <table width="100%">
+                                                                <tr>
+                                                                    <td><b><a data-toggle="collapse" style="color:white;" data-parent="#accordion" href="#ColapseDirecciones">DIRECCIONES</a></b></td>
+                                                                    <td align="right">
+                                                                        <b>Numero de Items: <span id="CantidadItemsDirecciones">0</span></b>
+                                                                        <button type="button" class="btn btn-success btn-xs" id="AgregarDireccion"><span class="glyphicon glyphicon-plus"></span></button>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div id="ColapseDirecciones" class="panel-collapse collapse">
+                                                            <div class="panel-body" style="padding:8px;">
+                                                                <input type="hidden" id="Direccion_Item" name="Direccion_Item" />
+
+                                                                <div class="table-responsive">
+                                                                    <table class="table table-bordered" id="TablaDireccion" style="margin-bottom:0px">
+                                                                        <tr class="info">
+                                                                            <td></td>
+                                                                            <td hidden></td><!--Item-->
+                                                                            <td>#</td>
+                                                                            <td hidden></td><!--Dep-->
+                                                                            <td hidden></td><!--Prov-->
+                                                                            <td hidden></td><!--Dist-->
+                                                                            <td>DEPARTAMENTO</td>
+                                                                            <td>PROVINCIA</td>
+                                                                            <td>DISTRITO</td>
+                                                                            <td hidden></td><!--Tipo-->
+                                                                            <td>VÍA</td>
+                                                                            <td>DIRECCIÓN</td>
+                                                                            <td>NÚMERO</td>
+                                                                            <td>INT.</td>
+                                                                            <td>MZ.</td>
+                                                                            <td>LT.</td>
+                                                                            <td>KM</td>
+                                                                            <td>BLOQUE</td>
+                                                                            <td>ETAPA</td>
+                                                                            <td hidden></td><!--Zona-->
+                                                                            <td>ZONA</td>
+                                                                            <td>REFERENCIA</td>
+                                                                            <!--<td>PRIN</td>-->
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-inline panel panel-primary" style=" margin-top: 10px;">
+                                                        <div class="panel-heading" style="padding:5px 5px;">
+                                                            <table width="100%">
+                                                                <tr>
+                                                                    <td><b><a data-toggle="collapse" style="color:white;" data-parent="#accordion" href="#ColapseTelefonos">TELEFONOS</a></b></td>
+                                                                    <td align="right">
+                                                                        <b>Numero de Items: <span id="CantidadItemsTelefonos">0</span></b>
+                                                                        <button type="button" class="btn btn-success btn-xs" id="AgregarTelefono"><span class="glyphicon glyphicon-plus"></span></button>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div id="ColapseTelefonos" class="panel-collapse collapse">
+                                                            <div class="panel-body" style="padding:8px;">
+                                                                <input type="hidden" id="Telefono_item" name="Telefono_item" />
+
+                                                                <div class="table-responsive">
+                                                                    <table class="table table-bordered" id="TablaTelefono" style="margin-bottom:0px">
+                                                                        <tr class="info">
+                                                                            <td width="60px">ACCIONES</td>
+                                                                            <td hidden></td><!--Item-->
+                                                                            <td width="10px">#</td>
+                                                                            <td hidden></td><!--Tipo-->
+                                                                            <td hidden></td><!--Operador-->
+                                                                            <td>TIPO</td>
+                                                                            <td>OPERADOR</td>
+                                                                            <td>NÚMERO</td>
+                                                                            <td>PRIN</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-inline panel panel-primary" style=" margin-top: 10px;">
+                                                        <div class="panel-heading" style="padding:5px 5px;">
+                                                            <table width="100%">
+                                                                <tr>
+                                                                    <td><b><a data-toggle="collapse" style="color:white;" data-parent="#accordion" href="#ColapseCorreos">CORREOS</a></b></td>
+                                                                    <td align="right">
+                                                                        <b>Numero de Items: <span id="CantidadItemsCorreos">0</span></b>
+                                                                        <button type="button" class="btn btn-success btn-xs" id="AgregarCorreo"><span class="glyphicon glyphicon-plus"></span></button>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div id="ColapseCorreos" class="panel-collapse collapse">
+                                                            <div class="panel-body" style="padding:8px;">
+                                                                <input type="hidden" id="Correo_Item" name="Correo_Item" />
+
+                                                                <div class="table-responsive">
+                                                                    <table class="table table-bordered" id="TablaCorreo" style="margin-bottom:0px">
+                                                                        <tr class="info">
+                                                                            <td width="60px">ACCIONES</td>
+                                                                            <td hidden></td><!--Item-->
+                                                                            <td width="10px">#</td>
+                                                                            <td hidden></td><!--Tipo-->
+                                                                            <td>TIPO</td>
+                                                                            <td>CORREO</td>
+                                                                            <td>PRIN</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane active" id="DatosLaborales">
+                                            <div class="box box-primary">
+                                                <div class="box-header">
+                                                    <h3 class="box-title">DATOS LABORALES</h3>
+                                                </div>
+                                                <div class="box-body">
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="FechaNacimiento" style="width: 100px;">Ultimo Ingreso</label>
+                                                                <input type="text" class="datepicker form-control" id="FechaNacimiento" name="FechaNacimiento" maxlength="10"  />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="FechaNacimiento" style="width: 110px;">Ultimo Termino</label>
+                                                                <input type="text" class="datepicker form-control" id="FechaNacimiento" name="FechaNacimiento" maxlength="10"  />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="TRLB_MOTIVO_CESE" style="display:block">Motivo de Cese</label>
+                                                                <select id="cboMotivoCese123" class="form-control cboMotivoCese"></select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <button type="button" class="btn btn-primary btn-sm" id="">
+                                                                    <span class="glyphicon glyphicon-file"></span>
+                                                                </button>
+                                                                <button type="button" class="btn btn-success btn-sm" id="">
+                                                                    <span class="glyphicon glyphicon-zoom-in"></span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="TRLB_TIPO_TRABAJADOR" style="display:block">Tipo Trabajador</label>
+                                                                <select id="cboTipoTrabajador123" class="form-control cboTipoTrabajador"></select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="TRLB_REGIMEN_LAB" style="display:block;">Regimen Lab.</label>
+                                                                <select id="cboRegimenLaboral123" class="form-control cboRegimenLaboral"></select>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                   
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="TRLB_CAT_OCUPACION" style="display:block;">Categoria Ocup.</label>
+                                                                <select id="cboCategoriaOcupacion123" class="form-control cboCategoriaOcupacion"></select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="TRLB_OCUPACION" style="display: block;">Ocupación</label>
+                                                                <!--@Html.DropDownList("TRLB_OCUPACION", null, new { @class = "form-control", @style = "width:300px;" })-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="TRLB_NIVEL_EDUCATIVO" style="display: block;">Nivel Educ.</label>
+                                                                <select id="cboNivelEducativo123" class="form-control cboNivelEducativo"></select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="TRLB_TIPO_CONTRATO" style="display: block;">Tipo Contrato</label>
+                                                                <select class="form-control cboTipoContrato" id="cboTipoContrato" style="display: block"></select>
+                                                            </div>
+                                                        </div>
+                                                   
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="TRLB_TIPO_PAGO" style="display: block;">Tipo Pago</label>
+                                                                <!--@Html.DropDownList("TRLB_TIPO_PAGO", null, new { @class = "form-control", @style = "width:300px;" })-->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="TRLB_PERIODO_PAGO" style="display: block;">Periodo Pago</label>
+                                                                <!--@Html.DropDownList("TRLB_PERIODO_PAGO", null, new { @class = "form-control", @style = "width:300px;" })-->
+                                                            </div>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="TRLB_EMPRESA_LABORA" style="display: block;">Empresa Labora:</label>
+                                                                <!--@Html.DropDownList("TRLB_EMPRESA_LABORA", null, new { @class = "form-control", @style = "width:300px;" })-->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="TRLB_UNIDAD_LABORA" style="display: block;">Unidad Labora:</label>
+                                                                <!--@Html.DropDownList("TRLB_UNIDAD_LABORA", null, new { @class = "form-control", @style = "width:300px;" })-->
+                                                            </div>
+                                                        </div>
+                                                   
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="TRLB_JORNADA" style="display: block;">Jornada Laboral</label>
+                                                                <select class="form-control cboJornadaLaboral" id="JornadaLaboral" style="display: block"></select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="TRLB_REMUNERACION_BASICA" style="display: block;">Remuneracion Basica</label>
+                                                                <input type="number" class="form-control" id="TRLB_REMUNERACION_BASICA" name="TRLB_REMUNERACION_BASICA" style="background-color:lightyellow" />
+                                                            </div>
+                                                        </div>
+                                                      
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="TRLB_DISCAPACITADO" style="display: block;">Discapacitado</label>
+                                                                <select class="form-control" id="TRSS_COBERTURA_PENSION">
+                                                                    <option>SI</option>
+                                                                    <option selected>NO</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="TRLB_SINDICALIZADO" style="display: block;">Sindicalizado</label>
+                                                                <select class="form-control" id="TRSS_COBERTURA_PENSION">
+                                                                    <option>SI</option>
+                                                                    <option selected>NO</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="TRLB_SITUACION" style="display: block;">Situación Especial</label>
+                                                                <!--@Html.DropDownList("TRLB_SITUACION", null, new { @class = "form-control", @style = "width:300px;" })-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="tab-pane active" id="DatosSeguridadSocial">
+                                            <div class="box box-primary">
+                                                <div class="box-header">
+                                                    <h3 class="box-title">DATOS SEGURIDAD SOCIAL</h3>
+                                                </div>
+                                                <div class="box-body">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label for="TRSS_REGIMEN_SALUD" style="width:150px;">Regimen Salud</label>
+                                                                <select class="form-control cboRegimenSalud" id="cboRegimenSalud" style="display: block"></select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="TRSS_RPENSI_FINI" style="width:90px">Fecha Inicio</label>
+                                                                <input type="text" class="datepicker form-control mifecha" id="TRSS_RPENSI_FINI" name="TRSS_RPENSI_FINI" maxlength="10" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="TRSS_RPENSI_FFIN" style="width:70px">Fecha Fin</label>
+                                                                <input type="text" class="datepicker form-control mifecha" id="TRSS_RPENSI_FFIN" name="TRSS_RPENSI_FFIN" maxlength="10" />
+                                                            </div>
+                                                        </div>
+                                                   
+                                                    <!--<div class="form-group">
+            <label for="TRSS_RSALUD_FINI" style="width:90px;">Fecha Inicio</label>
+            <input type="text" class="datepicker form-control" id="TRSS_RSALUD_FINI" name="TRSS_RSALUD_FINI " maxlength="10" style="width:100px;" />
+        </div>
+        <div class="form-group">
+            <label for="TRSS_RSALUD_FFIN" style="width:70px">Fecha Fin</label>
+            <input type="text" class="datepicker form-control" id="TRSS_RSALUD_FFIN" name="TRSS_RSALUD_FFIN" maxlength="10" style="width:100px;" />
+        </div>
+        <br />-->
+
+                                                    <div class="col-md-2">
+                                                        <div class="form-group eps" style="display:block">
+                                                            <label for="TRSS_EPS" style="width:150px;">EPS/Servicio Propios</label>
+                                                            <select class="form-control cboEPS" id="cboEPS" style="display: block"></select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="TRSS_REGIMEN_PENSION" style="width:150px;">Regimen pensionario</label>
+                                                                <select class="form-control cboRegimenPensionario" id="cboRegimenPensionario" style="display: block"></select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group CUSPP" style="display:block">
+                                                                <label for="TRSS_CUSPP" style="width:150px;">CUSPP</label>
+                                                                <input type="text" class="form-control" id="TRSS_CUSPP" name="TRSS_CUSPP" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group CUSPP" style="display:block">
+                                                                <label for="TRSS_FLUJO_PENSION" style="display:block">Flujo</label>
+                                                                <!--@Html.DropDownList("TRSS_FLUJO_PENSION", null, new { @class = "form-control", @style = "width:300px;" })-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="TRSS_COBERTURA_PENSION">Cobertura Pension</label>
+                                                                <select class="form-control" id="TRSS_COBERTURA_PENSION">
+                                                                    <option>ONP</option>
+                                                                    <option>SEGURO PRIVADO</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="TRSS_COBERTURA_SALUD">Cobertura Salud</label>
+                                                                <select class="form-control" id="TRSS_COBERTURA_SALUD">
+                                                                    <option>ESSALUD</option>
+                                                                    <option>EPS</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="TRSS_CSALUD_FINI">Fecha Inicio</label>
+                                                                <input type="text" class="datepicker form-control" id="TRSS_CSALUD_FINI" name="TRSS_CSALUD_FINI" maxlength="10" style="width:100px;" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="TRSS_CSALUD_FFIN">Fecha Fin</label>
+                                                                <input type="text" class="datepicker form-control" id="TRSS_CSALUD_FFIN" name="TRSS_CSALUD_FFIN" maxlength="10" style="width:100px;" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                            <div class="tab-pane active" id="DatosInternos">
+                                                <div class="box box-primary">
+                                                    <div class="box-header">
+                                                        <h3 class="box-title">DATOS INTERNOS</h3>
+                                                    </div>
+                                                    <div class="box-body">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <label for="TRA_UNOR_ID" style="display:block">Uni. Organi.</label>
+                                                                    <!--@Html.DropDownList("TRA_UNOR_ID", null, new { @class = "form-control", @style = "width:300px;" })-->
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <label for="TRA_EMPRESA" style="display:block">Empresa</label>
+                                                                    <!--@Html.DropDownList("TRA_EMPRESA", null, new { @class = "form-control", @style = "width:300px;" })-->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--<div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="Grado_Instruccion" style="display:block">Unidad</label>
+                                <select class="form-control" style="display:block" id="TipoDocumento">
+                                    <option>LA VICTORIA</option>
+                                    <option>MAYORAZGO</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="Grado_Instruccion" style="display:block">Oficina</label>
+                                <select class="form-control" style="display:block" id="TipoDocumento">
+                                    <option>LA VICTORIA</option>
+                                    <option>MAYORAZGO</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>-->
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <label for="TRA_GER_ID" style="display:block">Gerencia</label>
+                                                                    <select class="form-control cboGerencia" id="cboGerencia" style="display: block"></select>
+                                                                </div>
+                                                            </div>
+                                                            <!--<div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="TRA_AREA" style="display:block">Area</label>
+                                    @Html.DropDownList("TRA_AREA", null, new { @class = "form-control", @style = "width:300px;" })
+                                </div>
+                            </div>
+                        </div>-->
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <label id="lblArea123" style="display:block">Área</label>
+                                                                    <div class="input-group">
+                                                                        <span class="input-group-btn">
+                                                                            <input type="text" class="form-control" id="nvArea123" name="nvArea123" value="" placeholder="Ingrese Área..." />
+                                                                            <input type="hidden" class="form-control" id="iIdArea123" name="iIdArea123" value="" />
+                                                                            <button type="button" class="btn btn-danger" id="btnNuevaBusquedaArea123"><span class="glyphicon glyphicon-remove"></span></button>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <label for="TRA_CENTRO_COSTO" style="display:block">Centro Costo</label>
+                                                                    <!--@Html.DropDownList("TRA_CENTRO_COSTO", null, new { @class = "form-control", @style = "width:300px;" })-->
+                                                                </div>
+                                                            </div>
+                                                            <!--<div class="col-md-4">
+                            <div class="form-group">
+                                <label for="TRA_PUESTO" style="display:block">Puesto</label>
+                                 @Html.DropDownList("TRA_PUESTO", null, new { @class = "form-control", @style = "width:300px;" })
+                            </div>
+                        </div>-->
+                                                            <div class="col-md-4">
+                                                                <div class="input-group" style="display:block">
+                                                                    <label id="lblArea123" style="display:block">Puesto</label>
+                                                                    <div class="input-group">
+                                                                        <span class="input-group-btn">
+                                                                            <input type="hidden" class="form-control" id="idPuesto123" name="idPuesto123" value="" readonly />
+                                                                            <input type="text" class="form-control" id="nvPuesto123" name="nvPuesto123" value="" placeholder="Ingrese Puesto..." />
+                                                                            <button type="button" class="btn btn-danger" id="btnNuevaBusqueda123"><span class="glyphicon glyphicon-remove"></span></button>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-1">
+
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form-group">
+                                                                    <label for="TRA_SIS_TRABAJO" style="display:block">Sis.Trabajo</label>
+                                                                    <select class="form-control cboSistTrabajo" id="cboSistTrabajo" name="cboSistTrabajo" style="display:block"></select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-inline panel panel-primary" style=" margin-top: 10px;">
+                                                            <div class="panel-heading" style="padding:5px 5px;">
+                                                                <table width="100%">
+                                                                    <tr>
+                                                                        <td><b><a data-toggle="collapse" style="color:white;" data-parent="#accordion" href="#ColapseCuentasBancarias">CUENTAS BANCARIAS</a></b></td>
+                                                                        <td align="right">
+                                                                            <b>Numero de Items: <span id="CantidadItemsAntecedentes">0</span></b>
+                                                                            <button type="button" class="btn btn-success btn-xs" id="AgregarAntecedente"><span class="glyphicon glyphicon-plus"></span></button>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                            <div id="ColapseCuentasBancarias" class="panel-collapse collapse">
+                                                                <div class="panel-body" style="padding:8px;">
+                                                                    <input type="hidden" id="ItemAntecedente" name="ItemAntecedente" />
+                                                                    <input type="hidden" id="ItemANTOrden" name="ItemANTOrden" />
+
+                                                                    <div class="table-responsive">
+                                                                        <table class="table table-bordered" id="TablaAntecedentes" style="margin-bottom:0px">
+                                                                            <tr class="info">
+                                                                                <td></td>
+                                                                                <td hidden></td><!--Item-->
+                                                                                <td>#</td>
+                                                                                <td>TIPO DEPOSITO</td><!--Tipo-->
+                                                                                <td>BANCO</td><!--Clase-->
+                                                                                <td>MONEDA</td><!--Clase-->
+                                                                                <td>NUMERO</td><!--Clase-->
+                                                                                <td>TIPO</td><!--Clase-->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td></td>
+                                                                                <td hidden></td><!--Item-->
+                                                                                <td>1</td>
+                                                                                <td>CTS</td><!--Tipo-->
+                                                                                <td>BANCO DE CREDITO DEL PERU</td><!--Clase-->
+                                                                                <td>SOLES</td><!--Clase-->
+                                                                                <td>190-111-2233333-12</td><!--Clase-->
+                                                                                <td>AHORROS</td><!--Clase-->
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="tab-pane" id="DatosFamiliares">
+                                                <div class="form-inline panel panel-primary">
+                                                    <div class="panel-heading">
+                                                        <table width="100%">
+                                                            <tr>
+                                                                <td><b>DATOS FAMILIARES</b></td>
+                                                                <td align="right">
+                                                                    <b>Numero de Items: <span id="CantidadItemsAntecedentes">0</span></b>
+                                                                    <button type="button" class="btn btn-success btn-sm" id="AgregarAntecedente"><span class="glyphicon glyphicon-plus"></span></button>
+
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <input type="hidden" id="ItemAntecedente" name="ItemAntecedente" />
+                                                        <input type="hidden" id="ItemANTOrden" name="ItemANTOrden" />
+
+                                                        <div class="table-responsive">
+                                                            <table class="table table-bordered" id="TablaAntecedentes">
+                                                                <tr class="info">
+                                                                    <td></td>
+                                                                    <td hidden></td><!--Item-->
+                                                                    <td>#</td>
+                                                                    <td>DNI</td><!--Tipo-->
+                                                                    <td>APELLIDO PATERNO</td><!--Clase-->
+                                                                    <td>APELLIDO MATERNO</td><!--Clase-->
+                                                                    <td>NOMBRES</td><!--Clase-->
+                                                                    <td>PARENTESCO</td><!--Clase-->
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td hidden></td><!--Item-->
+                                                                    <td>1</td>
+                                                                    <td>10203040</td><!--Tipo-->
+                                                                    <td>PEREZ</td><!--Clase-->
+                                                                    <td>DIAZ</td><!--Clase-->
+                                                                    <td>JORGE</td><!--Clase-->
+                                                                    <td>PADRE</td><!--Clase-->
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td hidden></td><!--Item-->
+                                                                    <td>2</td>
+                                                                    <td>50607080</td><!--Tipo-->
+                                                                    <td>HEREDIA</td><!--Clase-->
+                                                                    <td>VILLARAN</td><!--Clase-->
+                                                                    <td>MARIA</td><!--Clase-->
+                                                                    <td>MADRE</td><!--Clase-->
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td hidden></td><!--Item-->
+                                                                    <td>3</td>
+                                                                    <td>12345678</td><!--Tipo-->
+                                                                    <td>PEREZ</td><!--Clase-->
+                                                                    <td>HEREDIA</td><!--Clase-->
+                                                                    <td>PREDO</td><!--Clase-->
+                                                                    <td>HERMANO</td><!--Clase-->
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="tab-pane" id="Asignaciones">
+                                                <div class="form-inline panel panel-primary">
+                                                    <div class="panel-heading">
+                                                        <table width="100%">
+                                                            <tr>
+                                                                <td><b>ASIGNACIONES</b></td>
+                                                                <td align="right">
+                                                                    <b>Numero de Items: <span id="CantidadItemsAntecedentes">0</span></b>
+                                                                    <button type="button" class="btn btn-success btn-sm" id="AgregarAntecedente"><span class="glyphicon glyphicon-plus"></span></button>
+
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <input type="hidden" id="ItemAntecedente" name="ItemAntecedente" />
+                                                        <input type="hidden" id="ItemANTOrden" name="ItemANTOrden" />
+
+                                                        <div class="table-responsive">
+                                                            <table class="table table-bordered" id="TablaAntecedentes">
+                                                                <tr class="info">
+                                                                    <td></td>
+                                                                    <td hidden></td><!--Item-->
+                                                                    <td>#</td>
+                                                                    <td>TIPO</td><!--Tipo-->
+                                                                    <td>DESCRIPCION</td><!--Clase-->
+                                                                    <td>FECHA ENTREGA</td><!--Clase-->
+                                                                    <td>FECHA DEVOLUCION</td><!--Clase-->
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td hidden></td><!--Item-->
+                                                                    <td>1</td>
+                                                                    <td>EQUIPO COMPUTO</td><!--Tipo-->
+                                                                    <td>LAPTOP LENOVO T530</td><!--Clase-->
+                                                                    <td>12/10/2016</td><!--Clase-->
+                                                                    <td>-</td><!--Clase-->
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                            <!--Inicio Ventanas Emergentes-->
+                                            <!-- Inicio Ventana Emergente Direccion-->
+                                            <div class="modal fade bs-example-modal-lg" id="FormAgregarDireccion" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                                                <div class="modal-dialog modal-lg" role="document">
+                                                    <div class="modal-content ">
+                                                        <div class="modal-header ">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title titulo-modal" id="myModalLabel">AGREGAR DIRECCIÓN</h4>
+                                                        </div>
+                                                        <div class="box-body">
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label for="lblTipoVia123" style="display: block">Tipo</label>
+                                                                        <select class="form-control cboTipoVia123" id="cboTipoVia123" style="display: block">
+                                                                            <option value="1">---SELECCIONAR---
+                                                                            <option value="1">AVENIDA
+                                                                            <option value="2">JIRÓN
+                                                                            <option value="3">CALLE
+                                                                            <option value="4">PASAJE
+                                                                            <option value="5">ALAMEDA
+                                                                            <option value="6">MALECÓN
+                                                                            <option value="7">OVALO
+                                                                            <option value="8">PARQUE
+                                                                            <option value="9">PLAZA
+                                                                            <option value="10">CARRETERA
+                                                                            <option value="11">TROCHA
+                                                                            <option value="99">CAMINO RURAL
+                                                                            <option value="5">BAJADA
+                                                                            <option value="6">GALERIA
+                                                                            <option value="7">PROLONGACIÓN
+                                                                            <option value="8">PASEO
+                                                                            <option value="9">PLAZUELA
+                                                                            <option value="10">OTROS</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label for="lblDireccion123" style="display: block">Dirección</label>
+                                                                        <input type="text" class="form-control" id="nvDireccion123" name="nvDireccion123" style="display: block;background-color: lightyellow" required />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-1">
+                                                                    <div class="form-group">
+                                                                        <label for="lblNumeroDireccion123" style="display: block">#</label>
+                                                                        <input type="text" class="form-control" id="iNumeroDireccion123" name="iNumeroDireccion123" style="display: block;background-color: lightyellow" required />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-1">
+                                                                    <div class="form-group">
+                                                                        <label for="lblInterior123" style="display: block">Int.</label>
+                                                                        <input type="text" class="form-control" id="iInterior123" name="iInterior123" style="display: block" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-1">
+                                                                    <div class="form-group">
+                                                                        <label for="lblManzana123" style="display: block">Mz.</label>
+                                                                        <input type="text" class="form-control" id="nvManzana123" name="nvManzana123" style="display: block" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-1">
+                                                                    <div class="form-group">
+                                                                        <label for="lblLote123" style="display: block">Lt.</label>
+                                                                        <input type="text" class="form-control" id="iLote123" name="iLote123" style="display: block" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-1">
+                                                                    <div class="form-group">
+                                                                        <label for="lblKilometro123" style="display: block">Km.</label>
+                                                                        <input type="text" class="form-control" id="iKilometro123" name="iKilometro123" style="display: block" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-1">
+                                                                    <div class="form-group" style="display: block">
+                                                                        <label for="lblBloque123">Bloque</label>
+                                                                        <input type="text" class="form-control" id="nvBloque123" name="nvBloque123" style="display: block;" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label for="lblTipoZona123" style="display: block">Zona</label>
+                                                                        <select class="form-control cboTipoZona" style="display: block" id="cboTipoZona123">
+                                                                            <option value="1">---SELECCIONAR---
+                                                                            <option value="1">URB. URBANIZACIÓN
+                                                                            <option value="2">P.J. PUEBLO JOVEN
+                                                                            <option value="3">U.V. UNIDAD VECINAL
+                                                                            <option value="4">C.H. CONJUNTO HABITACIONAL
+                                                                            <option value="5">A.H. ASENTAMIENTO HUMANO
+                                                                            <option value="6">COO. COOPERATIVA
+                                                                            <option value="7">RES. RESIDENCIAL
+                                                                            <option value="8">Z.I. ZONA INDUSTRIAL
+                                                                            <option value="9">GRU. GRUPO
+                                                                            <option value="10">CAS. CASERÍO
+                                                                            <option value="11">FND. FUNDO
+                                                                            <option value="99">OTROS</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-1">
+                                                                    <div class="form-group">
+                                                                        <label for="lblEtapa123" style="display: block">Etapa</label>
+                                                                        <input type="text" class="form-control" id="iEtapa123" name="iEtapa123" style="display: block;" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="lblReferencia123" style="display: block">Referencia</label>
+                                                                        <input type="text" class="form-control" id="nvReferencia123" name="nvReferencia123" style="display: block;background-color: lightyellow" required />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label id="lblDepartamento123" style="display: block">Departamento</label>
+                                                                        <select class="form-control cboDepartamento123" id="cboDepartamento123" style="display: block"></select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label id="lblProvincia123" style="display: block">Provincia</label>
+                                                                        <select class="form-control cboProvincia123" id="cboProvincia123" style="display: block"></select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label id="lblDistrito123" style="display: block">Distrito</label>
+                                                                        <select class="form-control cboDistrito123" id="cbodistrito123" style="display: block"></select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!--<div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="TRDI_PRINCIPAL" style="width:70px">Principal</label>
+                                        <input type="checkbox" class="form-control" id="TRDI_PRINCIPAL" name="TRDI_PRINCIPAL" />
+                                    </div>
+                                </div>-->
+                                                                <div class="col-md-1">
+                                                                    <div class="form-group" style="text-align:center;width:100%">
+                                                                        <button type="button" class="btn btn-success sincabecera" style="display: block" id="AgregaDireccion"><span class="glyphicon glyphicon-plus"></span></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Fin Ventana Emergente Direccion-->
+                                            <!-- Inicio Ventana Emergente Telefono-->
+                                            <div class="modal fade bs-example-modal-lg" id="FormAgregarTelefono" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                                                <div class="modal-dialog modal-lg" role="document">
+                                                    <div class="modal-content ">
+                                                        <div class="modal-header ">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title titulo-modal" id="myModalLabel">AGREGAR TELÉFONO</h4>
+                                                        </div>
+                                                        <div class="box-body">
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label for="lblTipo123" style="display:block">Tipo</label>
+                                                                        <select class="form-control" style="display: block" id="cboTipo123">
+                                                                            <option value="MOVIL">MOVIL</option>
+                                                                            <option value="FIJO">FIJO</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label for="lblOperador123" style="display: block">Operador</label>
+                                                                        <select class="form-control" style="display: block" id="cboOperador123">
+                                                                            <option value="M">MOVISTAR</option>
+                                                                            <option value="C">CLARO</option>
+                                                                            <option value="E">ENTEL</option>
+                                                                            <option value="B">BITEL</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label for="lbliNumTelefono123" style="display: block">Número</label>
+                                                                        <input type="number" class="form-control" id="iNumTelefono123" name="iNumTelefono123" style="display: block;background-color: lightyellow" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <div class="form-group">
+                                                                        <label for="lblTelefonoPrinc123" style="display: block">Principal</label>
+                                                                        <input type="checkbox" class="icheckbox_flat-blue" style="display: block" id="cbxTelefonoPrinc123" name="cbxTelefonoPrinc123" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-1">
+                                                                    <div class="form-group" style="text-align:center">
+                                                                        <button type="button" class="btn btn-success sincabecera" id="AgregaTelefono"><span class="glyphicon glyphicon-plus"></span></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Fin Ventana Emergente Telefono-->
+                                            <!-- Inicio Ventana Emergente Correo-->
+                                            <div class="modal fade xsmall" id="FormAgregarCorreo" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                                                <div class="modal-dialog " role="document">
+                                                    <div class="modal-content ">
+                                                        <div class="modal-header ">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title titulo-modal" id="myModalLabel">AGREGAR CORREO</h4>
+                                                        </div>
+                                                        <div class="box-body">
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label for="lblcboTipoCorreo123" style="display:block">Tipo</label>
+                                                                        <select class="form-control" style="display: block" id="cboTipoCorreo123">
+                                                                            <option value="P">PERSONAL</option>
+                                                                            <option value="C">CORPORATIVO</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label for="lblvcDenomicacion123" style="display:block">Correo</label>
+                                                                        <input type="text" class="form-control" id="vcDenomicacion123" name="vcDenomicacion123" style="display: block;background-color: lightyellow" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <div class="form-group">
+                                                                        <label for="lblcbxCorreoPrinc123" style="display: block">Principal</label>
+                                                                        <input type="checkbox" class="icheckbox_flat-blue" style="display: block" id="cbxCorreoPrinc123" name="cbxCorreoPrinc123" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-1">
+                                                                    <div class="form-group">
+                                                                        <button type="button" class="btn btn-success sincabecera" style="display: block" id="AgregaCorreo"><span class="glyphicon glyphicon-plus"></span></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Fin Ventana Emergente Correo-->
+                                            <!-- Fin Ventanas Emergentes-->
+                                            <!--Inicio Tablas Ocultas-->
+                                            <!--Inicio Tabla Oculta Dirección-->
+                                            <table id="tabla_oculta_direccion">
+                                                <tr class="fila-base">
+
+                                                    <td>
+                                                        <button type="button" class="btn btn-danger btn-xs" id="QuitarDireccion"><span class="glyphicon glyphicon-remove"></span></button>
+                                                        <button type="button" class="btn btn-success btn-xs" id="ModificarDireccion"><span class="glyphicon glyphicon-pencil"></span></button>
+                                                    </td>
+
+                                                    <td hidden></td><!--Item-->
+                                                    <td></td>
+                                                    <td hidden></td><!--Dep-->
+                                                    <td hidden></td><!--Prov-->
+                                                    <td hidden></td><!--Dist-->
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td hidden></td><!--Tipo-->
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td hidden></td><!--Zona-->
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td hidden></td>
+                                                </tr>
+                                            </table>
+                                            <!--Fin Tabla Oculta Dirección-->
+                                            <!--Inicio Tabla Oculta Teléfono-->
+                                            <table id="tabla_oculta_telefono">
+                                                <tr class="fila-base">
+
+                                                    <td>
+                                                        <button type="button" class="btn btn-danger btn-xs" id="QuitarTelefono"><span class="glyphicon glyphicon-remove"></span></button>
+                                                        <button type="button" class="btn btn-success btn-xs" id="ModificarTelefono"><span class="glyphicon glyphicon-pencil"></span></button>
+                                                    </td>
+                                                    <td hidden></td><!--Item-->
+                                                    <td></td>
+                                                    <td hidden></td><!--Tipo-->
+                                                    <td hidden></td><!--Operador-->
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </table>
+                                            <!--Fin Tabla Oculta Teléfono-->
+                                            <!--Inicio Tabla Oculta Correo-->
+                                            <table id="tabla_oculta_correo">
+                                                <tr class="fila-base">
+
+                                                    <td>
+                                                        <button type="button" class="btn btn-danger btn-xs" id="QuitarCorreo"><span class="glyphicon glyphicon-remove"></span></button>
+                                                        <button type="button" class="btn btn-success btn-xs" id="ModificarCorreo"><span class="glyphicon glyphicon-pencil"></span></button>
+                                                    </td>
+                                                    <td hidden></td><!--Item-->
+                                                    <td></td>
+                                                    <td hidden></td><!--Tipo-->
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </table>
+                                            <!--Fin Tabla Oculta Correo-->
+                                            <!--Fin Tablas Ocultas-->
+
+
+                                        </div>
+                                    </div>
+                                                </div>
+                                            </div>
+</section>
+
+        
+            <div class="panel-body">
+                <div class="form-group">
+                    <button type="button" class="btn btn-success" id="btnGuardarVacaciones" name="btnGuardarTrabajador"><span class="glyphicon glyphicon-floppy-disk"></span><b>&nbsp;Guardar</b></button>
+                    <!--<button type="button" class="btn btn-success" id=""><span class="glyphicon glyphicon-ok"></span><b>Confirmar</b></button>-->
+                    <!--<button type="button" class="btn btn-info" id=""><span class="glyphicon glyphicon-print"></span><b>Imprimir</b></button>-->
+                    <button type="button" class="btn btn-danger" id="Cancelar"><span class="glyphicon glyphicon-remove"></span><b>&nbsp; Cancelar</b></button>
+                    <button type="button" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>&nbsp;Atras</b></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        TipoDocumento();
+        Departamentos();
+        Departamentos123();
+        ObtenerDatos();
+        TipoEPS();
+        TipoRegimenPensionario();
+        TipoRegimenSalud();
+        Gerencia();
+        TipoTrabajador();
+        SistemaTrabajo();
+        RegimenLaboral();
+        CategoriaOcupacion();
+        TipoContrato();
+        JornadaLaboral();
+        NivelEducativo();
+        MotivoCese();
+
+        $(function () {
+            $(".datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(document).on("click", "#Cancelar", function () {
+            swal({
+                title: "Esta seguro de eliminar este Registro?",
+                text: "No podrá recuperar los datos ingresados...!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Si, estoy seguro!",
+                cancelButtonText: "Cancelar!",
+                closeOnConfirm: false
+            }, function () {
+                window.location.href = "../../../Views/RRHH/RegistrarTrabajador.html";
+                swal("Correcto!", "Su Registro fue eliminado.", "success");
+            });
+        });
+
+        $(document).on("change", ".cboDepartamento", function () {
+            $(".cboProvincia").empty();
+            $(".cboDistrito").empty();
+            unor = $(".cboDepartamento").val();
+            sessionStorage.setItem("Dep", $(".cboDepartamento").val());
+            //Unor2 = sessionStorage.getItem("Unor");
+            //console.log(Unor2)
+            Provincia();
+        });
+
+        $(document).on("change", ".cboProvincia", function () {
+            $(".cboDistrito").empty();
+            prov = $(".cboProvincia").val();
+
+            sessionStorage.setItem("Prov", $(".cboProvincia").val());
+            //prov2 = sessionStorage.getItem("Prov");
+            //console.log(prov2)
+            Distrito();
+        });
+
+        $(document).on("change", ".cboDepartamento123", function () {
+            $(".cboProvincia123").empty();
+            $(".cboDistrito123").empty();
+            unor = $(".cboDepartamento123").val();
+            sessionStorage.setItem("Dep", $(".cboDepartamento123").val());
+            //Unor2 = sessionStorage.getItem("Unor");
+            //console.log(Unor2)
+            Provincia123();
+        });
+
+        $(document).on("change", ".cboProvincia123", function () {
+            $(".cboDistrito123").empty();
+            prov = $(".cboProvincia123").val();
+
+            sessionStorage.setItem("Prov", $(".cboProvincia123").val());
+            //prov2 = sessionStorage.getItem("Prov");
+            //console.log(prov2)
+            Distrito123();
+        });
+
+        $("#AgregarDireccion").click(function () {
+            $('#FormAgregarDireccion').modal('toggle');
+        });
+
+        $('#FormAgregarDireccion').on('hidden.bs.modal', function (e) {
+            LimpiarDatosDireccion();
+        });
+
+        $("#AgregarTelefono").click(function () {
+            $('#FormAgregarTelefono').modal('toggle');
+        });
+
+        $('#FormAgregarTelefono').on('hidden.bs.modal', function (e) {
+            LimpiarDatosTelefono();
+        });
+
+        $("#AgregarCorreo").click(function () {
+            $('#FormAgregarCorreo').modal('toggle');
+        });
+
+        $('#FormAgregarCorreo').on('hidden.bs.modal', function (e) {
+            LimpiarDatosCorreo();
+        });
+
+        function Departamentos123() {
+            var xhr = new XMLHttpRequest();
+            var obj;
+            xhr.open('GET', 'http://admin_erp.natclar.com.pe:12000/rWSUbigeo/Ubigeo/Get', true);
+            xhr.responseType = "json";
+            xhr.onload = function () {
+                var status = xhr.status;
+                if (status == 200) {
+                    //console.log(xhr.response);
+                    obj = xhr.response;
+                    if (obj != "0") {
+                        $.each(obj, function (i, dep) {
+                           $(".cboDepartamento123").append('<option value="' + dep.vcCodigoUbigeo + '">' +
+                                  dep.nvDescripcion + '</option>');
+                        });
+                    }
+                    else {
+                        swal("No se cuenta con Departamentos asignadas!")
+                    }
+                }
+                else {
+                    swal("Ocurrió un error al obtener los Departamentos!")
+                }
+            }
+            xhr.send();
+            //xhr.send(dataobj);
+
+        }
+
+        function Provincia123() {
+            Dep2 = sessionStorage.getItem("Dep");
+            //console.log(Dep2)
+            //unor = "1";
+            var xhr = new XMLHttpRequest();
+            var obj;
+            xhr.open('GET', 'http://admin_erp.natclar.com.pe:12000/rWSUbigeo/Ubigeo/Get?CodPadre=' + Dep2, true);
+            xhr.responseType = "json";
+            xhr.onload = function () {
+                var status = xhr.status;
+                if (status == 200) {
+                    //console.log(xhr.response);
+                    obj = xhr.response;
+                    if (obj != "0") {
+                        $.each(obj, function (i, Prov) {
+                            $(".cboProvincia123").append('<option value="' + Prov.vcCodigoUbigeo + '">' +
+                               Prov.nvDescripcion + '</option>');
+                        });
+                    }
+                    else {
+                        swal("El Departamento no cuenta con Provincias asignadas!")
+                    }
+                }
+                else {
+                    swal("Ocurrió un error al obtener Provincias!")
+                }
+            }
+            xhr.send();
+            //xhr.send(dataobj);
+
+        }
+
+        function Distrito123() {
+            Prov2 = sessionStorage.getItem("Prov");
+            //console.log(Prov2)
+            var xhr = new XMLHttpRequest();
+            var obj;
+            xhr.open('GET', 'http://admin_erp.natclar.com.pe:12000/rWSUbigeo/Ubigeo/Get?CodPadre=' + Prov2, true);
+            xhr.responseType = "json";
+            xhr.onload = function () {
+                var status = xhr.status;
+                if (status == 200) {
+                    //console.log(xhr.response);
+                    obj = xhr.response;
+                    if (obj != "0") {
+                        $.each(obj, function (i, Dist) {
+                            $(".cboDistrito123").append('<option value="' + Dist.vcCodigoUbigeo + '">' +
+                                Dist.nvDescripcion + '</option>');
+                        });
+                    }
+                    else {
+                        swal("La Provincia no cuenta con Distritos asignadas!")
+                    }
+                }
+                else {
+                    swal("Ocurrió un error al obtener Distritos!")
+                }
+            }
+            xhr.send();
+            //xhr.send(dataobj);
+
+        }
+
+        function LimpiarDatosDireccion() {
+            $("#Direccion_Item").val("");
+            $(".cboTipoVia123").val("");
+            $(".cboDepartamento123").val("");
+            $(".cboProvincia123").val("");
+            $(".cboDistrito123").val("");
+            $("#nvDireccion123").val("");
+            $("#iNumeroDireccion123").val("");
+            $("#iInterior123").val("");
+            $("#nvManzana123").val("");
+            $("#iLote123").val("");
+            $("#iKilometro123").val("");
+            $("#nvBloque123").val("");
+            $("#iEtapa123").val("");
+            $("#cboTipoZona123").val("");
+            $("#nvReferencia123").val("");
+            //$("#TRDI_PRINCIPAL").prop('checked', false);
+        }
+
+        function LimpiarDatosTelefono() {
+            $("#Telefono_item").val("");
+            $("#cboTipo123").val("");
+            $("#cboOperador123").val("");
+            $("#iNumTelefono123").val("");
+            $("#cbxTelefonoPrinc123").prop('checked', false);
+        }
+
+        function LimpiarDatosCorreo() {
+            $("#Correo_Item").val("");
+            $("#cboTipoCorreo123").val("");
+            $("#vcDenomicacion123").val("");
+            $("#cbxCorreoPrinc123").prop('checked', false);
+        }
+
+        $("#AgregaDireccion").click(function () {
+            var fila = 0;
+            
+            if ($("#cboTipoVia123").val() == null) {
+                swal("Ingrese Tipo Vía")
+                $("#nvDireccion123").focus();
+                return;
+            }
+
+            if ($("#nvDireccion123").val() == "") {
+                swal("Ingrese Dirección")
+                $("#nvDireccion123").focus();
+                return;
+            }
+
+            if ($("#iNumeroDireccion123").val() == "") {
+                swal("Ingrese Número")
+                $("#iNumeroDireccion123").focus();
+                return;
+            }
+
+            if ($("#cboTipoZona123").val() == null) {
+                swal("Ingrese Tipo Zona")
+                $("#cboTipoZona123").focus();
+                return;
+            }
+
+            if ($("#nvReferencia123").val() == "") {
+                swal("Ingrese alguna Referencia")
+                $("#nvReferencia123").focus();
+                return;
+            }
+
+            if ($(".cboDepartamento123").val() == null) {
+                swal("Ingrese Departamento")
+                $(".cboDepartamento123").focus();
+                return;
+            }
+            if ($(".cboProvincia123").val() == null) {
+                swal("Ingrese Provincia")
+                $(".cboProvincia123").focus();
+                return;
+            }
+            if ($(".cboDistrito123").val() == null) {
+                swal("Ingrese Distrito")
+                $(".cboDistrito123").focus();
+                return;
+            }
+            if ($("#Direccion_Item").val() == "") {
+                $("#tabla_oculta_direccion tbody tr:eq(0)").clone().removeClass('fila-base').appendTo("#TablaDireccion tbody");
+                $("#CantidadItemsDirecciones").text(parseInt($("#CantidadItemsDirecciones").text()) + 1);
+
+                fila = parseInt($("#CantidadItemsDirecciones").text());
+                console.log(fila)
+            }
+            else {
+                fila = parseInt($("#Direccion_Item").val());
+                console.log(fila)
+            }
+
+            ActualizarCampoDetalle("D", fila, 1, $("#CantidadItemsDirecciones").text());
+            ActualizarCampoDetalle("D", fila, 2, $("#CantidadItemsDirecciones").text());
+            ActualizarCampoDetalle("D", fila, 3, $(".cboDepartamento123").val());
+            ActualizarCampoDetalle("D", fila, 4, $(".cboProvincia123").val());
+            ActualizarCampoDetalle("D", fila, 5, $(".cboDistrito123").val());
+            ActualizarCampoDetalle("D", fila, 6, $(".cboDepartamento123 option:selected").html());
+            ActualizarCampoDetalle("D", fila, 7, $(".cboProvincia123 option:selected").html());
+            ActualizarCampoDetalle("D", fila, 8, $(".cboDistrito123 option:selected").html());
+            ActualizarCampoDetalle("D", fila, 9, $("#cboTipoVia123").val());
+            ActualizarCampoDetalle("D", fila, 10, $("#cboTipoVia123 option:selected").html());
+            ActualizarCampoDetalle("D", fila, 11, $("#nvDireccion123").val());
+            ActualizarCampoDetalle("D", fila, 12, $("#iNumeroDireccion123").val());
+            ActualizarCampoDetalle("D", fila, 13, $("#iInterior123").val());
+            ActualizarCampoDetalle("D", fila, 14, $("#nvManzana123").val());
+            ActualizarCampoDetalle("D", fila, 15, $("#iLote123").val());
+            ActualizarCampoDetalle("D", fila, 16, $("#iKilometro123").val());
+            ActualizarCampoDetalle("D", fila, 17, $("#nvBloque123").val());
+            ActualizarCampoDetalle("D", fila, 18, $("#iEtapa123").val());
+            ActualizarCampoDetalle("D", fila, 19, $("#cboTipoZona123").val());
+            ActualizarCampoDetalle("D", fila, 20, $("#cboTipoZona123 option:selected").html());
+            ActualizarCampoDetalle("D", fila, 21, $("#nvReferencia123").val());
+
+            //if ($("#TRDI_PRINCIPAL").is(':checked'))
+            //    ActualizarCampoDetalle("D", fila, 22, "SI");
+            //else
+            //    ActualizarCampoDetalle("D", fila, 22, "NO");
+
+            ActualizarNumeroItem("D");
+            LimpiarDatosDireccion();
+            $('#FormAgregarDireccion').modal('toggle');
+            $('#ColapseDirecciones').collapse('collapse.in');
+
+        });
+
+        $("#AgregaTelefono").click(function () {
+            var fila = 0;
+
+            if ($("#cboOperador123").val() == "0") {
+                swal("Escoga Operador Telefónico")
+                $("#cboOperador123").focus();
+                return;
+            }
+
+            if ($("#iNumTelefono123").val() == "") {
+                swal("Ingrese Número de Teléfono")
+                $("#iNumTelefono123").focus();
+                return;
+            }
+
+            if ($("#Telefono_item").val() == "") {
+                $("#tabla_oculta_telefono tbody tr:eq(0)").clone().removeClass('fila-base').appendTo("#TablaTelefono tbody");
+                $("#CantidadItemsTelefonos").text(parseInt($("#CantidadItemsTelefonos").text()) + 1);
+                fila = parseInt($("#CantidadItemsTelefonos").text());
+            }
+            else {
+                fila = parseInt($("#Telefono_item").val());
+            }
+
+            ActualizarCampoDetalleTelefono("T", fila, 1, $("#CantidadItemsTelefonos").val());
+            ActualizarCampoDetalleTelefono("T", fila, 2, $("#CantidadItemsTelefonos").val());
+            ActualizarCampoDetalleTelefono("T", fila, 3, $("#cboTipo123").val());
+            ActualizarCampoDetalleTelefono("T", fila, 4, $("#cboOperador123").val());
+            ActualizarCampoDetalleTelefono("T", fila, 5, $("#cboTipo123 option:selected").html());
+            ActualizarCampoDetalleTelefono("T", fila, 6, $("#cboOperador123 option:selected").html());
+            ActualizarCampoDetalleTelefono("T", fila, 7, $("#iNumTelefono123").val());
+
+            if ($("#cbxTelefonoPrinc123").is(':checked'))
+                ActualizarCampoDetalleTelefono("T", fila, 8, "SI");
+            else
+                ActualizarCampoDetalleTelefono("T", fila, 8, "NO");
+
+            ActualizarNumeroItemTelefono("T");
+            LimpiarDatosTelefono();
+            $('#FormAgregarTelefono').modal('toggle');
+            $('#ColapseTelefonos').collapse('collapse.in');
+
+        });
+
+        $("#AgregaCorreo").click(function () {
+            var fila = 0;
+
+            if ($("#cboTipoCorreo123").val() == null) {
+                swal("Escoja su Tipo de Correo")
+                $("#cboTipoCorreo123").focus();
+                return;
+            }
+
+            if ($("#vcDenomicacion123").val() == "") {
+                swal("Ingrese su Correo")
+                $("#vcDenomicacion123").focus();
+                return;
+            }
+
+            if ($("#Correo_Item").val() == "") {
+                $("#tabla_oculta_correo tbody tr:eq(0)").clone().removeClass('fila-base').appendTo("#TablaCorreo tbody");
+                $("#CantidadItemsCorreos").text(parseInt($("#CantidadItemsCorreos").text()) + 1);
+                fila = parseInt($("#CantidadItemsCorreos").text());
+            }
+            else {
+                fila = parseInt($("#Correo_Item").val());
+            }
+
+            ActualizarCampoDetalleCorreo("C", fila, 1, $("#CantidadItemsCorreos").val());
+            ActualizarCampoDetalleCorreo("C", fila, 2, $("#CantidadItemsCorreos").val());
+            ActualizarCampoDetalleCorreo("C", fila, 3, $("#cboTipoCorreo123").val());
+            ActualizarCampoDetalleCorreo("C", fila, 4, $("#cboTipoCorreo123 option:selected").html());
+            ActualizarCampoDetalleCorreo("C", fila, 5, $("#vcDenomicacion123").val());
+
+            if ($("#cbxCorreoPrinc123").is(':checked'))
+                ActualizarCampoDetalleCorreo("C", fila, 6, "SI");
+            else
+                ActualizarCampoDetalleCorreo("C", fila, 6, "NO");
+
+            ActualizarNumeroItemCorreo("C");
+            LimpiarDatosCorreo();
+            $('#FormAgregarCorreo').modal('toggle');
+            $('#ColapseCorreos').collapse('collapse.in');
+
+        });
+
+        function ActualizarCampoDetalle(tabla, fila, columna, valor) {
+            if (tabla == "D") {
+                $("#TablaDireccion tbody tr").each(function (index) {
+                    $(this).children("td").each(function (index2) {
+                        if (index == fila && index2 == columna) {
+                            $(this).text(valor);
+                            return;
+                        }
+                    })
+                })
+            }
+        }
+
+        function ActualizarCampoDetalleTelefono(tabla, fila, columna, valor) {
+            if (tabla == "T") {
+                $("#TablaTelefono tbody tr").each(function (index) {
+                    $(this).children("td").each(function (index2) {
+                        if (index == fila && index2 == columna) {
+                            $(this).text(valor);
+                            return;
+                        }
+                    })
+                })
+            }
+        }
+
+        function ActualizarCampoDetalleCorreo(tabla, fila, columna, valor) {
+            if (tabla == "C") {
+                $("#TablaCorreo tbody tr").each(function (index) {
+                    $(this).children("td").each(function (index2) {
+                        if (index == fila && index2 == columna) {
+                            $(this).text(valor);
+                            return;
+                        }
+                    })
+                })
+            }
+        }
+
+        function ActualizarNumeroItem(tabla) {
+            var i = 1;
+            if (tabla == "D") {
+                $("#TablaDireccion tbody tr").each(function (index) {
+                    $(this).children("td").each(function (index2) {
+                        if (index > 0 && index2 == 2) {
+                            $(this).text(i);
+                            i++;
+                        }
+                    })
+                })
+            }
+        }
+
+        function ActualizarNumeroItemTelefono(tabla) {
+            var i = 1;
+            if (tabla == "T") {
+                $("#TablaTelefono tbody tr").each(function (index) {
+                    $(this).children("td").each(function (index2) {
+                        if (index > 0 && index2 == 2) {
+                            $(this).text(i);
+                            i++;
+                        }
+                    })
+                })
+            }
+        }
+
+        function ActualizarNumeroItemCorreo(tabla) {
+            var i = 1;
+            if (tabla == "C") {
+                $("#TablaCorreo tbody tr").each(function (index) {
+                    $(this).children("td").each(function (index2) {
+                        if (index > 0 && index2 == 2) {
+                            $(this).text(i);
+                            i++;
+                        }
+                    })
+                })
+            }
+        }
+
+        //Modificar Dirección
+        $(document).on("click", "#ModificarDireccion", function () {
+            var parent = $(this).parents().get(1);
+            $('#FormAgregarDireccion').modal('toggle');
+            $(parent).children("td").each(function (index2) {
+                if (index2 == 2)
+                    $("#Direccion_Item").val($(this).text());
+                if (index2 == 3)
+                    $(".cboDepartamento123").val($(this).text());
+                if (index2 == 4)
+                    $(".cboProvincia123").val($(this).text());
+                if (index2 == 5)
+                    $(".cboDistrito123").val($(this).text());
+                if (index2 == 9)
+                    $("#cboTipoVia123").val($(this).text());
+                if (index2 == 11)
+                    $("#nvDireccion123").val($(this).text());
+                if (index2 == 12)
+                    $("#iNumeroDireccion123").val($(this).text());
+                if (index2 == 13)
+                    $("#iInterior123").val($(this).text());
+                if (index2 == 14)
+                    $("#nvManzana123").val($(this).text());
+                if (index2 == 15)
+                    $("#iLote123").val($(this).text());
+                if (index2 == 16)
+                    $("#iKilometro123").val($(this).text());
+                if (index2 == 17)
+                    $("#nvBloque123").val($(this).text());
+                if (index2 == 18)
+                    $("#iEtapa123").val($(this).text());
+                if (index2 == 19)
+                    $("#cboTipoZona123").val($(this).text());
+                if (index2 == 21)
+                    $("#nvReferencia123").val($(this).text());
+                //if (index2 == 21)
+                //    $("#TRDI_PRINCIPAL").val($(this).text());
+
+                //if (index2 == 22)
+                //    if ($(this).text() == "SI")
+                //        $("#TRDI_PRINCIPAL").prop('checked', true);
+                //    else
+                //        $("#TRDI_PRINCIPAL").prop('checked', false);
+            })
+        });
+
+        //Quitar Dirección
+        $(document).on("click", "#QuitarDireccion", function () {
+            var parent = $(this).parents().get(1);
+            $(parent).remove();
+            $("#CantidadItemsDirecciones").text(parseInt($("#CantidadItemsDirecciones").text()) - 1);
+            LimpiarDatosDireccion();
+            ActualizarNumeroItem();
+        });
+
+        //Modificar Telefono
+        $(document).on("click", "#ModificarTelefono", function () {
+            var parent = $(this).parents().get(1);
+            $('#FormAgregarTelefono').modal('toggle');
+            $(parent).children("td").each(function (index2) {
+                if (index2 == 2)
+                    $("#Telefono_item").val($(this).text());
+                if (index2 == 3)
+                    $("#cboTipo123").val($(this).text());
+                if (index2 == 4)
+                    $("#cboOperador123").val($(this).text());
+                if (index2 == 7)
+                    $("#iNumTelefono123").val($(this).text());
+
+                if (index2 == 8)
+                    if ($(this).text() == "SI")
+                        $("#cbxTelefonoPrinc123").prop('checked', true);
+                    else
+                        $("#cbxTelefonoPrinc123").prop('checked', false);
+            })
+        });
+
+        //Quitar Telefono
+        $(document).on("click", "#QuitarTelefono", function () {
+            var parent = $(this).parents().get(1);
+            $(parent).remove();
+            $("#CantidadItemsTelefonos").text(parseInt($("#CantidadItemsTelefonos").text()) - 1);
+            LimpiarDatosTelefono();
+            ActualizarNumeroItemTelefono();
+        });
+
+        //Modificar Correo
+        $(document).on("click", "#ModificarCorreo", function () {
+            var parent = $(this).parents().get(1);
+            $('#FormAgregarCorreo').modal('toggle');
+            $(parent).children("td").each(function (index2) {
+                if (index2 == 2)
+                    $("#Correo_Item").val($(this).text());
+                if (index2 == 3)
+                    $("#cboTipoCorreo123").val($(this).text());
+                if (index2 == 5)
+                    $("#vcDenomicacion123").val($(this).text());
+
+                if (index2 == 6)
+                    if ($(this).text() == "SI")
+                        $("#cbxCorreoPrinc123").prop('checked', true);
+                    else
+                        $("#cbxCorreoPrinc123").prop('checked', false);
+            })
+        });
+
+        //Quitar Correo
+        $(document).on("click", "#QuitarCorreo", function () {
+            var parent = $(this).parents().get(1);
+            $(parent).remove();
+            $("#CantidadItemsCorreos").text(parseInt($("#CantidadItemsCorreos").text()) - 1);
+            LimpiarDatosCorreo();
+            ActualizarNumeroItemCorreo();
+        });
+
+        function ObtenerDatos() {
+            filtro = sessionStorage.getItem("dni");
+            console.log(filtro)
+            $("#documento").val(filtro);
+            var xhr = new XMLHttpRequest();
+            var dataobj = { filtro: filtro };
+            var obj;
+
+            xhr.open('GET', 'http://admin_erp.natclar.com.pe:12000/rWSTrabajador/TrabajadorByFiltro/Get?filtro=' + filtro, true);
+            xhr.responseType = "json";
+            // xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onload = function () {
+                var status = xhr.status;
+                if (status == 200) {
+                    //console.log(xhr.response);
+                    // console.log(xhr.response.GetDataPOSTResult.cUser + " " + xhr.response.GetDataPOSTResult.cPassword);
+                    obj = xhr.response;
+                    //console.log(obj)
+                    $.each(obj, function (i, Datos) {
+                        console.log(obj)
+                        a = Datos.persona.vcApellidoMaterno;
+                        b = Datos.persona.vcApellidoPaterno;
+                        c = Datos.persona.vcNombres;
+                        $("#nvTrabajador113").val(c + " " + b + " " + a);
+                        $("#id_Trabajador").val(Datos.iIdTrabajadorInterno);
+                        $("#id_Puesto").val(Datos.puesto.IdPuesto);
+                        $("#nvPuesto113").val(Datos.puesto.Descripcion);
+                        $("#id_Area").val(Datos.AreaNatclar.IdAreaNatclar);
+                        $("#nvArea113").val(Datos.AreaNatclar.Descripcion);
+                        $("#id_UnidadOrganizativa").val(Datos.sede.UnidadOrganizativa.iIdUnidadOrganizativa);
+                        $("#nvUnidadOrganizativa113").val(Datos.sede.UnidadOrganizativa.vcDescripcion);
+                        $("#id_Empresa").val(Datos.UbicacionTrabajo.EmpresaContrata.vcRucEmpresa);
+                        $("#nvEmpresa113").val(Datos.UbicacionTrabajo.EmpresaContrata.nvRazonSocial);
+                        $("#id_Sede").val(Datos.sede.vcIdSede);
+                        $("#nvSede113").val(Datos.sede.vcDescripcion);
+                    });
+                }
+                else {
+                    swal("Ocurrió un error al traer los Datos del trabajador!")
+                }
+            }
+            xhr.send();
+            //xhr.send(dataobj);
+        }
+
+        $("#nvPuesto123").autocomplete({
+        source: function (request, response) {
+            filtro = $("#nvPuesto123").val();
+            var data = { filtro: filtro };
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                data: { filtro: filtro },
+                //url: 'https://admin_erp.natclar.com.pe:11000/rWSPuesto/PuestoByFiltro/Get',
+                url: 'http://admin_erp.natclar.com.pe/rWSPuesto/PuestoByFiltro/Get',
+                async: true,
+                //data: JSON.stringify({usuario: dataobj}),
+                //data: JSON.stringify(dataobj),
+                //data: jQuery.parseJSON({user:us, pass:passw}),
+                //datos: { filtro: filtro },
+                contentType: "application/json",
+                success: function (data) {
+                    console.log(data)
+                    response($.map(data, function (item) {
+                        return { value: item.Descripcion, text1: item.IdPuesto };
+                    }))
+                },
+                error: function () { console.log("ERROR..."); }
+            })
+        },
+        minLength: 3,
+        select: function (event, ui) {
+            $("#nvPuesto123").val(ui.item.text);
+            $("#nvPuesto123").prop('readonly', true);
+            $("#nvPuesto123").css('background-color', 'lightgoldenrodyellow');
+            $("#idPuesto123").val(ui.item.text1);
+
+        },
+        error: function (ex) {
+            alert('Error al traer datos.' + ex);
+        }
+    })
+
+        $("#nvArea123").autocomplete({
+            source: function (request, response) {
+                filtro = $("#nvArea123").val();
+                var data = { filtro: filtro };
+                $.ajax({
+                    type: "GET",
+                    datatype: "json",
+                    data: { filtro: filtro },
+                    //url: 'https://admin_erp.natclar.com.pe:11000/rWSArea/AreaByFiltro/Get',
+                    url: 'http://admin_erp.natclar.com.pe/rWSArea/AreaByFiltro/Get',
+                    async: true,
+                    //data: JSON.stringify({usuario: dataobj}),
+                    //data: JSON.stringify(dataobj),
+                    //data: jQuery.parseJSON({user:us, pass:passw}),
+                    //datos: { filtro: filtro },
+                    contentType: "application/json",
+                    success: function (data) {
+                        console.log(data)
+                        response($.map(data, function (item) {
+                            return { value: item.Descripcion, text1: item.IdAreaNatclar };
+                        }))
+                    },
+                    error: function () { console.log("ERROR..."); }
+                })
+            },
+            minLength: 3,
+            select: function (event, ui) {
+                $("#nvArea123").val(ui.item.text);
+                $("#nvArea123").prop('readonly', true);
+                $("#nvArea123").css('background-color', 'lightgoldenrodyellow');
+                $("#iIdArea123").val(ui.item.text1);
+            },
+            error: function (ex) {
+                alert('Error al traer datos.' + ex);
+            }
+        })
+
+    });
+
+</script>

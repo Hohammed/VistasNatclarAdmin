@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>BUSCAR PAGO</title>
+    <link rel="import" href="../../Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-green fixed sidebar-mini sidebar-collapse">
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+        </script>    
+        <script src="../../Scripts/Finanzas/RegistrarPago.js"></script>
+        <script src="../../Scripts/Global/global.js"></script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    BUSCAR PAGO
+                </h1>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="collapsed-box">
+                                <div class="box-header">
+                                    <h3 class="box-title">Registro de Pagos</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                            <i class="fa fa-angle-double-down"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblFechaIni52">Fecha Inicio</label>
+                                                <input type="date" class="datepicker mifecha form-control" placeholder="dd/mm/yyyy" id="dIniAtencion1" name="dIniAtencion1" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblFechaFin52">Fecha Fin</label>
+                                                <input type="text" class="datepicker mifecha form-control" placeholder="dd/mm/yyyy" id="dFinAtencion1" name="dFinAtencion1" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label id="lblEntidadFinanciera" style="width: 50px;">Banco</label>
+                                                <select class="form-control" id="cboEntidadFinanciera">                                               
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label id="lblNumeroCuenta" style="width: 80px;">N° Cuenta</label>
+                                                <select class="form-control" id="cboNumeroCuenta">
+                                                    <option value="1">191-2324-90</option>
+                                                    <option value="2">191-23-123</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label id="lblOperacion" style="width: 120px;">N° Operacion</label>
+                                                <input type="text" class="form-control" id="vcOperacion" name="vcOperacion" value="" style="width:100%;" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <button type="button" class="btn btn-success sincabecera" id="btnBuscarPago" name="btnBuscarPago">
+                                                    <span class="glyphicon glyphicon-search"></span>
+                                                    <b>Buscar</b>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">Lista Pagos</h3>
+                                <button id="btnNuevo" class="btn btn-link btn-xs pull-right" data-toggle="modal" data-target="#FormRegistrarPago">
+                                    <i class="fa fa-plus-circle fa-2x" style="color: #00a65a" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table id="tblPagos">
+                                            <thead>
+                                                <tr>
+                                                    <th>SEL</th>
+                                                    <th>ITEM</th>
+                                                    <th hidden>>idBanco</th>
+                                                    <th>BANCO</th>
+                                                    <th hidden>idCUENTA</th>
+                                                    <th>N° CUENTA</th>
+                                                    <th>N° OPERACION</th>
+                                                    <th>MONTO</th>
+                                                    <th>FECHAC</th>
+                                                    <th>OBSERVACION</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>SEL</th>
+                                                    <th>ITEM</th>
+                                                    <th hidden>>idBanco</th>
+                                                    <th>BANCO</th>
+                                                    <th hidden>idCUENTA</th>
+                                                    <th>N° CUENTA</th>
+                                                    <th>N° OPERACION</th>
+                                                    <th>MONTO</th>
+                                                    <th>FECHAC</th>
+                                                    <th>OBSERVACION</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="modal fade" id="FormRegistrarPago" accesskey="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg " style="max-width:600px" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title titulo-modal" id="myModalLabel">Registrar Pago</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <label class="col-sm-3 control-label no-padding">Item</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="item">
+                            </div>
+                        </div>
+                        <div class="col-md-6"></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <label for="inputEmail3" id="lblEntidadFinanciera" class="col-sm-3 control-label no-padding">Banco</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="cboEntidadFinancieraf">
+                                    <option value="0">----SELECCIONAR----</option>
+                                    <option value="1">BANCO DE CREDITO</option>
+                                    <option value="2">BANCO CONINENTAL</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPassword3" id="lblNumeroCuentaf" class="col-sm-3 control-label no-padding">N° Cuenta</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="cboNumeroCuentaf">
+                                    <option value="0">----SELECCIONAR----</option>
+                                    <option value="1">191-2324-90</option>
+                                    <option value="2">191-23-123</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <label class="col-sm-3 control-label no-padding">N° Operacion</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="Operacionf">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-sm-3 control-label no-padding">Monto</label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" id="nuImportef" name="nuImportef" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <label class="col-sm-3 control-label no-padding">Fecha</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="datepicker mifecha form-control" id="dFecha" style="width:100%;" name="dFecha" value="" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-sm-3 control-label no-padding">Observacion</label>
+                            <div class="col-sm-9">
+                                <textarea rows="2" class="form-control" id="nvObservacion"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-danger" id="btnCancelar" name="btnCancelar" data-dismiss="modal"><i class="glyphicon glyphicon-remove"></i> Cancelar</button>
+                            <button type="button" class="btn btn-success" id="btnGuardarPago" name="btnGuardarPago" data-dismiss="modal"><i class="glyphicon glyphicon-floppy-save"></i> Guardar</button>
+                            <button type="button" class="btn btn-success" id="btnModificarPago" name="btnModificarPago" data-dismiss="modal"><i class="glyphicon glyphicon-refresh"></i> Modificar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

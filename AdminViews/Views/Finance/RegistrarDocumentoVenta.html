@@ -1,0 +1,471 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Registrar Documento Venta</title>
+    <link rel="import" href="../../Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-green fixed sidebar-mini sidebar-collapse">
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+        </script>
+        <script src="../../Scripts/Finanzas/Global.js"></script>
+        <script src="../../Scripts/Finanzas/RegistrarDocumentoVenta.js"></script>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    REGISTRAR DOCUMENTO VENTA
+                </h1>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">Cabecera Documento Venta</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <label id="lblDocumento" class="">Documento</label>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <select class="form-control" id="cboTipoDocumento">
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <input type="text" class="form-control" id="txtiSerie" name="txtiSerie" value="" style="" />
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <input type="text" class="form-control" id="txtiNUmero" name="txtiNUmero" value="" style="" />
+                                                </div>
+                                                <div class="col-md-3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label id="lblFecha" class="">Fecha</label>
+                                            <input type="text" class="datepicker mifecha form-control" placeholder="dd/mm/yyyy" name="txtdtFechaEmision" id="txtdtFechaEmision" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label id="lblPagador" class="">Cliente</label>
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" id="txtvcRucCliente" name="txtvcRucCliente" value="" style="" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" id="Pagador" name="COPG_DEN_CLIENTE" value="" style="" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" id="Direccion" name="COPG_DIRECCION" value="" style="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label id="lblSede" class="">Sede</label>
+                                            <select id="cboSede" class="form-control"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label id="lblUnidad">Unidad</label>
+                                            <select id="cboUnidad" class="form-control"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label id="lblCentroCosto" class="">Centro de Costo</label>
+                                            <select id="cboCentroCosto" class="form-control"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="Orden" class="">Orden</label>
+                                            <input type="text" class="form-control" id="txtnvOrden" name="COPG_ORDEN" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="cboCondicionPago" class="">Condicion Pago</label>
+                                            <select id="cboCondicionPago" class="form-control">
+                                                <option value="">-------SELECCIONAR-------</option>
+                                                <option value="CREDITO">CREDITO</option>
+                                                <option value="CONTADO">CONTADO</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="cboTipoMoneda" class="">Moneda</label>
+                                            <select id="cboTipoMoneda" class="form-control"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label id="lblEstadoFactura" class="">Estado</label>
+                                            <select id="cboEstadoFactura" class="form-control"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="txtdtFechaVencimiento" id="" class="">Fecha Venc.</label>
+                                            <input type="text" class="form-control datepicker" placeholder="dd/mm/yyyy" name="txtdtFechaVencimiento" id="txtdtFechaVencimiento" value="" style="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label id="lblTipoDescuento" class="">Tipo Dscto</label>
+                                            <select id="cboTipoDescuento" class="form-control"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="txtResponsable" class="">Resp.</label>
+                                            <input type="text" class="form-control UsuarioOrigen" id="txtResponsable" name="COPG_VENDEDOR_DENOMINACION" value="" style="" />
+                                            <input type="hidden" id="txtidResponsable" class="vcLogin" name="COPG_VENDEDOR" value="@Model.COPG_VENDEDOR" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                    </div>
+                                    <div class="col-md-4">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label for="txtnvObservacion" class="">Observa.</label>
+                                            <textarea class="form-control" rows="2" id="txtnvObservacion" name="txtnvObservacion" style="" maxlength="500"> </textarea>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="checkbox" id="COPG_AUTODETRACCION" class="" name="COPG_AUTODETRACCION" checked="checked" />
+                                            <label for="COPG_AUTODETRACCION" class="">Autodetraccion</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="checkbox" id="COPG_IMPRIME" class="" name="COPG_IMPRIME" />
+                                            <label for="COPG_IMPRIME" class="">Imprime</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">Detalle Documento Venta</h3>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div>
+                                            <label>Tipos SubTotal</label>
+                                            <select id="cboTiposSubTotal" class="form-control">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5"></div>
+                                    <div class="col-md-4">
+                                        <div align="right">
+                                            <b>Cantidad de Items: <label id="CantidadItems">0</label></b>
+                                            <button type="button" class="btn btn-success btn-sm" id="btnAgregarDetalleModal" data-toggle="modal" data-target="#FormRegistrarDetalleDocumentoVenta"><span class="glyphicon glyphicon-plus"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="hidden" class="form-control" id="iItemDetalleDocumentoVenta" name="iItemDetalleDocumentoVenta" />
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-hover" id="tblDetalleDocumentoVenta">
+                                                <thead>
+                                                    <tr class="info">
+                                                        <th>Acciones</th>
+                                                        <th>#</th>
+                                                        <th>CODIGO</th>
+                                                        <th>DESCRIPCION</th>
+                                                        <th>CANTIDAD</th>
+                                                        <th>P. UNITARIO</th>
+                                                        <th>DSCTO.</th>
+                                                        <th>P. UNITARIO NETO</th>
+                                                        <th>IMPORTE</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th style="text-align:right" colspan="9">
+                                                            <label>SUBTOTAL</label>
+                                                            <input class="incrustado" type="text" id="nuSubTotal" readonly="readonly" style=" .incrustado; border-top: 1px solid #cccccc !important; border-right: 1px solid #cccccc !important; border-bottom: 1px solid ##808080 !important; border-left: 1px solid #808080 !important; " />
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="text-align:right" colspan="9">
+                                                            DSCTO. (%)
+                                                            <label id="lblDescuento">GLOBAL</label>
+                                                            <input type="text" id="nuDescuentoPorcentaje" readonly="readonly" value="" style="width: 60px" />
+                                                            <input type="text" id="nuDescuentoValor" readonly="readonly" value="" />
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="text-align:right" colspan="9">
+                                                            IMPUESTO (%)
+                                                            <label id="lblImpuesto">IGV </label>
+                                                            <input type="text" id="nuImpuestoPorcentaje" readonly="readonly" value="18" style="width: 60px" />
+                                                            <input type="text" id="nuImpuestoValor" readonly="readonly" value="" />
+                                                        </th>
+                                                    </tr>
+                                                    <tr id="trDetraccion" style="display: none">
+                                                        <th style="text-align:right" colspan="9">
+                                                            DETRACCION (%)
+                                                            <label id="lblDetraccion">1</label>
+                                                            <input type="text" id="vcIdDetraccion" readonly="readonly" value="" style="width: 60px" />
+                                                            <input type="text" id="nuDetraccionValor" readonly="readonly" value="" />
+                                                        </th>
+                                                    </tr>
+                                                    <tr class="danger">
+                                                        <th style="text-align:right" colspan="9">
+                                                            <label id="lblTotal">TOTAL</label>
+                                                            <input type="text" id="nuTotal" readonly="readonly" value="" />
+                                                        </th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">Registro de Pagos</h3>
+                                <div align="right">
+                                    <b>Cantidad de Items: <span id="CantidadItems">0</span></b>
+
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label id="lblEntidadFinanciera" style="">BANCO</label>
+                                            <select class="form-control" id="cboEntidadFinanciera">
+                                                <option value="1">BANCO DE CREDITO</option>
+                                                <option value="2">BANCO CONINENTAL</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label id="lblNumeroCuenta" style="">N° CUENTA</label>
+                                            <select class="form-control" id="cboNumeroCuenta">
+                                                <option value="1">191-2324-90</option>
+                                                <option value="2">191-23-123</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label id="lblOperacion" style="">N° OPERACION</label>
+                                            <input type="text" class="form-control" id="vcOperacion" name="vcOperacion" value="" style="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label id="lblMonto" style="">MONTO</label>
+                                            <input type="number" class="form-control" id="nuMonto" name="nuMonto" style="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label id="lblImporte" style="">IMPORTE</label>
+                                            <input type="number" class="form-control" id="nuImporte" name="nuImporte" style="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="Agregar" style=""></label>
+                                            <input type="button" class="btn btn-success form-control" id="Agregar" value="Agregar">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-hover" id="TablaRegistrarAsistencia">
+                                                <thead>
+                                                    <tr class="info">
+                                                        <th>Acciones</th>
+                                                        <th>#</th>
+                                                        <th>BANCO</th>
+                                                        <th>N° CUENTA</th>
+                                                        <th>N° OPERACION</th>
+                                                        <th>IMPORTE</th>
+                                                        <th>FECHA</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                                <tfoot>
+                                                    <tr class="danger">
+                                                        <th style="text-align:right" colspan="9">
+                                                            <label>TOTAL</label>
+                                                            <input type="text" id="nuTotal" readonly="readonly" value="" />
+                                                        </th>
+                                                    </tr>
+                                                    <tr class="danger">
+                                                        <th style="text-align:right" colspan="9">
+                                                            <label>DEVOLUCION</label>
+                                                            <input type="text" id="nuDevolucion" readonly="readonly" value="" />
+                                                        </th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-info" id="btnGuardarDocumentoventa" name="btnGuardarDocumentoventa"><span class="glyphicon glyphicon-floppy-disk"></span><b>Guardar</b></button>
+                            <button type="button" class="btn btn-danger" id="btnAnularDocumentoVenta" name="btnAnularDocumentoVenta"><span class="glyphicon glyphicon-remove"></span><b>Anular</b></button>
+                            <button type="button" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>Atras</b></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="modal fade" id="FormRegistrarDetalleDocumentoVenta" accesskey="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg " style="max-width:600px" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title titulo-modal" id="myModalLabel">Registrar Detalle Documento Venta</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label id="lblCodigoServicio" class="col-sm-3 control-label no-padding">Codigo</label>
+                            <div class="col-sm-7">
+
+                                <input type="text" id="vcCodigoServicio" name="vcCodigoservicio" class=" form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label id="lblDenominacionServicio" class="col-sm-3 control-label no-padding">Descripcion</label>
+                            <div class="col-sm-7">
+                                <input type="text" id="nvDenominacionServicio" name="nvDenominacionServicio" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label class="col-sm-3 control-label no-padding">Cantidad</label>
+                            <div class="col-sm-7">
+                                <input type="number" id="nuCantidad" name="nuCantidad" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-sm-3 control-label no-padding">Precio Unitario</label>
+                            <div class="col-sm-6">
+                                <input type="number" id="nuPrecioUnitario" name="nuPrecioUnitario" class="form-control" id="nuImporte" name="nuImporte" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" id="btnAgregarDetalle" name="btnAgregarDetalle"><i class="fa fa-plus-circle"></i> Agregar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Tablas Ocultas-->
+    <table id="tabla_oculta_documentoventa_detalle">
+        <tr class="fila-base">
+            <td hidden></td><!--Id-->
+            <td hidden></td><!--Sede-->
+            <td hidden></td><!--Item-->
+            <td>
+                <button type="button" class="btn btn-danger btn-xs" id="QuitarDetalleDocumentoVenta"><span class="glyphicon glyphicon-remove"></span></button>
+            </td>
+            <td></td><!--item-->
+            <td></td><!--cod-->
+            <td></td><!--descrip-->
+            <td></td><!--cantidad-->
+            <td></td><!--preunit-->
+            <td></td><!--Dscto-->
+            <td></td><!--PrecioUnitarioNeto-->
+            <td></td><!--Importe-->
+        </tr>
+    </table>
+</body>
+</html>
+

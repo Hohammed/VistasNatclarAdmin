@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Registrar Pedido</title>
+    <link rel="import" href="/Views/Shared/Layout.html" id="import">
+</head>
+<body class="hold-transition skin-yellow fixed sidebar-mini">
+    <div class="wrapper">
+        <script>
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-header');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.sidebar-toggle');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.main-footer');
+            document.body.appendChild(getContent.cloneNode(true));
+
+            var getImport = document.querySelector('#import');
+            var getContent = getImport.import.querySelector('.control-sidebar');
+            document.body.appendChild(getContent.cloneNode(true));
+
+        </script>
+
+
+
+        <div class="content-wrapper">
+
+            <section class="content-header">
+                <h1>
+                    DATOS PEDIDO
+                </h1>
+            </section>
+
+
+            <section class="content">
+                <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">DATOS DE PEDIDO</h3>
+                                </div>
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <div class="form-group">
+                                                <label id="lblIdPedido108">Id</label>
+                                                <input type="number" class="form-control" id="nvIdPedido108" name="nvIdPedido108" style="background-color:lightgoldenrodyellow; display:block" readonly />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblTrabajador1" style="display:block">Responsable</label>
+                                                <input type="text" class="form-control" id="nvTrabajador1" name="nvTrabajador1" style="background-color:lightgoldenrodyellow; display:block" readonly />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label id="lblTipoPagoPedido108">Tipo</label>
+                                                <select class="form-control" id="cboTipoPedido108">
+                                                    <option value="1">COMPRA</option>
+                                                    <option value="2">SERVICIO</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="lblFechaPedido108" style="width:100px;">Fecha Pedido</label>
+                                                <input type="text" class="datepicker form-control mifecha" id="dFechaPedido108" name="dFechaPedido108" value="" placeholder="dd/mm/yyyy" disabled />
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="lblFechaFechaEntregaMaximaPedido108" style="width:160px;">Fecha Entrega Maxima</label>
+                                                <input type="text" class="datepicker form-control mifecha" id="dFechaEntregaMaximaPedido108" name="dFechaEntregaMaximaPedido108" value="" placeholder="dd/mm/yyyy" disabled />
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div class="row">
+
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label for="lblObservacionPedido108" style="width:120px;">Observacion</label>
+                                                <textarea class="form-control" cols="130" id="nvObservacionPedido108"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </section>
+
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">DETALLE PEDIDO</h3>
+                            </div>
+                            <div class="box-body">
+
+                                <input type="hidden" id="DatosLaborales_JSON" name="DatosLaborales_JSON" />
+                                <input type="hidden" id="SeguridadSocial_JSON" name="SeguridadSocial_JSON" />
+                                <input type="hidden" id="Direccion_JSON" name="Direccion_JSON" />
+                                <div id="exTab1">
+                                    <ul class="nav nav-pills">
+                                        <li class="active">
+                                            <a href="#DatosPersonales" data-toggle="tab">Detalle Pedido</a>
+                                        </li>
+                                        <li>
+                                            <a href="#DatosInternos" data-toggle="tab">Detalle Requerimiento</a>
+                                        </li>
+                                       
+                                    </ul>
+                                    <div class="tab-content clearfix">
+                                        <div class="tab-pane active" id="DatosPersonales">
+                                            <div class="box box-primary">
+                                                <div class="box-header">
+                                                    <h3 class="box-title">Detalle Pedido</h3>
+                                                </div>
+                                                <div class="box-body">
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="lblItem108">Item</label>
+                                                                <input type="text" class="form-control" id="nvItemPedido108" name="nvItemPedido108" style="background-color: lightyellow" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="lblItem108">Descripcion</label>
+                                                                <input type="text" class="form-control sincabecera" id="nvDescripcionPedido108" name="nvDescripcionPedido108" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="lblApellidoPaterno123">Unidad Medida</label>
+                                                                <input type="text" class="form-control" id="nvUnidadMedida108" name="nvApellidoPaterno123" style="background-color: lightyellow" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label for="lblApellidomaterno123">Cantidad</label>
+                                                                <input type="text" class="form-control" id="nvApellidomaterno123" name="nvApellidomPaterno123" style="background-color: lightyellow" />
+                                                            </div>
+                                                        </div>
+                                                      
+                                                    </div>
+                                                    
+                                            
+                                                   
+                                                    
+
+                                            
+
+                                   
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                       
+                                        <div class="tab-pane" id="DatosInternos">
+                                            <div class="form-inline panel panel-primary">
+                                                <div class="panel-heading">
+                                                    <b>DETALLE REQUERIMIENTO</b>
+                                                </div>
+                                             
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                
+                               
+                               
+                              
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="panel-body">
+                <div class="form-group">
+
+                    <button type="button" class="btn btn-info" id="" name=""><span class="glyphicon glyphicon-floppy-disk"></span><b>Guardar</b></button>
+                    <button type="button" class="btn btn-success" id="" name=""><span class="glyphicon glyphicon-ok"></span><b>Confirmar</b></button>
+                    <!--<button type="button" class="btn btn-info" id=""><span class="glyphicon glyphicon-print"></span><b>Imprimir</b></button>-->
+                    <button type="button" class="btn btn-warning" id="Atras"><span class="glyphicon glyphicon-arrow-left"></span><b>Atras</b></button>
+                </div>
+            </div>
+
+          
+            </div>
+
+        </div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+  
+</script>
